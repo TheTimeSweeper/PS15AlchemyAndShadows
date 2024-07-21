@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52652545d9df078468d1634c4e1b827e, type: 3}
+  m_Name: ElementEarth
+  m_EditorClassIdentifier: 
+  index: 1
+  elementPrefab: {fileID: 6846396711578369645, guid: f0399cf9ce4623d4cb939acd06e48519, type: 3}
+  growthMultiplier: 1
+  baseMass: 3
+  velocityMultiplier: 10
+  spawnState:
+    activeStateName: ActiveStates.Elements.BasicElementGrow
+  letGoState:
+    activeStateName: ActiveStates.Elements.BasicElementLetGo
+  elementActions:
+  - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.Earth.EarthSwipe
