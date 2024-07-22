@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: ElementAir
   m_EditorClassIdentifier: 
   index: 3
-  elementPrefab: {fileID: 2733586276718887689, guid: 5d4e618695f497d4ab139d59f23f6c66, type: 3}
-  growthMultiplier: 1
-  baseMass: 3
-  velocityMultiplier: 69
+  elementMassPrefab: {fileID: 2733586276718887689, guid: 5d4e618695f497d4ab139d59f23f6c66, type: 3}
+  cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
+  elementColor: {r: 0, g: 1, b: 0.9419038, a: 1}
+  massGrowthMultiplier: 1
+  massBaseMass: 5
+  massVelocityMultiplier: 30
   spawnState:
     activeStateName: ActiveStates.Elements.BasicElementGrow
   letGoState:
@@ -25,3 +27,14 @@ MonoBehaviour:
   - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Air.AirSwipe
+    baseManaCost: 0
+  - gestureType: {fileID: 11400000, guid: 11dcd5eb0dbb1f444bae72553a27ae55, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.Air.AirShake
+    baseManaCost: 0
+  - gestureType: {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.Air.AirSwirl
+    baseManaCost: 0
+  succPrefab: {fileID: 1994112508006969103, guid: 3c1f584857535724db53ac84726d47e5, type: 3}
+  blowPrefab: {fileID: 1474388984078184617, guid: b65dadb77a6624d48a71bcf54bad2df4, type: 3}

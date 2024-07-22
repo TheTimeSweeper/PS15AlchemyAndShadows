@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 914124400936391975}
   - component: {fileID: 1502281406013002248}
   - component: {fileID: 5094114858137204261}
+  - component: {fileID: -135243547296184392}
   m_Layer: 0
   m_Name: AirSubMass
   m_TagString: Untagged
@@ -29,14 +30,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826222899265231781}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.006579172, y: -0.003290786, z: -0.0055168686, w: 0.99995774}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4547132137007555094}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.756, y: -0.373, z: -0.63}
 --- !u!114 &5427545651285932472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +95,7 @@ MonoBehaviour:
   dormantComponents:
   - {fileID: 1502281406013002248}
   - {fileID: 5094114858137204261}
+  - {fileID: -135243547296184392}
 --- !u!114 &1502281406013002248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +123,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 2842930805848246035}
   rigidBody: {fileID: 7549978788094093812}
+--- !u!114 &-135243547296184392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826222899265231781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 094c96fe6bf43bd489abcdef865f36da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 2842930805848246035}
+  damageCoefficient: 1
+  impactEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  destroyOnImpact: 0
+  destroyOnImpactGraceTime: 0.2
 --- !u!1 &1843736058039858248
 GameObject:
   m_ObjectHideFlags: 0

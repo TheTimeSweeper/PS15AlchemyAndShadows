@@ -42,5 +42,10 @@ namespace SpellCasting
 
             return hit;
         }
+
+        public void ResetHits()
+        {
+            _alreadyHitTargets.Clear();
+        }
     }
 }

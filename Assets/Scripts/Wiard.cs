@@ -10,6 +10,9 @@ namespace SpellCasting
         private InputBank inputBank;
 
         [SerializeField]
+        private CommonComponentsHolder commonComponents;
+
+        [SerializeField]
         private ElementType m1Element;
         public ElementType M1Element {
             get => m1Element;
@@ -57,19 +60,28 @@ namespace SpellCasting
         {
             if (m1Element)
             {
-                _elementManipulations.Add(new ElementManipulation(m1Element, inputBank.M1));
+                _elementInputBehaviors.Add(new ElementMassManipulationBehavior(m1Element, inputBank.M1, commonComponents));
+                _elementInputBehaviors.Add(new ElementCursorIndicatorBehavior(m1Element, inputBank.M1, commonComponents));
+                _elementInputBehaviors.Add(new ElementColorBehavior(m1Element, inputBank.M1, commonComponents));
             }
             if (m2Element)
             {
-                _elementManipulations.Add(new ElementManipulation(m2Element, inputBank.M2));
+                _elementInputBehaviors.Add(new ElementMassManipulationBehavior(m2Element, inputBank.M2, commonComponents));
+                _elementInputBehaviors.Add(new ElementCursorIndicatorBehavior(m2Element, inputBank.M2, commonComponents));
+                _elementInputBehaviors.Add(new ElementColorBehavior(m1Element, inputBank.M1, commonComponents));
             }
+
             if (shiftElement)
             {
-                _elementManipulations.Add(new ElementManipulation(shiftElement, inputBank.Shift));
+                _elementInputBehaviors.Add(new ElementMassManipulationBehavior(shiftElement, inputBank.Shift, commonComponents));
+                _elementInputBehaviors.Add(new ElementCursorIndicatorBehavior(shiftElement, inputBank.Shift, commonComponents));
+                _elementInputBehaviors.Add(new ElementColorBehavior(shiftElement, inputBank.Shift, commonComponents));
             }
             if (spaceElement)
             {
-                _elementManipulations.Add(new ElementManipulation(spaceElement, inputBank.Space));
+                _elementInputBehaviors.Add(new ElementMassManipulationBehavior(spaceElement, inputBank.Space, commonComponents));
+                _elementInputBehaviors.Add(new ElementCursorIndicatorBehavior(spaceElement, inputBank.Space, commonComponents));
+                _elementInputBehaviors.Add(new ElementColorBehavior(spaceElement, inputBank.Space, commonComponents));
             }
         }
     }

@@ -107,7 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 3022085196851494293}
-  damageCoefficient: 11
+  damageCoefficient: 1
+  resetInterval: -1
   impactEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -155,7 +156,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.35355338, y: 0.1464466, z: -0.35355338, w: 0.8535535}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.5824523, y: 5.582453, z: 5.582453}
+  m_LocalScale: {x: 2.5900779, y: 2.590078, z: 2.590078}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8938305131620458363}
@@ -175,7 +176,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6529560793578120647}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

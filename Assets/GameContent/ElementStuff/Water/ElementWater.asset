@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: ElementWater
   m_EditorClassIdentifier: 
   index: 2
-  elementPrefab: {fileID: 4472891100982896484, guid: efa907a06110fb542b0b46be336bd999, type: 3}
-  growthMultiplier: 3
-  baseMass: 1
-  velocityMultiplier: 10
+  elementMassPrefab: {fileID: 4472891100982896484, guid: efa907a06110fb542b0b46be336bd999, type: 3}
+  cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
+  elementColor: {r: 0, g: 0.06871343, b: 1, a: 1}
+  massGrowthMultiplier: 3
+  massBaseMass: 3
+  massVelocityMultiplier: 30
   spawnState:
     activeStateName: ActiveStates.Elements.BasicElementGrow
   letGoState:
@@ -25,3 +27,5 @@ MonoBehaviour:
   - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Water.WaterSwipe
+    baseManaCost: 0
+  swipeSpawnSideDistance: 2

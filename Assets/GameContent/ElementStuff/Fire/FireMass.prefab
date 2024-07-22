@@ -122,10 +122,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2957934907171078566, guid: d6a28643d1c770d479de198c4b66a84a, type: 3}
-      propertyPath: positionLerpDecay
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2957934907171078566, guid: d6a28643d1c770d479de198c4b66a84a, type: 3}
       propertyPath: subMasses.Array.data[0]
       value: 
       objectReference: {fileID: 1168993829280939313}

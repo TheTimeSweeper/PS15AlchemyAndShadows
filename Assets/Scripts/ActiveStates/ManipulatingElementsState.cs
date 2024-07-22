@@ -6,19 +6,19 @@ namespace ActiveStates
 {
     public class ManipulatingElementsState : ActiveState
     {
-        public List<ElementManipulation> _elementManipulations = new List<ElementManipulation>();
+        public List<ElementInputBehavior> _elementManipulations = new List<ElementInputBehavior>();
 
         public override void OnEnter()
         {
             base.OnEnter();
-            _elementManipulations = caster.ElementManipulations;
+            _elementManipulations = caster.ElementInputBehaviors;
         }
 
         public override void OnUpdate()
         {
             for (int i = 0; i < _elementManipulations.Count; i++)
             {
-                _elementManipulations[i].Update(machine.CommonComponents);
+                _elementManipulations[i].Update();
             }
         }
 
@@ -26,7 +26,7 @@ namespace ActiveStates
         {
             for (int i = 0; i < _elementManipulations.Count; i++)
             {
-                _elementManipulations[i].FixedUpdate(inputBank);
+                _elementManipulations[i].FixedUpdate();
             }
         }
     }

@@ -2,6 +2,11 @@
 using UnityEngine;
 namespace SpellCasting
 {
+    public class ManaComponent :MonoBehaviour
+    {
+        
+    }
+
     public class HealthComponent : MonoBehaviour
     {
         public delegate void HealthChangedEvent(float healthDelta);

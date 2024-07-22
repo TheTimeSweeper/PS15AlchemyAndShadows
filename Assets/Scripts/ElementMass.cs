@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace SpellCasting
 {
@@ -78,7 +79,7 @@ namespace SpellCasting
         {
             for (int i = 0; i < subMasses.Count; i++)
             {
-                subMasses[i].SetMass(_totalMass);
+                subMasses[i].SetMass(_totalMass / subMasses.Count);
             }
         }
 

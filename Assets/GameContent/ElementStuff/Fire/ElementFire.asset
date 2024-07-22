@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: ElementFire
   m_EditorClassIdentifier: 
   index: 0
-  elementPrefab: {fileID: 4742311297794782505, guid: cda0e8e3ca13bf24e8e20abcc62b3149, type: 3}
-  growthMultiplier: 1
-  baseMass: 1
-  velocityMultiplier: 44.05
+  elementMassPrefab: {fileID: 4742311297794782505, guid: cda0e8e3ca13bf24e8e20abcc62b3149, type: 3}
+  cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
+  elementColor: {r: 1, g: 0.5744225, b: 0, a: 1}
+  massGrowthMultiplier: 1
+  massBaseMass: 1
+  massVelocityMultiplier: 19.63
   spawnState:
     activeStateName: ActiveStates.Elements.BasicElementGrow
   letGoState:
@@ -25,3 +27,14 @@ MonoBehaviour:
   - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Fire.FireSwipe
+    baseManaCost: 0
+  - gestureType: {fileID: 11400000, guid: 11dcd5eb0dbb1f444bae72553a27ae55, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.Fire.FireShake
+    baseManaCost: 0
+  - gestureType: {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.Fire.FireSwirl
+    baseManaCost: 0
+  explosionPrefab: {fileID: 4793637844757369106, guid: 0b06fec99c4a14246b3d67477d8b931f, type: 3}
+  poolPrefab: {fileID: 3624624150187626333, guid: 6d2333cf3c4ef184597e135b2e93b9c0, type: 3}

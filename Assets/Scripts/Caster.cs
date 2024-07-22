@@ -4,16 +4,16 @@ namespace SpellCasting
 {
     public class Caster : MonoBehaviour
     {
-        protected List<ElementManipulation> _elementManipulations = new List<ElementManipulation>();
-        public List<ElementManipulation> ElementManipulations => _elementManipulations;
+        protected List<ElementInputBehavior> _elementInputBehaviors = new List<ElementInputBehavior>();
+        public List<ElementInputBehavior> ElementInputBehaviors => _elementInputBehaviors;
 
         public void UpdateElement(ElementType lastElement, ElementType newElement)
         {
-            for (int i = _elementManipulations.Count - 1; i >= 0; i--)
+            for (int i = _elementInputBehaviors.Count - 1; i >= 0; i--)
             {
-                if (_elementManipulations[i].CurrentElementType == lastElement)
+                if (_elementInputBehaviors[i].ElementType == lastElement)
                 {
-                    _elementManipulations[i].CurrentElementType = newElement;
+                    _elementInputBehaviors[i].ElementType = newElement;
                 }
             }
         }

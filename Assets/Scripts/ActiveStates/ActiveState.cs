@@ -15,6 +15,7 @@ namespace ActiveStates
         protected HealthComponent healthComponent => machine.CommonComponents.HealthComponent;
         protected Caster caster => machine.CommonComponents.Caster;
         protected FixedMotorDriver fixedMotorDriver => machine.CommonComponents.FixedMotorDriver;
+        protected CharacterModel characterModel => machine.CommonComponents.CharacterModel;
 
         private float _fixedAge;
         protected float fixedAge => _fixedAge;

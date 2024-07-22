@@ -1616,10 +1616,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1725531796}
+  - component: {fileID: 1725531798}
   - component: {fileID: 1725531795}
   - component: {fileID: 1725531794}
   - component: {fileID: 1725531797}
-  - component: {fileID: 1725531798}
   - component: {fileID: 1725531805}
   - component: {fileID: 1725531804}
   - component: {fileID: 1725531803}
@@ -1663,6 +1663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputBank: {fileID: 1725531794}
+  commonComponents: {fileID: 1725531804}
   m1Element: {fileID: 11400000, guid: b4bf9355eaf200840ae74d300c1c7e24, type: 2}
   m2Element: {fileID: 11400000, guid: 1523a7871b8db304990d850360547269, type: 2}
   shiftElement: {fileID: 11400000, guid: 735c28191e66ad943a3bf219d795d968, type: 2}
@@ -1699,7 +1700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraController: {fileID: 200568834}
   inputBank: {fileID: 1725531794}
-  maxInputRange: 20
+  maxInputRange: 10
   deltaEnds: []
   deltaStarts: []
 --- !u!114 &1725531798
@@ -1761,7 +1762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1725531799}
-  gravity: 9.8
+  gravity: 0.98
 --- !u!114 &1725531801
 MonoBehaviour:
   m_ObjectHideFlags: 0

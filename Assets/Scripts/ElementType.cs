@@ -3,6 +3,7 @@ using ActiveStates.Elements;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SpellCasting
 {
@@ -16,6 +17,10 @@ namespace SpellCasting
         [SerializeField]
         private SerializableActiveState gestureState;
         public SerializableActiveState GestureState => gestureState;
+
+        [SerializeField]
+        private float baseManaCost;
+        public float BaseManaCost => baseManaCost;
     }
 
     [CreateAssetMenu(menuName = "ElementType/Unspecified", fileName = "Element")]
@@ -26,20 +31,28 @@ namespace SpellCasting
         public ElementTypeIndex Index { get => index; }
 
         [SerializeField]
-        private ElementMass elementPrefab;
-        public ElementMass ElementPrefab { get => elementPrefab; }
+        private ElementMass elementMassPrefab;
+        public ElementMass ElementMassPrefab { get => elementMassPrefab; }
 
         [SerializeField]
-        private float growthMultiplier;
-        public float GrowthMultiplier { get => growthMultiplier; }
+        private CursorIndicator cursorIndicatorPrefab;
+        public CursorIndicator CursorIndicatorPrefab { get => cursorIndicatorPrefab; set => cursorIndicatorPrefab = value; }
 
         [SerializeField]
-        private float baseMass;
-        public float BaseMass { get => baseMass; }
+        private Color elementColor;
+        public Color ElementColor { get => elementColor; }
 
         [SerializeField]
-        private float velocityMultiplier;
-        public float VelocityMultiplier { get => velocityMultiplier; }
+        private float massGrowthMultiplier;
+        public float MassGrowthMultiplier { get => massGrowthMultiplier; }
+
+        [SerializeField]
+        private float massBaseMass;
+        public float BaseMass { get => massBaseMass; }
+
+        [SerializeField]
+        private float massVelocityMultiplier;
+        public float MassVelocityMultiplier { get => massVelocityMultiplier; }
 
         [SerializeField]
         private SerializableActiveState spawnState = new SerializableActiveState(typeof(BasicElementGrow));

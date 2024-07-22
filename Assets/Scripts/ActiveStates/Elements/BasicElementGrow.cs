@@ -8,13 +8,17 @@ namespace ActiveStates.Elements
         {
             base.OnFixedUpdate();
 
-            elementMass.Grow(elementType.GrowthMultiplier);
+            elementMass.Grow(elementType.MassGrowthMultiplier);
 
             elementMass.SetPosition(inputBank.AimPoint);
 
             for (int i = 0; i < elementMass.SubMasses.Count; i++)
             {
+                //Vector3 lastPosition = elementMass.SubMasses[i].transform.position;
+
                 elementMass.SubMasses[i].transform.position = elementMass.CenterPosition;
+
+                //elementMass.SubMasses[i].transform.rotation = Quaternion.LookRotation(elementMass.SubMasses[i].transform.position - lastPosition, Vector3.up);
             }
         }
     }

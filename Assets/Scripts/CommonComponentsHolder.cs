@@ -9,6 +9,7 @@ namespace SpellCasting
         public CharacterBody CharacterBody;
         public Caster Caster;
         public FixedMotorDriver FixedMotorDriver;
+        public CharacterModel CharacterModel;
 
         private void Reset()
         {
@@ -17,6 +18,7 @@ namespace SpellCasting
             CharacterBody = GetComponent<CharacterBody>();
             Caster = GetComponent<Caster>();
             FixedMotorDriver = GetComponent<FixedMotorDriver>();
+            CharacterModel = GetComponent<CharacterModel>();
         }
     }
 }

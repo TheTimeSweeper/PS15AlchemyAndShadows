@@ -13,12 +13,13 @@ namespace SpellCasting.Projectiles
     public class ProjectileOverlapAttack : ProjectileOverlap, IProjectileDormant
     {
         [SerializeField]
-        private float damageCoefficient;
+        private float damageCoefficient = 1;
+
+        [SerializeField]
+        private float resetInterval = -1;
 
         [SerializeField]
         private UnityEvent impactEvent;
-
-        private bool _impacted;
 
         [SerializeField]
         private bool destroyOnImpact;
@@ -26,14 +27,29 @@ namespace SpellCasting.Projectiles
         private float destroyOnImpactGraceTime = 0.2f;
 
         private float _destoryOnImpactTim;
+        private float _repeatTim;
+
+        private bool _impacted;
 
         public void Init(ProjectileController controller)
         {
             overlapAttack = new OverlapAttack { Hitbox = hitbox, Damage = controller.BaseDamage * damageCoefficient, Owner = controller.Owner.gameObject };
+            _repeatTim = resetInterval;
         }
 
         void FixedUpdate()
         {
+            if (resetInterval > 0)
+            {
+                _repeatTim -= Time.fixedDeltaTime;
+                if (_repeatTim < 0)
+                {
+                    _repeatTim += resetInterval;
+
+                    overlapAttack.ResetHits();
+                }
+            }
+
             bool hit = overlapAttack.Fire();
             if (!_impacted)
             {
@@ -51,7 +67,6 @@ namespace SpellCasting.Projectiles
                     Destroy(gameObject);
                 }
             }
-            
         }
     }
 }
