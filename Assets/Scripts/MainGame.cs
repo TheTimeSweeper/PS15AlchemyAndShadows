@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 
-public class MainGame : MonoBehaviour
+namespace SpellCasting
 {
-    [SerializeField]
-    private GameObject menu;
-
-    private void Update()
+    public class MainGame : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        [SerializeField]
+        private GameObject menu;
+
+        private void Update()
         {
-            menu.SetActive(!menu.activeInHierarchy);
-            Time.timeScale = menu.activeInHierarchy ? 0 : 1;
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                menu.SetActive(!menu.activeInHierarchy);
+                Time.timeScale = menu.activeInHierarchy ? 0 : 1;
+            }
         }
     }
 }

@@ -1,27 +1,39 @@
-﻿using System;
+﻿using SpellCasting.Projectiles;
+using System;
 using UnityEngine;
 
-public class ElementSubMass : MonoBehaviour
+namespace SpellCasting
 {
-    [SerializeField]
-    private Transform viewContainer;
-
-    [SerializeField]
-    private Rigidbody rigidBody;
-
-    public void MoveTowards(Vector3 position)
+    public class ElementSubMass : MonoBehaviour
     {
-        transform.position = Vector3.Lerp(transform.position, position, 0.1f);
-    }
+        [SerializeField]
+        private Transform viewContainer;
 
-    public void SetMass(float totalMass)
-    {
-        viewContainer.transform.localScale = Vector3.one * totalMass;
-    }
+        [SerializeField]
+        private Rigidbody rigidBody;
 
-    public void TEMPThrow(Vector3 throwVector)
-    {
-        rigidBody.isKinematic = false;
-        rigidBody.velocity = throwVector;
+        [SerializeField]
+        private ProjectileController projectileController;
+
+        public void MoveTowards(Vector3 position)
+        {
+            transform.position = Vector3.Lerp(transform.position, position, 0.1f);
+        }
+
+        public void SetMass(float totalMass)
+        {
+            viewContainer.transform.localScale = Vector3.one * totalMass;
+        }
+
+        public void JAMThrow(Vector3 throwVector)
+        {
+            rigidBody.isKinematic = false;
+            rigidBody.velocity = throwVector;
+        }
+
+        public void JAMActivateProjectile(CharacterBody owner)
+        {
+            projectileController.Init(owner);
+        }
     }
 }

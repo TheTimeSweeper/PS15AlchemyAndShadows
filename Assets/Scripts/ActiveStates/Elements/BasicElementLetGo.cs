@@ -7,7 +7,6 @@
             base.OnEnter();
 
             elementMass.Fizzle();
-
         }
     }
 }

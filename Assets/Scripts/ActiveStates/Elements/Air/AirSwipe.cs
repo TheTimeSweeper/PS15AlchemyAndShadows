@@ -1,10 +1,7 @@
 ﻿namespace ActiveStates.Elements.Air
 {
-    public class AirSwipe : BasicElementThrow
+    public class AirSwipe : ElementThrowProjectile
     {
 
     }
-}
-namespace ActiveStates.Elements.Fire
-{
 }

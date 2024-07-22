@@ -1,11 +1,39 @@
-﻿public enum ElementTypeIndex
+﻿
+namespace SpellCasting
 {
-    FIRE,
-    EARTH,
-    WATER,
-    AIR,
-    LIGHTNING,
-    ICE,
-    BLOOD,
-    SOMETHINGELSECOOL
+    public enum ElementTypeIndex
+    {
+        FIRE,
+        EARTH,
+        WATER,
+        AIR,
+        METAL,
+        LAVA,
+        LIGHTNING,
+        ICE,
+        SAND,
+        LIGHT,
+        SHADOW_FIRE,
+        SHADOW_EARTH,
+        SHADOW_WATER,
+        SHADOW_AIR,
+        SHADOW_METAL,
+        SHADOW_LAVA,
+        SHADOW_LIGHTNING,
+        SHADOW_ICE,
+        SHADOW_SAND,
+        SHADOW_LIGHT,
+        ENEMY_FIRE,
+        ENEMY_EARTH,
+        ENEMY_WATER,
+        ENEMY_AIR,
+        ENEMY_METAL,
+        ENEMY_LAVA,
+        ENEMY_LIGHTNING,
+        ENEMY_ICE,
+        ENEMY_SAND,
+        ENEMY_LIGHT,
+        BLOOD,
+        SOMETHINGELSECOOL
+    }
 }

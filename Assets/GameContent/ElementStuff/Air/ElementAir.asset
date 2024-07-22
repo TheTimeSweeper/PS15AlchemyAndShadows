@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52652545d9df078468d1634c4e1b827e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e400f87ad2c6a94cb01f202421e8135, type: 3}
   m_Name: ElementAir
   m_EditorClassIdentifier: 
   index: 3
-  elementPrefab: {fileID: 6846396711578369645, guid: 47d84d4add64d424181d51cdbf3e3cba, type: 3}
+  elementPrefab: {fileID: 2733586276718887689, guid: 5d4e618695f497d4ab139d59f23f6c66, type: 3}
   growthMultiplier: 1
   baseMass: 3
-  velocityMultiplier: 101
+  velocityMultiplier: 69
   spawnState:
     activeStateName: ActiveStates.Elements.BasicElementGrow
   letGoState:

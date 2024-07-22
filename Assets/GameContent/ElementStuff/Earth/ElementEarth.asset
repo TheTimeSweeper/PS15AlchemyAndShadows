@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52652545d9df078468d1634c4e1b827e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b455bdb91be16c40b3a0aac8c624b48, type: 3}
   m_Name: ElementEarth
   m_EditorClassIdentifier: 
   index: 1
-  elementPrefab: {fileID: 6846396711578369645, guid: f0399cf9ce4623d4cb939acd06e48519, type: 3}
+  elementPrefab: {fileID: 8323308202881544581, guid: f0399cf9ce4623d4cb939acd06e48519, type: 3}
   growthMultiplier: 1
   baseMass: 3
   velocityMultiplier: 10

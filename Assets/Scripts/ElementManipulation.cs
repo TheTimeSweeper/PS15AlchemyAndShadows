@@ -1,60 +1,88 @@
 ﻿using ActiveStates;
 using ActiveStates.Elements;
+using Unity.VisualScripting.Antlr3.Runtime;
 
-public class ElementManipulation
+namespace SpellCasting
 {
-    private ElementType elementType;
-    private InputState input;
-
-    private ElementMass currentMass;
-
-    public ElementManipulation(ElementTypeIndex element_, InputState input_)
+    public class ElementManipulation
     {
-        elementType = ElementCatalog.ElementTypes[element_];
-        input = input_;
-    }
+        private ElementType elementType;
+        public ElementType CurrentElementType { get => elementType; set => elementType = value; }
 
-    public void Update(InputBank inputBank)
-    {
-        if (input.JustReleased)
+        private InputState input;
+
+        private ElementMass currentMass;
+
+        public ElementManipulation(ElementTypeIndex element_, InputState input_)
         {
-            if (currentMass != null)
+            elementType = ElementCatalog.ElementTypes[element_];
+            input = input_;
+        }
+
+        public ElementManipulation(ElementType element_, InputState input_)
+        {
+            elementType = element_;
+            input = input_;
+        }
+
+        public void Update(CommonComponentsHolder commonComponents)
+        {
+            InputBank inputBank = commonComponents.InputBank;
+
+            if (input.JustReleased)
             {
-                if(inputBank.LatestGesture != null)
+                if (currentMass != null)
                 {
-                    inputBank.ResetGestures();
-                    BaseElementMassState newState = elementType.CreateElementMassState(inputBank.LatestGesture, currentMass, inputBank);
-                    if(newState != null)
+                    if (inputBank.LatestGesture != null)
                     {
-                        currentMass.ActiveStateMachine.setState(newState);
+                        inputBank.ResetGestures();
+                        BaseElementMassState newState = elementType.CreateElementMassState(inputBank.LatestGesture, currentMass);
+                        if (newState != null)
+                        {
+                            currentMass.ActiveStateMachine.setState(newState);
+                        }
                     }
-                } 
-                else
-                {
-                    BaseElementMassState newState = elementType.CreateElementMassState(elementType.LetGoState, currentMass, inputBank);
-                    if (newState != null)
+                    else
                     {
-                        currentMass.ActiveStateMachine.setState(newState);
+                        BaseElementMassState newState = elementType.CreateElementMassState(elementType.LetGoState, currentMass);
+                        if (newState != null)
+                        {
+                            currentMass.ActiveStateMachine.setState(newState);
+                        }
                     }
                 }
             }
-        }
-    }
 
-    public void FixedUpdate(InputBank inputBank)
-    {
-        if (input.Down)
-        {
-            if (currentMass == null || currentMass.Casted)
+            if (input.Down)
             {
-                currentMass = UnityEngine.Object.Instantiate(elementType.ElementPrefab);
-                currentMass.Init(elementType);
+                if (currentMass == null || currentMass.Casted)
+                {
+                    currentMass = UnityEngine.Object.Instantiate(elementType.ElementPrefab);
+                    currentMass.Init(elementType);
+                    currentMass.ActiveStateMachine.CommonComponents = commonComponents;
+                    currentMass.ActiveStateMachine.setState(elementType.CreateElementMassState(elementType.SpawnState, currentMass));
+                    currentMass.transform.position = inputBank.AimPoint;
+                }
 
-                currentMass.ActiveStateMachine.setState(elementType.CreateElementMassState(elementType.SpawnState, currentMass, inputBank));
-                currentMass.transform.position = inputBank.AimPoint;
+                currentMass.SetPosition(inputBank.AimPoint);
             }
+        }
 
-            currentMass.SetPosition(inputBank.AimPoint);
+        public void FixedUpdate(InputBank inputBank)
+        {
+            //    if (input.Down)
+            //    {
+            //        if (currentMass == null || currentMass.Casted)
+            //        {
+            //            currentMass = UnityEngine.Object.Instantiate(elementType.ElementPrefab);
+            //            currentMass.Init(elementType);
+
+            //            currentMass.ActiveStateMachine.setState(elementType.CreateElementMassState(elementType.SpawnState, currentMass, inputBank));
+            //            currentMass.transform.position = inputBank.AimPoint;
+            //        }
+
+            //        currentMass.SetPosition(inputBank.AimPoint);
+            //    }
         }
     }
 }

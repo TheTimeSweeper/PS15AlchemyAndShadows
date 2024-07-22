@@ -1,17 +1,20 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class CursorUnlocker : MonoBehaviour
+namespace SpellCasting.UI
 {
-    public static List<CursorUnlocker> ReadOnlyInstancesList = new List<CursorUnlocker>();
-
-    private void OnEnable()
+    public class CursorUnlocker : MonoBehaviour
     {
-        ReadOnlyInstancesList.Add(this);
+        public static List<CursorUnlocker> ReadOnlyInstancesList = new List<CursorUnlocker>();
 
-    }
-    private void OnDisable()
-    {
-        ReadOnlyInstancesList.Remove(this);
+        private void OnEnable()
+        {
+            ReadOnlyInstancesList.Add(this);
+
+        }
+        private void OnDisable()
+        {
+            ReadOnlyInstancesList.Remove(this);
+        }
     }
 }

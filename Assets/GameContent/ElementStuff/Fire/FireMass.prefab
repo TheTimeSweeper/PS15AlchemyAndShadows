@@ -122,12 +122,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2957934907171078566, guid: d6a28643d1c770d479de198c4b66a84a, type: 3}
+      propertyPath: positionLerpDecay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2957934907171078566, guid: d6a28643d1c770d479de198c4b66a84a, type: 3}
       propertyPath: subMasses.Array.data[0]
       value: 
       objectReference: {fileID: 1168993829280939313}
     - target: {fileID: 5599481637262332111, guid: d6a28643d1c770d479de198c4b66a84a, type: 3}
       propertyPath: m_Name
       value: FireMass
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022622995892093112, guid: d6a28643d1c770d479de198c4b66a84a, type: 3}
+      propertyPath: label
+      value: Fiaya
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

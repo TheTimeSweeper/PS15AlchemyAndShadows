@@ -1,10 +1,7 @@
 ﻿namespace ActiveStates.Elements.Fire
 {
-    public class FireSwipe : BasicElementThrow
+    public class FireSwipe : ElementThrowProjectile
     {
         
     }
-}
-namespace ActiveStates.Elements.Earth
-{
 }

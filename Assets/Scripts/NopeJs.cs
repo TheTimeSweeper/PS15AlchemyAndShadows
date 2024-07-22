@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NopeJs : MonoBehaviour
+namespace SpellCasting
 {
-    [SerializeField]
-    private Vector3 rotation;
-
-    [SerializeField]
-    private float multiplier;
-
-    void Update()
+    public class NopeJs : MonoBehaviour
     {
-        transform.Rotate(rotation * multiplier * Time.deltaTime);
+        [SerializeField]
+        private Vector3 rotation;
+
+        [SerializeField]
+        private float multiplier;
+
+        void Update()
+        {
+            transform.Rotate(rotation * multiplier * Time.deltaTime);
+        }
     }
 }

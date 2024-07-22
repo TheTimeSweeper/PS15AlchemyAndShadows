@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpellCasting;
+using System;
 
 namespace ActiveStates
 {

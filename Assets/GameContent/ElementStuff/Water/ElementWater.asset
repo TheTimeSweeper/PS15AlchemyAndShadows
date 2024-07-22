@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52652545d9df078468d1634c4e1b827e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f9825792d4d3d44f9a0d6357fb53aac, type: 3}
   m_Name: ElementWater
   m_EditorClassIdentifier: 
   index: 2
-  elementPrefab: {fileID: 6846396711578369645, guid: efa907a06110fb542b0b46be336bd999, type: 3}
+  elementPrefab: {fileID: 4472891100982896484, guid: efa907a06110fb542b0b46be336bd999, type: 3}
   growthMultiplier: 3
   baseMass: 1
   velocityMultiplier: 10

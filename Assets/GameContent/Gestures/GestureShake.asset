@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priority: 2
   index: 2
-  maxYGive: 3
+  maxYGive: 5
+  minShakes: 3
+  minXTurn: 2

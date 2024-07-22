@@ -5,6 +5,3 @@
 
     }
 }
-namespace ActiveStates.Elements.Water
-{
-}

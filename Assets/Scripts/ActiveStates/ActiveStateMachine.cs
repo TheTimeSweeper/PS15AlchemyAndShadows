@@ -1,4 +1,5 @@
 ﻿
+using SpellCasting;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,12 +7,35 @@ namespace ActiveStates
 {
     public class ActiveStateMachine : MonoBehaviour
     {
+        [SerializeField]
+        private string label;
+        public string Label => label;
+
+        [SerializeField]
+        private CommonComponentsHolder commonComponents;
+        public CommonComponentsHolder CommonComponents { get => commonComponents; set { commonComponents = value; } }
+
+        [SerializeField]
+        private SerializableActiveState DefaultState;
+
         private Queue<ActiveState> _queuedStates = new Queue<ActiveState>();
         private ActiveState _currentlyRunningState;
 
-        void Awake()
+        private void Start()
         {
+            if (_currentlyRunningState != null)
+                return;
+
             _currentlyRunningState = new IdleState();
+
+            if (string.IsNullOrEmpty(DefaultState.activeStateName))
+                return;
+
+            var defaultState = ActiveStateCatalog.InstantiateState(DefaultState);
+            if (defaultState != null)
+            {
+                setState(ActiveStateCatalog.InstantiateState(DefaultState));
+            }
         }
 
         void FixedUpdate()
@@ -25,14 +49,23 @@ namespace ActiveStates
 
         public void setState(ActiveState newState)
         {
+            if (newState == null)
+            {
+                Debug.LogError("Tried to enter a null state", this);
+            }
+
             exitCurrentState();
             _currentlyRunningState = newState;
+
             enterCurrentState();
         }
 
         private void exitCurrentState()
         {
-            _currentlyRunningState.OnExit();
+            if (_currentlyRunningState != null)
+            {
+                _currentlyRunningState.OnExit();
+            }
         }
 
         private void enterCurrentState()
@@ -41,9 +74,9 @@ namespace ActiveStates
             _currentlyRunningState.OnEnter();
         }
 
-        public void setStateToIdle(bool clearQueue = false)
+        public void setStateToDefault(bool clearQueue = false)
         {
-            setState(new IdleState());
+            setState(ActiveStateCatalog.InstantiateState(DefaultState));
             if (clearQueue)
             {
                 _queuedStates.Clear();
@@ -66,7 +99,7 @@ namespace ActiveStates
             }
             else
             {
-                setStateToIdle();
+                setStateToDefault();
             }
         }
         public void queueState(ActiveState newState)

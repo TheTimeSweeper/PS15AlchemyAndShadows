@@ -3,22 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AimCursor : MonoBehaviour
+namespace SpellCasting.UI
 {
-    private RectTransform _rectTransform;
-
-    private void Awake()
+    public class AimCursor : MonoBehaviour
     {
-        _rectTransform = (RectTransform)transform;
-    }
+        private RectTransform _rectTransform;
 
-    void Update()
-    {
-        UpdateScreen();
-        _rectTransform.anchoredPosition = AimMouseManager.AimMousePosition;
-    }
+        private void Awake()
+        {
+            _rectTransform = (RectTransform)transform;
+        }
 
-    private void UpdateScreen()
-    {
+        void Update()
+        {
+            UpdateScreen();
+            _rectTransform.anchoredPosition = AimMouseManager.AimMousePosition;
+        }
+
+        private void UpdateScreen()
+        {
+        }
     }
 }

@@ -1,17 +1,20 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[DefaultExecutionOrder(-1)]
-public class GestureCatalog : MonoBehaviour
+namespace SpellCasting
 {
-    public static Dictionary<GestureTypeIndex, AimGesture> Gestures = new Dictionary<GestureTypeIndex, AimGesture>();
-
-    [SerializeField]
-    private List<AimGesture> aimGestures = new List<AimGesture>();
-    public static List<AimGesture> AllGestures;
-
-    void Awake()
+    [DefaultExecutionOrder(-1)]
+    public class GestureCatalog : MonoBehaviour
     {
-        AllGestures = aimGestures;
+        public static Dictionary<GestureTypeIndex, AimGesture> Gestures = new Dictionary<GestureTypeIndex, AimGesture>();
+
+        [SerializeField]
+        private List<AimGesture> aimGestures = new List<AimGesture>();
+        public static List<AimGesture> AllGestures;
+
+        void Awake()
+        {
+            AllGestures = aimGestures;
+        }
     }
 }

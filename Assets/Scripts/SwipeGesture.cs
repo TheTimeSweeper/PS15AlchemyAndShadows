@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "GestureType/Swipe", fileName = "GestureSwipe")]
-public class SwipeGesture : AimGesture
+namespace SpellCasting
 {
-    [SerializeField]
-    private float threshold = 0.2f;
-
-    public override bool QualifyGesture(InputBank bank)
+    [CreateAssetMenu(menuName = "GestureType/Swipe", fileName = "GestureSwipe")]
+    public class SwipeGesture : AimGesture
     {
-        bank.SwipeMag = bank.GestureDelta.magnitude;
-        return bank.GestureDelta.magnitude > threshold; 
+        [SerializeField]
+        private float threshold = 0.2f;
+
+        public override bool QualifyGesture(InputBank bank)
+        {
+            bank.DebugSwipeMag = bank.GestureDelta.magnitude;
+            return bank.GestureDelta.magnitude > threshold;
+        }
     }
 }

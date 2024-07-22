@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52652545d9df078468d1634c4e1b827e, type: 3}
+  m_Script: {fileID: 11500000, guid: c07841b780a3d574b8c617304f95f61e, type: 3}
   m_Name: ElementFire
   m_EditorClassIdentifier: 
   index: 0
-  elementPrefab: {fileID: 6846396711578369645, guid: cda0e8e3ca13bf24e8e20abcc62b3149, type: 3}
+  elementPrefab: {fileID: 4742311297794782505, guid: cda0e8e3ca13bf24e8e20abcc62b3149, type: 3}
   growthMultiplier: 1
   baseMass: 1
   velocityMultiplier: 44.05
