@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEditor.Search;
@@ -56,14 +57,13 @@ namespace SpellCasting
         public Vector3 GesturePosition { get; set; }
         public Vector3 GestureDelta { get; set; }
         private List<AimGesture> _gestures => GestureCatalog.AllGestures;
-        private int _latestGesture;
-        public AimGesture LatestGesture => _latestGesture >= 0 ? _gestures[_latestGesture] : null;
+        private List<AimGesture> _qualifiedGestures = new List<AimGesture>();
 
         [Header("Debug")]
         public float DebugSwipeMag;
         public float DebugSwirlTotalAngleSwirled;
         public float DebugShakeTurns;
-        public string DebugCurrentGesture;
+        public List<String> DebugCurrentGestures;
 
         void Awake()
         {
@@ -79,19 +79,56 @@ namespace SpellCasting
 
         void Update()
         {
-            _latestGesture = -1;
+            DebugCurrentGestures.Clear();
+
             for (int i = 0; i < _gestures.Count; i++)
             {
                 AimGesture gesture = _gestures[i];
 
                 bool qualified = gesture.QualifyGesture(this);
-                if (_latestGesture == -1 && qualified)
+
+                SetGestureQualified(gesture, qualified);
+
+                if (qualified)
                 {
-                    _latestGesture = i;
+                    DebugCurrentGestures.Add(gesture.ToString());
                 }
             }
+        }
 
-            DebugCurrentGesture = LatestGesture != null ? LatestGesture.ToString() : "none";
+        private void SetGestureQualified(AimGesture gesture, bool shouldAdd)
+        {
+            if (shouldAdd)
+            {
+                if (_qualifiedGestures.Contains(gesture))
+                    return;
+                _qualifiedGestures.Add(gesture);
+            }
+            else
+            {
+                for (int i = _qualifiedGestures.Count - 1; i >= 0; i--)
+                {
+                    if (_qualifiedGestures[i] == gesture)
+                    {
+                        _qualifiedGestures.RemoveAt(i);
+                    }
+                }
+            }
+            _qualifiedGestures.Sort();
+        }
+
+        public ElementActionState GetFirstQualifiedElementAction(List<ElementActionState> availableGestures)
+        {
+            for (int i = 0; i < _qualifiedGestures.Count; i++)
+            {
+                AimGesture gesture = _qualifiedGestures[i];
+                ElementActionState actionState = availableGestures.Find((action) => { return action.GestureType == gesture; });
+                if (actionState != null)
+                {
+                    return actionState;
+                }
+            }
+            return null;
         }
 
         public void ResetGestures()

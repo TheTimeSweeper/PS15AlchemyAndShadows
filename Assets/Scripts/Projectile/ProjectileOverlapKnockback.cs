@@ -32,6 +32,7 @@ namespace SpellCasting.Projectiles
                         continue;
 
                     commonComponents.FixedMotorDriver.AddedMotion = pushVector * force;
+                    commonComponents.FixedMotorDriver.OverrideVelocity = Vector3.zero;
                 }
             }
         }

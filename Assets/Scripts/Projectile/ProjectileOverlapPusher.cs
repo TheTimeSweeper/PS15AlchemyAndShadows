@@ -21,6 +21,7 @@ namespace SpellCasting.Projectiles
                 if (commonComponents != null && commonComponents.FixedMotorDriver != null)
                 {
                     commonComponents.FixedMotorDriver.AddedMotion = rigidBody.velocity * Time.fixedDeltaTime;
+                    commonComponents.FixedMotorDriver.OverrideVelocity = Vector3.zero;
                 }
             }
         }

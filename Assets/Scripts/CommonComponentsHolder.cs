@@ -1,15 +1,22 @@
-﻿using UnityEngine;
+﻿using ActiveStates;
+using System.Security.Cryptography;
+using UnityEngine;
 
 namespace SpellCasting
 {
     public class CommonComponentsHolder : MonoBehaviour
     {
+        //if a class is added here, make sure to add the shorthand to ActiveState.cs
+        //if this is jank please let me know why c:
         public HealthComponent HealthComponent;
         public InputBank InputBank;
         public CharacterBody CharacterBody;
         public Caster Caster;
         public FixedMotorDriver FixedMotorDriver;
         public CharacterModel CharacterModel;
+        public StateMachineLocator StateMachineLocator;
+        public ChildLocator ChildLocator;
+        public HitboxLocator HitboxLocator;
 
         private void Reset()
         {
@@ -19,6 +26,9 @@ namespace SpellCasting
             Caster = GetComponent<Caster>();
             FixedMotorDriver = GetComponent<FixedMotorDriver>();
             CharacterModel = GetComponent<CharacterModel>();
+            StateMachineLocator = GetComponent<StateMachineLocator>();
+            ChildLocator = GetComponent<ChildLocator>();
+            HitboxLocator = GetComponent<HitboxLocator>();
         }
     }
 }

@@ -103,6 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimGestures:
-  - {fileID: 11400000, guid: 11dcd5eb0dbb1f444bae72553a27ae55, type: 2}
   - {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
   - {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
+  - {fileID: 11400000, guid: 6dd5c6d84daa7874898992a754a5cde1, type: 2}

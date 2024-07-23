@@ -3,31 +3,28 @@ using UnityEngine;
 
 namespace SpellCasting
 {
-
-    public enum GesturePriority
-    {
-        LOW,
-        MID,
-        HIGH
-    }
-
     //JAM I would prefer to abstract these to be able to add more gestures
     //well I'm doin it anyway
     public enum GestureTypeIndex
     {
         SWIPE,
         SWIRL,
-        SHAKE
+        SHAKE,
+        MASH
     }
 
     public abstract class AimGesture : ScriptableObject, IComparable<AimGesture>
     {
+        public const float BASE_GESTURE_LOW_PRIO = 0;
+        public const float BASE_GESTURE_MID_PRIO = 1;
+        public const float BASE_GESTURE_HIGH_PRIO = 2;
+
         public abstract bool QualifyGesture(InputBank bank);
         public virtual void ResetGesture() { }
 
         [SerializeField]
-        private GesturePriority priority;
-        public GesturePriority Priority => priority;
+        private float priority;
+        public float Priority => priority;
 
         [SerializeField]
         public GestureTypeIndex index;
@@ -35,7 +32,7 @@ namespace SpellCasting
 
         public int CompareTo(AimGesture other)
         {
-            return other.Priority - Priority;
+            return (int)(other.Priority - Priority);
         }
     }
 }

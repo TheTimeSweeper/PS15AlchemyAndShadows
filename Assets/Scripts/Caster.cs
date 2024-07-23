@@ -7,6 +7,8 @@ namespace SpellCasting
         protected List<ElementInputBehavior> _elementInputBehaviors = new List<ElementInputBehavior>();
         public List<ElementInputBehavior> ElementInputBehaviors => _elementInputBehaviors;
 
+        public ElementType CurrentCastingElement { get; set; }
+
         public void UpdateElement(ElementType lastElement, ElementType newElement)
         {
             for (int i = _elementInputBehaviors.Count - 1; i >= 0; i--)

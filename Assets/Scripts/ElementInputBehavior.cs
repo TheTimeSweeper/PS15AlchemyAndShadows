@@ -1,4 +1,6 @@
-﻿namespace SpellCasting
+﻿using System;
+
+namespace SpellCasting
 {
     public abstract class ElementInputBehavior
     {
@@ -7,6 +9,8 @@
         protected InputState input;
         protected CommonComponentsHolder commonComponents;
         protected InputBank inputBank;
+        protected ElementType overrideElementType;
+        public ElementType currentElementType => overrideElementType != null ? overrideElementType : elementType;
 
         public ElementInputBehavior(ElementTypeIndex element_, InputState input_, CommonComponentsHolder commonComponents_)
         {
@@ -26,5 +30,11 @@
 
         public abstract void Update();
         public virtual void FixedUpdate() { }
+
+        protected bool IsOtherElementActive()
+        {
+            ElementType currentCastingElement = commonComponents.Caster.CurrentCastingElement;
+            return currentCastingElement != null && currentCastingElement != elementType;
+        }
     }
 }

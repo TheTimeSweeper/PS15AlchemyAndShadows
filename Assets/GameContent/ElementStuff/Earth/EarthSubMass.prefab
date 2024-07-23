@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 3163475742082288025}
   damageCoefficient: 11
+  resetInterval: -1
   impactEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -144,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5900146329496642311
 Transform:
   m_ObjectHideFlags: 0

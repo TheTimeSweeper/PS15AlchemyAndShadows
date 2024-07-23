@@ -68,7 +68,7 @@ namespace SpellCasting
             {
                 _elementInputBehaviors.Add(new ElementMassManipulationBehavior(m2Element, inputBank.M2, commonComponents));
                 _elementInputBehaviors.Add(new ElementCursorIndicatorBehavior(m2Element, inputBank.M2, commonComponents));
-                _elementInputBehaviors.Add(new ElementColorBehavior(m1Element, inputBank.M1, commonComponents));
+                _elementInputBehaviors.Add(new ElementColorBehavior(m2Element, inputBank.M2, commonComponents));
             }
 
             if (shiftElement)

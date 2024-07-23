@@ -4,18 +4,20 @@ namespace SpellCasting
     [System.Serializable]
     public class CharacterStats
     {
-        public float BaseMaxHealth;
-        public float BaseDamage;
+        public float BaseMaxHealth = 100;
+        public float BaseDamage = 10;
+        public float BaseAttackSpeed = 1;
 
-        public float BaseMaxMana;
+        public float BaseMaxMana = 100;
 
-        public float BaseCastRange;
+        public float BaseCastRange = 20;
 
-        public float BaseMoveSpeed;
+        public float BaseMoveSpeed = 20;
         public float BaseJumpHeight;
 
         public VariableNumberStat MaxHealth;
         public VariableNumberStat Damage;
+        public VariableNumberStat AttackSpeed;
 
         public VariableNumberStat MaxFireMana;
         public VariableNumberStat MaxEarthMana;
@@ -31,6 +33,7 @@ namespace SpellCasting
         {
             MaxHealth = new VariableNumberStat(BaseMaxHealth);
             Damage = new VariableNumberStat(BaseDamage);
+            AttackSpeed = new VariableNumberStat(BaseAttackSpeed);
 
             MaxFireMana = new VariableNumberStat(BaseMaxMana);
             MaxEarthMana = new VariableNumberStat(BaseMaxMana);

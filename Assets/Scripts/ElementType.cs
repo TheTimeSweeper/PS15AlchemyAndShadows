@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UIElements;
 
 namespace SpellCasting
 {
@@ -60,9 +61,18 @@ namespace SpellCasting
         [SerializeField]
         private SerializableActiveState letGoState = new SerializableActiveState(typeof(BasicElementLetGo));
         public SerializableActiveState LetGoState => letGoState;
+        [SerializeField]
+        private SerializableActiveState bodyMeleeState = new SerializableActiveState(typeof(GenericMelee));
+        public SerializableActiveState BodyMeleeState => bodyMeleeState;
 
         [SerializeField]
         private List<ElementActionState> elementActions;
+        public List<ElementActionState> ElementActions => elementActions;
+
+
+        [SerializeField]
+        private List<ElementType> componentElements;
+        private bool IsSecondary => componentElements.Count > 1;
 
         public SerializableActiveState FindGestureStateType(AimGesture gesture)
         {
@@ -73,9 +83,9 @@ namespace SpellCasting
             return elementActionState != null ? elementActionState.GestureState : default;
         }
 
-        public BaseElementMassState CreateElementMassState(AimGesture latestGesture, ElementMass elementMass)
+        public BaseElementMassState CreateElementMassState(AimGesture gesture, ElementMass elementMass)
         {
-            SerializableActiveState state = FindGestureStateType(latestGesture);
+            SerializableActiveState state = FindGestureStateType(gesture);
             if (string.IsNullOrEmpty(state.activeStateName))
             {
                 return null;

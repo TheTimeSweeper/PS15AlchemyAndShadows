@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 namespace SpellCasting
 {
@@ -14,6 +15,7 @@ namespace SpellCasting
         public Vector3 Direction { get; set; }
         public float DesiredSpeed { get; set; }
         public Vector3 AddedMotion { get; set; }
+        public Vector3? OverrideVelocity { get; set; }
 
         private Vector3 _deltaPosition;
         private Vector3 _currentVelocity;
@@ -31,6 +33,13 @@ namespace SpellCasting
             //jam faster deceleration value for fuckin uhh stopping and moving opposite direction
 
             Vector3 movement = _currentVelocity;
+
+            if (OverrideVelocity.HasValue)
+            {
+                movement = OverrideVelocity.Value;
+                OverrideVelocity = null;
+            }
+
             if (AddedMotion != default)
             {
                 movement += AddedMotion;
