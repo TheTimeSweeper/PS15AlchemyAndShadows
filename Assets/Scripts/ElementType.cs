@@ -1,4 +1,5 @@
 ﻿using ActiveStates;
+using ActiveStates.Characters;
 using ActiveStates.Elements;
 using System;
 using System.Collections.Generic;
@@ -63,9 +64,10 @@ namespace SpellCasting
         private SerializableActiveState massLetGoState = new SerializableActiveState(typeof(BasicElementLetGo));
         public SerializableActiveState MassLetGoState => massLetGoState;
 
+        [SerializeField]
         private SerializableActiveState bodyMeleeState = new SerializableActiveState(typeof(GenericMeleeCombo));
         public SerializableActiveState BodyMeleeState => bodyMeleeState;
-
+        [Space]
         [SerializeField]
         private List<ElementActionState> elementActions;
         public List<ElementActionState> ElementActions => elementActions;

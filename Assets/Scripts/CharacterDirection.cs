@@ -16,8 +16,6 @@ public class CharacterDirection : MonoBehaviour
     private Vector3 _currentDirection;
     private Vector3 _desiredDirection;
 
-    private Vector3 _lastPosition;
-
     private float _lookTimer;
 
     void FixedUpdate()
@@ -44,9 +42,10 @@ public class CharacterDirection : MonoBehaviour
 
         finalDirection.y = 0;
 
-        baseTransform.rotation = Quaternion.LookRotation(finalDirection, Vector3.up);
+        if (finalDirection == Vector3.zero)
+            return;
 
-        _lastPosition = transform.position;
+        baseTransform.rotation = Quaternion.LookRotation(finalDirection, Vector3.up);
     }
 
     public void OverrideLookDirection(Vector3 desiredDirection, float time = 1)

@@ -20,12 +20,12 @@ namespace SpellCasting
 
         public void AddChild(T component)
         {
-            if (_nameToComponent.ContainsKey(name))
+            if (_nameToComponent.ContainsKey(component.name))
             {
-                Debug.LogError($"child with the name {name} already exists. multiple children with the same name are not supported");
+                Debug.LogError($"child with the name {component.name} already exists. multiple children with the same name are not supported");
                 return;
             }
-            _nameToComponent[name] = component;
+            _nameToComponent[component.name] = component;
         }
 
         public virtual T LocateByName(string name)

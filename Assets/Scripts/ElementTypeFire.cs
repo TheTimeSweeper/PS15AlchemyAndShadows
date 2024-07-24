@@ -6,6 +6,7 @@ namespace SpellCasting
     [CreateAssetMenu(menuName = "ElementType/Fire", fileName = "ElementFire")]
     public class ElementTypeFire : ElementType
     {
+        [Header("Fire")]
         [SerializeField]
         private ProjectileController explosionPrefab;
         public ProjectileController ExplosionPrefab => explosionPrefab;
