@@ -2,6 +2,6 @@
 {
     public interface IProjectileDormant
     {
-        void Init(ProjectileController controller);
+        void Init();
     }
 }

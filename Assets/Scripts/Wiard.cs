@@ -4,13 +4,14 @@ using System.Xml.Schema;
 using UnityEngine;
 namespace SpellCasting
 {
-    public class Wiard : Caster
+    public class Wiard : Caster, IHasCommonComponents
     {
         [SerializeField]
         private InputBank inputBank;
 
         [SerializeField]
         private CommonComponentsHolder commonComponents;
+        public CommonComponentsHolder CommonComponents => commonComponents;
 
         [SerializeField]
         private ElementType m1Element;

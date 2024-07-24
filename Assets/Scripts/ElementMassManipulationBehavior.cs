@@ -31,7 +31,7 @@ namespace SpellCasting
                     }
                     else
                     {
-                        BaseElementMassState newState = currentElementType.CreateElementMassState(currentElementType.LetGoState, _currentMass);
+                        BaseElementMassState newState = currentElementType.CreateElementMassState(currentElementType.MassLetGoState, _currentMass);
                         if (newState != null)
                         {
                             _currentMass.ActiveStateMachine.setState(newState);
@@ -63,7 +63,7 @@ namespace SpellCasting
                     _currentMass = UnityEngine.Object.Instantiate(currentElementType.ElementMassPrefab);
                     _currentMass.Init(currentElementType);
                     _currentMass.ActiveStateMachine.CommonComponents = commonComponents;
-                    _currentMass.ActiveStateMachine.setState(currentElementType.CreateElementMassState(currentElementType.SpawnState, _currentMass));
+                    _currentMass.ActiveStateMachine.setState(currentElementType.CreateElementMassState(currentElementType.MassSpawnState, _currentMass));
                     _currentMass.transform.position = inputBank.AimPoint;
                 }
 
@@ -87,5 +87,14 @@ namespace SpellCasting
             //        currentMass.SetPosition(inputBank.AimPoint);
             //    }
         }
+
+        public override void OnManipluatorExit()
+        {
+            if(_currentMass != null)
+            {
+                _currentMass.Fizzle();
+            }
+        }
+
     }
 }

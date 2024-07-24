@@ -15,12 +15,42 @@ namespace ActiveStates
         {
             base.OnEnter();
 
-            //attack = new OverlapAttack
-            //{
-            //    Damage = damageCoefficient * characterBody.stats.Damage,
-            //    Hitbox = hitboxLocator.LocateByName(hitboxName),
-            //    Owner = gameObject
-            //};
+            attack = new OverlapAttack
+            {
+                Damage = damageCoefficient * characterBody.stats.Damage,
+                Hitbox = characterModel.HitboxLocator.LocateByName(hitboxName),
+                Owner = gameObject,
+                Team = teamComponent.TeamIndex
+            };
         }
+
+        protected override void OnCastFixedUpdate()
+        {
+            base.OnCastFixedUpdate();
+
+            if (attack.Fire())
+            {
+                OnHitEnemyAuthority();
+            }
+        }
+
+        protected virtual void OnHitEnemyAuthority()
+        {
+            //Util.PlaySound(hitSoundString, gameObject);
+
+            //if (!hasHopped)
+            //{
+            //    if (characterMotor && !characterMotor.isGrounded && hitHopVelocity > 0f)
+            //    {
+            //        SmallHop(characterMotor, hitHopVelocity);
+            //    }
+
+            //    hasHopped = true;
+            //}
+
+            //ApplyHitstop();
+        }
+
+
     }
 }

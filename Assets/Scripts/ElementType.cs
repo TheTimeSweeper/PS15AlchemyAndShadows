@@ -55,14 +55,15 @@ namespace SpellCasting
         private float massVelocityMultiplier;
         public float MassVelocityMultiplier { get => massVelocityMultiplier; }
 
-        [SerializeField]
-        private SerializableActiveState spawnState = new SerializableActiveState(typeof(BasicElementGrow));
-        public SerializableActiveState SpawnState => spawnState;
-        [SerializeField]
-        private SerializableActiveState letGoState = new SerializableActiveState(typeof(BasicElementLetGo));
-        public SerializableActiveState LetGoState => letGoState;
-        [SerializeField]
-        private SerializableActiveState bodyMeleeState = new SerializableActiveState(typeof(GenericMelee));
+        [SerializeField, FormerlySerializedAs("spawnState")]
+        private SerializableActiveState massSpawnState = new SerializableActiveState(typeof(BasicElementGrow));
+        public SerializableActiveState MassSpawnState => massSpawnState;
+
+        [SerializeField, FormerlySerializedAs("letGoState")]
+        private SerializableActiveState massLetGoState = new SerializableActiveState(typeof(BasicElementLetGo));
+        public SerializableActiveState MassLetGoState => massLetGoState;
+
+        private SerializableActiveState bodyMeleeState = new SerializableActiveState(typeof(GenericMeleeCombo));
         public SerializableActiveState BodyMeleeState => bodyMeleeState;
 
         [SerializeField]

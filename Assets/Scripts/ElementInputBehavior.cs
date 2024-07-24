@@ -30,6 +30,7 @@ namespace SpellCasting
 
         public abstract void Update();
         public virtual void FixedUpdate() { }
+        public virtual void OnManipluatorExit() { }
 
         protected bool IsOtherElementActive()
         {

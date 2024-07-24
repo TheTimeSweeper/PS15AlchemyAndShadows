@@ -3,12 +3,13 @@
     public abstract class BasicTimedState : ActiveState
     {
         //total duration of the move
-        protected abstract float TimedBaseDuration { get; }
+        protected abstract float BaseDuration { get; }
 
         //0-1 time relative to duration that the skill starts
         //for example, set 0.5 and the "cast" will happen halfway through the skill
-        protected abstract float TimedBaseCastStartPercentTime { get; }
-        protected virtual float TimedBaseCastEndPercentTime => 1;
+        protected abstract float BaseCastStartTimeFraction { get; }
+        protected virtual float BaseCastEndTimeFraction => 1;
+        protected virtual float BaseInterruptibleTimeFraction => 1;
 
         protected float duration;
         protected float castStartTime;
@@ -25,9 +26,9 @@
 
         protected virtual void InitDurationValues()
         {
-            duration = TimedBaseDuration / characterBody.stats.Damage;
-            this.castStartTime = TimedBaseCastStartPercentTime * duration;
-            this.castEndTime = TimedBaseCastEndPercentTime * duration;
+            duration = BaseDuration / characterBody.stats.Damage;
+            this.castStartTime = BaseCastStartTimeFraction * duration;
+            this.castEndTime = BaseCastEndTimeFraction * duration;
         }
 
         protected virtual void OnCastEnter() { }

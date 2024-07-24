@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 namespace SpellCasting
@@ -6,8 +7,12 @@ namespace SpellCasting
     public class OverlapAttack
     {
         public GameObject Owner { get; set; }
+        public CharacterBody Body { get; set; }
         public Hitbox Hitbox { get; set; }
         public float Damage { get; set; }
+        public TeamIndex Team { get; set; }
+        public TeamTargetType TeamTargeting { get; set; } = TeamTargetType.OTHER;
+        public DamageInfo DamageInfo { get; set; }
 
         private List<HealthComponent> _alreadyHitTargets = new List<HealthComponent>();
         public List<HealthComponent> HitTargets => _alreadyHitTargets;
@@ -25,17 +30,49 @@ namespace SpellCasting
                 if (hurtbox != null)
                 {
                     HealthComponent healthComponent = hurtbox.HealthComponent;
-                    if (healthComponent.gameObject == Owner)
-                        continue;
+
                     if (_alreadyHitTargets.Contains(healthComponent))
                         continue;
+
+                    //if team is undefined, just hit everything
+                    if (Team != default)
+                    {
+                        bool validHit = false;
+                        switch (TeamTargeting)
+                        {
+                            case var targeting when TeamTargeting.HasFlag(TeamTargetType.SELF):
+                                if (healthComponent.gameObject == Owner)
+                                    validHit = true;
+                                break;
+
+                                //JAM friendlyfiremanager?
+                            case var targeting when TeamTargeting.HasFlag(TeamTargetType.OTHER):
+                                if (Util.GetTeamIndex(hurtbox.HealthComponent) != Team)
+                                    validHit = true;
+                                break;
+
+                            case var targeting when TeamTargeting.HasFlag(TeamTargetType.ALLY):
+                                if (Util.GetTeamIndex(hurtbox.HealthComponent) == Team)
+                                    validHit = true;
+                                break;
+                        }
+                        if (!validHit)
+                        {
+                            continue;
+                        }
+                    }
 
                     _alreadyHitTargets.Add(healthComponent);
                     hit = true;
 
+                    if(DamageInfo == null)
+                    {
+                        DamageInfo = new DamageInfo { Attacker = Owner, AttackerBody = Body, Value = Damage };
+                    }
+
                     if (Damage > 0)
                     {
-                        healthComponent.TakeDamage(Damage);
+                        healthComponent.TakeDamage(DamageInfo);
                     }
                 }
             }

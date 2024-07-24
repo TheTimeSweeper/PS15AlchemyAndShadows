@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2736093658010405510}
   - component: {fileID: 2974003917913701704}
   - component: {fileID: 5790455508350688420}
+  - component: {fileID: -1203637938278205826}
   m_Layer: 0
   m_Name: FireSubMass
   m_TagString: Untagged
@@ -91,6 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a4b27ffb73eb643aee15bb9efec3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subComponentsBehaviours:
+  - {fileID: 2974003917913701704}
+  teamComponent: {fileID: -1203637938278205826}
   dormantComponents:
   - {fileID: 2974003917913701704}
   - {fileID: 5790455508350688420}
@@ -127,6 +131,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 2
+--- !u!114 &-1203637938278205826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217069319588914888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150d89e9dfc2e90479cb690a8cf371eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamIndex: 0
 --- !u!1 &6529560793578120647
 GameObject:
   m_ObjectHideFlags: 0

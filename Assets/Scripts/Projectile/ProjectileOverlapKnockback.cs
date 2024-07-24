@@ -10,11 +10,21 @@ namespace SpellCasting.Projectiles
         [SerializeField]
         private float succCloseLimit = 3;
 
+        [SerializeField]
+        private TeamTargetType teamTargeting = TeamTargetType.OTHER;
+
         private Vector3 _center;
 
-        public void Init(ProjectileController controller)
+        public void Init()
         {
-            overlapAttack = new OverlapAttack { Hitbox = hitbox, Owner = controller.Owner.gameObject };
+            overlapAttack = new OverlapAttack
+            {
+                Hitbox = hitbox,
+                Owner = Controller.Owner.gameObject,
+                Team = Controller.TeamIndex,
+                TeamTargeting = teamTargeting
+
+            };
             _center = transform.position;
         }
 

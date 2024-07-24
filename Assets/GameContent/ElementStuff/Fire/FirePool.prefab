@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 3624624150187626333}
   - component: {fileID: 6320333610305842502}
   - component: {fileID: 4659915942550810931}
+  - component: {fileID: -606267768016257986}
   m_Layer: 0
   m_Name: FirePool
   m_TagString: Untagged
@@ -213,6 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a4b27ffb73eb643aee15bb9efec3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subComponentsBehaviours: []
+  teamComponent: {fileID: -606267768016257986}
   dormantComponents:
   - {fileID: 6320333610305842502}
   - {fileID: 4659915942550810931}
@@ -249,6 +252,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
+--- !u!114 &-606267768016257986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972880765063732178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150d89e9dfc2e90479cb690a8cf371eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamIndex: 0
 --- !u!1 &8930207104412053987
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,5 +29,13 @@ namespace ActiveStates
                 _elementManipulations[i].FixedUpdate();
             }
         }
+
+        public override void OnExit()
+        {
+            for (int i = 0; i < _elementManipulations.Count; i++)
+            {
+                _elementManipulations[i].OnManipluatorExit();
+            }
+        }
     }
 }

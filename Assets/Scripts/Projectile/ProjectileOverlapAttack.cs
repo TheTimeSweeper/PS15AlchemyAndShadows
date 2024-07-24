@@ -3,11 +3,13 @@ using UnityEngine.Events;
 
 namespace SpellCasting.Projectiles
 {
-    public abstract class ProjectileOverlap : MonoBehaviour
+    public abstract class ProjectileOverlap : MonoBehaviour, IProjectileSubComponent
     {
         [SerializeField]
         protected Hitbox hitbox;
         protected OverlapAttack overlapAttack;
+
+        public ProjectileController Controller { get; set; }
     }
 
     public class ProjectileOverlapAttack : ProjectileOverlap, IProjectileDormant
@@ -31,9 +33,15 @@ namespace SpellCasting.Projectiles
 
         private bool _impacted;
 
-        public void Init(ProjectileController controller)
+        public void Init()
         {
-            overlapAttack = new OverlapAttack { Hitbox = hitbox, Damage = controller.BaseDamage * damageCoefficient, Owner = controller.Owner.gameObject };
+            overlapAttack = new OverlapAttack
+            {
+                Hitbox = hitbox,
+                Damage = Controller.BaseDamage * damageCoefficient,
+                Owner = Controller.Owner.gameObject,
+                Team = Controller.TeamIndex
+            };
             _repeatTim = resetInterval;
         }
 

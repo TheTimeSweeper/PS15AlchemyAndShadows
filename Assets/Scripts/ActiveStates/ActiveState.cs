@@ -17,8 +17,7 @@ namespace ActiveStates
         protected FixedMotorDriver fixedMotorDriver => machine.CommonComponents.FixedMotorDriver;
         protected CharacterModel characterModel => machine.CommonComponents.CharacterModel;
         protected StateMachineLocator stateMachineLocator => machine.CommonComponents.StateMachineLocator;
-        protected ChildLocator childLocator => machine.CommonComponents.ChildLocator;
-        protected HitboxLocator hitboxLocator => machine.CommonComponents.HitboxLocator;
+        protected TeamComponent teamComponent => machine.CommonComponents.TeamComponent;
 
         private float _fixedAge;
         protected float fixedAge => _fixedAge;

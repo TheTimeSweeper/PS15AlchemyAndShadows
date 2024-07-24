@@ -7,9 +7,17 @@ namespace SpellCasting.Projectiles
         [SerializeField]
         private Rigidbody rigidBody;
 
-        public void Init(ProjectileController controller)
+        [SerializeField]
+        private TeamTargetType teamTargeting = TeamTargetType.OTHER;
+
+        public void Init()
         {
-            overlapAttack = new OverlapAttack { Hitbox = hitbox };
+            overlapAttack = new OverlapAttack
+            {
+                Hitbox = hitbox,
+                Team = Controller.TeamIndex,
+                TeamTargeting = teamTargeting
+            };
         }
 
         void FixedUpdate()

@@ -11,6 +11,20 @@ namespace SpellCasting
         [SerializeField]
         private Color noElementColor = Color.gray;
 
+        [SerializeField]
+        private CharacterDirection characterDirection;
+        public CharacterDirection CharacterDirection { get => characterDirection; }
+
+        [SerializeField]
+        private ChildLocator childLocator;
+        public ChildLocator ChildLocator { get => childLocator; }
+
+        [SerializeField]
+        private HitboxLocator hitboxLocator;
+        public HitboxLocator HitboxLocator { get => hitboxLocator; }
+
+
+
         private MaterialPropertyBlock[] materialBlocks;
 
         private List<Color> currentColors = new List<Color>();

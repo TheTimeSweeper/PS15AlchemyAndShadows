@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ActiveStates
 {
-    public class ActiveStateMachine : MonoBehaviour
+    public class ActiveStateMachine : MonoBehaviour, IHasCommonComponents
     {
         [SerializeField]
         private string label;

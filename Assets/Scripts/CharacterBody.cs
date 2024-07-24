@@ -47,12 +47,13 @@ namespace SpellCasting
         }
     }
 
-    public class CharacterBody : MonoBehaviour
+    public class CharacterBody : MonoBehaviour, IHasCommonComponents
     {
         public CharacterStats stats;
 
         [SerializeField]
         private CommonComponentsHolder commonComponents;
+        public CommonComponentsHolder CommonComponents => commonComponents;
 
         [ContextMenu("ReInitStats")]
         void Awake()

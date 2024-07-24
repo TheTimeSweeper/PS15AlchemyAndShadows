@@ -2,15 +2,16 @@
 using UnityEngine;
 namespace SpellCasting
 {
-    public class ManaComponent :MonoBehaviour
-    {
-        
-    }
-
-    public class HealthComponent : MonoBehaviour
+    public class HealthComponent : MonoBehaviour, IHasCommonComponents
     {
         public delegate void HealthChangedEvent(float healthDelta);
         public event HealthChangedEvent OnHealthChange;
+
+        public delegate void ModifyDamageCallback(DamageInfo damage);
+        public event ModifyDamageCallback OnModifyDamage;
+
+        public delegate void ModifyHealCallback(HealInfo damage);
+        public event ModifyHealCallback OnModifyHeal;
 
         [SerializeField]
         private float health;
@@ -30,15 +31,19 @@ namespace SpellCasting
             this.health = health;
         }
 
-        public void TakeDamage(float damage)
+        public void TakeDamage(DamageInfo damage)
         {
-            health -= damage;
-            OnHealthChange?.Invoke(damage);
+            OnModifyDamage?.Invoke(damage);
+
+            health -= damage.Value;
+            OnHealthChange?.Invoke(damage.Value);
         }
-        public void Heal(float heal)
+        public void Heal(HealInfo heal)
         {
-            health += heal;
-            OnHealthChange?.Invoke(heal);
+            OnModifyHeal?.Invoke(heal);
+
+            health += heal.Value;
+            OnHealthChange?.Invoke(heal.Value);
         }
 
         public void UpdateMaxHealth(float newMaxHealth, bool heal)

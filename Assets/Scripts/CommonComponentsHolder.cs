@@ -15,8 +15,7 @@ namespace SpellCasting
         public FixedMotorDriver FixedMotorDriver;
         public CharacterModel CharacterModel;
         public StateMachineLocator StateMachineLocator;
-        public ChildLocator ChildLocator;
-        public HitboxLocator HitboxLocator;
+        public TeamComponent TeamComponent;
 
         private void Reset()
         {
@@ -27,8 +26,7 @@ namespace SpellCasting
             FixedMotorDriver = GetComponent<FixedMotorDriver>();
             CharacterModel = GetComponent<CharacterModel>();
             StateMachineLocator = GetComponent<StateMachineLocator>();
-            ChildLocator = GetComponent<ChildLocator>();
-            HitboxLocator = GetComponent<HitboxLocator>();
+            TeamComponent = GetComponent<TeamComponent>();
         }
     }
 }
