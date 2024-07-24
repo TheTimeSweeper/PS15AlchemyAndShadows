@@ -19,7 +19,7 @@ namespace ActiveStates
             {
                 Damage = damageCoefficient * characterBody.stats.Damage,
                 Hitbox = characterModel.HitboxLocator.LocateByName(hitboxName),
-                Owner = gameObject,
+                OwnerGameObject = gameObject,
                 Team = teamComponent.TeamIndex
             };
         }

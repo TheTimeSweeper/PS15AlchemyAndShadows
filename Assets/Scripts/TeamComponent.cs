@@ -25,6 +25,6 @@ namespace SpellCasting
     {
         [SerializeField]
         private TeamIndex teamIndex;
-        public TeamIndex TeamIndex => teamIndex;
+        public TeamIndex TeamIndex { get => teamIndex; set => teamIndex = value; }
     }
 }

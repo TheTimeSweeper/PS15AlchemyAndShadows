@@ -3,15 +3,6 @@ using UnityEngine.Events;
 
 namespace SpellCasting.Projectiles
 {
-    public abstract class ProjectileOverlap : MonoBehaviour, IProjectileSubComponent
-    {
-        [SerializeField]
-        protected Hitbox hitbox;
-        protected OverlapAttack overlapAttack;
-
-        public ProjectileController Controller { get; set; }
-    }
-
     public class ProjectileOverlapAttack : ProjectileOverlap, IProjectileDormant
     {
         [SerializeField]
@@ -39,7 +30,7 @@ namespace SpellCasting.Projectiles
             {
                 Hitbox = hitbox,
                 Damage = Controller.BaseDamage * damageCoefficient,
-                Owner = Controller.Owner.gameObject,
+                OwnerGameObject = Controller.Owner.gameObject,
                 Team = Controller.TeamIndex
             };
             _repeatTim = resetInterval;

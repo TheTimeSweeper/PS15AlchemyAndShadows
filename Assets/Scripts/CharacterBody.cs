@@ -55,6 +55,8 @@ namespace SpellCasting
         private CommonComponentsHolder commonComponents;
         public CommonComponentsHolder CommonComponents => commonComponents;
 
+        public TeamIndex teamIndex => commonComponents.TeamComponent.TeamIndex;
+
         [ContextMenu("ReInitStats")]
         void Awake()
         {

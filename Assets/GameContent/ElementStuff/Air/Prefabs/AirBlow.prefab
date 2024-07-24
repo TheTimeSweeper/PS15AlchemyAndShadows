@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 2158201367414771652}
   - component: {fileID: 2769743149947603239}
   - component: {fileID: 6701959003239607167}
+  - component: {fileID: 972602598804726162}
   m_Layer: 0
   m_Name: AirBlow
   m_TagString: Untagged
@@ -137,6 +138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a4b27ffb73eb643aee15bb9efec3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teamComponent: {fileID: 972602598804726162}
+  subComponentsBehaviours:
+  - {fileID: 2769743149947603239}
+  - {fileID: 6701959003239607167}
   dormantComponents:
   - {fileID: 2158201367414771652}
   - {fileID: 2769743149947603239}
@@ -189,6 +194,20 @@ MonoBehaviour:
   hitbox: {fileID: 2957635901804807959}
   force: 0.2
   succCloseLimit: 3
+  teamTargeting: 2
+--- !u!114 &972602598804726162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036361271667701353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150d89e9dfc2e90479cb690a8cf371eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamIndex: 0
 --- !u!1 &5895382300507937307
 GameObject:
   m_ObjectHideFlags: 0

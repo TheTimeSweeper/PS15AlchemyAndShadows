@@ -214,8 +214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a4b27ffb73eb643aee15bb9efec3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subComponentsBehaviours: []
   teamComponent: {fileID: -606267768016257986}
+  subComponentsBehaviours:
+  - {fileID: 6320333610305842502}
   dormantComponents:
   - {fileID: 6320333610305842502}
   - {fileID: 4659915942550810931}

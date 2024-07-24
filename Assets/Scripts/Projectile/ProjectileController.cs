@@ -7,10 +7,10 @@ namespace SpellCasting.Projectiles
     public class ProjectileController : MonoBehaviour
     {
         [SerializeField]
-        private List<MonoBehaviour> subComponentsBehaviours;
+        private TeamComponent teamComponent;
 
         [SerializeField]
-        private TeamComponent teamComponent;
+        private List<MonoBehaviour> subComponentsBehaviours;
 
         [SerializeField]
         private MonoBehaviour[] dormantComponents;
@@ -55,6 +55,7 @@ namespace SpellCasting.Projectiles
         {
             Owner = owner;
             BaseDamage = owner.stats.Damage;
+            teamComponent.TeamIndex = owner.teamIndex;
 
             for (int i = 0; i < dormantComponents.Length; i++)
             {

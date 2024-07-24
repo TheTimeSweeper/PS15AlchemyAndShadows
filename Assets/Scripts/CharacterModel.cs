@@ -23,8 +23,6 @@ namespace SpellCasting
         private HitboxLocator hitboxLocator;
         public HitboxLocator HitboxLocator { get => hitboxLocator; }
 
-
-
         private MaterialPropertyBlock[] materialBlocks;
 
         private List<Color> currentColors = new List<Color>();

@@ -20,7 +20,7 @@ namespace SpellCasting.Projectiles
             overlapAttack = new OverlapAttack
             {
                 Hitbox = hitbox,
-                Owner = Controller.Owner.gameObject,
+                OwnerGameObject = Controller.Owner.gameObject,
                 Team = Controller.TeamIndex,
                 TeamTargeting = teamTargeting
 

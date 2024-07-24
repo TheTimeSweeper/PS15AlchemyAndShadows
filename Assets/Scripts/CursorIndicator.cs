@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,21 +7,36 @@ public class CursorIndicator : MonoBehaviour
 {
     [SerializeField]
     private Color color;
-    public Color Color { get =>  color; set
+    public Color Color { 
+        get =>  color; 
+        set
         {
             color = value;
-            mainModule.startColor = color;
+            UpdateParticleColors();
         } 
     }
 
     [SerializeField]
-    private ParticleSystem mainSystem;
+    private ParticleSystem[] particleSystems;
 
-    private ParticleSystem.MainModule mainModule;
+    private ParticleSystem.MainModule[] mainModules;
 
     private void Awake()
     {
-        mainModule = mainSystem.main;
-        Color = color;
+        mainModules = new ParticleSystem.MainModule[particleSystems.Length];
+        for (int i = 0; i < particleSystems.Length; i++)
+        {
+            mainModules[i] = particleSystems[i].main;
+        }
+        UpdateParticleColors();
+    }
+
+
+    private void UpdateParticleColors()
+    {
+        for (int i = 0; i< mainModules.Length; i++)
+        {
+            mainModules[i].startColor = color;
+        }
     }
 }

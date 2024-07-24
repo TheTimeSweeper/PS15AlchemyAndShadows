@@ -6,8 +6,8 @@ namespace SpellCasting
 {
     public class OverlapAttack
     {
-        public GameObject Owner { get; set; }
-        public CharacterBody Body { get; set; }
+        public GameObject OwnerGameObject { get; set; }
+        public CharacterBody OwnerBody { get; set; }
         public Hitbox Hitbox { get; set; }
         public float Damage { get; set; }
         public TeamIndex Team { get; set; }
@@ -41,7 +41,7 @@ namespace SpellCasting
                         switch (TeamTargeting)
                         {
                             case var targeting when TeamTargeting.HasFlag(TeamTargetType.SELF):
-                                if (healthComponent.gameObject == Owner)
+                                if (healthComponent.gameObject == OwnerGameObject)
                                     validHit = true;
                                 break;
 
@@ -67,7 +67,7 @@ namespace SpellCasting
 
                     if(DamageInfo == null)
                     {
-                        DamageInfo = new DamageInfo { Attacker = Owner, AttackerBody = Body, Value = Damage };
+                        DamageInfo = new DamageInfo { AttackerObject = OwnerGameObject, AttackerBody = OwnerBody, Value = Damage };
                     }
 
                     if (Damage > 0)

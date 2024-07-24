@@ -5129,6 +5129,7 @@ GameObject:
   - component: {fileID: 619492243433722407}
   - component: {fileID: 4161082688376463815}
   - component: {fileID: 7990725702055464545}
+  - component: {fileID: 2620428317841873699}
   m_Layer: 0
   m_Name: AirSucc
   m_TagString: Untagged
@@ -5208,6 +5209,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a4b27ffb73eb643aee15bb9efec3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teamComponent: {fileID: 2620428317841873699}
+  subComponentsBehaviours:
+  - {fileID: 4161082688376463815}
+  - {fileID: 7990725702055464545}
   dormantComponents:
   - {fileID: 619492243433722407}
   - {fileID: 4161082688376463815}
@@ -5260,3 +5265,17 @@ MonoBehaviour:
   hitbox: {fileID: 2517951345225999493}
   force: -0.2
   succCloseLimit: 1
+  teamTargeting: 2
+--- !u!114 &2620428317841873699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133109617605774191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150d89e9dfc2e90479cb690a8cf371eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamIndex: 0
