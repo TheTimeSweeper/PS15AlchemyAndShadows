@@ -4,13 +4,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public enum Direction
-{
-    NORTH =  1,
-    SOUTH = -1,
-    EAST = 2,
-    WEST = -2
-}
 namespace SpellCasting.World
 {
     public class Room : MonoBehaviour
@@ -26,6 +19,9 @@ namespace SpellCasting.World
         [SerializeField]
         private float roomCost;
         public float RoomCost => roomCost;
+
+        [SerializeField]
+        public float RoomWeight;
 
         private Collider[] _colliders;
 
