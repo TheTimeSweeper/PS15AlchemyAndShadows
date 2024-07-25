@@ -57,7 +57,7 @@ public static class Util
                 return items[i];
             }
         }
-
+        Debug.LogError($"could not get weighted random pick of {items}");
         return default;
     }
 
@@ -88,5 +88,31 @@ public static class Util
             list[i] = list[rnd];
             list[rnd] = temp;
         }
+    }
+
+    public static T2 TryGetValueDefault<T1, T2>(this Dictionary<T1, T2> dict, T1 key)
+    {
+        if (dict.ContainsKey(key))
+        {
+            return dict[key];
+        }
+        return default;
+    }
+
+    public static void AddToDictionary<T1>(this Dictionary<T1, int> dict, T1 key, int value)
+    {
+        if (!dict.ContainsKey(key))
+        {
+            dict[key] = 0;
+        }
+        dict[key] += value;
+    }
+    public static void AddToDictionary<T1>(this Dictionary<T1, float> dict, T1 key, float value)
+    {
+        if (!dict.ContainsKey(key))
+        {
+            dict[key] = 0;
+        }
+        dict[key] += value;
     }
 }

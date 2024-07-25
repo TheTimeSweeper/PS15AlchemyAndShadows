@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,57 +12,55 @@ namespace SpellCasting.World
         private List<Room> existingRooms;
         //public List<Room> Rooms => rooms;
 
-        private List<Room> _existingRoomQueue;
-
         [SerializeField]
         private float TEMPStartingCredits = 120;
 
         [SerializeField]
         private float availableCredits;
 
-        void Awake()
+        private Dictionary<UniqueRoom, int> _uniqueRoomsSpawned;
+        private List<Room> _existingRoomQueue;
+
+        void Start()
         {
+            InitializeValues();
             GenerateLevel();
         }
 
-        Dictionary<string, int> roomLog = new Dictionary<string, int>();
-
-        [ContextMenu("ReGenerate")]
-        public void RegenerateLevel()
+        public void InitializeValues()
         {
-            for (int i = 0; i < existingRooms.Count; i++)
-            {
-                Destroy(existingRooms[i].gameObject);
-            }
-            existingRooms = new List<Room>
-            {
-                Instantiate(RoomCatalog.instance.AllAvaialbleRooms[0], Vector3.zero, Quaternion.identity, transform)
-            };
 
-            Invoke("GenerateLevel", 0.2f);
+            availableCredits = TEMPStartingCredits;
+
+            RoomCatalog.instance.InitializeAvailableRooms();
+
+            _uniqueRoomsSpawned = new Dictionary<UniqueRoom, int>();
         }
 
         public void GenerateLevel()
         {
             _existingRoomQueue = new List<Room>(existingRooms);
 
-            availableCredits = TEMPStartingCredits;
-
             float lowestCost = float.MaxValue;
-            for (int i = 0; i < RoomCatalog.instance.AllAvaialbleRooms.Count; i++)
+            for (int i = 0; i < RoomCatalog.instance.AllAvailableRooms.Count; i++)
             {
-                float cost = RoomCatalog.instance.AllAvaialbleRooms[i].RoomCost;
+                float cost = RoomCatalog.instance.AllAvailableRooms[i].RoomCost;
                 if (cost > 0)
                 {
-                    lowestCost = RoomCatalog.instance.AllAvaialbleRooms[i].RoomCost;
+                    lowestCost = RoomCatalog.instance.AllAvailableRooms[i].RoomCost;
                 }
             }
 
             int failsafe = 0;
-            while (_existingRoomQueue.Count > 0 && availableCredits > lowestCost)
+            while (_existingRoomQueue.Count > 0 && (availableCredits > lowestCost || !AreAllRequiredRoomsSpawned()))
             {
                 failsafe++;
-                if(failsafe > 10000)
+                if (failsafe > 10000)
+                {
+                    bool breakpointHere = true;
+                }
+
+                if (failsafe > 20000)
                 {
                     Debug.LogError($"FAILSAFE: credits {availableCredits}, roomqueue {_existingRoomQueue.Count}");
                     break;
@@ -69,118 +68,278 @@ namespace SpellCasting.World
 
                 _existingRoomQueue.Shuffle();
 
+                List<Door> allOpenDoors = new List<Door>();
+                for (int i = 0; i < _existingRoomQueue.Count; i++)
+                {
+                    for (int j = 0; j < _existingRoomQueue[i].Doors.Count; j++)
+                    {
+                        if (!_existingRoomQueue[i].Doors[j].Occupied)
+                        {
+                            allOpenDoors.Add(_existingRoomQueue[i].Doors[j]);
+                        }
+                    }
+                }
+
+                //for this existing room check its existing doors
                 Room existingRoom = _existingRoomQueue[0];
                 existingRoom.Doors.Shuffle();
-                for (int j = 0; j < existingRoom.Doors.Count; j++)
+                for (int eD = 0; eD < existingRoom.Doors.Count; eD++)
                 {
-                    Door existingDoor = existingRoom.Doors[j];
+                    Door existingDoor = existingRoom.Doors[eD];
 
                     int occupiedDoors = 0;
                     if (existingDoor.Occupied)
                     {
                         occupiedDoors++;
                         //all doors occupied, remove this room
-                        if (j == existingRoom.Doors.Count - 1 && occupiedDoors >= existingRoom.Doors.Count - 1)
+                        if (eD == existingRoom.Doors.Count - 1 && occupiedDoors >= existingRoom.Doors.Count - 1)
                         {
                             _existingRoomQueue.Remove(existingRoom);
+                            break;
                         }
-                        break;
                     }
 
-                    List<Room> potentialRooms = new List<Room>(RoomCatalog.instance.AllAvaialbleRooms);
+                    List<Room> potentialRooms;
+                    if (availableCredits < lowestCost && !AreAllRequiredRoomsSpawned())
+                    {
+                        //only spawn requried rooms now
+                        potentialRooms = new List<Room>();
+                    }
+                    else
+                    {
+                        //spawn rooms based on currency (aka continue as normal)
+                        potentialRooms = new List<Room>(RoomCatalog.instance.AllAvailableRooms);
+                        for (int r = potentialRooms.Count - 1; r >= 0; r--)
+                        {
+                            if (potentialRooms[r].RoomCost > availableCredits)
+                            {
+                                potentialRooms.RemoveAt(r);
+                            }
+                        }
+                    }
+                    AddUniqueRooms(potentialRooms);
 
+                    //for each existing door check potential rooms
                     int tries = 0;
                     while (potentialRooms.Count > 0)
                     {
                         tries++;
-                        if (tries > 10000)
+                        if (tries > 20000)
                         {
                             Debug.LogError($"FAILSAFE: credits {availableCredits}, roomqueue {_existingRoomQueue.Count}, potentialRooms{potentialRooms.Count}");
                             break;
                         }
 
-                        Room potentialRoom = potentialRooms.WeightedRandom((room) => room.RoomWeight);
+                        Room potentialRoomPrefab = potentialRooms.WeightedRandom((room) => room.RoomWeight);
 
-                        if (potentialRoom == null)
+                        if (potentialRoomPrefab == null)
                         {
+                            potentialRooms.Clear();
+                            Debug.LogError("could not get any rooms to randomize");
+                            return;
+                        }
+
+                        Room newRoom = TrySpawnRoom(existingDoor, potentialRoomPrefab);
+
+                        if (newRoom != null)
+                        {
+                            existingRooms.Add(newRoom);
+                            _existingRoomQueue.Add(newRoom);
+                            IncrementUniqueRoomAndCheckRemove(potentialRoomPrefab, potentialRooms);
                             break;
                         }
-
-                        if (potentialRoom.RoomCost > availableCredits)
+                        else
                         {
-                            potentialRooms.Remove(potentialRoom);
+                            //if the potential room was unsuccessful, remove it from the list and try a different one
+                            potentialRooms.Remove(potentialRoomPrefab);
                             continue;
-                        }
-
-                        bool spawned = false;
-
-                        List<Door> potentialRoomDoors = new List<Door>(potentialRoom.Doors);
-                        potentialRoomDoors.Shuffle();
-                        for (int l = 0; l < potentialRoomDoors.Count; l++)
-                        {
-                            Door potentialDoor = potentialRoomDoors[l];
-                            if ((int)potentialDoor.FacingDirection != -(int)existingDoor.FacingDirection)
-                                continue;
-
-                            bool overlapped = false;
-
-                            for (int m = 0; m < potentialRoom.OverlapZones.Count; m++)
-                            {
-                                OverlapZone overlapZone = potentialRoom.OverlapZones[m];
-                                Vector3 center = overlapZone.localPosition - potentialDoor.transform.localPosition + existingDoor.transform.position;
-
-                                Collider[] overlaps = Physics.OverlapBox(center, overlapZone.localScale * 0.5f, Quaternion.identity, LayerInfo.RoomOverlap.layerMask);
-                                overlapped |= overlaps.Length > 0;
-
-                                //Debug.LogWarning($"p room {potentialRoom.name}, checking p overlapzone {overlapZone} with respect to p door {potentialDoor.name}," +
-                                //    $"checked against e door {existingDoor.name} and found {overlaps.Length} overlaps");
-                                //TestCube(overlaps.Length > 0, center, overlapZone.localScale, $"p{potentialRoom.name} p{overlapZone.name} p {potentialDoor.name} e {existingDoor.name}");
-                            }
-
-                            if (!overlapped)
-                            {
-                                spawned = true;
-                                Vector3 position = potentialRoom.transform.position - potentialDoor.transform.position + existingDoor.transform.position;
-
-                                Room newRoom = Instantiate(potentialRoom, position, Quaternion.identity, transform);
-                                existingRooms.Add(newRoom);
-                                _existingRoomQueue.Add(newRoom);
-
-                                newRoom.Doors[potentialDoor.DoorIndex].Occupied = true;
-                                newRoom.Doors[potentialDoor.DoorIndex].GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.red);
-
-                                existingDoor.Occupied = true;
-                                existingDoor.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.magenta);
-                                availableCredits -= potentialRoom.RoomCost;
-                            }
-                        }
-                        if (!spawned)
-                        {
-                            potentialRooms.Remove(potentialRoom);
-                            continue;
-                        }
-
-                        if (potentialRooms.Count == 0)
-                        {
-                            existingDoor.Occupied = true;
-                            existingDoor.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.yellow);
                         }
                     }
 
-                    //for (int i = 0; i < existingRooms.Count; i++)
-                    //{
-                    //    var ROom = existingRooms[i];
-                    //    for (int x = 0; x < ROom.Doors.Count; x++)
-                    //    {
-                    //        if (ROom.Doors[x].Occupied)
-                    //        {
-                    //            ROom.Doors[x].GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.blue);
-                    //        }
-                    //    }
-                    //}
+                    //if there are no more rooms left to check (all of them have failed)
+                    if (potentialRooms.Count == 0)
+                    {
+                        allOpenDoors.Remove(existingDoor);
+                    }
+                }
+                //no more rooms possible. uh just leave?
+                if (allOpenDoors.Count == 0)
+                {
+                    Debug.LogError("it is physically impossible to place any more rooms. well shit");
+                    break;
                 }
             }
 
+            //after generation, close all remaining doors
+            for (int r = 0; r < existingRooms.Count; r++)
+            {
+                var ROom = existingRooms[r];
+                for (int rD = 0; rD < ROom.Doors.Count; rD++)
+                {
+                    if (!ROom.Doors[rD].Occupied)
+                    {
+                        ROom.Doors[rD].SetClosed(true);
+                    }
+                }
+            }
+#if UNITY_EDITOR
+            //LogReadout();
+#endif
+        }
+
+        private Room TrySpawnRoom(Door existingDoor, Room potentialRoomPrefab)
+        {
+            Room newRoom = null;
+            //for each potential room look at their doors
+            List<Door> potentialRoomDoors = new List<Door>(potentialRoomPrefab.Doors);
+            potentialRoomDoors.Shuffle();
+            for (int pD = 0; pD < potentialRoomDoors.Count; pD++)
+            {
+                Door potentialDoor = potentialRoomDoors[pD];
+                if ((int)potentialDoor.FacingDirection != -(int)existingDoor.FacingDirection)
+                    continue;
+
+                bool overlapped = false;
+
+                //check the overlapzones of the potential room with respect to the potential door aligned to the existing door
+                for (int m = 0; m < potentialRoomPrefab.OverlapZones.Count; m++)
+                {
+                    OverlapZone overlapZone = potentialRoomPrefab.OverlapZones[m];
+                    Vector3 center = overlapZone.localPosition - potentialDoor.transform.localPosition + existingDoor.transform.position;
+
+                    Collider[] overlaps = Physics.OverlapBox(center, overlapZone.localScale * 0.5f, Quaternion.identity, LayerInfo.RoomOverlap.layerMask);
+                    overlapped |= overlaps.Length > 0;
+#if UNITY_EDITOR
+                    //DebugOverlapCube(existingDoor, potentialRoom, potentialDoor, overlapZone, center, overlaps);
+#endif
+                }
+
+                //if there are no overlaps, spawn the new room
+                if (!overlapped)
+                {
+                    Vector3 position = potentialRoomPrefab.transform.position - potentialDoor.transform.position + existingDoor.transform.position;
+
+                    newRoom = Instantiate(potentialRoomPrefab, position, Quaternion.identity, transform);
+
+                    newRoom.Doors[potentialDoor.DoorIndex].Occupied = true;
+                    newRoom.Doors[potentialDoor.DoorIndex].SetClosed(true);
+
+                    existingDoor.Occupied = true;
+                    existingDoor.SetClosed(true);
+                    availableCredits -= potentialRoomPrefab.RoomCost;
+
+                    break;
+                }
+            }
+
+            return newRoom;
+        }
+
+        // I've passed 200 script lines noooooo
+        private bool AreAllRequiredRoomsSpawned()
+        {
+            for (int i = 0; i < RoomCatalog.instance.AllUniqueRooms.Count; i++)
+            {
+                UniqueRoom room = RoomCatalog.instance.AllUniqueRooms[i];
+
+                if (_uniqueRoomsSpawned.TryGetValueDefault(room) < room.minimumInstancesRequired)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private void AddUniqueRooms(List<Room> potentialRooms)
+        {
+            for (int i = 0; i < RoomCatalog.instance.AllUniqueRooms.Count; i++)
+            {
+                UniqueRoom uniqueRoom = RoomCatalog.instance.AllUniqueRooms[i];
+
+                if(_uniqueRoomsSpawned.ContainsKey(uniqueRoom) && _uniqueRoomsSpawned[uniqueRoom] >= uniqueRoom.maximumInstancesAllowed)
+                    continue;
+
+                potentialRooms.Add(uniqueRoom.room);
+            }
+        }
+
+        public void IncrementUniqueRoomAndCheckRemove(Room newRoomPrefab, List<Room> potentialRooms)
+        {
+            for (int i = 0; i < RoomCatalog.instance.AllUniqueRooms.Count; i++)
+            {
+                if (RoomCatalog.instance.AllUniqueRooms[i].room == newRoomPrefab)
+                {
+                    Util.AddToDictionary(_uniqueRoomsSpawned, RoomCatalog.instance.AllUniqueRooms[i], 1);
+                }
+            }
+
+            foreach (KeyValuePair<UniqueRoom, int> uniqueRoomCounts in _uniqueRoomsSpawned)
+            {
+                if (uniqueRoomCounts.Key.room == newRoomPrefab)
+                {
+                    if (_uniqueRoomsSpawned[uniqueRoomCounts.Key] >= uniqueRoomCounts.Key.maximumInstancesAllowed)
+                    {
+                        potentialRooms.Remove(newRoomPrefab);
+                    }
+                }
+            }
+        }
+
+        private void DebugOverlapCube(Door existingDoor, Room potentialRoom, Door potentialDoor, OverlapZone overlapZone, Vector3 center, Collider[] overlaps)
+        {
+            Debug.LogWarning($"p room {potentialRoom.name}, checking p overlapzone {overlapZone} with respect to p door {potentialDoor.name}," +
+                $"checked against e door {existingDoor.name} and found {overlaps.Length} overlaps");
+            TestCube(overlaps.Length > 0, center, overlapZone.localScale, $"p{potentialRoom.name} p{overlapZone.name} p {potentialDoor.name} e {existingDoor.name}");
+        }
+
+        #region debug
+
+        [ContextMenu("ReGenerate")]
+        public void RegenerateLevel()
+        {
+            InitializeValues();
+            for (int i = 0; i < existingRooms.Count; i++)
+            {
+                Destroy(existingRooms[i].gameObject);
+            }
+            existingRooms = new List<Room>
+            {
+                Instantiate(RoomCatalog.instance.AllAvailableRooms[0], Vector3.zero, Quaternion.identity, transform)
+            };
+
+            Invoke("GenerateLevel", 0.2f);
+        }
+
+        public void TestCube(bool overlapped, Vector3 position, Vector3 scale, string name)
+        {
+            var cob = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            cob.name = name;
+            cob.transform.position = position;
+            cob.transform.localScale = scale;
+
+            if (overlapped)
+            {
+                cob.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.magenta);
+            }
+        }
+        Dictionary<string, int> roomLog = new Dictionary<string, int>();
+
+#if UNITY_EDITOR
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                RegenerateLevel();
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                roomLog = new Dictionary<string, int>();
+            }
+        }
+#endif
+        private void LogReadout()
+        {
             for (int i = 0; i < existingRooms.Count; i++)
             {
                 if (!roomLog.ContainsKey(existingRooms[i].name))
@@ -197,31 +356,6 @@ namespace SpellCasting.World
             }
             Debug.Log(readout);
         }
-
-        // I've passed the 200 line script line noooooo
-        public void TestCube(bool overlapped, Vector3 position, Vector3 scale, string name)
-        {
-            var cob = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            cob.name = name;
-            cob.transform.position = position;
-            cob.transform.localScale = scale;
-
-            if (overlapped)
-            {
-                cob.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.magenta);
-            }
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                RegenerateLevel();
-            }
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                roomLog = new Dictionary<string, int>();
-            }
-        }
+        #endregion debug
     }
 }

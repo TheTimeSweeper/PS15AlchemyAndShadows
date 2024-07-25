@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 namespace SpellCasting.World
 {
@@ -11,10 +12,15 @@ namespace SpellCasting.World
 
     public class RoomCatalog: MonoBehaviour
     {
-        private List<Room> _allAvailableRooms = new List<Room>();
-        public List<Room> AllAvaialbleRooms => _allAvailableRooms;
+        private List<Room> _allAvailableRooms;
+        public List<Room> AllAvailableRooms => _allAvailableRooms;
+
+        public List<UniqueRoom> AllUniqueRooms;
 
         public List<ElementRequriedRooms> elementRequriedRooms;
+
+        [SerializeField]
+        private List<UniqueRoom> uniqueRooms;
 
         public static RoomCatalog instance;
 
@@ -24,8 +30,11 @@ namespace SpellCasting.World
         }
 
         //jam initialized by maingame. a base class or interface that maingame can loop through might be nice
-        public void InitializeAvailableRooms(List<ElementType> availableElements)
+        public void InitializeAvailableRooms()
         {
+            _allAvailableRooms = new List<Room>();
+
+            List<ElementType> availableElements = MainGame.instance.SavedData.UnlockedElements;
             for (int i = 0; i < elementRequriedRooms.Count; i++)
             {
                 ElementRequriedRooms elementRooms = elementRequriedRooms[i];
@@ -34,6 +43,15 @@ namespace SpellCasting.World
                     continue;
 
                 _allAvailableRooms.AddRange(elementRooms.Rooms);
+            }
+
+            AllUniqueRooms = new List<UniqueRoom>();
+            for (int i = 0; i < uniqueRooms.Count; i++)
+            {
+                if (uniqueRooms[i].CanSpawn())
+                {
+                    AllUniqueRooms.Add(uniqueRooms[i]);
+                }
             }
         }
     }
