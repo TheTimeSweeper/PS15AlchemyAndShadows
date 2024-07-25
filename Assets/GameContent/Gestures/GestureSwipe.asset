@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c0e7e0aace3d8e4e9252415acb23826, type: 3}
   m_Name: GestureSwipe
   m_EditorClassIdentifier: 
-  priority: 0
-  index: 0
+  priority: 1
   threshold: 0.2

@@ -11,6 +11,12 @@ namespace SpellCasting
         [SerializeField]
         private List<ElementType> TEMPElementTypes = new List<ElementType>();
 
+        public static ElementType TryCombineElements(ElementType element1, ElementType element2)
+        {
+            //todo combine elements
+            return null;
+        }
+
         public void Init()
         {
             for (int i = 0; i < TEMPElementTypes.Count; i++)

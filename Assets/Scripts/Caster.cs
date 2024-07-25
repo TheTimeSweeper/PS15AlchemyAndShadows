@@ -4,20 +4,13 @@ namespace SpellCasting
 {
     public class Caster : MonoBehaviour
     {
+        //jam not quite sure how shitty this is lol
+        public Dictionary<InputState, ElementType> InputToElement = new Dictionary<InputState, ElementType>();
+
         protected List<ElementInputBehavior> _elementInputBehaviors = new List<ElementInputBehavior>();
         public List<ElementInputBehavior> ElementInputBehaviors => _elementInputBehaviors;
 
         public ElementType CurrentCastingElement { get; set; }
-
-        public void UpdateElement(ElementType lastElement, ElementType newElement)
-        {
-            for (int i = _elementInputBehaviors.Count - 1; i >= 0; i--)
-            {
-                if (_elementInputBehaviors[i].ElementType == lastElement)
-                {
-                    _elementInputBehaviors[i].ElementType = newElement;
-                }
-            }
-        }
+        public InputState CurrentCastingInput { get; set; }
     }
 }

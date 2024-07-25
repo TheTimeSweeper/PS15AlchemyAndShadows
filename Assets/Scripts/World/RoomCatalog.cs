@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace SpellCasting.World
 {
+    //jam should be a scriptableobject?
     [System.Serializable]
     public class ElementRequriedRooms
     {

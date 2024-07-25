@@ -1,8 +1,7 @@
-﻿
-using SpellCasting;
+﻿using SpellCasting;
 using System.Collections.Generic;
 
-namespace ActiveStates
+namespace ActiveStates.Characters
 {
     public class ManipulatingElementsState : ActiveState
     {

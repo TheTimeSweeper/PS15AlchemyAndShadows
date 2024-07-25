@@ -28,7 +28,7 @@ namespace SpellCasting
             _totalAngleSwirled = 0;
         }
 
-        public override bool QualifyGesture(InputBank bank)
+        public override bool QualifyGesture(InputBank bank, InputState inputState)
         {
 
             for (int i = 0; i < debugPositions.Count; i++)

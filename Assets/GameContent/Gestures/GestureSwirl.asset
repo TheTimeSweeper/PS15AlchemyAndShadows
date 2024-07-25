@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b5ad7af78e89c419bc35bedfe0c8fe, type: 3}
   m_Name: GestureSwirl
   m_EditorClassIdentifier: 
-  priority: 1
-  index: 1
+  priority: 2
+  angleThreshold: 720

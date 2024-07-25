@@ -65,8 +65,8 @@ namespace SpellCasting
         public SerializableActiveState MassLetGoState => massLetGoState;
 
         [SerializeField]
-        private SerializableActiveState bodyMeleeState = new SerializableActiveState(typeof(GenericMeleeCombo));
-        public SerializableActiveState BodyMeleeState => bodyMeleeState;
+        private SerializableActiveState bodyMeleeStaterino = new SerializableActiveState(typeof(GenericMeleeCombo));
+        public SerializableActiveState BodyMeleeState => bodyMeleeStaterino;
         [Space]
         [SerializeField]
         private List<ElementActionState> elementActions;

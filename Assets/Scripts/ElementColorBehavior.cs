@@ -2,21 +2,28 @@
 {
     public class ElementColorBehavior : ElementInputBehavior
     {
-        public ElementColorBehavior(ElementTypeIndex element_, InputState input_, CommonComponentsHolder commonComponents_) : base(element_, input_, commonComponents_) { }
-        public ElementColorBehavior(ElementType element_, InputState input_, CommonComponentsHolder commonComponents_) : base(element_, input_, commonComponents_) { }
+        public ElementColorBehavior(CommonComponentsHolder commonComponents_) : base(commonComponents_) { }
+
+        private ElementType _lastElement;
 
         public override void Update()
         {
             if (commonComponents.CharacterModel == null)
                 return;
 
-            if (input.JustPressed)
+            if (_lastElement != currentCastingElement)
             {
-                commonComponents.CharacterModel.SetElementColor(elementType.ElementColor);
-            }
-            if(input.JustReleased)
-            {
-                commonComponents.CharacterModel.RemoveElementColor(elementType.ElementColor);
+                if (_lastElement != null)
+                {
+                    commonComponents.CharacterModel.RemoveElementColor(_lastElement.ElementColor);
+                }
+
+                _lastElement = currentCastingElement;
+
+                if (currentCastingElement != null)
+                {
+                    commonComponents.CharacterModel.SetElementColor(currentCastingElement.ElementColor);
+                }
             }
         }
     }

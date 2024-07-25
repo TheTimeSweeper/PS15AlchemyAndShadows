@@ -2,6 +2,7 @@ using ActiveStates;
 using System;
 using System.Xml.Schema;
 using UnityEngine;
+using static UnityEditor.Rendering.FilterWindow;
 namespace SpellCasting
 {
     public class Wiard : Caster, IHasCommonComponents
@@ -19,7 +20,7 @@ namespace SpellCasting
             get => m1Element;
             set
             {
-                UpdateElement(m1Element, value);
+                //UpdateElement(m1Element, value);
                 m1Element = value;
             }
         }
@@ -30,7 +31,7 @@ namespace SpellCasting
             get => m2Element;
             set
             {
-                UpdateElement(m2Element, value);
+                //UpdateElement(m2Element, value);
                 m2Element = value;
             }
         }
@@ -41,7 +42,7 @@ namespace SpellCasting
             get => shiftElement;
             set
             {
-                UpdateElement(shiftElement, value);
+                //UpdateElement(shiftElement, value);
                 shiftElement = value;
             }
         }
@@ -52,38 +53,27 @@ namespace SpellCasting
             get => spaceElement;
             set
             {
-                UpdateElement(spaceElement, value);
+                //UpdateElement(spaceElement, value);
                 spaceElement = value;
             }
         }
 
         private void Awake()
         {
-            if (m1Element)
-            {
-                _elementInputBehaviors.Add(new ElementMassManipulationBehavior(m1Element, inputBank.M1, commonComponents));
-                _elementInputBehaviors.Add(new ElementCursorIndicatorBehavior(m1Element, inputBank.M1, commonComponents));
-                _elementInputBehaviors.Add(new ElementColorBehavior(m1Element, inputBank.M1, commonComponents));
-            }
-            if (m2Element)
-            {
-                _elementInputBehaviors.Add(new ElementMassManipulationBehavior(m2Element, inputBank.M2, commonComponents));
-                _elementInputBehaviors.Add(new ElementCursorIndicatorBehavior(m2Element, inputBank.M2, commonComponents));
-                _elementInputBehaviors.Add(new ElementColorBehavior(m2Element, inputBank.M2, commonComponents));
-            }
+            _elementInputBehaviors.Add(new ElementMassManipulationBehavior(commonComponents));
+            _elementInputBehaviors.Add(new ElementSelectionBehaviour(commonComponents));
+            _elementInputBehaviors.Add(new ElementCursorIndicatorBehavior(commonComponents));
+            _elementInputBehaviors.Add(new ElementColorBehavior(commonComponents));
 
-            if (shiftElement)
-            {
-                _elementInputBehaviors.Add(new ElementMassManipulationBehavior(shiftElement, inputBank.Shift, commonComponents));
-                _elementInputBehaviors.Add(new ElementCursorIndicatorBehavior(shiftElement, inputBank.Shift, commonComponents));
-                _elementInputBehaviors.Add(new ElementColorBehavior(shiftElement, inputBank.Shift, commonComponents));
-            }
-            if (spaceElement)
-            {
-                _elementInputBehaviors.Add(new ElementMassManipulationBehavior(spaceElement, inputBank.Space, commonComponents));
-                _elementInputBehaviors.Add(new ElementCursorIndicatorBehavior(spaceElement, inputBank.Space, commonComponents));
-                _elementInputBehaviors.Add(new ElementColorBehavior(spaceElement, inputBank.Space, commonComponents));
-            }
+            InputToElement.Add(inputBank.M1, m1Element);
+            InputToElement.Add(inputBank.M2, m2Element);
+            InputToElement.Add(inputBank.Shift, shiftElement);
+            InputToElement.Add(inputBank.Space, spaceElement);
+
+            //ElementToInput.Add(m1Element, inputBank.M1);
+            //ElementToInput.Add(m2Element, inputBank.M2);
+            //ElementToInput.Add(shiftElement, inputBank.Shift);
+            //ElementToInput.Add(spaceElement, inputBank.Space);
         }
     }
 }

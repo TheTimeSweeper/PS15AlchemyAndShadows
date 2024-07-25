@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ee6040e54dc7c49a2c33b8f2811d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllUniqueRooms: []
   elementRequriedRooms:
   - RequiredElement: {fileID: 0}
     Rooms:
@@ -147,6 +148,9 @@ MonoBehaviour:
     Rooms:
     - {fileID: 615712206326356590, guid: 41f00c3aab081744aae24a0f3d2f137a, type: 3}
     - {fileID: 5765920359163647062, guid: b26d4b16fbbde2146b0ffffdb1978b28, type: 3}
+  uniqueRooms:
+  - {fileID: 11400000, guid: 7cc3a18c6ef921c4abc50d79b30fc92e, type: 2}
+  - {fileID: 11400000, guid: 25ab18c49cdc8164a8caa09c900c4772, type: 2}
 --- !u!114 &1867267761727004822
 MonoBehaviour:
   m_ObjectHideFlags: 0

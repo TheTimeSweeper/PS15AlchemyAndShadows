@@ -1,4 +1,4 @@
-﻿namespace ActiveStates
+﻿namespace ActiveStates.Characters
 {
     public class GenericCharacterMove : ActiveState
     {

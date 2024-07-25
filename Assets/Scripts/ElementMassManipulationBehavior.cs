@@ -6,24 +6,24 @@ namespace SpellCasting
 {
     public class ElementMassManipulationBehavior : ElementInputBehavior
     {
-        public ElementMassManipulationBehavior(ElementTypeIndex element_, InputState input_, CommonComponentsHolder commonComponents_) : base(element_, input_, commonComponents_) { }
-        public ElementMassManipulationBehavior(ElementType element_, InputState input_, CommonComponentsHolder commonComponents_) : base(element_, input_, commonComponents_) { }
+        public ElementMassManipulationBehavior(CommonComponentsHolder commonComponents_) : base(commonComponents_) { }
 
         private ElementMass _currentMass;
 
-        private ElementType TEMP_secondElement = ElementCatalog.ElementTypes[ElementTypeIndex.FIRE];
-
         public override void Update()
         {
+            if (currentCastingElement == null)
+                return;
+
             if (input.JustReleased)
             {
                 if (_currentMass != null)
                 {
-                    ElementActionState actionState = inputBank.GetFirstQualifiedElementAction(currentElementType.ElementActions);
+                    ElementActionState actionState = inputBank.GetFirstQualifiedElementAction(currentCastingElement.ElementActions);
                     if (actionState != null)
                     {
                         inputBank.ResetGestures();
-                        BaseElementMassState newState = currentElementType.CreateElementMassState(actionState.GestureState, _currentMass);
+                        BaseElementMassState newState = currentCastingElement.CreateElementMassState(actionState.GestureState, _currentMass);
                         if (newState != null)
                         {
                             _currentMass.ActiveStateMachine.setState(newState);
@@ -31,39 +31,23 @@ namespace SpellCasting
                     }
                     else
                     {
-                        BaseElementMassState newState = currentElementType.CreateElementMassState(currentElementType.MassLetGoState, _currentMass);
+                        BaseElementMassState newState = currentCastingElement.CreateElementMassState(currentCastingElement.MassLetGoState, _currentMass);
                         if (newState != null)
                         {
                             _currentMass.ActiveStateMachine.setState(newState);
                         }
                     }
-                    overrideElementType = null;
-                    commonComponents.Caster.CurrentCastingElement = null;
                 }
             }
 
-            if (input.JustPressed && !IsOtherElementActive())
+            if (input.Down)
             {
-                commonComponents.Caster.CurrentCastingElement = currentElementType;
-            }
-
-            if (input.Down && commonComponents.Caster.CurrentCastingElement == currentElementType)
-            {
-                if (input == inputBank.Space && inputBank.Shift.JustPressed)
-                {
-                    if (_currentMass != null)
-                    {
-                        _currentMass.Fizzle();
-                    }
-                    overrideElementType = TEMP_secondElement;
-                }
-
                 if (_currentMass == null || _currentMass.Casted)
                 {
-                    _currentMass = UnityEngine.Object.Instantiate(currentElementType.ElementMassPrefab);
-                    _currentMass.Init(currentElementType);
+                    _currentMass = UnityEngine.Object.Instantiate(currentCastingElement.ElementMassPrefab);
+                    _currentMass.Init(currentCastingElement);
                     _currentMass.ActiveStateMachine.CommonComponents = commonComponents;
-                    _currentMass.ActiveStateMachine.setState(currentElementType.CreateElementMassState(currentElementType.MassSpawnState, _currentMass));
+                    _currentMass.ActiveStateMachine.setState(currentCastingElement.CreateElementMassState(currentCastingElement.MassSpawnState, _currentMass));
                     _currentMass.transform.position = inputBank.AimPoint;
                 }
 

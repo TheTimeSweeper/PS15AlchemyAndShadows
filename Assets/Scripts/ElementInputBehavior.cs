@@ -4,38 +4,27 @@ namespace SpellCasting
 {
     public abstract class ElementInputBehavior
     {
-        protected ElementType elementType;
-        public ElementType ElementType { get => elementType; set => elementType = value; }
-        protected InputState input;
         protected CommonComponentsHolder commonComponents;
+        protected Caster caster;
         protected InputBank inputBank;
-        protected ElementType overrideElementType;
-        public ElementType currentElementType => overrideElementType != null ? overrideElementType : elementType;
 
-        public ElementInputBehavior(ElementTypeIndex element_, InputState input_, CommonComponentsHolder commonComponents_)
+        protected ElementType currentCastingElement => caster.CurrentCastingElement;
+        protected InputState input => caster.CurrentCastingInput;
+
+        public ElementInputBehavior(CommonComponentsHolder commonComponents_)
         {
-            elementType = ElementCatalog.ElementTypes[element_];
-            input = input_;
-            commonComponents_ = commonComponents;
-            inputBank = commonComponents.InputBank;
+            Init(commonComponents_);
         }
 
-        public ElementInputBehavior(ElementType element_, InputState input_, CommonComponentsHolder commonComponents_)
+        protected void Init(CommonComponentsHolder commonComponents_)
         {
-            elementType = element_;
-            input = input_;
             commonComponents = commonComponents_;
             inputBank = commonComponents.InputBank;
+            caster = commonComponents.Caster;
         }
 
         public abstract void Update();
         public virtual void FixedUpdate() { }
         public virtual void OnManipluatorExit() { }
-
-        protected bool IsOtherElementActive()
-        {
-            ElementType currentCastingElement = commonComponents.Caster.CurrentCastingElement;
-            return currentCastingElement != null && currentCastingElement != elementType;
-        }
     }
 }

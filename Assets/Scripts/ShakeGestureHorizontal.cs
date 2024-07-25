@@ -31,7 +31,7 @@ namespace SpellCasting
             _turns = 0;
         }
 
-        public override bool QualifyGesture(InputBank bank)
+        public override bool QualifyGesture(InputBank bank, InputState inputState)
         {
             _graceTimer -= Time.deltaTime;
 

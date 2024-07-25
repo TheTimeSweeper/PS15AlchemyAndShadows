@@ -22,6 +22,8 @@ namespace ActiveStates
                 OwnerGameObject = gameObject,
                 Team = teamComponent.TeamIndex
             };
+
+            characterModel.CharacterDirection.OverrideLookDirection(inputBank.AimOut, duration * 2);
         }
 
         protected override void OnCastFixedUpdate()

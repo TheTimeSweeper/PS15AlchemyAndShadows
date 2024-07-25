@@ -8,7 +8,7 @@ namespace SpellCasting
         [SerializeField]
         private float threshold = 0.2f;
 
-        public override bool QualifyGesture(InputBank bank)
+        public override bool QualifyGesture(InputBank bank, InputState inputState)
         {
             bank.DebugSwipeMag = bank.GestureDelta.magnitude;
             return bank.GestureDelta.magnitude > threshold;

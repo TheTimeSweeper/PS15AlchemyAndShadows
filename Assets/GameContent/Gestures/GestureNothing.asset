@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77f2149e41554c445bef5ade80171d42, type: 3}
-  m_Name: GestureMash
+  m_Script: {fileID: 11500000, guid: 0d53ea5cf8bb7e840a3f0db01ef8c1ac, type: 3}
+  m_Name: GestureNothing
   m_EditorClassIdentifier: 
-  priority: 1.5
-  requiredMashes: 2
-  resetTime: 1
+  priority: 0

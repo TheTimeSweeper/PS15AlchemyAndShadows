@@ -15,7 +15,7 @@ namespace SpellCasting
         private int _mashes;
         private float _resetTimer;
 
-        public override bool QualifyGesture(InputBank bank)
+        public override bool QualifyGesture(InputBank bank, InputState inputState)
         {
             _resetTimer += Time.deltaTime;
             if(_resetTimer > resetTime)
@@ -23,7 +23,7 @@ namespace SpellCasting
                 _mashes = 0;
             }
 
-            if (bank.M1.JustPressed)
+            if (inputState.JustPressed)
             {
                 _mashes++;
                 _resetTimer = 0;
@@ -33,7 +33,7 @@ namespace SpellCasting
 
         public override void ResetGesture()
         {
-            _mashes = 0;
+            //_mashes = 0;
         }
     }
 }

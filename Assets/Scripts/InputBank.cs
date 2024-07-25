@@ -50,12 +50,33 @@ namespace SpellCasting
         public InputState M2 { get; set; } = new InputState();
         public InputState Space { get; set; } = new InputState();
         public InputState Shift { get; set; } = new InputState();
-         
-        public Vector3 LocalMoveDirection { get; set; }
-        public Vector3 GlobalMoveDirection { get; set; }
+        //public InputState[] extraInputStates;
+
+        public List<InputState> OrderedHeldInputs { get; set; } = new List<InputState>();
+
+        public InputState CurrentPrimaryInput
+        {
+            get
+            {
+                if (OrderedHeldInputs.Count > 0)
+                {
+                    return OrderedHeldInputs[0];
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
 
         public Vector3 GesturePosition { get; set; }
         public Vector3 GestureDelta { get; set; }
+
+        public Vector3 LocalMoveDirection { get; set; }
+        public Vector3 GlobalMoveDirection { get; set; }
+
+        private List<InputState> _allInputStates;
+
         private List<AimGesture> _gestures => GestureCatalog.AllGestures;
         private List<AimGesture> _qualifiedGestures = new List<AimGesture>();
 
@@ -68,6 +89,9 @@ namespace SpellCasting
         void Awake()
         {
             _gestures.Sort();
+
+            _allInputStates = new List<InputState> { M1, M2, Space, Shift }; 
+            //AllInputStates.AddRange(extraInputStates);
         }
 
         public void ManageInputStates(InputState state, bool down, bool justPressed, bool justReleased)
@@ -81,17 +105,39 @@ namespace SpellCasting
         {
             DebugCurrentGestures.Clear();
 
-            for (int i = 0; i < _gestures.Count; i++)
+            InputState iterState;
+            for (int i = 0; i < _allInputStates.Count; i++)
             {
-                AimGesture gesture = _gestures[i];
-
-                bool qualified = gesture.QualifyGesture(this);
-
-                SetGestureQualified(gesture, qualified);
-
-                if (qualified)
+                iterState = _allInputStates[i];
+                if ((iterState.Down) && !OrderedHeldInputs.Contains(iterState))
                 {
-                    DebugCurrentGestures.Add(gesture.ToString());
+                    OrderedHeldInputs.Add(iterState);
+                }
+            }
+
+            for (int i = _allInputStates.Count - 1; i >= 0; i--)
+            {
+                iterState = _allInputStates[i];
+                if (!iterState.Down && !iterState.JustReleased && OrderedHeldInputs.Contains(iterState))
+                {
+                    OrderedHeldInputs.Remove(iterState);
+                }
+            }
+
+            if (CurrentPrimaryInput != null)
+            {
+                for (int i = 0; i < _gestures.Count; i++)
+                {
+                    AimGesture gesture = _gestures[i];
+
+                    bool qualified = gesture.QualifyGesture(this, CurrentPrimaryInput);
+
+                    SetGestureQualified(gesture, qualified);
+
+                    if (qualified)
+                    {
+                        DebugCurrentGestures.Add(gesture.ToString());
+                    }
                 }
             }
         }

@@ -24,7 +24,7 @@ namespace SpellCasting
         private float _recentLargestDelta;
         private float _recentLargestTimer;
 
-        public override bool QualifyGesture(InputBank bank)
+        public override bool QualifyGesture(InputBank bank, InputState inputState)
         {
             _graceTimer -= Time.deltaTime;
 

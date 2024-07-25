@@ -311,7 +311,7 @@ MonoBehaviour:
   label: Body
   commonComponents: {fileID: 1487827616747877697}
   DefaultState:
-    activeStateName: ActiveStates.GenericCharacterMove
+    activeStateName: ActiveStates.Characters.GenericCharacterMove
 --- !u!114 &2415498122064681131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
   label: Casting
   commonComponents: {fileID: 1487827616747877697}
   DefaultState:
-    activeStateName: ActiveStates.ManipulatingElementsState
+    activeStateName: ActiveStates.Characters.ManipulatingElementsState
 --- !u!114 &4556897560370750402
 MonoBehaviour:
   m_ObjectHideFlags: 0

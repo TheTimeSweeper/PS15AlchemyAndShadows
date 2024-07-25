@@ -11,6 +11,8 @@ public class CursorIndicator : MonoBehaviour
         get =>  color; 
         set
         {
+            if (color == value) 
+                return;
             color = value;
             UpdateParticleColors();
         } 

@@ -16,16 +16,27 @@ MonoBehaviour:
   elementMassPrefab: {fileID: 4472891100982896484, guid: efa907a06110fb542b0b46be336bd999, type: 3}
   cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
   elementColor: {r: 0, g: 0.14512777, b: 1, a: 1}
-  massGrowthMultiplier: 1
+  massGrowthMultiplier: 0
   massBaseMass: 3
   massVelocityMultiplier: 30
-  spawnState:
+  massSpawnState:
     activeStateName: ActiveStates.Elements.BasicElementGrow
-  letGoState:
+  massLetGoState:
     activeStateName: ActiveStates.Elements.BasicElementLetGo
+  bodyMeleeStaterino:
+    activeStateName: ActiveStates.Characters.GenericMeleeCombo
   elementActions:
   - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Water.WaterSwipe
     baseManaCost: 0
+  - gestureType: {fileID: 11400000, guid: 6dd5c6d84daa7874898992a754a5cde1, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.BasicElementMelee
+    baseManaCost: 0
+  - gestureType: {fileID: 11400000, guid: c52837f313ef4ca4396eed8288aaf495, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.BasicElementLetGo
+    baseManaCost: 0
+  componentElements: []
   swipeSpawnSideDistance: 1

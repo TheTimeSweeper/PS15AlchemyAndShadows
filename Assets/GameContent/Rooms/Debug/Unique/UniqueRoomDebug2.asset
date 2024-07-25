@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8267b83b0245fa44390e5e9d0eb1e315, type: 3}
   m_Name: UniqueRoomDebug2
   m_EditorClassIdentifier: 
-  room: {fileID: 0}
-  instancesAllowed: 1
+  room: {fileID: 6123192508971727168, guid: 0a2cfeac9f75ce543825ce2463cff19f, type: 3}
+  maximumInstancesAllowed: 4
+  minimumInstancesRequired: 4

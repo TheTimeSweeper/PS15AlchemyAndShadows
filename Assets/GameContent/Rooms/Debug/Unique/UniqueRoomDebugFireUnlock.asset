@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: UniqueRoomDebugFireUnlock
   m_EditorClassIdentifier: 
   room: {fileID: 6123192508971727168, guid: b4faebd32529b904aa871a37b6ee7918, type: 3}
-  instancesAllowed: 1
+  maximumInstancesAllowed: 2
+  minimumInstancesRequired: 2
   elementThatTheRoomDoesntShowUpIfYouUnlock: {fileID: 11400000, guid: b4bf9355eaf200840ae74d300c1c7e24, type: 2}

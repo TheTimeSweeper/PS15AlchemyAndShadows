@@ -39,14 +39,15 @@ namespace SpellCasting.World
 
             nip.OnValidate();
         }
-
         private void OnDestroy()
         {
+#if UNITY_EDITOR
             var nip = GetComponentInParent<Room>();
             if (nip == null)
                 return;
 
             Debug.LogError($"don't forget to remove this from the Room {nip.name}", nip);
+#endif
         }
     }
 }

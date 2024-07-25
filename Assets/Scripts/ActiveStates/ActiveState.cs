@@ -1,4 +1,5 @@
 ﻿using SpellCasting;
+using System;
 using UnityEngine;
 
 namespace ActiveStates
@@ -29,10 +30,15 @@ namespace ActiveStates
         public virtual void OnFixedUpdate()
         {
             _fixedAge += Time.fixedDeltaTime;
-
         }
+
         public virtual void OnEnter() { }
         public virtual void OnUpdate() { }
         public virtual void OnExit() { }
+
+        public virtual InterruptPriority GetMinimumInterruptPriority()
+        {
+            return InterruptPriority.STATE_ANY;
+        }
     }
 }
