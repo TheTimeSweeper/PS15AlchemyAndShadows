@@ -19,8 +19,8 @@ namespace SpellCasting
         public CharacterDirection CharacterDirection { get => characterDirection; }
 
         [SerializeField]
-        private ChildLocator childLocator;
-        public ChildLocator ChildLocator { get => childLocator; }
+        private ChildTransformLocator childLocator;
+        public ChildTransformLocator ChildLocator { get => childLocator; }
 
         [SerializeField]
         private HitboxLocator hitboxLocator;

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2501168355527328141}
   - component: {fileID: 6749049692360157778}
   - component: {fileID: 3851465993621774473}
+  - component: {fileID: 1386914475464599782}
   m_Layer: 0
   m_Name: EarthSubMass
   m_TagString: Untagged
@@ -98,6 +99,7 @@ MonoBehaviour:
   dormantComponents:
   - {fileID: 2501168355527328141}
   - {fileID: 6749049692360157778}
+  - {fileID: 3851465993621774473}
 --- !u!114 &2501168355527328141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +146,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 4227748468550602867}
+--- !u!114 &1386914475464599782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420521427287630370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f696e358b3c0a40922647355248b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0.3
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.968827
+      outSlope: 1.968827
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.09583333
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  targetTransform: {fileID: 7099725484880254688}
 --- !u!1 &7049513859175524831
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,7 +54,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3218272428408795064}
   - component: {fileID: 3701454681504572662}
-  - component: {fileID: 2401550195340508688}
   - component: {fileID: 8229601400613761143}
   m_Layer: 0
   m_Name: MainGame
@@ -95,18 +94,6 @@ MonoBehaviour:
   TEMPRoomCatalog: {fileID: 1734050388914010690}
   TEMPElementCatalog: {fileID: 5088064961873132389}
   menu: {fileID: 0}
---- !u!114 &2401550195340508688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8847469351332851560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9260c6e400269748bbd310262c5ce11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8229601400613761143
 MonoBehaviour:
   m_ObjectHideFlags: 0

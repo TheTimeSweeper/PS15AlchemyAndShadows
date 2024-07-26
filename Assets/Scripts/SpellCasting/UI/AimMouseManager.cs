@@ -1,7 +1,6 @@
-﻿using SpellCasting.UI;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace SpellCasting
+namespace SpellCasting.UI
 {
     [DefaultExecutionOrder(-1)]
     public class AimMouseManager : MonoBehaviour
@@ -22,8 +21,8 @@ namespace SpellCasting
             if (Instance != null)
             {
                 //jam i should have a copypaste base singleton class by now huh
-                Debug.LogError($"tried to have duplicate singleton {this.GetType()}", this);
-                this.enabled = false;
+                Debug.LogError($"tried to have duplicate singleton {GetType()}", this);
+                enabled = false;
             }
             Instance = this;
         }

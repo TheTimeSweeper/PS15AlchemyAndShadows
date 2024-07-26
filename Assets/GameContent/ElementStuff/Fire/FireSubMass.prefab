@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 5790455508350688420}
   - component: {fileID: 1161459758808466295}
   - component: {fileID: 8898097480340378306}
+  - component: {fileID: 543363272767973918}
   m_Layer: 0
   m_Name: FireSubMass
   m_TagString: Untagged
@@ -219,6 +220,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 3159130046204335257}
+--- !u!114 &543363272767973918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217069319588914888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f696e358b3c0a40922647355248b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0.3
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  targetTransform: {fileID: 8357498285966987786}
 --- !u!1 &6529560793578120647
 GameObject:
   m_ObjectHideFlags: 0

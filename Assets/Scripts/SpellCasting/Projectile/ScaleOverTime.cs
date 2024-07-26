@@ -2,7 +2,6 @@
 
 namespace SpellCasting.Projectiles
 {
-
     public class ScaleOverTime : MonoBehaviour
     {
         [SerializeField]
@@ -11,20 +10,32 @@ namespace SpellCasting.Projectiles
         [SerializeField]
         private AnimationCurve curve = AnimationCurve.EaseInOut(0,0,1,1);
 
+        [SerializeField]
+        private Transform targetTransform;
+
         private float _lerpTim;
         private Vector3 _originalScale;
 
-        private void Awake()
+        void Reset()
         {
-            _originalScale = transform.localScale;
-            transform.localScale = _originalScale * curve.Evaluate(0);
+            targetTransform = transform;
         }
 
-        private void FixedUpdate()
+        void Awake()
+        {
+            if (targetTransform == null)
+            {
+                targetTransform = transform;
+            }
+            _originalScale = targetTransform.localScale;
+            targetTransform.localScale = _originalScale * curve.Evaluate(0);
+        }
+
+        void FixedUpdate()
         {
             _lerpTim += Time.deltaTime / time;
 
-            transform.localScale = _originalScale * curve.Evaluate(_lerpTim);
+            targetTransform.localScale = _originalScale * curve.Evaluate(_lerpTim);
         }
     }
 }

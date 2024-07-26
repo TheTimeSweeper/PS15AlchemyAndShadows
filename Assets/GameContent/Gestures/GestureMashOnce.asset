@@ -15,4 +15,4 @@ MonoBehaviour:
   priority: -1
   requiredMashes: 1
   resetTime: 0.4
-  _movedThreshold: 5
+  _movedThreshold: 10

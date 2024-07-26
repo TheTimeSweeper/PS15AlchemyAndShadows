@@ -17,6 +17,8 @@ namespace SpellCasting
 
         public static MainGame instance { get; private set; }
 
+        private InputState escapeInput = new InputState();
+
         public SavedData SavedData { get; private set; }
 
         void Awake()
@@ -37,7 +39,9 @@ namespace SpellCasting
         //jam ... yeah
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            escapeInput.UpdateInput(Input.GetKey(KeyCode.Escape));
+
+            if (escapeInput.JustPressed(this))
             {
                 menu.SetActive(!menu.activeInHierarchy);
                 Time.timeScale = menu.activeInHierarchy ? 0 : 1;

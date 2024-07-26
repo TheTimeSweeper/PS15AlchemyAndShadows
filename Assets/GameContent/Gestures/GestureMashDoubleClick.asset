@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GestureMashDoubleClick
   m_EditorClassIdentifier: 
   priority: -1
-  requiredMashes: 1
+  requiredMashes: 2
   resetTime: 0.4
-  _movedThreshold: 5
+  _movedThreshold: 20

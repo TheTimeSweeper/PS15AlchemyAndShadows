@@ -580,7 +580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engine: {fileID: 591744653}
-  acceleration: 0
+  controlledAcceleration: 100
+  idleInertia: 10
 --- !u!114 &591744652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2263,7 +2264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engine: {fileID: 1906396763}
-  acceleration: 0
+  controlledAcceleration: 100
+  idleInertia: 10
 --- !u!114 &1906396766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2992,10 +2994,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharJoanna
       objectReference: {fileID: 0}
-    - target: {fileID: 8830860988371401859, guid: b53c50db6e9871e40b6ef372d8ae4cf3, type: 3}
-      propertyPath: maxInputRange
-      value: 116
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3371,12 +3369,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 8156939276982445739}
+  - {fileID: 1740301210}
   - {fileID: 705507995}
   - {fileID: 1730395293}
   - {fileID: 6489424474826869357}
   - {fileID: 591744649}
   - {fileID: 1906396768}
-  - {fileID: 1740301210}
   - {fileID: 1573423091}
   - {fileID: 1196359129}
   - {fileID: 1374233100}

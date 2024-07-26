@@ -5432,7 +5432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4277677651496357183
 Transform:
   m_ObjectHideFlags: 0
@@ -5524,8 +5524,8 @@ GameObject:
   - component: {fileID: 1945603532078308060}
   - component: {fileID: 7877570703370491462}
   - component: {fileID: 5843002486608109577}
-  - component: {fileID: 3436006890941373317}
   - component: {fileID: 7041158287745764479}
+  - component: {fileID: 3436006890941373317}
   - component: {fileID: 4259848521986375160}
   m_Layer: 0
   m_Name: Model
@@ -5587,6 +5587,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseTransform: {fileID: 1945603532078308060}
   acceleration: 11
+--- !u!114 &7041158287745764479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414058287316284414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b1d0273e64daf49bf3a17437b494ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentList: []
 --- !u!114 &3436006890941373317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5601,19 +5614,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   componentList:
   - {fileID: 5466858851253481706}
---- !u!114 &7041158287745764479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7414058287316284414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b1d0273e64daf49bf3a17437b494ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  componentList: []
 --- !u!114 &4259848521986375160
 MonoBehaviour:
   m_ObjectHideFlags: 0
