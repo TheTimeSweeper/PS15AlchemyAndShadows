@@ -18,7 +18,7 @@ MonoBehaviour:
   elementColor: {r: 0.5896226, g: 0.9417553, b: 1, a: 1}
   massGrowthMultiplier: 0
   massBaseMass: 5
-  massVelocityMultiplier: 40
+  massVelocityMultiplier: 69
   massSpawnState:
     activeStateName: ActiveStates.Elements.BasicElementGrow
   massLetGoState:

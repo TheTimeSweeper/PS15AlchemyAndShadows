@@ -1,9 +1,9 @@
 ﻿using SpellCasting;
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Progress;
+using UnityEngine.EventSystems;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 public static class Util
 {
@@ -114,5 +114,46 @@ public static class Util
             dict[key] = 0;
         }
         dict[key] += value;
+    }
+
+    private static void LogToDisplay(object message, string color, KeyCode keycode = default, UnityEngine.Object context = null)
+    {
+        if (keycode != default && !Input.GetKey(keycode))
+            return;
+
+        StaticLogDisplay.Log(message.ToString(), color);
+    }
+
+    public static void Log(object message, KeyCode keycode = default, UnityEngine.Object context = null)
+    {
+        Debug.Log(message, context);
+        LogToDisplay(message, "white", keycode, context);
+    }
+
+    public static void LogError(object message, KeyCode keycode = default, UnityEngine.Object context = null)
+    {
+        Debug.LogError(message, context);;
+        LogToDisplay(message, "red", keycode, context);
+
+    }
+
+    public static void LogWarning(object message, KeyCode keycode = default, UnityEngine.Object context = null)
+    {
+        Debug.LogWarning(message, context);
+        LogToDisplay(message, "yellow", keycode, context);
+    }
+
+    public static Vector3 ScreenToCanvasPosition(Vector3 inputPosition)
+    {
+        //jam this probably doesnt work on other resolutions
+            //get fucked ultrawiders
+        inputPosition.x = inputPosition.x / Screen.width * 2560;
+        inputPosition.y = inputPosition.y / Screen.height * 1440;
+        return inputPosition;
+    }
+
+    public static float TestValue(this GameObject gob, int index)
+    {
+        return gob.GetComponent<TestValues>().floats[index];
     }
 }

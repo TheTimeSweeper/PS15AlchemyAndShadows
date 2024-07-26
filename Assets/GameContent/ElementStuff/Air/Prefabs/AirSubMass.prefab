@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1502281406013002248}
   - component: {fileID: 5094114858137204261}
   - component: {fileID: -135243547296184392}
-  - component: {fileID: 7126754995028586448}
+  - component: {fileID: -8956635059687887134}
   m_Layer: 0
   m_Name: AirSubMass
   m_TagString: Untagged
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392a07cf2534f45449902f8a52befa08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewContainer: {fileID: 4547132137007555094}
+  massScaleContainer: {fileID: 4547132137007555094}
   rigidBody: {fileID: 7549978788094093812}
   projectileController: {fileID: 914124400936391975}
 --- !u!54 &7549978788094093812
@@ -93,10 +93,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a4b27ffb73eb643aee15bb9efec3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamComponent: {fileID: 7126754995028586448}
   subComponentsBehaviours:
   - {fileID: 5094114858137204261}
   - {fileID: -135243547296184392}
+  - {fileID: -8956635059687887134}
   dormantComponents:
   - {fileID: 1502281406013002248}
   - {fileID: 5094114858137204261}
@@ -149,7 +149,7 @@ MonoBehaviour:
       m_Calls: []
   destroyOnImpact: 0
   destroyOnImpactGraceTime: 0.2
---- !u!114 &7126754995028586448
+--- !u!114 &-8956635059687887134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,10 +158,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 826222899265231781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 150d89e9dfc2e90479cb690a8cf371eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8da61de7bb017f649ba6bf26c208686b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamIndex: 0
+  rigidBody: {fileID: 7549978788094093812}
 --- !u!1 &1843736058039858248
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +266,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5065,6 +5068,9 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

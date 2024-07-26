@@ -1,0 +1,88 @@
+﻿using SpellCasting;
+using Unity.VisualScripting;
+using UnityEngine;
+
+namespace ActiveStates.Characters
+{
+
+    public class GenericMeleeCombo : BasicMeleeAttack
+    {
+        protected virtual int comboHits => 1;
+        protected override string hitboxName => "BasicHitbox";
+        protected override float damageCoefficient => 1;
+        protected override float baseDuration => 0.5f;
+        protected override float baseCastStartTimeFraction => 0.1f;
+        protected override float baseCastEndTimeFraction => 0.4f;
+        protected override float baseOtherStateInterruptTimeFraction => 0.5f;
+        protected override float baseMovementInterruptTimeFraction => 0.6f;
+
+        public int hits;
+
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            hits++;
+            Debug.LogWarning("entering melee");
+        }
+
+        public override void OnFixedUpdate()
+        {
+            base.OnFixedUpdate();
+
+            if(fixedAge > otherStateInterruptTime)
+            {
+                SetNextState();
+            }
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            Debug.LogWarning("done attacking at " + fixedAge.ToString("0.00"));
+        }
+
+        protected override void OnHitEnemyAuthority()
+        {
+            base.OnHitEnemyAuthority();
+            Debug.LogWarning("hit a guy");
+        }
+
+        protected override void SetNextState()
+        {
+            if (hits < comboHits)
+            {
+                //jam ugly
+                machine.setState(ActiveStateCatalog.InstantiateState(this.GetType().ToString()));
+            }
+            else
+            {
+                base.SetNextState();
+            }
+        }
+
+        protected override void OnMovementInterrupt()
+        {
+            if (hits < comboHits)
+            {
+                //jam ugly
+                machine.setState(ActiveStateCatalog.InstantiateState(this.GetType().ToString()));
+            }
+            else
+            {
+                base.OnMovementInterrupt();
+            }
+        }
+
+        public override void ModifyNextState(ActiveState state)
+        {
+            base.ModifyNextState(state);
+            GenericMeleeCombo comboState;
+            if((comboState = state as GenericMeleeCombo) != null)
+            {
+                comboState.hits = hits;
+                comboState.aimDirection = aimDirection; 
+            }
+
+        }
+    }
+}

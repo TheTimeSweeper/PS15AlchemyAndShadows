@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GestureSwirl
   m_EditorClassIdentifier: 
   priority: 2
-  angleThreshold: 720
+  angleThreshold: 360
