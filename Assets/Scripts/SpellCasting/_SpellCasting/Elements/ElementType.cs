@@ -78,6 +78,8 @@ namespace SpellCasting
 
         [SerializeField]
         private List<ElementType> componentElements;
+        public List<ElementType> ComponentElements => componentElements;
+
         public bool IsSecondary => componentElements.Count > 1;
 
         public SerializableActiveState FindGestureStateType(AimGesture gesture)

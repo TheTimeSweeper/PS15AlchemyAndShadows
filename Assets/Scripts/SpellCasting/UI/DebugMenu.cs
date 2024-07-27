@@ -30,7 +30,7 @@ namespace SpellCasting.UI
 
             AddFunnyButton("Funny Respawn", FunnyFix);
 
-            foreach (ElementType element in ElementCatalog.Instance.ElementTypes.Values)
+            foreach (ElementType element in ElementCatalog.Instance.ElementTypesMap.Values)
             {
                 AddToggleElementButton(element);
             }

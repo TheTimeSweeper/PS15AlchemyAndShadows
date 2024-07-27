@@ -10,7 +10,6 @@ namespace SpellCasting
         {
             //Util.LogWarning($"inputBank.CurrentPrimaryInput: {inputBank.CurrentPrimaryInput}, inputBank.CurrentPrimaryInput.JustPressed: {inputBank.CurrentPrimaryInput != null && inputBank.CurrentPrimaryInput.JustPressed(this + "1")}", UnityEngine.KeyCode.Z);
             //just pressed a button , set its element
-            //wait is this broken
             if (inputBank.CurrentPrimaryInput != null && inputBank.CurrentPrimaryInput.JustPressed(this))
             {
                 ElementType inputElement = caster.TryGetInputElement(inputBank.CurrentPrimaryInput);
