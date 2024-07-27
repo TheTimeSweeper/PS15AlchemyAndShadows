@@ -8,7 +8,7 @@ namespace ActiveStates.Characters
     {
         protected abstract string hitboxName { get; }
         protected abstract float damageCoefficient { get; }
-        protected virtual float positionShift => 1;
+        protected virtual float positionShift => 0.5f;
         protected virtual float positionShiftDeceleration => 16;
 
         protected OverlapAttack attack;
@@ -29,7 +29,7 @@ namespace ActiveStates.Characters
                 Team = teamComponent.TeamIndex
             };
 
-            _shift = inputBank.GlobalMoveDirection * gameObject.GetTestValue(0) * characterBody.stats.MoveSpeed;
+            _shift = inputBank.GlobalMoveDirection * 0.69f * characterBody.stats.MoveSpeed;
 
             if (aimDirection == default)
             {
@@ -38,6 +38,7 @@ namespace ActiveStates.Characters
             characterModel.CharacterDirection.OverrideLookDirection(aimDirection, duration);
 
             //jam effectcatalog when
+                //well I did it but this works so not touching it til i need to
             if (characterModel.particleSystemLocator)
             {
                 ParticleSystem swipeParticle = characterModel.particleSystemLocator.LocateByName("SwipeParticle");
@@ -53,7 +54,7 @@ namespace ActiveStates.Characters
             base.OnCastFixedUpdate();
 
             fixedMotorDriver.AddedMotion = _shift;
-            _shift = Util.ExpDecayLerp(_shift, default, gameObject.GetTestValue(1), Time.fixedDeltaTime);
+            _shift = Util.ExpDecayLerp(_shift, default, 11, Time.fixedDeltaTime);
 
             if (attack.Fire())
             {

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07841b780a3d574b8c617304f95f61e, type: 3}
   m_Name: ElementEnemyFire
   m_EditorClassIdentifier: 
-  index: 0
+  index: 20
+  baseElement: 0
   elementMassPrefab: {fileID: 0}
   cursorIndicatorPrefab: {fileID: 0}
   elementColor: {r: 0, g: 0, b: 0, a: 0}

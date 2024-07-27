@@ -33,6 +33,10 @@ namespace SpellCasting
         public ElementTypeIndex Index { get => index; }
 
         [SerializeField]
+        private ElementTypeIndex baseElement;
+        public ElementTypeIndex BaseElement { get => baseElement; }
+
+        [SerializeField]
         private ElementMass elementMassPrefab;
         public ElementMass ElementMassPrefab { get => elementMassPrefab; }
 
@@ -72,10 +76,9 @@ namespace SpellCasting
         private List<ElementActionState> elementActions;
         public List<ElementActionState> ElementActions => elementActions;
 
-
         [SerializeField]
         private List<ElementType> componentElements;
-        private bool IsSecondary => componentElements.Count > 1;
+        public bool IsSecondary => componentElements.Count > 1;
 
         public SerializableActiveState FindGestureStateType(AimGesture gesture)
         {

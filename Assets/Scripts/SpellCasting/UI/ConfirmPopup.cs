@@ -42,6 +42,7 @@ namespace SpellCasting.UI
                 button.gameObject.SetActive(false);
                 return;
             }
+            text.text = label;
 
             button.onClick.AddListener(Button);
 

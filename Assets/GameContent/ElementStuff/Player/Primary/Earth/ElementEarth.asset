@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b455bdb91be16c40b3a0aac8c624b48, type: 3}
+  m_Name: ElementEarth
+  m_EditorClassIdentifier: 
+  index: 1
+  baseElement: 1
+  elementMassPrefab: {fileID: 8323308202881544581, guid: f0399cf9ce4623d4cb939acd06e48519, type: 3}
+  cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
+  elementColor: {r: 0.5849056, g: 0.32974672, b: 0.1738163, a: 1}
+  massGrowthMultiplier: 0
+  massBaseMass: 2
+  massVelocityMultiplier: 10
+  massSpawnState:
+    activeStateName: ActiveStates.Elements.BasicElementGrow
+  massLetGoState:
+    activeStateName: ActiveStates.Elements.BasicElementLetGo
+  bodyMeleeStaterino:
+    activeStateName: ActiveStates.Characters.TwoHitCombo
+  elementActions:
+  - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.Earth.EarthSwipe
+    baseManaCost: 0
+  - gestureType: {fileID: 11400000, guid: 44615728a5361634c9e3b0f5a2518930, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.BasicElementMelee
+    baseManaCost: 0
+  - gestureType: {fileID: 11400000, guid: c52837f313ef4ca4396eed8288aaf495, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.BasicElementLetGo
+    baseManaCost: 0
+  componentElements: []

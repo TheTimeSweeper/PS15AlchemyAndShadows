@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b20a31dc2e3b374e8e48010978dacfd, type: 3}
+  m_Name: DamageTypeFreeze
+  m_EditorClassIdentifier: 
+  damageTypeIndex: 1
+  stunTime: 3
+  damageMultipler: 2
+  effectPrefab: {fileID: 7290836164328417482, guid: 84097e2c4018c584aa7c11a3db2479a3, type: 3}
+  stunInterruptPriority: 7
+  stunState:
+    activeStateName: ActiveStates.Characters.FrozenState

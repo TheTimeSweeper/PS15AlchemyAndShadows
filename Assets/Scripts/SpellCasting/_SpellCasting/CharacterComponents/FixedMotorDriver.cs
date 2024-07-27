@@ -6,7 +6,7 @@ namespace SpellCasting
     public class FixedMotorDriver : MonoBehaviour
     {
         [SerializeField]
-        private MotorEngine engine;
+        public MotorEngine engine;
 
         [SerializeField]
         private float controlledAcceleration= 100;

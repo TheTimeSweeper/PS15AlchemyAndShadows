@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ActiveStates;
+using System;
 using UnityEngine;
 
 namespace SpellCasting
 {
+
     public class CameraController : MonoBehaviour
     {
         [SerializeField]

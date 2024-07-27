@@ -8,6 +8,8 @@ namespace SpellCasting
         [SerializeField]
         private T[] componentList;
 
+        public T[] ComponentList { get => componentList; }
+
         private Dictionary<string, T> _nameToComponent = new Dictionary<string, T>();
 
         public virtual void Awake()

@@ -4,14 +4,15 @@ namespace SpellCasting
 {
     public class HealthComponent : MonoBehaviour, IHasCommonComponents
     {
-        public delegate void HealthChangedEvent(float healthDelta);
-        public event HealthChangedEvent OnHealthChange;
+        public delegate void DamageTakenEvent(GetDamagedinfo getDamagedInfo);
+        public event DamageTakenEvent OnDamageTaken;
+        public delegate void ModifyDamageCallback(GetDamagedinfo getDamagedInfo);
+        public event ModifyDamageCallback PreModifyDamage;
 
-        public delegate void ModifyDamageCallback(DamageInfo damage);
-        public event ModifyDamageCallback OnModifyDamage;
-
-        public delegate void ModifyHealCallback(HealInfo damage);
-        public event ModifyHealCallback OnModifyHeal;
+        public delegate void HealTakenEvenet(float healAmount);
+        public event HealTakenEvenet OnHealTaken;
+        public delegate void ModifyHealCallback(HealingInfo damage);
+        public event ModifyHealCallback PreModifyHeal;
 
         [SerializeField]
         private float health;
@@ -31,19 +32,32 @@ namespace SpellCasting
             this.health = health;
         }
 
-        public void TakeDamage(DamageInfo damage)
+        public void TakeDamage(DamagingInfo damage)
         {
-            OnModifyDamage?.Invoke(damage);
+            GetDamagedinfo info = new GetDamagedinfo
+            {
+                VictimHealth = this,
+                VictimBody = commonComponents.CharacterBody,
+                DamagingInfo = damage
+            };
 
-            health -= damage.Value;
-            OnHealthChange?.Invoke(damage.Value);
+            DamageTypeCatalog.PreModifyDamageAll(info);
+
+            PreModifyDamage?.Invoke(info);
+
+            health -= damage.DamageValue;
+
+            DamageTypeCatalog.OnTakeDamageAll(info);
+
+            OnDamageTaken?.Invoke(info);
         }
-        public void Heal(HealInfo heal)
-        {
-            OnModifyHeal?.Invoke(heal);
 
-            health += heal.Value;
-            OnHealthChange?.Invoke(heal.Value);
+        public void Heal(HealingInfo heal)
+        {
+            PreModifyHeal?.Invoke(heal);
+
+            health += heal.DamageValue;
+            OnHealTaken?.Invoke(heal.DamageValue);
         }
 
         public void UpdateMaxHealth(float newMaxHealth, bool heal)

@@ -10,9 +10,10 @@ namespace SpellCasting
         public CharacterBody OwnerBody { get; set; }
         public Hitbox Hitbox { get; set; }
         public float Damage { get; set; }
+        public DamageTypeIndex DamageType { get; set; }
         public TeamIndex Team { get; set; }
         public TeamTargetType TeamTargeting { get; set; } = TeamTargetType.OTHER;
-        public DamageInfo DamageInfo { get; set; }
+        public DamagingInfo DamageInfo { get; set; }
 
         private List<HealthComponent> _alreadyHitTargets = new List<HealthComponent>();
         public List<HealthComponent> HitTargets => _alreadyHitTargets;
@@ -65,15 +66,16 @@ namespace SpellCasting
                     _alreadyHitTargets.Add(healthComponent);
                     hit = true;
 
-                    if(DamageInfo == null)
-                    {
-                        DamageInfo = new DamageInfo { AttackerObject = OwnerGameObject, AttackerBody = OwnerBody, Value = Damage };
-                    }
-
                     if (Damage > 0)
                     {
+                        if (DamageInfo == null)
+                        {
+                            DamageInfo = new DamagingInfo { AttackerObject = OwnerGameObject, AttackerBody = OwnerBody, DamageValue = Damage, DamageTypeIndex = DamageType };
+                        }
+
                         healthComponent.TakeDamage(DamageInfo);
-                        EffectManager.SpawnEffect(EffectIndex.HITFLASH, collider.transform.position);
+                        //jam all attacks od the same inmpact effect yep
+                        EffectManager.SpawnEffect(EffectIndex.HITFLASH, collider.transform.position, collider.transform);
                     }
                 }
             }

@@ -40,5 +40,13 @@ namespace SpellCasting
             characterController.Move(movement + Vector3.up * _ySpeed);
         }
 
+        public override void Teleport(Vector3 destination)
+        {
+            _ySpeed = 0;
+            characterController.enabled = false;
+            characterController.transform.position = destination;
+            characterController.enabled = true;
+        }
+
     }
 }

@@ -35,7 +35,7 @@ namespace SpellCasting
 
             SavedData = SavedData.LoadOrCreate();
 
-            RoomCatalog.instance.InitWithMainGame();
+            TEMPRoomCatalog.InitWithMainGame();
         }
 
         private void Update()

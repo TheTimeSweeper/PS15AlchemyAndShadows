@@ -27,10 +27,6 @@ public static class Util
         return component.CommonComponents.TeamComponent.TeamIndex;
     }
 
-    public static bool HasFlag(this uint flag1, uint flag2){
-        return (flag1 & flag2) == flag2;
-    }
-
     public static T WeightedRandom<T>(this List<T> items, Func<T, float> getWeight)
     {
         List<float> weightList = new List<float>();

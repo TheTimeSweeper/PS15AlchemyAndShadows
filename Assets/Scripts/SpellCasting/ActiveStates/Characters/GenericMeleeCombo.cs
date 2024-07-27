@@ -22,7 +22,6 @@ namespace ActiveStates.Characters
         {
             base.OnEnter();
             hits++;
-            Debug.LogWarning("entering melee");
         }
 
         public override void OnFixedUpdate()
@@ -38,13 +37,11 @@ namespace ActiveStates.Characters
         public override void OnExit()
         {
             base.OnExit();
-            Debug.LogWarning("done attacking at " + fixedAge.ToString("0.00"));
         }
 
         protected override void OnHitEnemyAuthority()
         {
             base.OnHitEnemyAuthority();
-            Debug.LogWarning("hit a guy");
         }
 
         protected override void SetNextState()

@@ -83,7 +83,7 @@ namespace SpellCasting
     [System.Serializable]
     public abstract class VariableStat
     {
-        //jam i am not spending game jam time writing a custom property drawer like an idiot
+        //jam wait i am not spending game jam time writing a custom property drawer like an idiot
     }
 
     public abstract class VariableStat<T> : VariableStat

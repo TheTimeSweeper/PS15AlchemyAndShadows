@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 5088064961873132389}
   - component: {fileID: 1734050388914010690}
   - component: {fileID: 1867267761727004822}
+  - component: {fileID: 2124546673239639657}
   m_Layer: 0
   m_Name: Catalogs
   m_TagString: Untagged
@@ -246,3 +247,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
   - {fileID: 11400000, guid: 6dd5c6d84daa7874898992a754a5cde1, type: 2}
   - {fileID: 11400000, guid: 44615728a5361634c9e3b0f5a2518930, type: 2}
+--- !u!114 &2124546673239639657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8892113247995895942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461308dca3da6094e80de785e6aa13ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catalogItems:
+  - {fileID: 11400000, guid: 74bdc813bc347dc4a8286bed8406c654, type: 2}
+  - {fileID: 11400000, guid: e5e80ace8dbf5a1469ffe0dc37ecfe1c, type: 2}

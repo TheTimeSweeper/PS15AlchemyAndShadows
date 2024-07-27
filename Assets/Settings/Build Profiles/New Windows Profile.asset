@@ -33,7 +33,7 @@ MonoBehaviour:
         m_ConnectProfiler: 0
         m_BuildWithDeepProfilingSupport: 1
         m_AllowDebugging: 1
-        m_WaitForManagedDebugger: 0
+        m_WaitForManagedDebugger: 1
         m_ManagedDebuggerFixedPort: 0
         m_ExplicitNullChecks: 0
         m_ExplicitDivideByZeroChecks: 0
@@ -43,6 +43,6 @@ MonoBehaviour:
         m_WindowsBuildAndRunDeployTarget: 0
         m_Architecture: 0
         m_CreateSolution: 0
-        m_CopyPDBFiles: 0
+        m_CopyPDBFiles: 1
         m_WindowsDevicePortalAddress: 
         m_WindowsDevicePortalUsername: 

@@ -5040,7 +5040,7 @@ GameObject:
   - component: {fileID: 7150011646177074888}
   m_Layer: 0
   m_Name: CharJoanna
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5081,6 +5081,7 @@ MonoBehaviour:
     BaseDamage: 1
     BaseAttackSpeed: 1
     BaseStunFactor: 1
+    BaseKnockbackFactor: 1
     BaseMaxMana: 100
     BaseManaRegeneration: 1
     BaseManaCostMultiplier: 1
@@ -5205,6 +5206,7 @@ MonoBehaviour:
   commonComponents: {fileID: 1487827616747877697}
   DefaultState:
     activeStateName: ActiveStates.Characters.GenericCharacterMove
+  currentState: 
 --- !u!114 &2415498122064681131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5221,6 +5223,7 @@ MonoBehaviour:
   commonComponents: {fileID: 1487827616747877697}
   DefaultState:
     activeStateName: ActiveStates.Characters.ManipulatingElementsState
+  currentState: 
 --- !u!114 &4556897560370750402
 MonoBehaviour:
   m_ObjectHideFlags: 0

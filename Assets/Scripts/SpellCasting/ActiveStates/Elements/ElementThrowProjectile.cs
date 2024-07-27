@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SpellCasting;
+using UnityEngine;
 
 namespace ActiveStates.Elements
 {
@@ -13,19 +14,25 @@ namespace ActiveStates.Elements
                 Vector3 originalPosition = elementMass.SubMasses[i].transform.position;
                 Vector3 relativePOsition = originalPosition - elementMass.CenterPosition;
 
-                elementMass.SubMasses[i].JAMActivateProjectile(characterBody, 
+                elementMass.SubMasses[i].JAMActivateProjectile(characterBody,
                     inputBank.AimDirection * elementType.MassVelocityMultiplier,
                     GetPositionInlineWithDirectionPerpendicularly() + relativePOsition,
-                    originalPosition);
+                    originalPosition,
+                    getDamageType());
             }
 
             elementMass.Casted = true;
         }
 
+        protected virtual DamageTypeIndex getDamageType()
+        {
+            return DamageTypeIndex.NONE;
+        }
+
         protected virtual Vector3 GetPositionInlineWithDirectionPerpendicularly()
         {
 
-            return elementMass.CenterPositionRaw;
+            return elementMass.CenterPositionRaw - inputBank.AimDirection * inputBank.GestureDistance * 0.1f;
             //Vector3 CMinusR = elementMass.CenterPosition - elementMass.CenterPositionRaw;
 
             //float theta = Vector3.Angle(CMinusR, inputBank.AimDirection);

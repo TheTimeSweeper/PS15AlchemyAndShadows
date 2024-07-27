@@ -30,6 +30,7 @@ namespace SpellCasting.Projectiles
             {
                 Hitbox = hitbox,
                 Damage = ProjectileInfo.Damage * damageCoefficient,
+                DamageType = ProjectileInfo.DamageType,
                 OwnerGameObject = ProjectileInfo.OwnerObject,
                 Team = ProjectileInfo.TeamIndex
             };

@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices.WindowsRuntime;
 
-namespace ActiveStates
-{
-}
-
 namespace ActiveStates.Characters
 {
     public abstract class BasicTimedState : BodyState
@@ -13,10 +9,11 @@ namespace ActiveStates.Characters
         protected abstract float baseDuration { get; }
         //0-1 time relative to duration that the skill starts
         //for example, set 0.5 and the "cast" will happen halfway through the skill
-        protected abstract float baseCastStartTimeFraction { get; }
+        protected virtual float baseCastStartTimeFraction => 1;
         protected virtual float baseCastEndTimeFraction => 1;
-        protected virtual float baseOtherStateInterruptTimeFraction => 0.8f;
-        protected virtual float baseMovementInterruptTimeFraction => 0.9f;
+        protected virtual float baseOtherStateInterruptTimeFraction => 1;
+        protected virtual float baseMovementInterruptTimeFraction => 1;
+        protected virtual bool attackSpeedAffected => true;
 
         protected float duration;
         protected float castStartTime;
@@ -35,7 +32,7 @@ namespace ActiveStates.Characters
 
         protected virtual void InitDurationValues()
         {
-            duration = baseDuration / characterBody.stats.AttackSpeed;
+            duration = baseDuration / (attackSpeedAffected? characterBody.stats.AttackSpeed : 1);
             castStartTime = baseCastStartTimeFraction * duration;
             castEndTime = baseCastEndTimeFraction * duration;
             otherStateInterruptTime = baseOtherStateInterruptTimeFraction * duration;

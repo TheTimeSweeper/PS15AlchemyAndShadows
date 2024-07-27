@@ -11,5 +11,6 @@ namespace SpellCasting.Projectiles
         public Vector3 PreviousPosition;
         public TeamIndex TeamIndex;
         public float Damage = 1;
+        public DamageTypeIndex DamageType;
     }
 }

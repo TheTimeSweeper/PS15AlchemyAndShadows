@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7395482652056944315}
   - component: {fileID: 5628387582986095789}
-  - component: {fileID: 4794498023403223793}
+  - component: {fileID: 3804793570871115614}
+  - component: {fileID: 3518759617939675465}
   m_Layer: 5
   m_Name: ConfirmPopup
   m_TagString: Untagged
@@ -58,7 +59,7 @@ MonoBehaviour:
   yesButton: {fileID: 1491361594230077823}
   noText: {fileID: 1074305559035763767}
   noButton: {fileID: 8041850996873107093}
---- !u!114 &4794498023403223793
+--- !u!114 &3804793570871115614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,7 +68,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1926062974000334527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c12e1c728550c469e527bf5f5aebfa, type: 3}
+  m_Script: {fileID: 11500000, guid: c7c40e9ebbc71184580f3f88be6aae2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3518759617939675465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926062974000334527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc3b876613bda3459906744415e4278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6380933803372119024
@@ -449,6 +462,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NoButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4590202524379167786, guid: c6fb7964f1509284592314215e87de63, type: 3}
+      propertyPath: m_fontSize
+      value: 97.15
+      objectReference: {fileID: 0}
     - target: {fileID: 5825016025065239986, guid: c6fb7964f1509284592314215e87de63, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -584,6 +601,10 @@ PrefabInstance:
     - target: {fileID: 4283860252804852509, guid: c6fb7964f1509284592314215e87de63, type: 3}
       propertyPath: m_Name
       value: YesButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590202524379167786, guid: c6fb7964f1509284592314215e87de63, type: 3}
+      propertyPath: m_fontSize
+      value: 97.15
       objectReference: {fileID: 0}
     - target: {fileID: 5825016025065239986, guid: c6fb7964f1509284592314215e87de63, type: 3}
       propertyPath: m_Pivot.x

@@ -22,9 +22,10 @@ namespace SpellCasting
             }
         }
 
-        public static void SpawnEffect(EffectIndex index, Vector3 position)
+        public static void SpawnEffect(EffectIndex index, Vector3 position, Transform transform = null)
         {
-            Instance.GetEffectFromPool(index).StartEffect(position);
+            EffectPooled Effect = Instance.GetEffectFromPool(index).StartEffect(position);
+            Effect.transform.parent = transform != null? transform : Instance.transform;
         }
 
         public EffectPooled GetEffectFromPool(EffectIndex index)
@@ -41,6 +42,7 @@ namespace SpellCasting
 
         internal static void ReturnEffect(EffectPooled effectPooled)
         {
+            effectPooled.transform.parent = Instance.transform;
             Instance._effectPools[effectPooled.effectIndex].ReturnItem(effectPooled);
         }
     }

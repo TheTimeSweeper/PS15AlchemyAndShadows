@@ -17,7 +17,12 @@ namespace ActiveStates
         public CommonComponentsHolder CommonComponents { get => commonComponents; set { commonComponents = value; } }
 
         [SerializeField]
-        private SerializableActiveState DefaultState;
+        private SerializableActiveState DefaultState = new SerializableActiveState(typeof(IdleState));
+
+#if UNITY_EDITOR
+        [SerializeField]
+        private string currentState;
+#endif
 
         private Queue<ActiveState> _queuedStates = new Queue<ActiveState>();
         private ActiveState _currentlyRunningState;
@@ -57,8 +62,12 @@ namespace ActiveStates
             }
 
             exitCurrentState(newState);
+
             _currentlyRunningState = newState;
 
+#if UNITY_EDITOR
+            currentState = _currentlyRunningState.GetType().ToString();
+#endif
             enterCurrentState();
         }
 
@@ -111,7 +120,7 @@ namespace ActiveStates
         }
 
         public void tryInterruptState(ActiveState activeState, InterruptPriority priority)
-        {
+          {
             if(_currentlyRunningState.GetMinimumInterruptPriority() <= priority)
             {
                 setState(activeState);

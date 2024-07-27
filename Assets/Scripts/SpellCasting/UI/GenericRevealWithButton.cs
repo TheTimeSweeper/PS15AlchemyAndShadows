@@ -17,7 +17,7 @@ namespace SpellCasting.UI
 
         private void reveal()
         {
-            toReveal.SetActive(toReveal.activeSelf);
+            toReveal.SetActive(!toReveal.activeSelf);
         }
     }
 }

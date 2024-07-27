@@ -32,7 +32,7 @@ namespace SpellCasting.World
 
             availableCredits = TEMPStartingCredits;
 
-            RoomCatalog.instance.InitWithMainGame();
+            RoomCatalog.Instance.InitWithMainGame();
 
             _uniqueRoomsSpawned = new Dictionary<UniqueRoom, int>();
         }
@@ -42,12 +42,12 @@ namespace SpellCasting.World
             _existingRoomQueue = new List<Room>(existingRooms);
 
             float lowestCost = float.MaxValue;
-            for (int i = 0; i < RoomCatalog.instance.AllAvailableRooms.Count; i++)
+            for (int i = 0; i < RoomCatalog.Instance.AllAvailableRooms.Count; i++)
             {
-                float cost = RoomCatalog.instance.AllAvailableRooms[i].RoomCost;
+                float cost = RoomCatalog.Instance.AllAvailableRooms[i].RoomCost;
                 if (cost > 0)
                 {
-                    lowestCost = RoomCatalog.instance.AllAvailableRooms[i].RoomCost;
+                    lowestCost = RoomCatalog.Instance.AllAvailableRooms[i].RoomCost;
                 }
             }
 
@@ -109,7 +109,7 @@ namespace SpellCasting.World
                     else
                     {
                         //spawn rooms based on currency (aka continue as normal)
-                        potentialRooms = new List<Room>(RoomCatalog.instance.AllAvailableRooms);
+                        potentialRooms = new List<Room>(RoomCatalog.Instance.AllAvailableRooms);
                         for (int r = potentialRooms.Count - 1; r >= 0; r--)
                         {
                             if (potentialRooms[r].RoomCost > availableCredits)
@@ -239,9 +239,9 @@ namespace SpellCasting.World
         // I've passed 200 script lines noooooo
         private bool AreAllRequiredRoomsSpawned()
         {
-            for (int i = 0; i < RoomCatalog.instance.AllUniqueRooms.Count; i++)
+            for (int i = 0; i < RoomCatalog.Instance.AllUniqueRooms.Count; i++)
             {
-                UniqueRoom room = RoomCatalog.instance.AllUniqueRooms[i];
+                UniqueRoom room = RoomCatalog.Instance.AllUniqueRooms[i];
 
                 if (_uniqueRoomsSpawned.TryGetValueDefault(room) < room.minimumInstancesRequired)
                 {
@@ -253,9 +253,9 @@ namespace SpellCasting.World
 
         private void AddUniqueRooms(List<Room> potentialRooms)
         {
-            for (int i = 0; i < RoomCatalog.instance.AllUniqueRooms.Count; i++)
+            for (int i = 0; i < RoomCatalog.Instance.AllUniqueRooms.Count; i++)
             {
-                UniqueRoom uniqueRoom = RoomCatalog.instance.AllUniqueRooms[i];
+                UniqueRoom uniqueRoom = RoomCatalog.Instance.AllUniqueRooms[i];
 
                 if(_uniqueRoomsSpawned.ContainsKey(uniqueRoom) && _uniqueRoomsSpawned[uniqueRoom] >= uniqueRoom.maximumInstancesAllowed)
                     continue;
@@ -266,11 +266,11 @@ namespace SpellCasting.World
 
         public void IncrementUniqueRoomAndCheckRemove(Room newRoomPrefab, List<Room> potentialRooms)
         {
-            for (int i = 0; i < RoomCatalog.instance.AllUniqueRooms.Count; i++)
+            for (int i = 0; i < RoomCatalog.Instance.AllUniqueRooms.Count; i++)
             {
-                if (RoomCatalog.instance.AllUniqueRooms[i].room == newRoomPrefab)
+                if (RoomCatalog.Instance.AllUniqueRooms[i].room == newRoomPrefab)
                 {
-                    Util.IncrementvValue(_uniqueRoomsSpawned, RoomCatalog.instance.AllUniqueRooms[i], 1);
+                    Util.IncrementvValue(_uniqueRoomsSpawned, RoomCatalog.Instance.AllUniqueRooms[i], 1);
                 }
             }
 
@@ -305,7 +305,7 @@ namespace SpellCasting.World
             }
             existingRooms = new List<Room>
             {
-                Instantiate(RoomCatalog.instance.AllAvailableRooms[0], Vector3.zero, Quaternion.identity, transform)
+                Instantiate(RoomCatalog.Instance.AllAvailableRooms[0], Vector3.zero, Quaternion.identity, transform)
             };
 
             Invoke("GenerateLevel", 0.2f);

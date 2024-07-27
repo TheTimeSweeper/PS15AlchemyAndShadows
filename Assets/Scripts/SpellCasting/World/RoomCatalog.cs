@@ -16,19 +16,15 @@ namespace SpellCasting.World
         private List<Room> _allAvailableRooms;
         public List<Room> AllAvailableRooms => _allAvailableRooms;
 
-        public List<UniqueRoom> AllUniqueRooms;
+        public List<UniqueRoom> AllUniqueRooms { get; private set; }
 
         public List<ElementRequriedRooms> elementRequriedRooms;
 
         [SerializeField]
+        public Room StartRoom;
+
+        [SerializeField]
         private List<UniqueRoom> uniqueRooms;
-
-        public static RoomCatalog instance;
-
-        void Awake()
-        {
-            instance = this;
-        }
 
         //jam initialized by maingame. a base class or interface that maingame can loop through might be nice
         public void InitWithMainGame()

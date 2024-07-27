@@ -1,6 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace SpellCasting.UI
@@ -19,15 +20,33 @@ namespace SpellCasting.UI
 
         private void Start()
         {
+            jango.gameObject.SetActive(false);
+            jangoToggle.gameObject.SetActive(false);
+
             timeScaleSlider.onValueChanged.AddListener(OnTimeScaleSliderChanged);
 
             timeScaleSlider.value = getInverseTimeScaleSliderValue();
             timeScaleText.text = $"Time Scale: {TimeStopperInstance.UnpausedTime.ToString("0.00")}";
 
+            AddFunnyButton("Funny Respawn", FunnyFix);
+
             foreach (ElementType element in ElementCatalog.Instance.ElementTypes.Values)
             {
                 AddToggleElementButton(element);
             }
+        }
+
+        private void AddFunnyButton(string text, UnityAction onClick)
+        {
+            Button NewButton = Instantiate(jango, jango.transform.parent);
+            NewButton.gameObject.SetActive(true);
+            NewButton.GetComponentInChildren<TMP_Text>().text = text;
+            NewButton.onClick.AddListener(onClick);
+        }
+
+        private void FunnyFix()
+        {
+            GameObject.FindWithTag("Player").GetComponent<FixedMotorDriver>().engine.Teleport(GameObject.FindWithTag("Level").transform.position + Vector3.up * 10);
         }
 
         private void AddToggleElementButton(ElementType value)

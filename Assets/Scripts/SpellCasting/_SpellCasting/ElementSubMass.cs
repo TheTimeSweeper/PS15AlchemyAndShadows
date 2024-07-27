@@ -24,13 +24,14 @@ namespace SpellCasting
             CurrentMass = subMass;
         }
 
-        public void JAMActivateProjectile(CharacterBody owner, Vector3 throwVector, Vector3 throwPosition, Vector3 originalPosition)
+        public void JAMActivateProjectile(CharacterBody owner, Vector3 throwVector, Vector3 throwPosition, Vector3 originalPosition, DamageTypeIndex damageType)
         {
             projectileController?.Init(new FireProjectileInfo
             {
                 OwnerObject = owner.gameObject,
                 OwnerBody = owner,
                 Damage = owner.stats.Damage,
+                DamageType = damageType,
                 PreviousPosition = originalPosition,
                 StartPosition = throwPosition,
                 AimDirection = throwVector,

@@ -63,6 +63,10 @@ namespace SpellCasting
         }
     }
 
+    [RequireComponent(typeof(CommonComponentsHolder))]
+    [RequireComponent(typeof(HealthComponent))]
+    [RequireComponent(typeof(StateMachineLocator))]
+    [RequireComponent(typeof(TeamComponent))]
     public class CharacterBody : MonoBehaviour, IHasCommonComponents
     {
         public CharacterStats stats;

@@ -17,6 +17,11 @@ namespace ActiveStates.Elements.Water
             base.OnEnter();
         }
 
+        protected override DamageTypeIndex getDamageType()
+        {
+            return DamageTypeIndex.FREEZE;
+        }
+
         private void addMass(Vector3 positionShift)
         {
             ElementSubMass firstMass = elementMass.SubMasses[0];
