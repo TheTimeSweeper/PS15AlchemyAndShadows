@@ -23,7 +23,7 @@ namespace ActiveStates.Characters
 
             _shift = inputBank.GlobalMoveDirection * 0.69f * characterBody.stats.MoveSpeed;
 
-            if (aimDirection == default)
+            if (aimDirection == Vector3.zero)
             {
                 aimDirection = inputBank.GlobalMoveDirection;
             }
@@ -34,7 +34,8 @@ namespace ActiveStates.Characters
                 Hitbox = characterModel.HitboxLocator.LocateByName(hitboxName),
                 OwnerGameObject = gameObject,
                 Team = teamComponent.TeamIndex,
-                KnockbackDirection = aimDirection.normalized
+                OverrideKnockbackDirection = characterModel.transform.forward,
+                KnockbackForce = 0.4f
             };
 
             characterModel.CharacterDirection.OverrideLookDirection(aimDirection, duration);
@@ -56,7 +57,7 @@ namespace ActiveStates.Characters
             base.OnCastFixedUpdate();
 
             fixedMotorDriver.AddedMotion = _shift;
-            _shift = Util.ExpDecayLerp(_shift, default, 11, Time.fixedDeltaTime);
+            _shift = Util.ExpDecayLerp(_shift, Vector3.zero, 11, Time.fixedDeltaTime);
 
             if (attack.Fire())
             {

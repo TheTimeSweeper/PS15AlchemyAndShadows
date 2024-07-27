@@ -17,19 +17,23 @@ namespace ActiveStates.Characters
 
         private void HealthComponent_PreModifyDamage(GetDamagedinfo getDamagedInfo)
         {
+            if(getDamagedInfo.DamagingInfo.DamageValue <= 0)
+                return;
             if (fixedAge < _minFrozenTime)
                 return;
             if (_modifiedDamage)
                 return;
             _modifiedDamage = true;
+
             getDamagedInfo.DamagingInfo.DamageValue *= (DamageTypeCatalog.GetCatalogItem(DamageTypeIndex.FREEZE) as StunningDamageType).damageMultipler;
         }
 
         private void HealthComponent_OnDamageTaken(GetDamagedinfo getDamagedInfo)
         {
+            if (getDamagedInfo.DamagingInfo.DamageValue <= 0)
+                return;
             if (fixedAge < _minFrozenTime)
                 return;
-
             if (_unfreezed)
                 return;
             _unfreezed = true;

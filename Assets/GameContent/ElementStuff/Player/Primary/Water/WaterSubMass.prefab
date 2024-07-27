@@ -280,13 +280,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subComponentsBehaviours:
-  - {fileID: 2240365389968163620}
   - {fileID: -2011472418742008136}
+  - {fileID: 2240365389968163620}
   - {fileID: 1953175409492016915}
   dormantComponents:
+  - {fileID: -2011472418742008136}
   - {fileID: 2240365389968163620}
   - {fileID: 6504295058412743720}
-  - {fileID: -2011472418742008136}
   - {fileID: 1953175409492016915}
 --- !u!114 &2240365389968163620
 MonoBehaviour:

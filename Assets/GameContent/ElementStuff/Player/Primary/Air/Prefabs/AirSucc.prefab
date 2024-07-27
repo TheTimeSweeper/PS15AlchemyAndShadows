@@ -5123,6 +5123,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  targetTransform: {fileID: 0}
 --- !u!1 &9133109617605774191
 GameObject:
   m_ObjectHideFlags: 0
@@ -5252,12 +5253,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 2517951345225999493}
   damageCoefficient: 1
+  knockbackDirectionRigidbody: {fileID: 0}
+  KnockbackForce: 0
   resetInterval: -1
+  destroyOnImpact: 0
+  destroyOnImpactGraceTime: 0.2
   impactEvent:
     m_PersistentCalls:
       m_Calls: []
-  destroyOnImpact: 0
-  destroyOnImpactGraceTime: 0.2
 --- !u!114 &7990725702055464545
 MonoBehaviour:
   m_ObjectHideFlags: 0

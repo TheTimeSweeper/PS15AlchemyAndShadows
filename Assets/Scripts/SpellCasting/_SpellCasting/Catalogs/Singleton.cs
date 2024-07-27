@@ -10,7 +10,7 @@ namespace SpellCasting
         {
             if (Instance != null)
             {
-                Destroy(gameObject);
+                HandleAdditionalInstance();
                 Instance.ReInit();
                 return;
             }
@@ -20,5 +20,9 @@ namespace SpellCasting
 
         protected virtual void InitOnce() { }
         public virtual void ReInit() { }
+        protected virtual void HandleAdditionalInstance()
+        {
+            Destroy(gameObject);
+        }
     }
 }

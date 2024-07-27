@@ -30,7 +30,7 @@ namespace SpellCasting
             _deltaPosition = transform.position - _lastPosition;
             if (Direction.sqrMagnitude > 1) Direction = Direction.normalized;
             _desiredVelocity = Direction * DesiredSpeed;
-            float lerpValue = Direction == default ? idleInertia : controlledAcceleration;
+            float lerpValue = Direction == Vector3.zero ? idleInertia : controlledAcceleration;
             _currentVelocity = Util.ExpDecayLerp(_currentVelocity, _desiredVelocity, lerpValue, Time.fixedDeltaTime);
 
             //jam faster deceleration value for fuckin uhh stopping and moving opposite direction
@@ -43,10 +43,10 @@ namespace SpellCasting
                 OverrideVelocity = null;
             }
 
-            if (AddedMotion != default)
+            if (AddedMotion != Vector3.zero)
             {
                 movement += AddedMotion;
-                AddedMotion = default;
+                AddedMotion = Vector3.zero;
             }
 
             engine.FixedMove(movement);

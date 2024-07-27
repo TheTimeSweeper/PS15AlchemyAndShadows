@@ -17,6 +17,9 @@ namespace SpellCasting
         [SerializeField]
         private float hitMoveThreshold;
 
+        private float _knockbackTime;
+        private Vector3 _knockback;
+
         private float stunFactor
         {
             get
@@ -48,20 +51,45 @@ namespace SpellCasting
 
         private void Awake()
         {
-            commonComponents.HealthComponent.OnDamageTaken += HealthComponent_OnDamageTaken; ;
+            commonComponents.HealthComponent.OnDamageTaken += HealthComponent_OnDamageTaken;
+        }
+
+        private void Update()
+        {
+            if (_knockbackTime > 0 && _knockback != Vector3.zero)
+            {
+                _knockbackTime -= Time.deltaTime;
+
+                commonComponents.FixedMotorDriver.AddedMotion = _knockback;
+                _knockback = Util.ExpDecayLerp(_knockback, Vector3.zero, 6, Time.fixedDeltaTime);
+            }
         }
 
         private void HealthComponent_OnDamageTaken(GetDamagedinfo damagedInfo)
         {
             if (damagedInfo.DamagingInfo.DamageValue > hitStunThreshold)
             {
-                commonComponents.StateMachineLocator.SetStates(new StunnedState { StunTime = hitStunTime * stunFactor }, InterruptPriority.HITSTUN);
+                SetHitstunState(damagedInfo, true);
             }
             else if (damagedInfo.DamagingInfo.DamageValue > hitMoveThreshold)
             {
-                commonComponents.StateMachineLocator.SetStates(new StunnedState { StunTime = hitStunTime * stunFactor }, InterruptPriority.HITSTUN, true, false);
+                SetHitstunState(damagedInfo, false);
             }
+        }
 
+        public void SetHitstunState(GetDamagedinfo damagedInfo, bool all)
+        {
+            commonComponents.StateMachineLocator.SetStates(
+                new StunnedState
+                {
+                    StunTime = hitStunTime * stunFactor,
+                },
+                InterruptPriority.HITSTUN,
+                true,
+                all);
+
+            _knockbackTime = 0.5f;
+            _knockback = damagedInfo.DamagingInfo.Knockback * commonComponents.CharacterBody.stats.KnockbackFactor;
         }
     }
 }

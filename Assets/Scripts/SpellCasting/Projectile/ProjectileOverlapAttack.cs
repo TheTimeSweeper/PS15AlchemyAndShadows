@@ -5,12 +5,13 @@ namespace SpellCasting.Projectiles
 {
     public class ProjectileOverlapAttack : ProjectileOverlap, IProjectileDormant
     {
-
-        [SerializeField]
-        private Rigidbody rigidBody;
-
         [SerializeField]
         private float damageCoefficient = 1;
+
+        [SerializeField]
+        private Rigidbody knockbackDirectionRigidbody;
+        [SerializeField]
+        private float KnockbackForce = 0.69f;
 
         [SerializeField]
         private float resetInterval = -1;
@@ -37,7 +38,9 @@ namespace SpellCasting.Projectiles
                 DamageType = ProjectileInfo.DamageType,
                 OwnerGameObject = ProjectileInfo.OwnerObject,
                 Team = ProjectileInfo.TeamIndex,
-                KnockbackDirection = rigidBody ? rigidBody.linearVelocity.normalized : default
+                OverrideKnockbackDirection = knockbackDirectionRigidbody ? knockbackDirectionRigidbody.linearVelocity.normalized : Vector3.zero,
+                KnockbackCenter = transform.position,
+                KnockbackForce = KnockbackForce
             };
             _repeatTim = resetInterval;
         }

@@ -26,8 +26,8 @@ namespace SpellCasting
 
         public override void ResetGesture()
         {
-            _lastDelta = default;
-            _lastExtreme = default;
+            _lastDelta = Vector3.zero;
+            _lastExtreme = Vector3.zero;
             _turns = 0;
         }
 

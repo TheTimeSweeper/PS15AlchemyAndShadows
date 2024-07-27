@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 1474388984078184617}
   - component: {fileID: 2158201367414771652}
   - component: {fileID: 2769743149947603239}
-  - component: {fileID: 6701959003239607167}
   - component: {fileID: 972602598804726162}
   m_Layer: 0
   m_Name: AirBlow
@@ -96,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392a07cf2534f45449902f8a52befa08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewContainer: {fileID: 5767191614685003610}
+  massScaleContainer: {fileID: 5767191614685003610}
   rigidBody: {fileID: 4499484956485160274}
   projectileController: {fileID: 1474388984078184617}
 --- !u!54 &4499484956485160274
@@ -138,14 +137,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a4b27ffb73eb643aee15bb9efec3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamComponent: {fileID: 972602598804726162}
   subComponentsBehaviours:
   - {fileID: 2769743149947603239}
-  - {fileID: 6701959003239607167}
+  - {fileID: 0}
   dormantComponents:
   - {fileID: 2158201367414771652}
   - {fileID: 2769743149947603239}
-  - {fileID: 6701959003239607167}
+  - {fileID: 0}
 --- !u!114 &2158201367414771652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,29 +170,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 2957635901804807959}
-  damageCoefficient: 1
+  damageCoefficient: 0.75
+  knockbackDirectionRigidbody: {fileID: 0}
+  KnockbackForce: 2
   resetInterval: -1
+  destroyOnImpact: 0
+  destroyOnImpactGraceTime: 0.2
   impactEvent:
     m_PersistentCalls:
       m_Calls: []
-  destroyOnImpact: 0
-  destroyOnImpactGraceTime: 0.2
---- !u!114 &6701959003239607167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036361271667701353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab88d79a5263b9248ba6508589830f82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitbox: {fileID: 2957635901804807959}
-  force: 0.2
-  succCloseLimit: 3
-  teamTargeting: 2
 --- !u!114 &972602598804726162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +252,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -330,6 +317,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  targetTransform: {fileID: 0}
 --- !u!1 &7094218122728485772
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +376,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

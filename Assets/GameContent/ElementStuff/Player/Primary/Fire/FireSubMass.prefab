@@ -128,14 +128,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subComponentsBehaviours:
+  - {fileID: 8898097480340378306}
   - {fileID: 2974003917913701704}
   - {fileID: 1161459758808466295}
-  - {fileID: 8898097480340378306}
   dormantComponents:
+  - {fileID: 8898097480340378306}
   - {fileID: 2974003917913701704}
   - {fileID: 5790455508350688420}
   - {fileID: 1161459758808466295}
-  - {fileID: 8898097480340378306}
 --- !u!114 &2974003917913701704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,14 +149,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 3022085196851494293}
+  rigidBody: {fileID: 3159130046204335257}
   damageCoefficient: 1
   resetInterval: -1
+  destroyOnImpact: 1
+  destroyOnImpactGraceTime: 0.04
   impactEvent:
     m_PersistentCalls:
       m_Calls: []
-  destroyOnImpact: 1
-  destroyOnImpactGraceTime: 0.04
-  rigidBody: {fileID: 3159130046204335257}
 --- !u!114 &5790455508350688420
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ namespace SpellCasting
         public override bool QualifyGesture(InputBank bank, InputState inputState)
         {
             bank.DebugSwipeMag = bank.GestureDistance;
-            return bank.GestureDistance > threshold && bank.GestureDelta != default;
+            return bank.GestureDistance > threshold && bank.GestureDelta != Vector3.zero;
         }
     }
 }

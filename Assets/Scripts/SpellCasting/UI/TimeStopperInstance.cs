@@ -21,7 +21,7 @@ namespace SpellCasting.UI
             OnUpdasteInstanceList();
         }
 
-        private void OnUpdasteInstanceList()
+        public static void OnUpdasteInstanceList()
         {
             Time.timeScale = ReadOnlyInstancesList.Count > 0 ? 0 : UnpausedTime;
         }

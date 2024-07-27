@@ -7,7 +7,7 @@ namespace SpellCasting
     {
         public override bool QualifyGesture(InputBank bank, InputState inputState)
         {
-            return bank.GestureDelta == default;
+            return bank.GestureDelta == Vector3.zero;
         }
     }
 }

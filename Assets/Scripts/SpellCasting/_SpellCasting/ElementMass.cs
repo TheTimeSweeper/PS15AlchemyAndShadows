@@ -39,7 +39,7 @@ namespace SpellCasting
 
         public void SetPosition(Vector3 aimPoint)
         {
-            if (_centerPosition == default)
+            if (_centerPosition == Vector3.zero)
             {
                 _centerPosition = aimPoint;
                 return;
@@ -48,7 +48,7 @@ namespace SpellCasting
             _centerPosition = Util.ExpDecayLerp(_centerPosition, aimPoint, positionLerpDecay, Time.deltaTime);
 
             //_centerPosition = aimPoint;
-            //if (_lastPosition == default)
+            //if (_lastPosition == Vector3.zero)
             //{
             //    _lastPosition = _centerPosition;
             //}

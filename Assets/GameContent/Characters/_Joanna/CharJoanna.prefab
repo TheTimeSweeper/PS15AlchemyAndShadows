@@ -5037,7 +5037,6 @@ GameObject:
   - component: {fileID: 478314400720116886}
   - component: {fileID: 2078819425590698794}
   - component: {fileID: 8845007593822761126}
-  - component: {fileID: 7150011646177074888}
   m_Layer: 0
   m_Name: CharJoanna
   m_TagString: Player
@@ -5291,21 +5290,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamIndex: 2
---- !u!114 &7150011646177074888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2593886557186326773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6906c2313345bd0429e5b1502d917e6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floats:
-  - 1
-  - 16
 --- !u!1 &3989892459678320299
 GameObject:
   m_ObjectHideFlags: 0
@@ -5571,7 +5555,7 @@ MonoBehaviour:
   elementColoredRenderers:
   - {fileID: 3302817720077320529}
   elementColoredParticles: []
-  noElementColor: {r: 0.87058824, g: 0.48235294, b: 0.90588236, a: 1}
+  noElementColor: {r: 0.7607843, g: 0.48235294, b: 0.90588236, a: 1}
   characterDirection: {fileID: 5843002486608109577}
   childLocator: {fileID: 7041158287745764479}
   hitboxLocator: {fileID: 3436006890941373317}

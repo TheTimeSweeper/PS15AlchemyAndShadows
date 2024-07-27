@@ -25,7 +25,7 @@ namespace SpellCasting
             if(Time.time > _nextResetTime)
             {
                 _mashes = 0;
-                _initialInput = default;
+                _initialInput = Vector3.zero;
             }
 
             if (inputState.JustPressed(this))

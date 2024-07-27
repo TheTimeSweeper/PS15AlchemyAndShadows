@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace SpellCasting
@@ -14,10 +15,14 @@ namespace SpellCasting
         public TeamIndex Team { get; set; }
         public TeamTargetType TeamTargeting { get; set; } = TeamTargetType.OTHER;
         public DamagingInfo DamageInfo { get; set; }
-        public Vector3 KnockbackDirection { get; set; }
+        public Vector3 OverrideKnockbackDirection { get; set; }
+        public Vector3 KnockbackCenter { get;  set; }
+        public float KnockbackForce { get; set; }
 
         private List<HealthComponent> _alreadyHitTargets = new List<HealthComponent>();
         public List<HealthComponent> HitTargets => _alreadyHitTargets;
+
+        public List<HurtBox> _hitResults;
 
         public bool Fire() => Fire(out _, false);
         public bool Fire(out List<HurtBox> hitResults) => Fire(out hitResults, true);
@@ -27,7 +32,12 @@ namespace SpellCasting
 
             if (returnResults)
             {
-                hitResults = new List<HurtBox>();
+                if (_hitResults == null)
+                {
+                    _hitResults = new List<HurtBox>();
+                }
+                _hitResults.Clear();
+                hitResults = _hitResults;
             }
             else
             {
@@ -58,7 +68,7 @@ namespace SpellCasting
                                     validHit = true;
                                 break;
 
-                                //JAM friendlyfiremanager?
+                            //JAM friendlyfiremanager?
                             case var targeting when TeamTargeting.HasFlag(TeamTargetType.OTHER):
                                 if (Util.GetTeamIndex(hurtbox.HealthComponent) != Team)
                                     validHit = true;
@@ -83,20 +93,35 @@ namespace SpellCasting
                     _alreadyHitTargets.Add(healthComponent);
                     hit = true;
 
+                    if (DamageInfo == null)
+                    {
+                        DamageInfo = new DamagingInfo
+                        {
+                            AttackerObject = OwnerGameObject,
+                            AttackerBody = OwnerBody,
+                            DamageValue = Damage,
+                            DamageTypeIndex = DamageType,
+                        };
+                    }
+
+                    if (OverrideKnockbackDirection != Vector3.zero)
+                    {
+                        DamageInfo.Knockback = OverrideKnockbackDirection * KnockbackForce;
+                    }
+                    else
+                    {
+                        if (KnockbackForce > 0)
+                        {
+                            Vector3 knock = collider.transform.position - KnockbackCenter;
+                            knock.y = 0;
+                            DamageInfo.Knockback = knock.normalized * KnockbackForce;
+                        }
+                    }
+
+                    healthComponent.TakeDamage(DamageInfo);
+                    //jam all attacks od the same inmpact effect yep
                     if (Damage > 0)
                     {
-                        if (DamageInfo == null)
-                        {
-                            DamageInfo = new DamagingInfo { 
-                                AttackerObject = OwnerGameObject, 
-                                AttackerBody = OwnerBody,
-                                DamageValue = Damage,
-                                DamageTypeIndex = DamageType
-                            };
-                        }
-
-                        healthComponent.TakeDamage(DamageInfo);
-                        //jam all attacks od the same inmpact effect yep
                         EffectManager.SpawnEffect(EffectIndex.HITFLASH, collider.transform.position, collider.transform);
                     }
                 }

@@ -1,4 +1,6 @@
-﻿namespace ActiveStates.Characters
+﻿using UnityEngine;
+
+namespace ActiveStates.Characters
 {
     public abstract class BodyState : ActiveState
     {
@@ -13,7 +15,7 @@
             if (!inputBank)
                 return;
 
-            if (GetMinimumInterruptPriority() == InterruptPriority.MOVEMENT && inputBank.GlobalMoveDirection != default)
+            if (GetMinimumInterruptPriority() == InterruptPriority.MOVEMENT && inputBank.GlobalMoveDirection != Vector3.zero)
             {
                 OnMovementInterrupt();
             }
