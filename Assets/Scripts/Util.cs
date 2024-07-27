@@ -99,7 +99,10 @@ public static class Util
         return default;
     }
 
-    public static void AddToDictionary<T1>(this Dictionary<T1, int> dict, T1 key, int value)
+    /// <summary>
+    /// creates a new int entry if it doesn't exist and increments it
+    /// </summary>
+    public static void IncrementvValue<T1>(this Dictionary<T1, int> dict, T1 key, int value)
     {
         if (!dict.ContainsKey(key))
         {
@@ -107,7 +110,10 @@ public static class Util
         }
         dict[key] += value;
     }
-    public static void AddToDictionary<T1>(this Dictionary<T1, float> dict, T1 key, float value)
+    /// <summary>
+    /// creates a new float entry if it doesn't exist and increments it
+    /// </summary>
+    public static void IncrementValue<T1>(this Dictionary<T1, float> dict, T1 key, float value)
     {
         if (!dict.ContainsKey(key))
         {
@@ -116,6 +122,16 @@ public static class Util
         dict[key] += value;
     }
 
+    public static bool AboutEqual(float a, float b)
+    {
+
+        if (a > 0f && b < 0f) return false;
+        if (a < 0f && b > 0f) return false;
+
+        return Math.Abs(Math.Abs(a) - Math.Abs(b)) <= float.Epsilon;
+    }
+
+    #region log
     private static void LogToDisplay(object message, string color, KeyCode keycode = default, UnityEngine.Object context = null)
     {
         if (keycode != default && !Input.GetKey(keycode))
@@ -124,12 +140,18 @@ public static class Util
         StaticLogDisplay.Log(message.ToString(), color);
     }
 
+    /// <summary>
+    /// logs to a debug display if it is active
+    /// </summary>
     public static void Log(object message, KeyCode keycode = default, UnityEngine.Object context = null)
     {
         Debug.Log(message, context);
         LogToDisplay(message, "white", keycode, context);
     }
 
+    /// <summary>
+    /// logs to a debug display if it is active
+    /// </summary>
     public static void LogError(object message, KeyCode keycode = default, UnityEngine.Object context = null)
     {
         Debug.LogError(message, context);;
@@ -137,11 +159,15 @@ public static class Util
 
     }
 
+    /// <summary>
+    /// logs to a debug display if it is active
+    /// </summary>
     public static void LogWarning(object message, KeyCode keycode = default, UnityEngine.Object context = null)
     {
         Debug.LogWarning(message, context);
         LogToDisplay(message, "yellow", keycode, context);
     }
+    #endregion
 
     public static Vector3 ScreenToCanvasPosition(Vector3 inputPosition)
     {
@@ -152,7 +178,7 @@ public static class Util
         return inputPosition;
     }
 
-    public static float TestValue(this GameObject gob, int index)
+    public static float GetTestValue(this GameObject gob, int index)
     {
         return gob.GetComponent<TestValues>().floats[index];
     }

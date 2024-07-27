@@ -3,18 +3,17 @@ using UnityEngine;
 
 namespace SpellCasting
 {
-    [DefaultExecutionOrder(-1)]
     public class GestureCatalog : MonoBehaviour
     {
-        //public static Dictionary<GestureTypeIndex, AimGesture> Gestures = new Dictionary<GestureTypeIndex, AimGesture>();
-
         [SerializeField]
         private List<AimGesture> aimGestures = new List<AimGesture>();
         public static List<AimGesture> AllGestures;
 
+        //jam not a singleton. replaces gestures whenever a new one is loaded, that's fine
         void Awake()
         {
             AllGestures = aimGestures;
+            aimGestures.Sort();
         }
     }
 }

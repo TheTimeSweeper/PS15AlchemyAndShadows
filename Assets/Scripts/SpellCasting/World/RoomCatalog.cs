@@ -11,7 +11,7 @@ namespace SpellCasting.World
         public List<Room> Rooms;
     }
 
-    public class RoomCatalog: MonoBehaviour
+    public class RoomCatalog : Singleton<RoomCatalog>
     {
         private List<Room> _allAvailableRooms;
         public List<Room> AllAvailableRooms => _allAvailableRooms;
@@ -31,11 +31,11 @@ namespace SpellCasting.World
         }
 
         //jam initialized by maingame. a base class or interface that maingame can loop through might be nice
-        public void InitializeAvailableRooms()
+        public void InitWithMainGame()
         {
             _allAvailableRooms = new List<Room>();
 
-            List<ElementType> availableElements = MainGame.instance.SavedData.UnlockedElements;
+            List<ElementType> availableElements = MainGame.Instance.SavedData.UnlockedElements;
             for (int i = 0; i < elementRequriedRooms.Count; i++)
             {
                 ElementRequriedRooms elementRooms = elementRequriedRooms[i];

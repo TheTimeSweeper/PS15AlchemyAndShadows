@@ -1,6 +1,5 @@
 ﻿using SpellCasting.World;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace SpellCasting
 {
@@ -12,50 +11,38 @@ namespace SpellCasting
         [SerializeField]
         private ElementCatalog TEMPElementCatalog;
 
-        [SerializeField]
-        private GameObject menu;
-
-        public static MainGame instance { get; private set; }
-
-        private InputState escapeInput = new InputState();
+        public static MainGame Instance { get; private set; }
 
         public SavedData SavedData { get; private set; }
 
+        public static InputState EscapeInput = new InputState();
+
+        public static InputState TabInput = new InputState();
+
         void Awake()
         {
-            instance = this;
+            if (Instance != null)
+                Destroy(gameObject);
+
+            Instance = this;
             InitializeGame();
+            Object.DontDestroyOnLoad(gameObject);
         }
 
         public void InitializeGame()
         {
-            TEMPElementCatalog.Init();
+            TEMPElementCatalog.InitWithMainGame();
 
             SavedData = SavedData.LoadOrCreate();
 
-            RoomCatalog.instance.InitializeAvailableRooms();
+            RoomCatalog.instance.InitWithMainGame();
         }
 
-        //jam ... yeah
         private void Update()
         {
-            escapeInput.UpdateInput(Input.GetKey(KeyCode.Escape));
+            EscapeInput.UpdateInput(Input.GetKey(KeyCode.Escape));
 
-            if (escapeInput.JustPressed(this))
-            {
-                menu.SetActive(!menu.activeInHierarchy);
-                Time.timeScale = menu.activeInHierarchy ? 0 : 1;
-            }
-
-            if (Input.GetKeyDown(KeyCode.B))
-            {
-                SavedData.AddElement("ElementFire");
-            }
-
-            if (Input.GetKeyDown(KeyCode.N))
-            {
-                SavedData.RemoveElement("ElementFire");
-            }
+            TabInput.UpdateInput(Input.GetKey(KeyCode.Tab));
         }
     }
 }

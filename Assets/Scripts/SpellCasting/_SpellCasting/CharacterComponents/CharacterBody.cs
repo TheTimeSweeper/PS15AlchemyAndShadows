@@ -9,6 +9,7 @@ namespace SpellCasting
         public float BaseDamage = 10;
         public float BaseAttackSpeed = 1;
         public float BaseStunFactor = 1;
+        public float BaseKnockbackFactor = 1;
 
         public float BaseMaxMana = 100;
         public float BaseManaRegeneration = 1;
@@ -24,6 +25,7 @@ namespace SpellCasting
         public VariableNumberStat Damage;
         public VariableNumberStat AttackSpeed;
         public VariableNumberStat StunFactor;
+        public VariableNumberStat KnockbackFactor;
 
         public VariableNumberStat MaxFireMana;
         public VariableNumberStat MaxEarthMana;
@@ -45,6 +47,7 @@ namespace SpellCasting
             Damage = new VariableNumberStat(BaseDamage);
             AttackSpeed = new VariableNumberStat(BaseAttackSpeed);
             StunFactor = new VariableNumberStat(BaseStunFactor);
+            KnockbackFactor = new VariableNumberStat(BaseKnockbackFactor);
 
             MaxFireMana = new VariableNumberStat(BaseMaxMana);
             MaxEarthMana = new VariableNumberStat(BaseMaxMana);

@@ -11,7 +11,7 @@ namespace SpellCasting.UI
 
         public static AimMouseManager Instance;
 
-        private static bool _wasUnlocked = CursorUnlocker.ReadOnlyInstancesList.Count <= 0;
+        private static bool _wasUnlocked = CursorUnlockerInstance.ReadOnlyInstancesList.Count <= 0;
 
         public delegate void CursorLockUpdatedEvent(bool unlocked);
         public static event CursorLockUpdatedEvent OnCursorLockUpdated;
@@ -34,7 +34,7 @@ namespace SpellCasting.UI
 
         public static void UpdateCursor()
         {
-            bool cursorUnlocked = CursorUnlocker.ReadOnlyInstancesList.Count > 0;
+            bool cursorUnlocked = CursorUnlockerInstance.ReadOnlyInstancesList.Count > 0;
 
             if (cursorUnlocked == _wasUnlocked)
             {

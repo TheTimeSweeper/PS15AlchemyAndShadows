@@ -106,10 +106,8 @@ namespace SpellCasting
         public List<String> DebugCurrentGestures;
         public float GestureDistancee;
 
-        void Awake()
+        void Start()
         {
-            _gestures.Sort();
-
             _allInputStates = new List<InputState> { M1, M2, Space, Shift }; 
             //AllInputStates.AddRange(extraInputStates);
         }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace SpellCasting.UI
 {
+
     public class AimCursor : MonoBehaviour
     {
         private RectTransform _rectTransform;

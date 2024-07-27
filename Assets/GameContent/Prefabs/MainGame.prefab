@@ -44,6 +44,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80f43ad8c03e974fbf57d316606fa6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2647097215287279165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7971757421721199683}
+  - component: {fileID: 5384702406839431027}
+  m_Layer: 0
+  m_Name: EffectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7971757421721199683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2647097215287279165}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3218272428408795064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5384702406839431027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2647097215287279165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddaeb144ecadb344ca57596290f770da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefabs:
+  - {fileID: 5488968741610097604, guid: af1eac3d72dfa6243b259f7dd6605a8f, type: 3}
 --- !u!1 &8847469351332851560
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,6 +123,7 @@ Transform:
   m_Children:
   - {fileID: 6357067541834512757}
   - {fileID: 7632022325640583225}
+  - {fileID: 7971757421721199683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3701454681504572662
@@ -93,7 +140,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TEMPRoomCatalog: {fileID: 1734050388914010690}
   TEMPElementCatalog: {fileID: 5088064961873132389}
-  menu: {fileID: 0}
 --- !u!114 &8229601400613761143
 MonoBehaviour:
   m_ObjectHideFlags: 0

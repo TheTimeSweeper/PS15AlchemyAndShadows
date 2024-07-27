@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 namespace SpellCasting
 {
@@ -12,5 +13,10 @@ namespace SpellCasting
 
         public ElementType CurrentCastingElement { get; set; }
         public InputState CurrentCastingInput { get; set; }
+
+        public virtual ElementType TryGetInputElement(InputState currentPrimaryInput)
+        {
+            return InputToElement.TryGetValueDefault(currentPrimaryInput);
+        }
     }
 }

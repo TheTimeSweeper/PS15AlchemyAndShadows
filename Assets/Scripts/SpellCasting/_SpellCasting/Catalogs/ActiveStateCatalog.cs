@@ -8,11 +8,11 @@ using UnityEngine;
 
 namespace SpellCasting
 {
-    public class ActiveStateCatalog : MonoBehaviour
+    public class ActiveStateCatalog : Singleton<ActiveStateCatalog>
     {
         public static Dictionary<string, Type> StateTypes = new Dictionary<string, Type>();
 
-        void Awake()
+        protected override void InitOnce()
         {
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetAssembly(typeof(ActiveState));
 

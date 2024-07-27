@@ -29,7 +29,7 @@ namespace ActiveStates.Characters
                 Team = teamComponent.TeamIndex
             };
 
-            _shift = inputBank.GlobalMoveDirection * gameObject.TestValue(0) * characterBody.stats.MoveSpeed;
+            _shift = inputBank.GlobalMoveDirection * gameObject.GetTestValue(0) * characterBody.stats.MoveSpeed;
 
             if (aimDirection == default)
             {
@@ -53,7 +53,7 @@ namespace ActiveStates.Characters
             base.OnCastFixedUpdate();
 
             fixedMotorDriver.AddedMotion = _shift;
-            _shift = Util.ExpDecayLerp(_shift, default, gameObject.TestValue(1), Time.fixedDeltaTime);
+            _shift = Util.ExpDecayLerp(_shift, default, gameObject.GetTestValue(1), Time.fixedDeltaTime);
 
             if (attack.Fire())
             {

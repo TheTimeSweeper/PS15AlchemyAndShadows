@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace SpellCasting
 {
-    public class ElementCatalog : MonoBehaviour
+    public class ElementCatalog : Singleton<ElementCatalog>
     {
-        public static Dictionary<ElementTypeIndex, ElementType> ElementTypes = new Dictionary<ElementTypeIndex, ElementType>();
-        public static Dictionary<string, ElementType> NameToElementMap = new Dictionary<string, ElementType>();
+        public Dictionary<ElementTypeIndex, ElementType> ElementTypes = new Dictionary<ElementTypeIndex, ElementType>();
+        public Dictionary<string, ElementType> NameToElementMap = new Dictionary<string, ElementType>();
 
         [SerializeField]
         private List<ElementType> TEMPElementTypes = new List<ElementType>();
@@ -17,7 +17,7 @@ namespace SpellCasting
             return null;
         }
 
-        public void Init()
+        public void InitWithMainGame()
         {
             for (int i = 0; i < TEMPElementTypes.Count; i++)
             {

@@ -73,6 +73,7 @@ namespace SpellCasting
                     if (Damage > 0)
                     {
                         healthComponent.TakeDamage(DamageInfo);
+                        EffectManager.SpawnEffect(EffectIndex.HITFLASH, collider.transform.position);
                     }
                 }
             }

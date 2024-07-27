@@ -32,7 +32,7 @@ namespace SpellCasting.World
 
             availableCredits = TEMPStartingCredits;
 
-            RoomCatalog.instance.InitializeAvailableRooms();
+            RoomCatalog.instance.InitWithMainGame();
 
             _uniqueRoomsSpawned = new Dictionary<UniqueRoom, int>();
         }
@@ -270,7 +270,7 @@ namespace SpellCasting.World
             {
                 if (RoomCatalog.instance.AllUniqueRooms[i].room == newRoomPrefab)
                 {
-                    Util.AddToDictionary(_uniqueRoomsSpawned, RoomCatalog.instance.AllUniqueRooms[i], 1);
+                    Util.IncrementvValue(_uniqueRoomsSpawned, RoomCatalog.instance.AllUniqueRooms[i], 1);
                 }
             }
 

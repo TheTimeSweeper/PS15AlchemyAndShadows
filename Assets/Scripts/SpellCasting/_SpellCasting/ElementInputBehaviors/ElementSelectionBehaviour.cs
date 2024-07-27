@@ -1,4 +1,6 @@
-﻿namespace SpellCasting
+﻿using System;
+
+namespace SpellCasting
 {
     public class ElementSelectionBehaviour : ElementInputBehavior
     {
@@ -7,12 +9,15 @@
         public override void FixedUpdate()
         {
             //Util.LogWarning($"inputBank.CurrentPrimaryInput: {inputBank.CurrentPrimaryInput}, inputBank.CurrentPrimaryInput.JustPressed: {inputBank.CurrentPrimaryInput != null && inputBank.CurrentPrimaryInput.JustPressed(this + "1")}", UnityEngine.KeyCode.Z);
-
             //just pressed a button , set its element
+            //wait is this broken
             if (inputBank.CurrentPrimaryInput != null && inputBank.CurrentPrimaryInput.JustPressed(this))
             {
+                ElementType inputElement = caster.TryGetInputElement(inputBank.CurrentPrimaryInput);
+                if (inputElement == null)
+                    return;
+                caster.CurrentCastingElement = inputElement;
                 caster.CurrentCastingInput = inputBank.CurrentPrimaryInput;
-                caster.CurrentCastingElement = caster.InputToElement.TryGetValueDefault(inputBank.CurrentPrimaryInput);
             }
 
             //pressed a second button while controlling an element. set to combined element
