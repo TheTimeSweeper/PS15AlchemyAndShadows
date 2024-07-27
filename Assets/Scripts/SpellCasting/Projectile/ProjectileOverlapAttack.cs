@@ -5,6 +5,10 @@ namespace SpellCasting.Projectiles
 {
     public class ProjectileOverlapAttack : ProjectileOverlap, IProjectileDormant
     {
+
+        [SerializeField]
+        private Rigidbody rigidBody;
+
         [SerializeField]
         private float damageCoefficient = 1;
 
@@ -12,12 +16,12 @@ namespace SpellCasting.Projectiles
         private float resetInterval = -1;
 
         [SerializeField]
-        private UnityEvent impactEvent;
-
-        [SerializeField]
         private bool destroyOnImpact;
         [SerializeField]
         private float destroyOnImpactGraceTime = 0.2f;
+
+        [SerializeField]
+        private UnityEvent impactEvent;
 
         private float _destoryOnImpactTim;
         private float _repeatTim;
@@ -32,7 +36,8 @@ namespace SpellCasting.Projectiles
                 Damage = ProjectileInfo.Damage * damageCoefficient,
                 DamageType = ProjectileInfo.DamageType,
                 OwnerGameObject = ProjectileInfo.OwnerObject,
-                Team = ProjectileInfo.TeamIndex
+                Team = ProjectileInfo.TeamIndex,
+                KnockbackDirection = rigidBody ? rigidBody.linearVelocity.normalized : default
             };
             _repeatTim = resetInterval;
         }

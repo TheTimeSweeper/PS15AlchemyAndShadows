@@ -29,11 +29,13 @@ namespace SpellCasting.Projectiles
         private void AssignSubComponents()
         {
             UnityEditor.Undo.RecordObject(this, "subcomponents");
-            subComponentsBehaviours.Clear();
             IProjectileSubComponent[] attachedSubComponents = GetComponents<IProjectileSubComponent>();
             for (int i = 0; i < attachedSubComponents.Length; ++i)
             {
-                subComponentsBehaviours.Add((MonoBehaviour)attachedSubComponents[i]);
+                if (!subComponentsBehaviours.Contains((MonoBehaviour)attachedSubComponents[i]))
+                {
+                    subComponentsBehaviours.Add((MonoBehaviour)attachedSubComponents[i]);
+                }
             }
 
             IProjectileDormant[] attachedDormantComponents = GetComponents<IProjectileDormant>();

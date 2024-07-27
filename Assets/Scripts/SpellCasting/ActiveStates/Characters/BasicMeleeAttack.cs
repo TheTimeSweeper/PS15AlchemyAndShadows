@@ -21,20 +21,22 @@ namespace ActiveStates.Characters
         {
             base.OnEnter();
 
-            attack = new OverlapAttack
-            {
-                Damage = damageCoefficient * characterBody.stats.Damage,
-                Hitbox = characterModel.HitboxLocator.LocateByName(hitboxName),
-                OwnerGameObject = gameObject,
-                Team = teamComponent.TeamIndex
-            };
-
             _shift = inputBank.GlobalMoveDirection * 0.69f * characterBody.stats.MoveSpeed;
 
             if (aimDirection == default)
             {
                 aimDirection = inputBank.GlobalMoveDirection;
             }
+
+            attack = new OverlapAttack
+            {
+                Damage = damageCoefficient * characterBody.stats.Damage,
+                Hitbox = characterModel.HitboxLocator.LocateByName(hitboxName),
+                OwnerGameObject = gameObject,
+                Team = teamComponent.TeamIndex,
+                KnockbackDirection = aimDirection.normalized
+            };
+
             characterModel.CharacterDirection.OverrideLookDirection(aimDirection, duration);
 
             //jam effectcatalog when

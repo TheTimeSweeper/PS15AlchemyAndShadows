@@ -1384,7 +1384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5825016025065239986, guid: c6fb7964f1509284592314215e87de63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 94.47003
       objectReference: {fileID: 0}
     - target: {fileID: 5825016025065239986, guid: c6fb7964f1509284592314215e87de63, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5196,6 +5196,10 @@ PrefabInstance:
     - target: {fileID: 2593886557186326773, guid: b53c50db6e9871e40b6ef372d8ae4cf3, type: 3}
       propertyPath: m_Name
       value: CharJoanna
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145416712310715398, guid: b53c50db6e9871e40b6ef372d8ae4cf3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7150011646177074888, guid: b53c50db6e9871e40b6ef372d8ae4cf3, type: 3}
       propertyPath: 'floats.Array.data[0]'

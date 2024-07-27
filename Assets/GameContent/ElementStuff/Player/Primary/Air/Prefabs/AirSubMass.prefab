@@ -94,12 +94,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subComponentsBehaviours:
-  - {fileID: 5094114858137204261}
   - {fileID: -8956635059687887134}
+  - {fileID: 5094114858137204261}
   dormantComponents:
-  - {fileID: 1502281406013002248}
-  - {fileID: 5094114858137204261}
   - {fileID: -8956635059687887134}
+  - {fileID: 5094114858137204261}
+  - {fileID: 1502281406013002248}
 --- !u!114 &1502281406013002248
 MonoBehaviour:
   m_ObjectHideFlags: 0

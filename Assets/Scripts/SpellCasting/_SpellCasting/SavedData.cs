@@ -19,7 +19,10 @@ namespace SpellCasting
                     _unlockedElements = new List<ElementType>();
                     for (int i = 0; i < elem.Count; i++)
                     {
-                        _unlockedElements.Add(ElementCatalog.Instance.NameToElementMap[elem[i]]);
+                        if (ElementCatalog.Instance.NameToElementMap.ContainsKey(elem[i]))
+                        {
+                            _unlockedElements.Add(ElementCatalog.Instance.NameToElementMap[elem[i]]);
+                        }
                     }
                 }
                 return _unlockedElements;

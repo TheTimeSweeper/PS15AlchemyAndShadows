@@ -94,12 +94,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subComponentsBehaviours:
-  - {fileID: 2501168355527328141}
   - {fileID: 3851465993621774473}
+  - {fileID: 2501168355527328141}
   dormantComponents:
+  - {fileID: 3851465993621774473}
   - {fileID: 2501168355527328141}
   - {fileID: 6749049692360157778}
-  - {fileID: 3851465993621774473}
 --- !u!114 &2501168355527328141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
       m_Calls: []
   destroyOnImpact: 1
   destroyOnImpactGraceTime: 0.04
+  rigidBody: {fileID: 4227748468550602867}
 --- !u!114 &6749049692360157778
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -156,6 +156,7 @@ MonoBehaviour:
       m_Calls: []
   destroyOnImpact: 1
   destroyOnImpactGraceTime: 0.04
+  rigidBody: {fileID: 3159130046204335257}
 --- !u!114 &5790455508350688420
 MonoBehaviour:
   m_ObjectHideFlags: 0

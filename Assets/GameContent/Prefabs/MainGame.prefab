@@ -199,11 +199,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f6d25c86e184c49afc7c067e8549fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TEMPElementTypes:
-  - {fileID: 11400000, guid: b4bf9355eaf200840ae74d300c1c7e24, type: 2}
-  - {fileID: 11400000, guid: 1523a7871b8db304990d850360547269, type: 2}
-  - {fileID: 11400000, guid: 735c28191e66ad943a3bf219d795d968, type: 2}
+  elementTypes:
   - {fileID: 11400000, guid: 3823b492ece4b0b49aea651602c99d8b, type: 2}
+  - {fileID: 11400000, guid: 1523a7871b8db304990d850360547269, type: 2}
+  - {fileID: 11400000, guid: e9dc55c4007b4c84287fb34af817401e, type: 2}
+  - {fileID: 11400000, guid: b4bf9355eaf200840ae74d300c1c7e24, type: 2}
+  - {fileID: 11400000, guid: 89a994514cf2dd24cb5bcb5305d81a8d, type: 2}
+  - {fileID: 11400000, guid: 735c28191e66ad943a3bf219d795d968, type: 2}
 --- !u!114 &1734050388914010690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ee6040e54dc7c49a2c33b8f2811d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllUniqueRooms: []
   elementRequriedRooms:
   - RequiredElement: {fileID: 0}
     Rooms:
@@ -227,6 +228,7 @@ MonoBehaviour:
     Rooms:
     - {fileID: 615712206326356590, guid: 41f00c3aab081744aae24a0f3d2f137a, type: 3}
     - {fileID: 5765920359163647062, guid: b26d4b16fbbde2146b0ffffdb1978b28, type: 3}
+  StartRoom: {fileID: 0}
   uniqueRooms:
   - {fileID: 11400000, guid: 7cc3a18c6ef921c4abc50d79b30fc92e, type: 2}
   - {fileID: 11400000, guid: 25ab18c49cdc8164a8caa09c900c4772, type: 2}

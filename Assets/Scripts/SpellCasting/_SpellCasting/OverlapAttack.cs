@@ -14,13 +14,25 @@ namespace SpellCasting
         public TeamIndex Team { get; set; }
         public TeamTargetType TeamTargeting { get; set; } = TeamTargetType.OTHER;
         public DamagingInfo DamageInfo { get; set; }
+        public Vector3 KnockbackDirection { get; set; }
 
         private List<HealthComponent> _alreadyHitTargets = new List<HealthComponent>();
         public List<HealthComponent> HitTargets => _alreadyHitTargets;
 
-        public bool Fire()
+        public bool Fire() => Fire(out _, false);
+        public bool Fire(out List<HurtBox> hitResults) => Fire(out hitResults, true);
+        public bool Fire(out List<HurtBox> hitResults, bool returnResults)
         {
             bool hit = false;
+
+            if (returnResults)
+            {
+                hitResults = new List<HurtBox>();
+            }
+            else
+            {
+                hitResults = null;
+            }
 
             Collider[] colliders = Hitbox.DoOverlap();
 
@@ -63,6 +75,11 @@ namespace SpellCasting
                         }
                     }
 
+                    if (returnResults)
+                    {
+                        hitResults.Add(hurtbox);
+                    }
+
                     _alreadyHitTargets.Add(healthComponent);
                     hit = true;
 
@@ -70,7 +87,12 @@ namespace SpellCasting
                     {
                         if (DamageInfo == null)
                         {
-                            DamageInfo = new DamagingInfo { AttackerObject = OwnerGameObject, AttackerBody = OwnerBody, DamageValue = Damage, DamageTypeIndex = DamageType };
+                            DamageInfo = new DamagingInfo { 
+                                AttackerObject = OwnerGameObject, 
+                                AttackerBody = OwnerBody,
+                                DamageValue = Damage,
+                                DamageTypeIndex = DamageType
+                            };
                         }
 
                         healthComponent.TakeDamage(DamageInfo);

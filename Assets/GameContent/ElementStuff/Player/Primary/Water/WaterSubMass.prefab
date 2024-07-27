@@ -301,13 +301,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 5312657621487949612}
+  rigidBody: {fileID: 1757537718585247545}
   damageCoefficient: 1
   resetInterval: -1
+  destroyOnImpact: 0
+  destroyOnImpactGraceTime: 0.2
   impactEvent:
     m_PersistentCalls:
       m_Calls: []
-  destroyOnImpact: 0
-  destroyOnImpactGraceTime: 0.2
 --- !u!114 &6504295058412743720
 MonoBehaviour:
   m_ObjectHideFlags: 0

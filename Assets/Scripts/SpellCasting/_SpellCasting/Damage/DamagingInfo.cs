@@ -9,5 +9,6 @@ namespace SpellCasting
         public GameObject AttackerObject;
         public CharacterBody AttackerBody;
         public DamageTypeIndex DamageTypeIndex;
+        public Vector3 Knockback;
     }
 }
