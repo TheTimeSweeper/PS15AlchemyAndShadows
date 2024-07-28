@@ -11,5 +11,6 @@ namespace SpellCasting
         EARTH = 8u,
         AIR = 16u,
         WATER = 32u,
+        BIGSTUN = 64u,
     }
 }

@@ -21,6 +21,7 @@ namespace SpellCasting
             inputBank.M2.UpdateInput(Input.GetMouseButton(1));
             inputBank.Space.UpdateInput(Input.GetKey(KeyCode.Space));
             inputBank.Shift.UpdateInput(Input.GetKey(KeyCode.LeftShift));
+            inputBank.E.UpdateInput(Input.GetKey(KeyCode.E));
         }
 
         protected override Vector3 GetMovementInput()

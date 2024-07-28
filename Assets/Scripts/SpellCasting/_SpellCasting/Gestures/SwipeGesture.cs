@@ -2,7 +2,7 @@
 
 namespace SpellCasting
 {
-    [CreateAssetMenu(menuName = "GestureType/Swipe", fileName = "GestureSwipe")]
+    [CreateAssetMenu(menuName = "SpellCasting/GestureType/Swipe", fileName = "GestureSwipe")]
     public class SwipeGesture : AimGesture
     {
         [SerializeField]
@@ -18,6 +18,7 @@ namespace SpellCasting
             public override bool QualifyGesture(InputBank bank, InputState inputState)
             {
                 bank.DebugSwipeMag = bank.GestureDistance;
+
                 return bank.GestureDistance > InfoObject.threshold && bank.GestureDelta != Vector3.zero;
             }
         }

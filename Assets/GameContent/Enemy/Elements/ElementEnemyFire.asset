@@ -19,7 +19,7 @@ MonoBehaviour:
   elementColor: {r: 0.6981132, g: 0.13501245, b: 0.13501245, a: 1}
   massGrowthMultiplier: 0
   massBaseMass: 1
-  massVelocityMultiplier: 11
+  massVelocityMultiplier: 30
   massSpawnState:
     activeStateName: ActiveStates.Elements.BasicElementGrow
   massLetGoState:
@@ -31,10 +31,14 @@ MonoBehaviour:
     gestureState:
       activeStateName: ActiveStates.Elements.BasicElementMelee
     baseManaCost: 0
-  - gestureType: {fileID: 11400000, guid: bf5fa6541de09864aab592876a92a511, type: 2}
+  - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Fire.FireSwipe
     baseManaCost: 0
+  - gestureType: {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.Fire.FireShake
+    baseManaCost: 0
   componentElements: []
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 4793637844757369106, guid: 0b06fec99c4a14246b3d67477d8b931f, type: 3}
   poolPrefab: {fileID: 0}

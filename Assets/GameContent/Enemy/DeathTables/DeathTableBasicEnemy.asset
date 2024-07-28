@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd0dbaf9ccdf09439348dc47ca870b0, type: 3}
+  m_Name: DeathTableBasicEnemy
+  m_EditorClassIdentifier: 
+  rewardItems:
+  - {fileID: 2197020883804871636, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
+  - {fileID: 7290836164328417482, guid: 84097e2c4018c584aa7c11a3db2479a3, type: 3}
+  weights:
+  - 1
+  - 1

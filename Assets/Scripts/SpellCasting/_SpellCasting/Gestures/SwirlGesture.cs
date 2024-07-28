@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SpellCasting
 {
-    [CreateAssetMenu(menuName = "GestureType/Swirl", fileName = "GestureSwirl")]
+    [CreateAssetMenu(menuName = "SpellCasting/GestureType/Swirl", fileName = "GestureSwirl")]
     public class SwirlGesture : AimGesture
     {
         [SerializeField]

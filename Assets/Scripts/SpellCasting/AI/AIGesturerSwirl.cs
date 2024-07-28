@@ -2,9 +2,12 @@
 
 namespace SpellCasting.AI
 {
-    [CreateAssetMenu(menuName = "AIGesturer/Swirl", fileName = "AIGestureSwirl")]
+    [CreateAssetMenu(menuName = "SpellCasting/AIGesturer/Swirl", fileName = "AIGestureSwirl")]
     public class AIGesturerSwirl : AIGesture
     {
+        [SerializeField]
+        private bool targetSelf;
+
         [SerializeField]
         private float offsetDistance;
 
@@ -27,9 +30,19 @@ namespace SpellCasting.AI
             {
                 bool end = base.OnFixedUpdate(brain);
 
+                brain.AIInputController.OverrideGesturePosition = Vector3.zero;
+
                 if (initialPosition == Vector3.zero)
                 {
-                    initialPosition = brain.CurrentTargetPosition;
+                    if(InfoObject.targetSelf)
+                    {
+                        initialPosition = brain.transform.position;
+                    }
+                    else
+                    {
+                        initialPosition = brain.CurrentTargetPosition;
+                    }
+                    ;
                 }
 
                 brain.AIInputController.downInputs[InfoObject.inputIndex] = true;

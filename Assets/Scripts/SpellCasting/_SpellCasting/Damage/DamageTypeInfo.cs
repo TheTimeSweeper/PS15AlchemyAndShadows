@@ -2,7 +2,7 @@
 using UnityEngine;
 namespace SpellCasting
 {
-    [CreateAssetMenu(menuName = "DamageType/Generic", fileName = "DamageType")]
+    [CreateAssetMenu(menuName = "SpellCasting/DamageType/Generic", fileName = "DamageType")]
     public class DamageTypeInfo : ScriptableObject
     {
         [SerializeField]

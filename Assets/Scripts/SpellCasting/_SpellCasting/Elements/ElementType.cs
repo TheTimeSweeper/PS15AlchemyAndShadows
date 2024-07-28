@@ -25,7 +25,7 @@ namespace SpellCasting
         public float BaseManaCost => baseManaCost;
     }
 
-    [CreateAssetMenu(menuName = "ElementType/Unspecified", fileName = "Element")]
+    [CreateAssetMenu(menuName = "SpellCasting/ElementType/Unspecified", fileName = "Element")]
     public class ElementType : ScriptableObject
     {
         [SerializeField]

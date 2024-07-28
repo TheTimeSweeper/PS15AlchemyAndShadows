@@ -5037,6 +5037,7 @@ GameObject:
   - component: {fileID: 2078819425590698794}
   - component: {fileID: 8845007593822761126}
   - component: {fileID: 310531384847307336}
+  - component: {fileID: 7736627267740524928}
   m_Layer: 0
   m_Name: CharJoanna
   m_TagString: Player
@@ -5077,7 +5078,7 @@ MonoBehaviour:
   stats:
     BaseMaxHealth: 100
     BaseHealthRegen: 1
-    BaseDamage: 1
+    BaseDamage: 10
     BaseAttackSpeed: 1
     BaseStunFactor: 1
     BaseKnockbackFactor: 1
@@ -5176,6 +5177,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   commonComponents: {fileID: 1487827616747877697}
+  deathComponent: {fileID: 7736627267740524928}
 --- !u!114 &6236650864354339292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5291,6 +5293,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teamComponent: {fileID: 8845007593822761126}
   body: {fileID: 9026110317149343735}
+--- !u!114 &7736627267740524928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593886557186326773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6dda0fa94071242b16569a6dea96bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathTable: {fileID: 0}
+  deathEffect: {fileID: 0}
 --- !u!1 &3845719698862260873
 GameObject:
   m_ObjectHideFlags: 0

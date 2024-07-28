@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 namespace SpellCasting.World
 {
-    [CreateAssetMenu(menuName = "UniqueRoom/Unspecified", fileName = "UniqueRoom")]
+    [CreateAssetMenu(menuName = "SpellCasting/UniqueRoom/Unspecified", fileName = "UniqueRoom")]
     public class UniqueRoom : ScriptableObject
     {
         [SerializeField]
-        public Room room;
+        public Roome room;
 
         [SerializeField]
         public int maximumInstancesAllowed = 1;

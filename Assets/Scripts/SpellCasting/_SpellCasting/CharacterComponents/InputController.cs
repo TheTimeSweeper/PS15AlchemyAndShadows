@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SpellCasting
@@ -50,8 +51,9 @@ namespace SpellCasting
             {
                 UpdateAimPoint();
                 UpdateGesturePosition();
+                GetGestureDelta();
                 inputBank.AimPoint = _currentAimPosition;
-                inputBank.AimDirection = _currentAimDirection;
+                inputBank.AimDirection = GetAimDirection();
                 inputBank.GestureDelta = _gestureDelta;
                 inputBank.GesturePosition = _currentGesturePosition;
                 //UpdateDebug();
@@ -61,13 +63,23 @@ namespace SpellCasting
                 inputBank.GlobalMoveDirection = transform.TransformDirection(inputBank.LocalMoveDirection);
             }
         }
+        //jam now it's messy
+        protected virtual Vector3 GetAimDirection()
+        {
+            return _currentAimDirection;
+        }
+
+        protected virtual Vector3 GetGestureDelta()
+        {
+            return (_currentGesturePosition - _lastGesturePosition);
+        }
 
         private void UpdateGesturePosition()
         {
             Vector3 mousePosition = GetGesturePosition();
             _currentGesturePosition = mousePosition;
 
-            _gestureDelta = _currentGesturePosition - _lastGesturePosition;
+            _gestureDelta = GetGestureDelta();
             _lastGesturePosition = _currentGesturePosition;
         }
 

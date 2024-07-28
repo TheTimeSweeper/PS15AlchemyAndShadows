@@ -10,14 +10,14 @@ namespace SpellCasting
 
         public Vector3 MoveDirection { get; set; }
 
-        private Vector3 _currentAimPosition;
-        public Vector3 CurrentAimPosition { get => _currentAimPosition;
+        private Vector3 _currentFixedAimPosition;
+        public Vector3 CurrentAimPosition { get => _currentFixedAimPosition;
             set {
-                _lastAimPosition = _currentAimPosition;
-                _currentAimPosition = value;
+                _lastFixedAimPosition = _currentFixedAimPosition;
+                _currentFixedAimPosition = value;
             } 
         }
-        private Vector3 _lastAimPosition;
+        private Vector3 _lastFixedAimPosition;
 
         private Vector3 _overrideGesturePosition;
         public Vector3 OverrideGesturePosition
@@ -60,7 +60,7 @@ namespace SpellCasting
             //smooth between fixedupdates
             float timeSinceLastDeltaTIme = Time.time - _lastFixedTime;
 
-            Vector3 lerpedPosition = Vector3.Lerp(_lastAimPosition, CurrentAimPosition, timeSinceLastDeltaTIme / Time.fixedDeltaTime);
+            Vector3 lerpedPosition = Vector3.Lerp(_lastFixedAimPosition, CurrentAimPosition, timeSinceLastDeltaTIme / Time.fixedDeltaTime);
 
             return lerpedPosition;
         }

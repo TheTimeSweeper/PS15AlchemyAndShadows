@@ -9,7 +9,7 @@ namespace SpellCasting.World
     public class Level: MonoBehaviour
     {
         [SerializeField]
-        private List<Room> existingRooms;
+        private List<Roome> existingRooms;
         //public List<Room> Rooms => rooms;
 
         [SerializeField]
@@ -19,7 +19,7 @@ namespace SpellCasting.World
         private float availableCredits;
 
         private Dictionary<UniqueRoom, int> _uniqueRoomsSpawned;
-        private List<Room> _existingRoomQueue;
+        private List<Roome> _existingRoomQueue;
 
         void Start()
         {
@@ -32,14 +32,12 @@ namespace SpellCasting.World
 
             availableCredits = TEMPStartingCredits;
 
-            RoomCatalog.Instance.InitWithMainGame();
-
             _uniqueRoomsSpawned = new Dictionary<UniqueRoom, int>();
         }
 
         public void GenerateLevel()
         {
-            _existingRoomQueue = new List<Room>(existingRooms);
+            _existingRoomQueue = new List<Roome>(existingRooms);
 
             float lowestCost = float.MaxValue;
             for (int i = 0; i < RoomCatalog.Instance.AllAvailableRooms.Count; i++)
@@ -82,7 +80,7 @@ namespace SpellCasting.World
                 }
 
                 //for this existing room check its existing doors
-                Room existingRoom = _existingRoomQueue[0];
+                Roome existingRoom = _existingRoomQueue[0];
                 existingRoom.Doors.Shuffle();
                 for (int eD = 0; eD < existingRoom.Doors.Count; eD++)
                 {
@@ -100,16 +98,16 @@ namespace SpellCasting.World
                         }
                     }
 
-                    List<Room> potentialRooms;
+                    List<Roome> potentialRooms;
                     if (availableCredits < lowestCost && !AreAllRequiredRoomsSpawned())
                     {
                         //only spawn requried rooms now
-                        potentialRooms = new List<Room>();
+                        potentialRooms = new List<Roome>();
                     }
                     else
                     {
                         //spawn rooms based on currency (aka continue as normal)
-                        potentialRooms = new List<Room>(RoomCatalog.Instance.AllAvailableRooms);
+                        potentialRooms = new List<Roome>(RoomCatalog.Instance.AllAvailableRooms);
                         for (int r = potentialRooms.Count - 1; r >= 0; r--)
                         {
                             if (potentialRooms[r].RoomCost > availableCredits)
@@ -131,7 +129,7 @@ namespace SpellCasting.World
                             break;
                         }
 
-                        Room potentialRoomPrefab = potentialRooms.WeightedRandom((room) => room.RoomWeight);
+                        Roome potentialRoomPrefab = potentialRooms.WeightedRandom((room) => room.RoomWeight);
 
                         if (potentialRoomPrefab == null)
                         {
@@ -140,7 +138,7 @@ namespace SpellCasting.World
                             return;
                         }
 
-                        Room newRoom = TrySpawnRoom(existingDoor, potentialRoomPrefab);
+                        Roome newRoom = TrySpawnRoom(existingDoor, potentialRoomPrefab);
 
                         if (newRoom != null)
                         {
@@ -179,7 +177,7 @@ namespace SpellCasting.World
                 {
                     if (!ROom.Doors[rD].Occupied)
                     {
-                        ROom.Doors[rD].SetClosed(true);
+                        ROom.Doors[rD].SetOpen(false);
                     }
                 }
             }
@@ -188,9 +186,9 @@ namespace SpellCasting.World
 #endif
         }
 
-        private Room TrySpawnRoom(Door existingDoor, Room potentialRoomPrefab)
+        private Roome TrySpawnRoom(Door existingDoor, Roome potentialRoomPrefab)
         {
-            Room newRoom = null;
+            Roome newRoom = null;
             //for each potential room look at their doors
             List<Door> potentialRoomDoors = new List<Door>(potentialRoomPrefab.Doors);
             potentialRoomDoors.Shuffle();
@@ -211,7 +209,7 @@ namespace SpellCasting.World
                     Collider[] overlaps = Physics.OverlapBox(center, overlapZone.localScale * 0.5f, Quaternion.identity, LayerInfo.RoomOverlap.layerMask);
                     overlapped |= overlaps.Length > 0;
 #if UNITY_EDITOR
-                    //DebugOverlapCube(existingDoor, potentialRoom, potentialDoor, overlapZone, center, overlaps);
+                     //DebugOverlapCube(existingDoor, potentialRoomPrefab, potentialDoor, overlapZone, center, overlaps);
 #endif
                 }
 
@@ -223,10 +221,10 @@ namespace SpellCasting.World
                     newRoom = Instantiate(potentialRoomPrefab, position, Quaternion.identity, transform);
 
                     newRoom.Doors[potentialDoor.DoorIndex].Occupied = true;
-                    newRoom.Doors[potentialDoor.DoorIndex].SetClosed(true);
+                    newRoom.Doors[potentialDoor.DoorIndex].SetOpen(true);
 
                     existingDoor.Occupied = true;
-                    existingDoor.SetClosed(true);
+                    existingDoor.SetOpen(true);
                     availableCredits -= potentialRoomPrefab.RoomCost;
 
                     break;
@@ -251,7 +249,7 @@ namespace SpellCasting.World
             return true;
         }
 
-        private void AddUniqueRooms(List<Room> potentialRooms)
+        private void AddUniqueRooms(List<Roome> potentialRooms)
         {
             for (int i = 0; i < RoomCatalog.Instance.AllUniqueRooms.Count; i++)
             {
@@ -264,7 +262,7 @@ namespace SpellCasting.World
             }
         }
 
-        public void IncrementUniqueRoomAndCheckRemove(Room newRoomPrefab, List<Room> potentialRooms)
+        public void IncrementUniqueRoomAndCheckRemove(Roome newRoomPrefab, List<Roome> potentialRooms)
         {
             for (int i = 0; i < RoomCatalog.Instance.AllUniqueRooms.Count; i++)
             {
@@ -286,7 +284,7 @@ namespace SpellCasting.World
             }
         }
 
-        private void DebugOverlapCube(Door existingDoor, Room potentialRoom, Door potentialDoor, OverlapZone overlapZone, Vector3 center, Collider[] overlaps)
+        private void DebugOverlapCube(Door existingDoor, Roome potentialRoom, Door potentialDoor, OverlapZone overlapZone, Vector3 center, Collider[] overlaps)
         {
             Debug.LogWarning($"p room {potentialRoom.name}, checking p overlapzone {overlapZone} with respect to p door {potentialDoor.name}," +
                 $"checked against e door {existingDoor.name} and found {overlaps.Length} overlaps");
@@ -303,9 +301,9 @@ namespace SpellCasting.World
             {
                 Destroy(existingRooms[i].gameObject);
             }
-            existingRooms = new List<Room>
+            existingRooms = new List<Roome>
             {
-                Instantiate(RoomCatalog.Instance.AllAvailableRooms[0], Vector3.zero, Quaternion.identity, transform)
+                Instantiate(RoomCatalog.Instance.StartRoom, Vector3.zero, Quaternion.identity, transform)
             };
 
             Invoke("GenerateLevel", 0.2f);

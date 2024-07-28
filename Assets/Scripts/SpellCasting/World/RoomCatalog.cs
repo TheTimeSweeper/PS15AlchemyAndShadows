@@ -8,20 +8,20 @@ namespace SpellCasting.World
     public class ElementRequriedRooms
     {
         public ElementType RequiredElement;
-        public List<Room> Rooms;
+        public List<Roome> Rooms;
     }
 
     public class RoomCatalog : Singleton<RoomCatalog>
     {
-        private List<Room> _allAvailableRooms;
-        public List<Room> AllAvailableRooms => _allAvailableRooms;
+        private List<Roome> _allAvailableRooms;
+        public List<Roome> AllAvailableRooms => _allAvailableRooms;
 
         public List<UniqueRoom> AllUniqueRooms { get; private set; }
 
         public List<ElementRequriedRooms> elementRequriedRooms;
 
         [SerializeField]
-        public Room StartRoom;
+        public Roome StartRoom;
 
         [SerializeField]
         private List<UniqueRoom> uniqueRooms;
@@ -29,7 +29,7 @@ namespace SpellCasting.World
         //jam initialized by maingame. a base class or interface that maingame can loop through might be nice
         public void InitWithMainGame()
         {
-            _allAvailableRooms = new List<Room>();
+            _allAvailableRooms = new List<Roome>();
 
             List<ElementType> availableElements = MainGame.Instance.SavedData.UnlockedElements;
             for (int i = 0; i < elementRequriedRooms.Count; i++)

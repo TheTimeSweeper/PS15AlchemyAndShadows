@@ -2,7 +2,7 @@
 
 namespace SpellCasting
 {
-    [CreateAssetMenu(menuName = "ElementType/Water", fileName = "ElementWater")]
+    [CreateAssetMenu(menuName = "SpellCasting/ElementType/Water", fileName = "ElementWater")]
     public class ElementTypeWater : ElementType
     {
 

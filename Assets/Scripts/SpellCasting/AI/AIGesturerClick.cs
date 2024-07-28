@@ -2,7 +2,7 @@
 
 namespace SpellCasting.AI
 {
-    [CreateAssetMenu(menuName = "AIGesturer/Click", fileName = "AIGestureClick")]
+    [CreateAssetMenu(menuName = "SpellCasting/AIGesturer/Click", fileName = "AIGestureClick")]
     public class AIGesturerClick : AIGesture
     {
         public override ScriptableObjectBehavior GetBehavior()

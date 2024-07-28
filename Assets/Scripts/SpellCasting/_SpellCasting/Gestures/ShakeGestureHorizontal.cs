@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SpellCasting
 {
-    [CreateAssetMenu(menuName = "GestureType/Shake", fileName = "GestureShake")]
+    [CreateAssetMenu(menuName = "SpellCasting/GestureType/Shake", fileName = "GestureShake")]
     public class ShakeGestureHorizontal : AimGesture
     {
         [SerializeField]

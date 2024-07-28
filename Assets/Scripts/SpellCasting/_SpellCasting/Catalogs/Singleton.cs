@@ -6,7 +6,7 @@ namespace SpellCasting
     {
         public static T Instance;
 
-        void Awake()
+        protected virtual void Awake()
         {
             if (Instance != null)
             {

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 4
   baseElement: 4
-  elementMassPrefab: {fileID: 8323308202881544581, guid: f0399cf9ce4623d4cb939acd06e48519, type: 3}
+  elementMassPrefab: {fileID: 8323308202881544581, guid: d79274717f1e10d49bfd617feb431f90, type: 3}
   cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
-  elementColor: {r: 0.5849056, g: 0.32974672, b: 0.1738163, a: 1}
+  elementColor: {r: 0.084905684, g: 0.07275723, b: 0.06528126, a: 1}
   massGrowthMultiplier: 0
   massBaseMass: 2
   massVelocityMultiplier: 10

@@ -6,7 +6,9 @@ namespace SpellCasting.World
     public class Door : MonoBehaviour
     {
         [SerializeField]
-        private Transform closedObject;
+        private GameObject deactivateWhenOpen;
+        [SerializeField]
+        private GameObject activateWhenOpen;
 
         [SerializeField]
         private Direction facingDirection = Direction.NORTH;
@@ -20,20 +22,27 @@ namespace SpellCasting.World
         private int doorIndex;
         public int DoorIndex { get => doorIndex; set => doorIndex = value; }
 
-        [SerializeField]
-        private GameObject obstruction;
-
-        public void SetClosed(bool closed)
+        public void SetOpen(bool open)
         {
-            if(obstruction != null)
-                obstruction.SetActive(closed);
+            if ((name == "Door1"))
+            {
+                Util.Log("hi");
+            }
+            if (deactivateWhenOpen != null)
+            {
+                deactivateWhenOpen.SetActive(!open);
+            }
+            if (activateWhenOpen != null)
+            {
+                activateWhenOpen.SetActive(open);
+            }
 
-            GetComponentInChildren<Renderer>()?.material.SetColor("_Color", closed ? Color.red : Color.cyan);
+            //GetComponentInChildren<Renderer>()?.material.SetColor("_Color", closed ? Color.red : Color.cyan);
         }
 
         public void OnValidate()
         {
-            var nip = GetComponentInParent<Room>();
+            var nip = GetComponentInParent<Roome>();
             if (nip == null)
                 return;
 
@@ -42,7 +51,7 @@ namespace SpellCasting.World
         private void OnDestroy()
         {
 #if UNITY_EDITOR
-            var nip = GetComponentInParent<Room>();
+            var nip = GetComponentInParent<Roome>();
             if (nip == null)
                 return;
 

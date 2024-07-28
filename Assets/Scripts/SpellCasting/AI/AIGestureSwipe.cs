@@ -2,7 +2,7 @@
 
 namespace SpellCasting.AI
 {
-    [CreateAssetMenu(menuName = "AIGesturer/Swipe", fileName = "AIGestureSwipe")]
+    [CreateAssetMenu(menuName = "SpellCasting/AIGesturer/Swipe", fileName = "AIGestureSwipe")]
     public class AIGestureSwipe : AIGesture
     {
         [SerializeField]

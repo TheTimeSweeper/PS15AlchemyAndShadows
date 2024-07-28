@@ -1,0 +1,34 @@
+﻿using UnityEngine;
+
+namespace SpellCasting
+{
+    public class ElementUnlockInteraction : InteractionHandler
+    {
+
+        [SerializeField]
+        private ElementType elementToUnlock;
+
+
+        [SerializeField]
+        private GameObject fancyEffects;
+
+        [SerializeField]
+        private GameObject toDisable;
+
+        public override void HandleInteraction(CharacterBody body)
+        {
+            MainGame.Instance.SavedData.AddElement(elementToUnlock);
+            MainGame.Instance.SavedData.Save();
+
+            if (fancyEffects != null)
+            {
+                fancyEffects.SetActive(true);
+            }
+
+            if (toDisable != null)
+            {
+                toDisable.SetActive(false);
+            }
+        }
+    }
+}

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SpellCasting
 {
-    [CreateAssetMenu(menuName = "GestureType/Mash", fileName = "GestureMash")]
+    [CreateAssetMenu(menuName = "SpellCasting/GestureType/Mash", fileName = "GestureMash")]
     public class MashAimGesture : AimGesture
     {
         [SerializeField]

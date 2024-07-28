@@ -2,7 +2,7 @@
 
 namespace SpellCasting
 {
-    [CreateAssetMenu(menuName = "GestureType/Nothing", fileName = "GestureNothing")]
+    [CreateAssetMenu(menuName = "SpellCasting/GestureType/Nothing", fileName = "GestureNothing")]
     public class NothingAimGesture : AimGesture
     {
         public override ScriptableObjectBehavior GetBehavior()

@@ -19,7 +19,7 @@ namespace ActiveStates.Elements.Water
 
         protected override DamageTypeIndex getDamageType()
         {
-            return DamageTypeIndex.FREEZE;
+            return DamageTypeIndex.WATER;
         }
 
         private void addMass(Vector3 positionShift)

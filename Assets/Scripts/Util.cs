@@ -1,6 +1,7 @@
 ﻿using SpellCasting;
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
@@ -25,6 +26,27 @@ public static class Util
     public static TeamIndex GetTeamIndex(IHasCommonComponents component)
     {
         return component.CommonComponents.TeamComponent.TeamIndex;
+    }
+
+    public static int WeightedRandomIndex(this List<float> weights)
+    {
+        List<float> weightsList = new List<float>();
+        weightsList.Normalize();
+
+        float sum = 0f;
+        float rand = UnityEngine.Random.value;
+        for (var i = 0; i < weightsList.Count; i++)
+        {
+            if (weightsList[i] == 0)
+                continue;
+            sum += weightsList[i];
+
+            if (rand <= sum)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public static T WeightedRandom<T>(this List<T> items, Func<T, float> getWeight)

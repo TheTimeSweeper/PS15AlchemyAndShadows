@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace SpellCasting.World
 {
-    [CreateAssetMenu(menuName = "UniqueRoom/RoomThatDoesntShowUpIfYouUnlockedElements", fileName = "UniqueRoom")]
+    [CreateAssetMenu(menuName = "SpellCasting/UniqueRoom/RoomThatDoesntShowUpIfYouUnlockedElements", fileName = "UniqueRoom")]
     public class RoomThatDoesntShowUpIfYouUnlockedElements : UniqueRoom
     {
         [SerializeField]

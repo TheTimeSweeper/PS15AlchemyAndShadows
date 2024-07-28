@@ -2,6 +2,7 @@
 {
     public enum EffectIndex
     {
-        HITFLASH
+        HITFLASH,
+        SLOW
     }
 }

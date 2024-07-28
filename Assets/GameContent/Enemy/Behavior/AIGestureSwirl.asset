@@ -16,5 +16,6 @@ MonoBehaviour:
   inputIndex: 0
   CloseDistance: 10
   StrafeWhileClose: 0
+  targetSelf: 0
   offsetDistance: 3
-  angularVelocity: 10
+  angularVelocity: 20

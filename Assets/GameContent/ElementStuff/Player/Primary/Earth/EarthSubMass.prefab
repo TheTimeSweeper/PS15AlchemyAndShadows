@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6749049692360157778}
   - component: {fileID: 3851465993621774473}
   - component: {fileID: 1386914475464599782}
+  - component: {fileID: 9216813944715839595}
   m_Layer: 0
   m_Name: EarthSubMass
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7887979945394510737}
+  - {fileID: 5900146329496642311}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1819339224304910399
@@ -96,10 +97,12 @@ MonoBehaviour:
   subComponentsBehaviours:
   - {fileID: 3851465993621774473}
   - {fileID: 2501168355527328141}
+  - {fileID: 9216813944715839595}
   dormantComponents:
   - {fileID: 3851465993621774473}
   - {fileID: 2501168355527328141}
   - {fileID: 6749049692360157778}
+  - {fileID: 9216813944715839595}
 --- !u!114 &2501168355527328141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,13 +117,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 3163475742082288025}
   damageCoefficient: 11
+  knockbackDirectionRigidbody: {fileID: 0}
+  KnockbackForce: 0.69
   resetInterval: -1
+  destroyOnImpact: 1
+  destroyOnImpactGraceTime: 0.04
   impactEvent:
     m_PersistentCalls:
       m_Calls: []
-  destroyOnImpact: 1
-  destroyOnImpactGraceTime: 0.04
-  rigidBody: {fileID: 4227748468550602867}
 --- !u!114 &6749049692360157778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +189,44 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   targetTransform: {fileID: 7099725484880254688}
+--- !u!114 &9216813944715839595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420521427287630370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00928e8d6d30ef44090260e122644c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpedView: {fileID: 7887979945394510737}
+  time: 0.3
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7049513859175524831
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5900146329496642311
 Transform:
   m_ObjectHideFlags: 0
@@ -212,12 +254,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7049513859175524831}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.3801, y: 1.3801, z: 1.3801}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7887979945394510737}
+  m_Children:
+  - {fileID: 7887979945394510737}
+  m_Father: {fileID: 7099725484880254688}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5356739178229643810
 MeshFilter:
@@ -234,7 +277,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7049513859175524831}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -312,11 +355,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7245852, y: 0.7245852, z: 0.7245852}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5900146329496642311}
-  m_Father: {fileID: 7099725484880254688}
+  m_Children: []
+  m_Father: {fileID: 5900146329496642311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3844975081831445785
 MeshFilter:

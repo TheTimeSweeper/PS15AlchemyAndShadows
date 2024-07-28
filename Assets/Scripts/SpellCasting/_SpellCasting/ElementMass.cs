@@ -30,6 +30,7 @@ namespace SpellCasting
         private Vector3 _currentVelocity;
 
         private ElementType _elementType;
+        public ElementType ElementType => _elementType;
 
         public void Init(ElementType elementType)
         {

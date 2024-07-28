@@ -3,7 +3,8 @@ using ActiveStates.Characters;
 using UnityEngine;
 namespace SpellCasting
 {
-    [CreateAssetMenu(menuName = "DamageType/Stun", fileName = "DamageType")]
+
+    [CreateAssetMenu(menuName = "SpellCasting/DamageType/Stun", fileName = "DamageType")]
     public class StunningDamageType : DamageTypeInfo
     {
         [SerializeField]

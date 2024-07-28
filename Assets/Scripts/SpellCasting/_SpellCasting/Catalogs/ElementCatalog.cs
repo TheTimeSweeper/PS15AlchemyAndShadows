@@ -23,8 +23,14 @@ namespace SpellCasting
             return null;
         }
 
+        protected override void HandleAdditionalInstance()
+        {
+
+        }
+
         public void InitWithMainGame()
         {
+            Instance = this;
             for (int i = 0; i < elementTypes.Count; i++)
             {
                 ElementTypesMap.Add(elementTypes[i].Index, elementTypes[i]);

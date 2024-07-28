@@ -18,8 +18,14 @@ namespace SpellCasting
             if (currentCastingElement == null)
                 return;
 
+
             if (_currentMass != null)
             {
+                if (_currentMass.ElementType != currentCastingElement)
+                {
+                    _currentMass.Fizzle();
+                    return;
+                }
                 if (input.JustReleased(this))
                 {
                     ElementActionState actionState = inputBank.GetFirstQualifiedElementAction(currentCastingElement.ElementActions);

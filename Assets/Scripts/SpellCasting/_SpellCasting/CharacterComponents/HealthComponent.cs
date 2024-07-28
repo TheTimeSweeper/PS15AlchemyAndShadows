@@ -26,6 +26,9 @@ namespace SpellCasting
         private CommonComponentsHolder commonComponents;
         public CommonComponentsHolder CommonComponents => commonComponents;
 
+        [SerializeField]
+        private DeathComponent deathComponent;
+
         public bool Ded => health < 0;
 
         public void Init(float health)
@@ -52,6 +55,11 @@ namespace SpellCasting
             DamageTypeCatalog.OnTakeDamageAll(info);
 
             OnDamageTaken?.Invoke(info);
+
+            if (Ded && deathComponent != null)
+            {
+                deathComponent.GetRektLol();
+            }
         }
 
         public void Heal(HealingInfo heal)

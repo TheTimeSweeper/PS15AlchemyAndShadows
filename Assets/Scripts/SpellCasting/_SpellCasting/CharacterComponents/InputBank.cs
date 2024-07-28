@@ -57,6 +57,7 @@ namespace SpellCasting
         public InputState M2 = new InputState();
         public InputState Space = new InputState();
         public InputState Shift = new InputState();
+        public InputState E = new InputState();
         public Vector3 LocalMoveDirection { get; set; }
         public Vector3 GlobalMoveDirection { get; set; }
         //public InputState[] extraInputStates;
