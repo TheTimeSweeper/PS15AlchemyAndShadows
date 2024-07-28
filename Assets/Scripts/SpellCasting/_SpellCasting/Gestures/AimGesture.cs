@@ -20,10 +20,6 @@ namespace SpellCasting
         public const float BASE_GESTURE_MID_PRIO = 2;
         public const float BASE_GESTURE_HIGH_PRIO = 3;
 
-        public abstract bool QualifyGesture(InputBank bank, InputState lastHeldInput);
-        public virtual void RedeemGesture(InputState state) { }
-        public virtual void ResetGesture() { }
-
         [SerializeField]
         private float priority;
         public float Priority => priority;
@@ -36,5 +32,7 @@ namespace SpellCasting
         {
             return (int)(other.Priority - Priority);
         }
+
+        public abstract ScriptableObjectBehavior GetBehavior();
     }
 }

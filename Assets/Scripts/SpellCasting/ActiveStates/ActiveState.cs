@@ -19,7 +19,6 @@ namespace ActiveStates
         protected CharacterModel characterModel => machine.CommonComponents.CharacterModel;
         protected StateMachineLocator stateMachineLocator => machine.CommonComponents.StateMachineLocator;
         protected TeamComponent teamComponent => machine.CommonComponents.TeamComponent;
-        protected SetStateOnGetHurt setStateOnGetHurt => machine.CommonComponents.SetStateOnGetHurt;
 
         private float _fixedAge;
         protected float fixedAge => _fixedAge;

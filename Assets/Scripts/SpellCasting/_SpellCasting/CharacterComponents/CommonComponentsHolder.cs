@@ -16,7 +16,6 @@ namespace SpellCasting
         public CharacterModel CharacterModel;
         public StateMachineLocator StateMachineLocator;
         public TeamComponent TeamComponent;
-        public SetStateOnGetHurt SetStateOnGetHurt;
 
         private void Reset()
         {
@@ -28,7 +27,6 @@ namespace SpellCasting
             CharacterModel = GetComponent<CharacterModel>();
             StateMachineLocator = GetComponent<StateMachineLocator>();
             TeamComponent = GetComponent<TeamComponent>();
-            SetStateOnGetHurt = GetComponent<SetStateOnGetHurt>();
         }
     }
 }

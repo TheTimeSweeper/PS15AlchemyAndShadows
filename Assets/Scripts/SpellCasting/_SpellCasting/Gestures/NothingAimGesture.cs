@@ -5,9 +5,17 @@ namespace SpellCasting
     [CreateAssetMenu(menuName = "GestureType/Nothing", fileName = "GestureNothing")]
     public class NothingAimGesture : AimGesture
     {
-        public override bool QualifyGesture(InputBank bank, InputState inputState)
+        public override ScriptableObjectBehavior GetBehavior()
         {
-            return bank.GestureDelta == Vector3.zero;
+            return new NothingGestureBehavior();
+        }
+
+        public class NothingGestureBehavior : GestureBehavior<NothingAimGesture>
+        {
+            public override bool QualifyGesture(InputBank bank, InputState inputState)
+            {
+                return bank.GestureDelta == Vector3.zero;
+            }
         }
     }
 }

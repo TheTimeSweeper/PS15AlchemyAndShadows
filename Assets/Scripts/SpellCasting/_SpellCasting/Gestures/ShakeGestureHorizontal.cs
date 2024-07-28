@@ -15,67 +15,75 @@ namespace SpellCasting
         [SerializeField]
         private float minXTurn = 3;
 
-        private Vector3 _lastDelta;
-        private Vector3 _lastExtreme;
-
-        private float _graceTimer = 0.5f;
-
-        private int _turns;
-
-        private bool _lastQualified;
-
-        public override void ResetGesture()
+        public override ScriptableObjectBehavior GetBehavior()
         {
-            _lastDelta = Vector3.zero;
-            _lastExtreme = Vector3.zero;
-            _turns = 0;
+            return new ShakeGestureBehavior { infoObject = this };
         }
 
-        public override bool QualifyGesture(InputBank bank, InputState inputState)
+        public class ShakeGestureBehavior : GestureBehavior<ShakeGestureHorizontal>
         {
-            _graceTimer -= Time.deltaTime;
+            private Vector3 _lastDelta;
+            private Vector3 _lastExtreme;
 
-            if (bank.GestureDelta == Vector3.zero)
+            private float _graceTimer = 0.5f;
+
+            private int _turns;
+
+            private bool _lastQualified;
+
+            public override void ResetGesture()
             {
-                if (_graceTimer < 0)
-                {
-                    _turns = 0;
-                    bank.DebugShakeTurns = _turns;
-                }
-                else
-                {
-                    return _lastQualified;
-                }
-            }
-            else
-            {
-                _graceTimer = 0.5f;
-            }
-
-            int direction = bank.GestureDelta.x > 0 ? 1 : -1;
-
-            //is previous direction opposite current direction
-            if (_lastDelta.x * -direction > 0)
-            {
-                if (Mathf.Abs(bank.GesturePosition.x - _lastExtreme.x) > minXTurn)
-                {
-                    _turns++;
-                }
-                _lastExtreme = bank.GesturePosition;
-            }
-
-            _lastDelta = bank.GestureDelta;
-
-            if (Mathf.Abs(bank.GesturePosition.y - _lastExtreme.y) > maxYGive)
-            {
+                _lastDelta = Vector3.zero;
+                _lastExtreme = Vector3.zero;
                 _turns = 0;
             }
 
-            bank.DebugShakeTurns = _turns;
+            public override bool QualifyGesture(InputBank bank, InputState inputState)
+            {
+                _graceTimer -= Time.deltaTime;
 
-            _lastQualified = _turns >= minShakes;
+                if (bank.GestureDelta == Vector3.zero)
+                {
+                    if (_graceTimer < 0)
+                    {
+                        _turns = 0;
+                        bank.DebugShakeTurns = _turns;
+                    }
+                    else
+                    {
+                        return _lastQualified;
+                    }
+                }
+                else
+                {
+                    _graceTimer = 0.5f;
+                }
 
-            return _lastQualified;
+                int direction = bank.GestureDelta.x > 0 ? 1 : -1;
+
+                //is previous direction opposite current direction
+                if (_lastDelta.x * -direction > 0)
+                {
+                    if (Mathf.Abs(bank.GesturePosition.x - _lastExtreme.x) > InfoObject.minXTurn)
+                    {
+                        _turns++;
+                    }
+                    _lastExtreme = bank.GesturePosition;
+                }
+
+                _lastDelta = bank.GestureDelta;
+
+                if (Mathf.Abs(bank.GesturePosition.y - _lastExtreme.y) > InfoObject.maxYGive)
+                {
+                    _turns = 0;
+                }
+
+                bank.DebugShakeTurns = _turns;
+
+                _lastQualified = _turns >= InfoObject.minShakes;
+
+                return _lastQualified;
+            }
         }
     }
 }

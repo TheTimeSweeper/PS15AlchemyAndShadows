@@ -26,6 +26,8 @@ namespace SpellCasting
         private CommonComponentsHolder commonComponents;
         public CommonComponentsHolder CommonComponents => commonComponents;
 
+        public bool Ded => health < 0;
+
         public void Init(float health)
         {
             maxHealth = health;

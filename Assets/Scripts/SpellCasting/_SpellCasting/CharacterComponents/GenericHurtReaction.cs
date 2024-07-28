@@ -5,13 +5,11 @@ using UnityEngine;
 namespace SpellCasting
 {
     [RequireComponent(typeof(CharacterBody))]
-    public class SetStateOnGetHurt : MonoBehaviour
+    public class GenericHurtReaction : MonoBehaviour
     {
         [SerializeField]
         private CommonComponentsHolder commonComponents;
 
-        [SerializeField]
-        private float hitStunTime;
         [SerializeField]
         private float hitStunThreshold;
         [SerializeField]
@@ -82,7 +80,7 @@ namespace SpellCasting
             commonComponents.StateMachineLocator.SetStates(
                 new StunnedState
                 {
-                    StunTime = hitStunTime * stunFactor,
+                    StunTime = stunFactor,
                 },
                 InterruptPriority.HITSTUN,
                 true,

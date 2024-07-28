@@ -178,4 +178,30 @@ public static class Util
     {
         return gob.GetComponent<TestValues>().floats[index];
     }
+
+    public static bool ShouldTargetByTeam(GameObject thisGameObject, IHasCommonComponents targetObject, TeamIndex thisTeam, TeamTargetType teamTargeting)
+    {
+        bool validHit = false;
+        TeamIndex targetTeamIndex = Util.GetTeamIndex(targetObject);
+        switch (teamTargeting)
+        {
+            case var targeting when teamTargeting.HasFlag(TeamTargetType.SELF):
+                if (targetObject.CommonComponents.gameObject == thisGameObject)
+                    validHit = true;
+                break;
+
+            //JAM friendlyfiremanager?
+            case var targeting when teamTargeting.HasFlag(TeamTargetType.OTHER):
+                if (targetTeamIndex != thisTeam)
+                    validHit = true;
+                break;
+
+            case var targeting when teamTargeting.HasFlag(TeamTargetType.ALLY):
+                if (targetTeamIndex == thisTeam)
+                    validHit = true;
+                break;
+        }
+
+        return validHit;
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using SpellCasting;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Windows;
 
 namespace ActiveStates.Characters
 {
@@ -42,7 +43,7 @@ namespace ActiveStates.Characters
 
             //jam effectcatalog when
                 //well I did it but this works so not touching it til i need to
-            if (characterModel.particleSystemLocator)
+            if (characterModel?.particleSystemLocator)
             {
                 ParticleSystem swipeParticle = characterModel.particleSystemLocator.LocateByName("SwipeParticle");
                 if (swipeParticle) 

@@ -24,7 +24,12 @@ namespace SpellCasting
         private float _recentLargestDelta;
         private float _recentLargestTimer;
 
-        public override bool QualifyGesture(InputBank bank, InputState inputState)
+        public override ScriptableObjectBehavior GetBehavior()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool QualifyGesture(InputBank bank, InputState inputState)
         {
             _graceTimer -= Time.deltaTime;
 

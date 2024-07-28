@@ -1,3 +1,4 @@
+using SpellCasting.AI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -51,26 +52,14 @@ namespace SpellCasting
 
     public class InputBank : MonoBehaviour
     {
-        public Vector3 AimPoint { get; set; }
-        public Vector3 AimDirection { get; set; }
-        public Vector3 AimOut
-        {
-            get
-            {
-                Vector3 result = AimPoint - transform.position;
-                result.y = 0;
-                return result.normalized;
-            }
-        }
-
         public InputState M1 = new InputState();
         public InputState M2 = new InputState();
         public InputState Space = new InputState();
         public InputState Shift = new InputState();
+        public Vector3 LocalMoveDirection { get; set; }
+        public Vector3 GlobalMoveDirection { get; set; }
         //public InputState[] extraInputStates;
-
         public List<InputState> OrderedHeldInputs { get; set; } = new List<InputState>();
-
         public InputState CurrentPrimaryInput
         {
             get
@@ -86,18 +75,31 @@ namespace SpellCasting
             }
         }
 
+        public Vector3 AimPoint { get; set; }
+        public Vector3 AimDirection { get; set; }
+        public Vector3 AimOut
+        {
+            get
+            {
+                Vector3 result = AimPoint - transform.position;
+                result.y = 0;
+                return result.normalized;
+            }
+        }
+
         public Vector3 GesturePosition { get; set; }
         public Vector3 GestureDelta { get; set; }
         public float GestureDistance => Vector3.Distance(GesturePosition, _gestureLerpPosition);
-        private Vector3 _gestureLerpPosition;
 
-        public Vector3 LocalMoveDirection { get; set; }
-        public Vector3 GlobalMoveDirection { get; set; }
+        private Vector3 _gestureLerpPosition;
 
         private List<InputState> _allInputStates;
 
-        private List<AimGesture> _gestures => GestureCatalog.AllGestures;
+        [SerializeField]
+        private List<AimGesture> validGestures;
         private List<AimGesture> _qualifiedGestures = new List<AimGesture>();
+
+        private List<GestureBehavior> _gestureBehaviors = new List<GestureBehavior>();
 
         [Header("Debug")]
         public float DebugSwipeMag;
@@ -108,6 +110,10 @@ namespace SpellCasting
 
         void Start()
         {
+            for (int i = 0; i < validGestures.Count; i++)
+            {
+                _gestureBehaviors.Add(validGestures[i].GetBehavior() as GestureBehavior);
+            }
             _allInputStates = new List<InputState> { M1, M2, Space, Shift }; 
             //AllInputStates.AddRange(extraInputStates);
         }
@@ -140,11 +146,11 @@ namespace SpellCasting
 
             if (CurrentPrimaryInput != null)
             {
-                for (int i = 0; i < _gestures.Count; i++)
+                for (int i = 0; i < validGestures.Count; i++)
                 {
-                    AimGesture gesture = _gestures[i];
+                    AimGesture gesture = validGestures[i];
 
-                    bool qualified = gesture.QualifyGesture(this, CurrentPrimaryInput);
+                    bool qualified = _gestureBehaviors[i].QualifyGesture(this, CurrentPrimaryInput);
 
                     SetGestureQualified(gesture, qualified);
 
@@ -190,12 +196,11 @@ namespace SpellCasting
             }
             return null;
         }
-
         public void ResetGestures()
         {
-            for (int i = 0; i < _gestures.Count; i++)
+            for (int i = 0; i < _gestureBehaviors.Count; i++)
             {
-                _gestures[i].ResetGesture();
+                _gestureBehaviors[i].ResetGesture();
             }
         }
     }

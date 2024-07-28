@@ -26,6 +26,7 @@ namespace ActiveStates
 
         private Queue<ActiveState> _queuedStates = new Queue<ActiveState>();
         private ActiveState _currentlyRunningState;
+        public ActiveState CurrentState => _currentlyRunningState;
 
         private void Start()
         {

@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870788672680780415}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f696e358b3c0a40922647355248b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0.3
+  time: 0.5
   curve:
     serializedVersion: 2
     m_Curve:
@@ -299,6 +299,18 @@ PrefabInstance:
     - target: {fileID: 13560440226251413, guid: 6187377faff50de409dfe96c6ceb35da, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 13560440226251413, guid: 6187377faff50de409dfe96c6ceb35da, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13560440226251413, guid: 6187377faff50de409dfe96c6ceb35da, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.40701026
+      objectReference: {fileID: 0}
+    - target: {fileID: 13560440226251413, guid: 6187377faff50de409dfe96c6ceb35da, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13560440226251413, guid: 6187377faff50de409dfe96c6ceb35da, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time

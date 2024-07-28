@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OverlayTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 961592d5ce9b91f45b1aaa11c8151878, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -82,7 +82,7 @@ Material:
     - _Mode: 0
     - _NormalStrength: 1
     - _OcclusionStrength: 1
-    - _OverlayOpacity: 0
+    - _OverlayOpacity: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -90,9 +90,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.87147844, g: 0.48273405, b: 0.9056604, a: 1}
+    - _Color: {r: 0.7609105, g: 0.48235294, b: 0.90588236, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &5481924767670462461
 MonoBehaviour:
   m_ObjectHideFlags: 11

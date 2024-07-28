@@ -1,6 +1,11 @@
 ﻿using SpellCasting;
 using UnityEngine;
 
+namespace ActiveStates.Elements.Enemy
+{
+    //public class SimpleFireball :
+}
+
 namespace ActiveStates.Elements
 {
     public class ElementThrowProjectile : BaseElementMassState 

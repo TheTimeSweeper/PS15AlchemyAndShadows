@@ -26,7 +26,11 @@ MonoBehaviour:
     activeStateName: ActiveStates.Elements.BasicElementLetGo
   bodyMeleeStaterino:
     activeStateName: ActiveStates.Characters.GenericMeleeCombo
-  elementActions: []
+  elementActions:
+  - gestureType: {fileID: 11400000, guid: 6dd5c6d84daa7874898992a754a5cde1, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.BasicElementMelee
+    baseManaCost: 0
   componentElements: []
   explosionPrefab: {fileID: 0}
   poolPrefab: {fileID: 0}

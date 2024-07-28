@@ -60,25 +60,11 @@ namespace SpellCasting
                     //if team is undefined, just hit everything
                     if (Team != default)
                     {
-                        bool validHit = false;
-                        switch (TeamTargeting)
-                        {
-                            case var targeting when TeamTargeting.HasFlag(TeamTargetType.SELF):
-                                if (healthComponent.gameObject == OwnerGameObject)
-                                    validHit = true;
-                                break;
 
-                            //JAM friendlyfiremanager?
-                            case var targeting when TeamTargeting.HasFlag(TeamTargetType.OTHER):
-                                if (Util.GetTeamIndex(hurtbox.HealthComponent) != Team)
-                                    validHit = true;
-                                break;
-
-                            case var targeting when TeamTargeting.HasFlag(TeamTargetType.ALLY):
-                                if (Util.GetTeamIndex(hurtbox.HealthComponent) == Team)
-                                    validHit = true;
-                                break;
-                        }
+                        GameObject thisGameObject = OwnerGameObject;
+                        IHasCommonComponents targetObject = healthComponent;
+                        TeamTargetType teamTargeting = TeamTargeting;
+                        bool validHit = Util.ShouldTargetByTeam(thisGameObject, targetObject, Team, teamTargeting);
                         if (!validHit)
                         {
                             continue;
