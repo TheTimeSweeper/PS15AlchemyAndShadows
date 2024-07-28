@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 194140475}
   - component: {fileID: 194140474}
   m_Layer: 0
-  m_Name: BasicHitbox (1)
+  m_Name: BasicHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3008,10 +3008,10 @@ MonoBehaviour:
   elementColoredRenderers: []
   elementColoredParticles: []
   noElementColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  characterDirection: {fileID: 0}
+  characterDirection: {fileID: 1422167433}
   childLocator: {fileID: 0}
-  hitboxLocator: {fileID: 0}
-  particleSystemLocator: {fileID: 0}
+  hitboxLocator: {fileID: 1422167430}
+  particleSystemLocator: {fileID: 1422167431}
 --- !u!114 &1422167433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3444,6 +3444,8 @@ GameObject:
   - component: {fileID: 1671605397}
   - component: {fileID: 1671605396}
   - component: {fileID: 1671605395}
+  - component: {fileID: 1671605407}
+  - component: {fileID: 1671605408}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -3465,6 +3467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   validGestures:
   - {fileID: 11400000, guid: 6dd5c6d84daa7874898992a754a5cde1, type: 2}
+  - {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
   DebugSwipeMag: 0
   DebugSwirlTotalAngleSwirled: 0
   DebugShakeTurns: 0
@@ -3525,7 +3528,7 @@ MonoBehaviour:
     BaseManaRegeneration: 1
     BaseManaCostMultiplier: 1
     BaseCastRange: 20
-    BaseMoveSpeed: 20
+    BaseMoveSpeed: 0.44
     BaseJumpHeight: 0
   commonComponents: {fileID: 1671605404}
 --- !u!114 &1671605399
@@ -3608,7 +3611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engine: {fileID: 1671605401}
-  controlledAcceleration: 100
+  controlledAcceleration: 69
   idleInertia: 10
 --- !u!114 &1671605404
 MonoBehaviour:
@@ -3623,11 +3626,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthComponent: {fileID: 1671605405}
-  InputBank: {fileID: 0}
+  InputBank: {fileID: 1671605395}
   CharacterBody: {fileID: 1671605398}
-  Caster: {fileID: 0}
+  Caster: {fileID: 1671605407}
   FixedMotorDriver: {fileID: 1671605403}
-  CharacterModel: {fileID: 0}
+  CharacterModel: {fileID: 1422167432}
   StateMachineLocator: {fileID: 1671605399}
   TeamComponent: {fileID: 1671605400}
 --- !u!114 &1671605405
@@ -3658,11 +3661,46 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1422167429}
   - {fileID: 1742306616}
   - {fileID: 1269351300}
+  - {fileID: 1422167429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1671605407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671605394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 907ea076d974e8f4f8d2dfb0966a14a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputBank: {fileID: 1671605395}
+  commonComponents: {fileID: 1671605404}
+  m1Element: {fileID: 11400000, guid: e9dc55c4007b4c84287fb34af817401e, type: 2}
+  m2Element: {fileID: 0}
+  shiftElement: {fileID: 0}
+  spaceElement: {fileID: 0}
+--- !u!114 &1671605408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671605394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d649957a92d9f0048872753b103e5597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: Casting
+  commonComponents: {fileID: 1671605404}
+  DefaultState:
+    activeStateName: ActiveStates.Characters.ManipulatingElementsState
+  currentState: 
 --- !u!1 &1692810340
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,7 +3795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1730395289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4137,13 +4175,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputBank: {fileID: 1671605395}
   aimOriginPosition: {fileID: 1269351300}
-  maxInputRange: 0
+  maxInputRange: 6
   debug: 0
   deltaEnds: []
   deltaStarts: []
   downInputs: 00000000
   inputDownFrames: 00000000000000000000000000000000
-  gestureSpeedMultiplier: 1
+  gestureSpeedMultiplier: 10
+  DebugFixedAge: 0
 --- !u!114 &1742306619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4157,13 +4196,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gestureBehaviors:
-  - {fileID: 11400000, guid: f0afa44b7de6eb144bee81c8ed83bd03, type: 2}
+  - {fileID: 11400000, guid: e31d778c134279446bf62023ff5fdee5, type: 2}
   AIInputController: {fileID: 1742306618}
   defaultAimPoint: {fileID: 1414133353}
   teamTargetType: 2
   teamComponent: {fileID: 1671605400}
-  searchDistance: 111
-  searchInterval: 1
+  searchDistance: 50
+  searchIntervalMin: 1
+  searchIntervalMax: 2
   aiStateMachine: {fileID: 1742306617}
 --- !u!1 &1819234623
 GameObject:
@@ -4641,7 +4681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1906396762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5229,7 +5269,7 @@ GameObject:
   - component: {fileID: 2107812901}
   - component: {fileID: 2107812900}
   m_Layer: 0
-  m_Name: SwipeParticle (1)
+  m_Name: SwipeParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10836,6 +10876,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharJoanna
       objectReference: {fileID: 0}
+    - target: {fileID: 2593886557186326773, guid: b53c50db6e9871e40b6ef372d8ae4cf3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10991,6 +11035,10 @@ PrefabInstance:
     - target: {fileID: 8847469351332851560, guid: e480d446e7593a24493c093cfa936580, type: 3}
       propertyPath: m_Name
       value: MainGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847469351332851560, guid: e480d446e7593a24493c093cfa936580, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

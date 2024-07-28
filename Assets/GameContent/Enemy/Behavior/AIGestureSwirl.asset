@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a37eacff17d00e64e88ceb903d8f11bc, type: 3}
-  m_Name: AIGestureClick
+  m_Script: {fileID: 11500000, guid: 6b75908d51fbfab4d9d23f4e63b6db78, type: 3}
+  m_Name: AIGestureSwirl
   m_EditorClassIdentifier: 
-  duration: 0.1
+  duration: 2
   inputIndex: 0
-  CloseDistance: 6
+  CloseDistance: 10
   StrafeWhileClose: 0
+  offsetDistance: 3
+  angularVelocity: 10

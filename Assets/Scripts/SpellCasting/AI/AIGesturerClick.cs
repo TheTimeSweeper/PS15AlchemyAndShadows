@@ -13,18 +13,21 @@ namespace SpellCasting.AI
         public class AIClickBehavior : AIGestureBehavior<AIGesturerClick>
         {
             private Vector3 initialPosition;
-            public override void OnFixedUpdate(AIBrain inputController)
+
+            public override bool OnFixedUpdate(AIBrain brain)
             {
-                base.OnFixedUpdate(inputController);
+                bool end = base.OnFixedUpdate(brain);
 
                 if (initialPosition == Vector3.zero)
                 {
-                    initialPosition = inputController.CurrentTargetPosition;
+                    initialPosition = brain.CurrentTargetPosition;
                 }
 
-                inputController.AIInputController.CurrentAimPosition = inputController.CurrentTargetPosition;
-                inputController.AIInputController.OverrideGesturePosition = initialPosition;
-                inputController.AIInputController.downInputs[InfoObject.inputIndex] = true;
+                brain.AIInputController.CurrentAimPosition = brain.CurrentTargetPosition;
+                brain.AIInputController.OverrideGesturePosition = initialPosition;
+                brain.AIInputController.downInputs[InfoObject.inputIndex] = true;
+
+                return end;
             }
         }
     }

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 20
   baseElement: 0
-  elementMassPrefab: {fileID: 0}
-  cursorIndicatorPrefab: {fileID: 0}
-  elementColor: {r: 0, g: 0, b: 0, a: 0}
+  elementMassPrefab: {fileID: 4742311297794782505, guid: cda0e8e3ca13bf24e8e20abcc62b3149, type: 3}
+  cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
+  elementColor: {r: 0.6981132, g: 0.13501245, b: 0.13501245, a: 1}
   massGrowthMultiplier: 0
-  massBaseMass: 0
-  massVelocityMultiplier: 0
+  massBaseMass: 1
+  massVelocityMultiplier: 11
   massSpawnState:
     activeStateName: ActiveStates.Elements.BasicElementGrow
   massLetGoState:
@@ -30,6 +30,10 @@ MonoBehaviour:
   - gestureType: {fileID: 11400000, guid: 6dd5c6d84daa7874898992a754a5cde1, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.BasicElementMelee
+    baseManaCost: 0
+  - gestureType: {fileID: 11400000, guid: bf5fa6541de09864aab592876a92a511, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.Fire.FireSwipe
     baseManaCost: 0
   componentElements: []
   explosionPrefab: {fileID: 0}

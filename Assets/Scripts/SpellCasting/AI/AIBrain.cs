@@ -16,7 +16,7 @@ namespace SpellCasting.AI
         public AIInputController AIInputController;
 
         [SerializeField]
-        private Transform defaultAimPoint;
+        public Transform defaultAimPoint;
 
         [SerializeField]
         private TeamTargetType teamTargetType = TeamTargetType.OTHER;
@@ -27,55 +27,54 @@ namespace SpellCasting.AI
         [SerializeField]
         private float searchDistance;
         [SerializeField]
-        private float searchInterval = 1;
+        public float searchIntervalMin = 1;
+        [SerializeField]
+        public float searchIntervalMax = 2;
 
         [SerializeField]
         private ActiveStateMachine aiStateMachine;
 
-        public AIGestureBehavior CurrentGesture { get; set; }
+        private CharacterBody _targetBody;
+        public CharacterBody CurrentTargetBody
+        {
+            get
+            {
+                if(_targetBody != null && !_targetBody.Ded)
+                {
+                    return _targetBody;
+                } 
+                else
+                {
+                    _targetBody = null;
+                }
+                return _targetBody;
+            }
+            set
+            {
+                _targetBody = value;
+            }
+        }
 
-        private CharacterBody target;
 
-        public Vector3 CurrentTargetPosition => target != null ? target.transform.position : defaultAimPoint.position;
-
-        private float _searchTim = 1;
+        public Vector3 CurrentTargetPosition => CurrentTargetBody != null ? CurrentTargetBody.transform.position + Vector3.up* defaultAimPoint.transform.position.y : defaultAimPoint.position;
 
         void FixedUpdate()
         {
-            Search();
-
-            bool hasTarget = target != null && !target.CommonComponents.HealthComponent.Ded;
-            if (hasTarget && aiStateMachine.CurrentState is not AITargetState)
+            if(aiStateMachine.CurrentState is IdleState)
             {
-                TryRollGesture();
-
-                if (CurrentGesture != null)
-                {
-                    aiStateMachine.setState(new ChaseTocombat { Brain = this, TargetBody = target });
-                }
-            }
-
-            if((!hasTarget || CurrentGesture == null) && aiStateMachine.CurrentState is AITargetState)
-            {
-                aiStateMachine.setStateToDefault();
+                aiStateMachine.setState(new Search { Brain = this });
             }
         }
 
-        private void TryRollGesture()
+        public AIGestureBehavior RollGesture()
         {
-            if(CurrentGesture != null)
-                return;
-            CurrentGesture = gestureBehaviors[UnityEngine.Random.Range(0, gestureBehaviors.Length)].GetBehavior() as AIGestureBehavior;
+            return gestureBehaviors[UnityEngine.Random.Range(0, gestureBehaviors.Length)].GetBehavior() as AIGestureBehavior;
         }
 
-        private void Search()
+        public CharacterBody SearchForTarget()
         {
-            _searchTim -= Time.fixedDeltaTime;
-            if (_searchTim <= 0)
-            {
-                _searchTim = searchInterval;
-                target = CharacterBodyTracker.FindBodyByTeam(gameObject, teamComponent.TeamIndex, teamTargetType, searchDistance * searchDistance);
-            }
+            return CharacterBodyTracker.FindBodyByTeam(gameObject, teamComponent.TeamIndex, teamTargetType, searchDistance * searchDistance);
+            
         }
     }
 }

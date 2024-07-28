@@ -141,7 +141,5 @@ namespace SpellCasting
                 return _lastQualified;
             }
         }
-
-
     }
 }

@@ -4,19 +4,40 @@ using UnityEngine;
 
 namespace ActiveStates.AI
 {
-    public class ChaseTocombat : AITargetState
+    public class ChaseToCombat : AITargetState
     {
+        public float ChaseTime = 1;
+
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            Gesture = Brain.RollGesture();
+        }
+
         public override void OnFixedUpdate()
         {
             base.OnFixedUpdate();
 
-            Vector3 difference = TargetBody.transform.position - transform.position;
-
-            Brain.AIInputController.MoveDirection = -difference;
-
-            if (difference.magnitude < Brain.CurrentGesture.CloseDistasnce)
+            if (Brain.CurrentTargetBody == null)
             {
-                machine.setState(new Combat { TargetBody = TargetBody, Brain = Brain });
+                machine.setStateToDefault();
+                return;
+            }
+
+            Vector3 difference = Brain.CurrentTargetBody.transform.position - transform.position;
+
+            if (difference.magnitude >= Gesture.CloseDistasnce)
+            {
+                Brain.AIInputController.MoveDirection = -difference;
+            } 
+            else
+            {
+                Brain.AIInputController.MoveDirection = Vector3.zero;
+
+                if (fixedAge > ChaseTime)
+                {
+                    machine.setState(new Combat { Brain = Brain, Gesture = Gesture });
+                }
             }
         }
 

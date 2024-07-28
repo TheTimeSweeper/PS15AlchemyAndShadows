@@ -9,14 +9,32 @@ namespace SpellCasting
         public int[] inputDownFrames = new int[4];
 
         public Vector3 MoveDirection { get; set; }
-        public Vector3 CurrentAimPosition { get; set; }
-        public Vector3 OverrideGesturePosition { get; set; }
+
+        private Vector3 _currentAimPosition;
+        public Vector3 CurrentAimPosition { get => _currentAimPosition;
+            set {
+                _lastAimPosition = _currentAimPosition;
+                _currentAimPosition = value;
+            } 
+        }
+        private Vector3 _lastAimPosition;
+
+        private Vector3 _overrideGesturePosition;
+        public Vector3 OverrideGesturePosition
+        {
+            get => _overrideGesturePosition;
+            set
+            {
+                _lastOverrideGesturePosition = _overrideGesturePosition;
+                _overrideGesturePosition = value;
+            }
+        }
+        private Vector3 _lastOverrideGesturePosition;
+
+        private float _lastFixedTime;
 
         [SerializeField]
         private float gestureSpeedMultiplier;
-
-        [SerializeField]
-        public float DebugFixedAge;
 
         private void FixedUpdate()
         {
@@ -28,6 +46,7 @@ namespace SpellCasting
                     downInputs[i] = false;
                 }
             }
+            _lastFixedTime = Time.time;
         }
 
         public void JustPress(int input)
@@ -38,7 +57,12 @@ namespace SpellCasting
 
         protected override Vector3 GetAimPosition()
         {
-            return CurrentAimPosition;
+            //smooth between fixedupdates
+            float timeSinceLastDeltaTIme = Time.time - _lastFixedTime;
+
+            Vector3 lerpedPosition = Vector3.Lerp(_lastAimPosition, CurrentAimPosition, timeSinceLastDeltaTIme / Time.fixedDeltaTime);
+
+            return lerpedPosition;
         }
 
         protected override Vector3 GetGesturePosition()
@@ -46,12 +70,17 @@ namespace SpellCasting
             Vector3 gesture;
             if(OverrideGesturePosition != Vector3.zero)
             {
-                gesture = OverrideGesturePosition;
+                float timeSinceLastDeltaTIme = Time.time - _lastFixedTime;
+
+                Vector3 lerpedPosition = Vector3.Lerp(_lastOverrideGesturePosition, OverrideGesturePosition, timeSinceLastDeltaTIme / Time.fixedDeltaTime);
+
+                gesture = lerpedPosition;
             } 
             else
             {
-                gesture = transform.TransformPoint(CurrentAimPosition) * gestureSpeedMultiplier;
+                gesture = transform.TransformPoint(GetAimPosition());
             }
+
             return new Vector3(gesture.x, gesture.z, 0) * gestureSpeedMultiplier;
         }
 

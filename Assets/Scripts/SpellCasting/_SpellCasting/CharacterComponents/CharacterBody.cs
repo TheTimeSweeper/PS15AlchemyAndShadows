@@ -77,6 +77,8 @@ namespace SpellCasting
 
         public TeamIndex teamIndex => commonComponents.TeamComponent.TeamIndex;
 
+        public bool Ded => commonComponents.HealthComponent.Ded;
+
         [ContextMenu("ReInitStats")]
         void Awake()
         {

@@ -8,7 +8,9 @@ namespace SpellCasting.AI
 
         public abstract float CloseDistasnce { get; }
 
-        public abstract void OnFixedUpdate(AIBrain brain);
+        public virtual void OnEnter(AIBrain brain) { }
+
+        public abstract bool OnFixedUpdate(AIBrain brain);
 
         public abstract void End(AIBrain brain);
     }
@@ -29,20 +31,23 @@ namespace SpellCasting.AI
         }
         public override float CloseDistasnce { get => InfoObject.CloseDistance; }
 
-        public override void OnFixedUpdate(AIBrain brain)
+        //jam this should have been an activestate huh
+
+        public override bool OnFixedUpdate(AIBrain brain)
         {
             fixedAge += Time.fixedDeltaTime;
 
             if (fixedAge > InfoObject.duration)
             {
                 End(brain);
+                return true;
             }
+            return false;
         }
 
         public override void End(AIBrain brain)
         {
             brain.AIInputController.downInputs[InfoObject.inputIndex] = false;
-            brain.CurrentGesture = null;
         }
     }
 }
