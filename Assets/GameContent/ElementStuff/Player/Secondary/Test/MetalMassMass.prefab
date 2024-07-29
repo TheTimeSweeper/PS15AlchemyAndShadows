@@ -94,6 +94,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6352637483393088369}
     m_Modifications:
+    - target: {fileID: 2501168355527328141, guid: bc8ad25576f249f41b15b31519c23d9e, type: 3}
+      propertyPath: damageCoefficient
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6420521427287630370, guid: bc8ad25576f249f41b15b31519c23d9e, type: 3}
       propertyPath: m_Name
       value: EarthSubMass
@@ -146,7 +150,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7887979945394510737, guid: bc8ad25576f249f41b15b31519c23d9e, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 336713543498439248}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc8ad25576f249f41b15b31519c23d9e, type: 3}
@@ -225,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 1168993829280939313}
     - target: {fileID: 5599481637262332111, guid: d6a28643d1c770d479de198c4b66a84a, type: 3}
       propertyPath: m_Name
-      value: EarthMass
+      value: MetalMassMass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace SpellCasting
 {
-
     public class CameraController : MonoBehaviour
     {
         [SerializeField]
@@ -28,6 +27,11 @@ namespace SpellCasting
         public Vector3 GetMousePointFromWorld(Vector3 position)
         {
             return currentCamera.WorldToScreenPoint(position);
+        }
+
+        void OnDestroy()
+        {
+            currentCamera.transform.parent = null;
         }
     }
 }

@@ -30,9 +30,9 @@ namespace ActiveStates.AI
             }
         }
 
-        public override void OnExit()
+        public override void OnExit(bool machineDed = false)
         {
-            base.OnExit();
+            base.OnExit(machineDed);
             Gesture.End(Brain);
         }
     }

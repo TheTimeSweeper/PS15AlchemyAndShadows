@@ -18,7 +18,7 @@ namespace SpellCasting
 
         private static Vector3 GetPositionFromRightJoystick()
         {
-            return new Vector3(-Input.GetAxis("RightStickX"), 0, Input.GetAxis("RightStickY"));
+            return new Vector3(-Input.GetAxis("RightStickX"), 0, -Input.GetAxis("RightStickY"));
         }
 
         protected override void SetbuttonInputs()
@@ -32,12 +32,12 @@ namespace SpellCasting
 
         protected override Vector3 GetMovementInput()
         {
-            return new Vector3(Input.GetAxis("HorizontalJoy"), 0, Input.GetAxis("VerticalJoy"));
+            return new Vector3(-Input.GetAxis("HorizontalJoy"), 0, Input.GetAxis("VerticalJoy"));
         }
 
         protected override Vector3 GetGestureDelta()
         {
-            return new Vector3(-Input.GetAxis("RightStickX"), Input.GetAxis("RightStickY"));
+            return new Vector3(-Input.GetAxis("RightStickX"), -Input.GetAxis("RightStickY"));
         }
 
         protected override Vector3 GetAimDirection()

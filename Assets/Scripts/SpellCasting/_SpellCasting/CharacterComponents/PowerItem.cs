@@ -16,5 +16,8 @@ namespace SpellCasting
 
         [SerializeField]
         public BuffInfo buffToApply;
+
+        [SerializeField]
+        public float buffDuration = -1;
     }
 }

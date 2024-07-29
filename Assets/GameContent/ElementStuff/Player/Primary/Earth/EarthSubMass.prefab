@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392a07cf2534f45449902f8a52befa08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  massScaleContainer: {fileID: 7887979945394510737}
+  massScaleContainer: {fileID: 5900146329496642311}
   rigidBody: {fileID: 4227748468550602867}
   projectileController: {fileID: 5571325531794995015}
 --- !u!54 &4227748468550602867
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 3163475742082288025}
-  damageCoefficient: 11
+  damageCoefficient: 1
   knockbackDirectionRigidbody: {fileID: 0}
   KnockbackForce: 0.69
   resetInterval: -1

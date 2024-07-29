@@ -120,7 +120,6 @@ namespace SpellCasting
                     T modifiedValue = _baseValue;
                     for (int i = 0; i < Modifiers.Count; i++)
                     {
-                        Debug.LogWarning($"{Modifiers[i].ID} {Modifiers[i].priority}");
                         Modifiers[i].ModifyStat(ref modifiedValue);
                     }
                     _lastValue = modifiedValue;

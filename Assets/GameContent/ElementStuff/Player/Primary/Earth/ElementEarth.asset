@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 1
   baseElement: 1
+  DisplayName: Earth
+  Icon: {fileID: 21300000, guid: 3360a36856f75034e83b7e0abef5b3af, type: 3}
+  elementColor: {r: 0.5283019, g: 0.3811953, b: 0.23175506, a: 1}
+  componentElements: []
   elementMassPrefab: {fileID: 8323308202881544581, guid: f0399cf9ce4623d4cb939acd06e48519, type: 3}
   cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
-  elementColor: {r: 0.5849056, g: 0.32974672, b: 0.1738163, a: 1}
   massGrowthMultiplier: 0
   massBaseMass: 2
   massVelocityMultiplier: 10
@@ -30,7 +33,7 @@ MonoBehaviour:
   - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Earth.EarthSwipe
-    baseManaCost: 0
+    baseManaCost: 10
   - gestureType: {fileID: 11400000, guid: 44615728a5361634c9e3b0f5a2518930, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.BasicElementMelee
@@ -39,4 +42,3 @@ MonoBehaviour:
     gestureState:
       activeStateName: ActiveStates.Elements.BasicElementLetGo
     baseManaCost: 0
-  componentElements: []

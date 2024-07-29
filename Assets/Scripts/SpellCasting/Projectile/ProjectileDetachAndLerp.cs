@@ -32,7 +32,10 @@ namespace SpellCasting.Projectiles
 
         void OnDestroy()
         {
-            Destroy(lerpedView.gameObject);
+            if (lerpedView != null)
+            {
+                Destroy(lerpedView.gameObject);
+            }
         }
     }
 }

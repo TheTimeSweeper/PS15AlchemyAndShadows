@@ -38,7 +38,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384616352816132776}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000058114523}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -5.73, y: 0, z: 9.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -80,6 +80,7 @@ MonoBehaviour:
   InputBank: {fileID: 5006275925513709933}
   CharacterBody: {fileID: 6983961863610744064}
   Caster: {fileID: 3469418705170175594}
+  ManaComponent: {fileID: 0}
   FixedMotorDriver: {fileID: 3958711077004013610}
   CharacterModel: {fileID: 7935538940552389282}
   StateMachineLocator: {fileID: 4094930025812819295}
@@ -239,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   validGestures:
   - {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
-  - {fileID: 11400000, guid: 6dd5c6d84daa7874898992a754a5cde1, type: 2}
+  - {fileID: 11400000, guid: 85e979a2161919240b040c9f98ef22ca, type: 2}
   - {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
   DebugSwipeMag: 0
   DebugSwirlTotalAngleSwirled: 0

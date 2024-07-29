@@ -28,6 +28,7 @@ namespace SpellCasting
     [CreateAssetMenu(menuName = "SpellCasting/ElementType/Unspecified", fileName = "Element")]
     public class ElementType : ScriptableObject
     {
+
         [SerializeField]
         private ElementTypeIndex index;
         public ElementTypeIndex Index { get => index; }
@@ -37,16 +38,26 @@ namespace SpellCasting
         public ElementTypeIndex BaseElement { get => baseElement; }
 
         [SerializeField]
+        public string DisplayName;
+
+        [SerializeField]
+        public Sprite Icon;
+
+        [SerializeField]
+        private Color elementColor;
+        public Color ElementColor { get => elementColor; }
+
+        [SerializeField]
+        private List<ElementType> componentElements;
+        public List<ElementType> ComponentElements => componentElements;
+
+        [SerializeField, Space]
         private ElementMass elementMassPrefab;
         public ElementMass ElementMassPrefab { get => elementMassPrefab; }
 
         [SerializeField]
         private CursorIndicator cursorIndicatorPrefab;
         public CursorIndicator CursorIndicatorPrefab { get => cursorIndicatorPrefab; set => cursorIndicatorPrefab = value; }
-
-        [SerializeField]
-        private Color elementColor;
-        public Color ElementColor { get => elementColor; }
 
         [SerializeField]
         private float massGrowthMultiplier;
@@ -75,10 +86,6 @@ namespace SpellCasting
         [SerializeField]
         private List<ElementActionState> elementActions;
         public List<ElementActionState> ElementActions => elementActions;
-
-        [SerializeField]
-        private List<ElementType> componentElements;
-        public List<ElementType> ComponentElements => componentElements;
 
         public bool IsSecondary => componentElements.Count > 1;
 

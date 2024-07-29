@@ -18,8 +18,7 @@ namespace SpellCasting
             if (currentCastingElement == null)
                 return;
 
-
-            if (_currentMass != null)
+            if (_currentMass != null && !_currentMass.Casted && _currentMass.Active)
             {
                 if (_currentMass.ElementType != currentCastingElement)
                 {
@@ -29,6 +28,11 @@ namespace SpellCasting
                 if (input.JustReleased(this))
                 {
                     ElementActionState actionState = inputBank.GetFirstQualifiedElementAction(currentCastingElement.ElementActions);
+                    if(actionState != null && !commonComponents.CharacterBody.TrySpendMana(currentCastingElement.BaseElement, actionState.BaseManaCost))
+                    {
+                        actionState = null;
+                    }
+
                     if (actionState != null)
                     {
                         inputBank.ResetGestures();

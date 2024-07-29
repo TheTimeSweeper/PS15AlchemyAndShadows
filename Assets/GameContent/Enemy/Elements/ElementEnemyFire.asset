@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 20
   baseElement: 0
+  DisplayName: 
+  Icon: {fileID: 0}
+  elementColor: {r: 0.6981132, g: 0.13501245, b: 0.13501245, a: 1}
+  componentElements: []
   elementMassPrefab: {fileID: 4742311297794782505, guid: cda0e8e3ca13bf24e8e20abcc62b3149, type: 3}
   cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
-  elementColor: {r: 0.6981132, g: 0.13501245, b: 0.13501245, a: 1}
   massGrowthMultiplier: 0
   massBaseMass: 1
   massVelocityMultiplier: 30
@@ -27,7 +30,7 @@ MonoBehaviour:
   bodyMeleeStaterino:
     activeStateName: ActiveStates.Characters.GenericMeleeCombo
   elementActions:
-  - gestureType: {fileID: 11400000, guid: 6dd5c6d84daa7874898992a754a5cde1, type: 2}
+  - gestureType: {fileID: 11400000, guid: 85e979a2161919240b040c9f98ef22ca, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.BasicElementMelee
     baseManaCost: 0
@@ -39,6 +42,5 @@ MonoBehaviour:
     gestureState:
       activeStateName: ActiveStates.Elements.Fire.FireShake
     baseManaCost: 0
-  componentElements: []
   explosionPrefab: {fileID: 4793637844757369106, guid: 0b06fec99c4a14246b3d67477d8b931f, type: 3}
   poolPrefab: {fileID: 0}

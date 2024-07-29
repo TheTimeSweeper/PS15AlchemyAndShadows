@@ -12,6 +12,7 @@ namespace SpellCasting
         public InputBank InputBank;
         public CharacterBody CharacterBody;
         public Caster Caster;
+        public ManaComponent ManaComponent;
         public FixedMotorDriver FixedMotorDriver;
         public CharacterModel CharacterModel;
         public StateMachineLocator StateMachineLocator;
@@ -23,6 +24,7 @@ namespace SpellCasting
             InputBank = GetComponent<InputBank>();
             CharacterBody = GetComponent<CharacterBody>();
             Caster = GetComponent<Caster>();
+            ManaComponent = GetComponent<ManaComponent>();
             FixedMotorDriver = GetComponent<FixedMotorDriver>();
             CharacterModel = GetComponent<CharacterModel>();
             StateMachineLocator = GetComponent<StateMachineLocator>();

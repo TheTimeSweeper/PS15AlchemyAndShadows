@@ -39,10 +39,18 @@ namespace SpellCasting
 
         public void TakeDamage(DamagingInfo damage)
         {
+            CharacterBody body = null;
+
+            if (commonComponents != null)
+            {
+                body = commonComponents.CharacterBody;
+
+            }
+
             GetDamagedinfo info = new GetDamagedinfo
             {
                 VictimHealth = this,
-                VictimBody = commonComponents.CharacterBody,
+                VictimBody = body,
                 DamagingInfo = damage
             };
 
@@ -77,6 +85,14 @@ namespace SpellCasting
             if (heal)
             {
                 health += maxHealthDelta;
+            }
+        }
+
+        void FixedUpdate()
+        {
+            if (commonComponents != null && commonComponents.CharacterBody != null)
+            {
+                health = Mathf.Clamp(health + commonComponents.CharacterBody.stats.HealthRegenPercent * commonComponents.CharacterBody.stats.MaxHealth * Time.fixedDeltaTime, 0, maxHealth);
             }
         }
     }

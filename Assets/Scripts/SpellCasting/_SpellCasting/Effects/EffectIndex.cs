@@ -3,6 +3,12 @@
     public enum EffectIndex
     {
         HITFLASH,
-        SLOW
+        SLOW,
+        UNSLOW,
+        HEAL,
+        MAXHEALTHUP,
+        MAXMANAUP,
+        DAMAGEUP,
+        FUCKINPOT
     }
 }

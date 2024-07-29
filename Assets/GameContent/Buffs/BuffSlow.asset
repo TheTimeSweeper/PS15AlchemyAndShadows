@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BuffSlow
   m_EditorClassIdentifier: 
   buffID: Slow
-  buffEffectPrefab: {fileID: 5366049141847802571, guid: b3dc927a881c02f4f8f01a75ffd8eefa, type: 3}
+  pooledEffect: {fileID: 5366049141847802571, guid: b3dc927a881c02f4f8f01a75ffd8eefa, type: 3}
   icon: {fileID: 0}
   statsToChange:
     BaseMaxHealth: 0
@@ -26,5 +26,5 @@ MonoBehaviour:
     BaseManaRegeneration: 0
     BaseManaCostMultiplier: 0
     BaseCastRange: 0
-    BaseMoveSpeed: 0.2
+    BaseMoveSpeed: 0.6
     BaseJumpHeight: 0

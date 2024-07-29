@@ -10,9 +10,9 @@
             characterModel.CharacterDirection.DesiredDirection = fixedMotorDriver.Direction;
         }
 
-        public override void OnExit()
+        public override void OnExit(bool machineDed = false)
         {
-            base.OnExit();
+            base.OnExit(machineDed);
             fixedMotorDriver.Direction = UnityEngine.Vector3.zero;
         }
     }

@@ -8,7 +8,7 @@ namespace SpellCasting
         private string buffID;
 
         [SerializeField]
-        private EffectPooled buffEffectPrefab;
+        private EffectPooled pooledEffect;
 
         [SerializeField]
         private Sprite icon;
@@ -18,9 +18,15 @@ namespace SpellCasting
 
         public virtual void OnApply(CharacterBody body)
         {
-            if(statsToChange.BaseMaxHealth > 0)
+            if (pooledEffect != null)
+            {
+                EffectManager.SpawnEffect(pooledEffect.effectIndex, body.transform.position, body.transform);
+            }
+
+            if (statsToChange.BaseMaxHealth > 0)
             {
                 body.stats.MaxHealth.ApplyMultiplyModifier(statsToChange.BaseMaxHealth, buffID);
+                body.CommonComponents.HealthComponent.UpdateMaxHealth(body.stats.MaxHealth, true);
             }
 
             if (statsToChange.BaseDamage > 0)
@@ -33,9 +39,17 @@ namespace SpellCasting
                 body.stats.MoveSpeed.ApplyMultiplyModifier(statsToChange.BaseMoveSpeed, buffID);
             }
 
-            if(buffEffectPrefab != null)
+            if (statsToChange.BaseMaxMana > 0)
             {
-                EffectManager.SpawnEffect(buffEffectPrefab.effectIndex, body.transform.position, body.transform);
+                body.stats.MaxFireMana.ApplyMultiplyModifier(statsToChange.BaseMaxMana, buffID);
+                body.stats.MaxEarthMana.ApplyMultiplyModifier(statsToChange.BaseMaxMana, buffID);
+                body.stats.MaxWaterMana.ApplyMultiplyModifier(statsToChange.BaseMaxMana, buffID);
+                body.stats.MaxAirMana.ApplyMultiplyModifier(statsToChange.BaseMaxMana, buffID);
+            }
+
+            if (statsToChange.BaseManaRegeneration > 0)
+            {
+                body.stats.ManaRegeneration.ApplyMultiplyModifier(statsToChange.BaseManaRegeneration, buffID);
             }
 
             //jam and so on and so forth
@@ -46,6 +60,7 @@ namespace SpellCasting
             if (statsToChange.BaseMaxHealth > 0)
             {
                 body.stats.MaxHealth.RemoveModifier(buffID);
+                body.CommonComponents.HealthComponent.UpdateMaxHealth(body.stats.MaxHealth, false);
             }
 
             if (statsToChange.BaseDamage > 0)

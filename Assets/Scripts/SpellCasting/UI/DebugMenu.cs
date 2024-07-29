@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SpellCasting.UI
@@ -34,6 +35,13 @@ namespace SpellCasting.UI
             {
                 AddToggleElementButton(element);
             }
+
+            AddFunnyButton("Skip Level", SkipLevel);
+        }
+
+        private void SkipLevel()
+        {
+            SceneManager.LoadScene(0);
         }
 
         private void AddFunnyButton(string text, UnityAction onClick)

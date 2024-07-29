@@ -6,7 +6,10 @@
         {
             base.OnEnter();
 
-            elementMass.Fizzle();
+            if (elementMass)
+            {
+                elementMass.Fizzle();
+            }
         }
     }
 }

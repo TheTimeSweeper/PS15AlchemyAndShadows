@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 namespace SpellCasting.UI
 {
@@ -29,7 +30,10 @@ namespace SpellCasting.UI
 
         private void titleClick()
         {
-            ConfirmPopup.Open("go back to title?", "yes", "no", () => SceneManager.LoadScene(0));
+            ConfirmPopup.Open("go back to title?", "yes", "no", () =>
+            {
+                LevelProgressionManager.TrueReset();
+            });
         }
     }
 }

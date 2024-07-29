@@ -34,14 +34,13 @@ namespace ActiveStates.Characters
             }
         }
 
-        public override void OnExit()
-        {
-            base.OnExit();
-        }
-
         protected override void OnHitEnemyAuthority()
         {
             base.OnHitEnemyAuthority();
+            if(manaComponent != null)
+            {
+                manaComponent.SiphonMana();
+            }
         }
 
         protected override void SetNextState()

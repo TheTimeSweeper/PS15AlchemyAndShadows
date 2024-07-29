@@ -51,12 +51,12 @@ MeshRenderer:
   m_GameObject: {fileID: 21152891696510139}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -158,12 +158,12 @@ MeshRenderer:
   m_GameObject: {fileID: 156559832888154964}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -245,12 +245,12 @@ MeshRenderer:
   m_GameObject: {fileID: 457486117853483630}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -352,7 +352,7 @@ MeshRenderer:
   m_GameObject: {fileID: 803371974158516357}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -472,7 +472,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1151484474431588808}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -631,12 +631,12 @@ MeshRenderer:
   m_GameObject: {fileID: 2437869731939449988}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -738,12 +738,12 @@ MeshRenderer:
   m_GameObject: {fileID: 2688781985969938751}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -824,12 +824,12 @@ MeshRenderer:
   m_GameObject: {fileID: 2733487845653530710}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -1032,12 +1032,12 @@ MeshRenderer:
   m_GameObject: {fileID: 3345741953194756362}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -1139,12 +1139,12 @@ MeshRenderer:
   m_GameObject: {fileID: 3460628715339060397}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -1334,12 +1334,12 @@ MeshRenderer:
   m_GameObject: {fileID: 3820486966011728261}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -1442,12 +1442,12 @@ MeshRenderer:
   m_GameObject: {fileID: 4119701608683546788}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -1550,12 +1550,12 @@ MeshRenderer:
   m_GameObject: {fileID: 5383501931254347765}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -1657,12 +1657,12 @@ MeshRenderer:
   m_GameObject: {fileID: 5626518100512545602}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -1780,12 +1780,12 @@ MeshRenderer:
   m_GameObject: {fileID: 6217235834123360787}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -1898,12 +1898,12 @@ MeshRenderer:
   m_GameObject: {fileID: 6720824992534723181}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
@@ -2001,6 +2001,10 @@ PrefabInstance:
       value: WallPiece (5)
       objectReference: {fileID: 0}
     - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 943330acee920dd46b853412b2bbfd0a, type: 2}
@@ -2069,6 +2073,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 258e44939ab0a8b4c8fd22285e05f8ba, type: 2}
@@ -2096,6 +2104,10 @@ PrefabInstance:
     - target: {fileID: 347609422531736028, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: m_Name
       value: WallPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2166,6 +2178,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 258e44939ab0a8b4c8fd22285e05f8ba, type: 2}
@@ -2193,6 +2209,10 @@ PrefabInstance:
     - target: {fileID: 347609422531736028, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: m_Name
       value: WallPiece (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2263,6 +2283,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 258e44939ab0a8b4c8fd22285e05f8ba, type: 2}
@@ -2293,6 +2317,10 @@ PrefabInstance:
     - target: {fileID: 347609422531736028, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: m_Name
       value: WallPiece (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2371,6 +2399,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 258e44939ab0a8b4c8fd22285e05f8ba, type: 2}
@@ -2395,6 +2427,10 @@ PrefabInstance:
     - target: {fileID: 347609422531736028, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: m_Name
       value: WallPiece (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2465,6 +2501,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 258e44939ab0a8b4c8fd22285e05f8ba, type: 2}
@@ -2492,6 +2532,10 @@ PrefabInstance:
     - target: {fileID: 347609422531736028, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: m_Name
       value: WallPiece (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2562,6 +2606,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 258e44939ab0a8b4c8fd22285e05f8ba, type: 2}
@@ -2592,6 +2640,26 @@ PrefabInstance:
     - target: {fileID: 771806220685904728, guid: fbf66519734ea1a49a5ddcf9d182fa7a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727984809369211959, guid: fbf66519734ea1a49a5ddcf9d182fa7a, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727984809369211959, guid: fbf66519734ea1a49a5ddcf9d182fa7a, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727984809369211959, guid: fbf66519734ea1a49a5ddcf9d182fa7a, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263465798059752736, guid: fbf66519734ea1a49a5ddcf9d182fa7a, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418350764350224547, guid: fbf66519734ea1a49a5ddcf9d182fa7a, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4645871290136053344, guid: fbf66519734ea1a49a5ddcf9d182fa7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2649,6 +2717,14 @@ PrefabInstance:
       propertyPath: doorIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8283965313122495558, guid: fbf66519734ea1a49a5ddcf9d182fa7a, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144416864175573924, guid: fbf66519734ea1a49a5ddcf9d182fa7a, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2681,6 +2757,10 @@ PrefabInstance:
     - target: {fileID: 347609422531736028, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: m_Name
       value: WallPiece (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 956727864201470490, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2749,6 +2829,10 @@ PrefabInstance:
     - target: {fileID: 7052420641574964226, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7899501740991021879, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

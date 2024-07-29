@@ -24,10 +24,6 @@ namespace SpellCasting.World
 
         public void SetOpen(bool open)
         {
-            if ((name == "Door1"))
-            {
-                Util.Log("hi");
-            }
             if (deactivateWhenOpen != null)
             {
                 deactivateWhenOpen.SetActive(!open);

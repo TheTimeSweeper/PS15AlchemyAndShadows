@@ -5038,6 +5038,7 @@ GameObject:
   - component: {fileID: 8845007593822761126}
   - component: {fileID: 310531384847307336}
   - component: {fileID: 7736627267740524928}
+  - component: {fileID: 7561969412569387848}
   m_Layer: 0
   m_Name: CharJoanna
   m_TagString: Player
@@ -5077,18 +5078,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     BaseMaxHealth: 100
-    BaseHealthRegen: 1
+    BaseHealthRegenPercent: 0.169
     BaseDamage: 10
     BaseAttackSpeed: 1
     BaseStunFactor: 1
     BaseKnockbackFactor: 1
     BaseMaxMana: 100
-    BaseManaRegeneration: 1
+    BaseManaRegeneration: 5
     BaseManaCostMultiplier: 1
     BaseCastRange: 0
-    BaseMoveSpeed: 0.5
+    BaseMoveSpeed: 0.4
     BaseJumpHeight: 5
   commonComponents: {fileID: 1487827616747877697}
+  dontDestroyOnLoad: 1
 --- !u!114 &8697790950799236599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5123,6 +5125,7 @@ MonoBehaviour:
   InputBank: {fileID: 4984334169204913053}
   CharacterBody: {fileID: 9026110317149343735}
   Caster: {fileID: 8697790950799236599}
+  ManaComponent: {fileID: 7561969412569387848}
   FixedMotorDriver: {fileID: 4556897560370750402}
   CharacterModel: {fileID: 7877570703370491462}
   StateMachineLocator: {fileID: 8771263758274044495}
@@ -5307,6 +5310,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathTable: {fileID: 0}
   deathEffect: {fileID: 0}
+  stateMachineLocator: {fileID: 0}
+--- !u!114 &7561969412569387848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593886557186326773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4936d9ad9f59a14584369fd6cf5ed61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _commonComopnents: {fileID: 1487827616747877697}
+  manaReturnedOnMelee: 4
+  FireMana: 0
+  EarthMana: 0
+  WaterMana: 0
+  AirMana: 0
 --- !u!1 &3845719698862260873
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,7 +5377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputBank: {fileID: 4984334169204913053}
   aimOriginPosition: {fileID: 4989716814478188524}
-  maxInputRange: 16
+  maxInputRange: 12
   debug: 0
   deltaEnds: []
   deltaStarts: []

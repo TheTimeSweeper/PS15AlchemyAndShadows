@@ -37,6 +37,18 @@ namespace SpellCasting
             }
         }
 
+        public static CharacterBody FindPrimaryPlayer()
+        {
+            if (teamsBodies.ContainsKey(TeamIndex.PLAYER))
+            {
+                if(teamsBodies[TeamIndex.PLAYER].Count > 0)
+                {
+                    return teamsBodies[TeamIndex.PLAYER][0].body;
+                }
+            }
+            return null;
+        }
+
         public static CharacterBody FindBodyByTeam(GameObject searchingObject, TeamIndex searchingTeamIndex, TeamTargetType teamTargeting, float maxSqrDistance)
         {
             foreach (var TeamIndex in teamsBodies.Keys)

@@ -25,6 +25,8 @@ public static class Util
 
     public static TeamIndex GetTeamIndex(IHasCommonComponents component)
     {
+        if (component.CommonComponents == null)
+            return TeamIndex.None;
         return component.CommonComponents.TeamComponent.TeamIndex;
     }
 
@@ -208,7 +210,7 @@ public static class Util
         switch (teamTargeting)
         {
             case var targeting when teamTargeting.HasFlag(TeamTargetType.SELF):
-                if (targetObject.CommonComponents.gameObject == thisGameObject)
+                if (targetObject.CommonComponents != null && targetObject.CommonComponents.gameObject == thisGameObject)
                     validHit = true;
                 break;
 

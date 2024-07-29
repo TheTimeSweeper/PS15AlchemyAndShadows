@@ -23,6 +23,7 @@ namespace ActiveStates
         [SerializeField]
         private string currentState;
 #endif
+        public bool Destroyed { get; set; }
 
         private Queue<ActiveState> _queuedStates = new Queue<ActiveState>();
         private ActiveState _currentlyRunningState;
@@ -125,6 +126,16 @@ namespace ActiveStates
             if(_currentlyRunningState.GetMinimumInterruptPriority() <= priority)
             {
                 setState(activeState);
+            }
+        }
+
+        void OnDestroy()
+        {
+            Destroyed = true;
+            if (_currentlyRunningState != null)
+            {
+                _currentlyRunningState.OnExit(true);
+                _currentlyRunningState = null;
             }
         }
     }

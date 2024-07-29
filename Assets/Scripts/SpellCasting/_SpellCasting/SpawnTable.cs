@@ -26,7 +26,11 @@ public class SpawnTable : ScriptableObject
 
         GameObject item = Table[randomIndex];
 
-        Object.Instantiate(item, position, Quaternion.identity);
+        //possibility to drop nothing
+        if (item != null)
+        {
+            Object.Instantiate(item, position, Quaternion.identity);
+        }
     }
 
     protected virtual List<GameObject> GetTable()

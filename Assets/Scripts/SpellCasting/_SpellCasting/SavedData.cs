@@ -24,6 +24,11 @@ namespace SpellCasting
                             _unlockedElements.Add(ElementCatalog.Instance.NameToElementMap[elem[i]]);
                         }
                     }
+
+                    if(_unlockedElements.Count == 0)
+                    {
+                        _unlockedElements.Add(ElementCatalog.Instance.ElementTypesMap[ElementTypeIndex.FIRE]);
+                    }
                 }
                 return _unlockedElements;
             }

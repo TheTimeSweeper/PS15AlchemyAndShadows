@@ -149,8 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 3022085196851494293}
-  rigidBody: {fileID: 3159130046204335257}
   damageCoefficient: 1
+  knockbackDirectionRigidbody: {fileID: 0}
+  KnockbackForce: 0.69
   resetInterval: -1
   destroyOnImpact: 1
   destroyOnImpactGraceTime: 0.04

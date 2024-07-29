@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 7597047267720964753}
   SearchTeam: 2
   SearchInterval: 1
-  SearchRange: 50
+  SearchRange: 200
 --- !u!114 &7597047267720964753
 MonoBehaviour:
   m_ObjectHideFlags: 0

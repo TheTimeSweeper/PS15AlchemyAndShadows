@@ -41,9 +41,9 @@ namespace ActiveStates.Characters
             machine.endState();
         }
 
-        public override void OnExit()
+        public override void OnExit(bool machineded = false)
         {
-            base.OnExit();
+            base.OnExit(machineded);
 
             healthComponent.OnDamageTaken -= HealthComponent_OnDamageTaken;
             healthComponent.PreModifyDamage -= HealthComponent_PreModifyDamage;

@@ -5422,10 +5422,10 @@ GameObject:
   - component: {fileID: 5113112206207525392}
   - component: {fileID: 3358658940526756820}
   - component: {fileID: 194451413381304547}
+  - component: {fileID: 2890170768704974797}
   - component: {fileID: 8083475067068661580}
   - component: {fileID: 5176992554521670172}
   - component: {fileID: 3105954548464548804}
-  - component: {fileID: 2890170768704974797}
   - component: {fileID: 2813631376633674538}
   m_Layer: 0
   m_Name: EnemyTest
@@ -5484,6 +5484,7 @@ MonoBehaviour:
   InputBank: {fileID: 5176992554521670172}
   CharacterBody: {fileID: 3358658940526756820}
   Caster: {fileID: 3105954548464548804}
+  ManaComponent: {fileID: 0}
   FixedMotorDriver: {fileID: 6892048478900723512}
   CharacterModel: {fileID: 1198745478966332825}
   StateMachineLocator: {fileID: 5113112206207525392}
@@ -5614,6 +5615,23 @@ MonoBehaviour:
   DefaultState:
     activeStateName: ActiveStates.Characters.GenericCharacterMove
   currentState: 
+--- !u!114 &2890170768704974797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9155246327287660149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d649957a92d9f0048872753b103e5597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: Casting
+  commonComponents: {fileID: 2816093511070573214}
+  DefaultState:
+    activeStateName: ActiveStates.Characters.ManipulatingElementsState
+  currentState: 
 --- !u!114 &8083475067068661580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5643,7 +5661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   validGestures:
   - {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
-  - {fileID: 11400000, guid: 6dd5c6d84daa7874898992a754a5cde1, type: 2}
+  - {fileID: 11400000, guid: 85e979a2161919240b040c9f98ef22ca, type: 2}
   - {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
   DebugSwipeMag: 0
   DebugSwirlTotalAngleSwirled: 0
@@ -5668,23 +5686,6 @@ MonoBehaviour:
   m2Element: {fileID: 0}
   shiftElement: {fileID: 0}
   spaceElement: {fileID: 0}
---- !u!114 &2890170768704974797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9155246327287660149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d649957a92d9f0048872753b103e5597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  label: Casting
-  commonComponents: {fileID: 2816093511070573214}
-  DefaultState:
-    activeStateName: ActiveStates.Characters.ManipulatingElementsState
-  currentState: 
 --- !u!114 &2813631376633674538
 MonoBehaviour:
   m_ObjectHideFlags: 0

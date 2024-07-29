@@ -29,7 +29,7 @@ namespace ActiveStates.Characters
             }
         }
 
-        public override void OnExit()
+        public override void OnExit(bool machineded = false)
         {
             for (int i = 0; i < _elementManipulations.Count; i++)
             {
