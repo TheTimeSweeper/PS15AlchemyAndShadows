@@ -22,11 +22,11 @@ public class DeathComponent : MonoBehaviour
         {
             Players.Remove(this);
 
-            if(Players.Count <= 0)
+            if(Players.Count <= 0 && !LevelProgressionManager.resetting)
             {
                 SpellCasting.UI.ConfirmPopup.Open("Game Over!", "return", "", () =>
                 {
-                    LevelProgressionManager.TrueReset();
+                    LevelProgressionManager.DelayedTrueReset();
                 });
             }
         }
@@ -66,5 +66,4 @@ public class DeathComponent : MonoBehaviour
 
         Object.Destroy(gameObject);
     }
-
 }

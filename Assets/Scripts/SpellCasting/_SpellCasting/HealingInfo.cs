@@ -1,7 +1,7 @@
 ﻿namespace SpellCasting
 {
-    public class HealingInfo : DamagingInfo
+    public class HealingInfo
     {
-
+        public float HealValue;
     }
 }

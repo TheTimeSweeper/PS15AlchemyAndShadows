@@ -6,13 +6,13 @@ namespace SpellCasting
     public class PowerItem : ScriptableObject
     {
         [SerializeField]
-        private string displayName;
+        public string displayName;
 
         [SerializeField]
-        private string description;
+        public string description;
 
         [SerializeField]
-        private Sprite icon;
+        public Sprite icon;
 
         [SerializeField]
         public BuffInfo buffToApply;

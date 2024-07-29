@@ -37,11 +37,11 @@ MonoBehaviour:
   - gestureType: {fileID: 11400000, guid: 11dcd5eb0dbb1f444bae72553a27ae55, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Fire.FireSwirl
-    baseManaCost: 50
+    baseManaCost: 40
   - gestureType: {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Fire.FireShake
-    baseManaCost: 50
+    baseManaCost: 40
   - gestureType: {fileID: 11400000, guid: 44615728a5361634c9e3b0f5a2518930, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.BasicElementMelee

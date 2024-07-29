@@ -28,9 +28,13 @@ namespace SpellCasting
                 if (input.JustReleased(this))
                 {
                     ElementActionState actionState = inputBank.GetFirstQualifiedElementAction(currentCastingElement.ElementActions);
-                    if(actionState != null && !commonComponents.CharacterBody.TrySpendMana(currentCastingElement.BaseElement, actionState.BaseManaCost))
+                    if(actionState != null)
                     {
-                        actionState = null;
+                        if (!commonComponents.CharacterBody.TrySpendMana(currentCastingElement.BaseElement, actionState.BaseManaCost))
+                        {
+                            EffectManager.SpawnEffect(EffectIndex.NOMANA, caster.transform.position, caster.transform);
+                            actionState = null;
+                        }
                     }
 
                     if (actionState != null)

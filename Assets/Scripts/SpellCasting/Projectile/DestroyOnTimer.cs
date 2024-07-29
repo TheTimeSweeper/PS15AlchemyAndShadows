@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace SpellCasting.Projectiles
 {
-
     public class DestroyOnTimer : MonoBehaviour
     {
         [SerializeField]

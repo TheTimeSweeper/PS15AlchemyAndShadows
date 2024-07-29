@@ -37,7 +37,7 @@ MonoBehaviour:
   - gestureType: {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Air.AirSwirl
-    baseManaCost: 50
+    baseManaCost: 40
   - gestureType: {fileID: 11400000, guid: 44615728a5361634c9e3b0f5a2518930, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.BasicElementMelee
@@ -46,5 +46,7 @@ MonoBehaviour:
     gestureState:
       activeStateName: ActiveStates.Elements.BasicElementLetGo
     baseManaCost: 0
+  explosionPrefab: {fileID: 0}
+  poolPrefab: {fileID: 0}
   succPrefab: {fileID: 1994112508006969103, guid: 3c1f584857535724db53ac84726d47e5, type: 3}
   blowPrefab: {fileID: 1474388984078184617, guid: b65dadb77a6624d48a71bcf54bad2df4, type: 3}

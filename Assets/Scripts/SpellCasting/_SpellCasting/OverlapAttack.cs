@@ -53,6 +53,8 @@ namespace SpellCasting
                 if (hurtbox != null)
                 {
                     HealthComponent healthComponent = hurtbox.HealthComponent;
+                    if (healthComponent == null)
+                        continue;
 
                     if (_alreadyHitTargets.Contains(healthComponent))
                         continue;

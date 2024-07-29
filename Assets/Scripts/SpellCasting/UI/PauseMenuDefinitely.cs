@@ -30,8 +30,9 @@ namespace SpellCasting.UI
 
         private void titleClick()
         {
-            ConfirmPopup.Open("go back to title?", "yes", "no", () =>
+            ConfirmPopup.Open("Do you want to reset your run?", "yes", "no", () =>
             {
+                menuObject.SetActive(false);
                 LevelProgressionManager.TrueReset();
             });
         }

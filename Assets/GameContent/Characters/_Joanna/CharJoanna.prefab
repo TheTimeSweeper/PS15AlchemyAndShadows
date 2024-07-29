@@ -5310,7 +5310,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathTable: {fileID: 0}
   deathEffect: {fileID: 0}
-  stateMachineLocator: {fileID: 0}
+  deathEffectPooled: {fileID: 0}
+  stateMachineLocator: {fileID: 8771263758274044495}
 --- !u!114 &7561969412569387848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5614,7 +5615,7 @@ MonoBehaviour:
   elementColoredRenderers:
   - {fileID: 3302817720077320529}
   elementColoredParticles: []
-  noElementColor: {r: 0.7607843, g: 0.48235294, b: 0.90588236, a: 1}
+  noElementColor: {r: 0.34117648, g: 0.12156863, b: 0.7058824, a: 1}
   characterDirection: {fileID: 5843002486608109577}
   childLocator: {fileID: 7041158287745764479}
   hitboxLocator: {fileID: 3436006890941373317}
@@ -5810,7 +5811,7 @@ PrefabInstance:
     - target: {fileID: 1531361340533461436, guid: 944d3c67eec2e694ab6ee15793f60c34, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 08ebbd5e3843bcc44871f3ada2f84730, type: 2}
+      objectReference: {fileID: 2100000, guid: b8a6c9f077ac8e84a9daae601c822336, type: 2}
     - target: {fileID: 5866666021909216657, guid: 944d3c67eec2e694ab6ee15793f60c34, type: 3}
       propertyPath: m_Controller
       value: 

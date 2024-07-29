@@ -31,7 +31,10 @@ namespace SpellCasting
 
         void OnDestroy()
         {
-            currentCamera.transform.parent = null;
+            if (currentCamera != null)
+            {
+                currentCamera.transform.parent = null;
+            }
         }
     }
 }

@@ -33,7 +33,7 @@ namespace SpellCasting
             FireMana = Mathf.Clamp(FireMana + manaReturnedOnMelee, 0, stats.MaxFireMana);
             EarthMana = Mathf.Clamp(EarthMana + manaReturnedOnMelee, 0, stats.MaxEarthMana);
             AirMana = Mathf.Clamp(AirMana + manaReturnedOnMelee, 0, stats.MaxAirMana);
-            WaterMana = Mathf.Clamp(manaReturnedOnMelee, 0, stats.MaxWaterMana);
+            WaterMana = Mathf.Clamp(WaterMana + manaReturnedOnMelee, 0, stats.MaxWaterMana);
         }
     }
 }

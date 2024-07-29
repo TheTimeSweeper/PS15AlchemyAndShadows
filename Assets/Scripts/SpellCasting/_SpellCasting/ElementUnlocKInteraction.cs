@@ -11,7 +11,12 @@ namespace SpellCasting
         private GameObject fancyEffects;
 
         [SerializeField]
-        private GameObject toDisable;
+        private GameObject elementDisplay;
+
+        void Awake()
+        {
+            Instantiate(elementToUnlock.ElementMassPrefab, elementDisplay.transform.position, elementDisplay.transform.rotation, elementDisplay.transform);
+        }
 
         public override void OnBodyDetected(CharacterBody body, bool InteractPressed)
         {
@@ -26,9 +31,9 @@ namespace SpellCasting
                 fancyEffects.SetActive(true);
             }
 
-            if (toDisable != null)
+            if (elementDisplay != null)
             {
-                toDisable.SetActive(false);
+                elementDisplay.SetActive(false);
             }
         }
     }

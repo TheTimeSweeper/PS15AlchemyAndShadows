@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9825792d4d3d44f9a0d6357fb53aac, type: 3}
+  m_Name: ElementLava
+  m_EditorClassIdentifier: 
+  index: 5
+  baseElement: 5
+  DisplayName: Lava
+  Icon: {fileID: 21300000, guid: ae196b565af7adf4e92781e33d5bde0a, type: 3}
+  elementColor: {r: 1, g: 0.706797, b: 0.11792451, a: 1}
+  componentElements:
+  - {fileID: 11400000, guid: b4bf9355eaf200840ae74d300c1c7e24, type: 2}
+  - {fileID: 11400000, guid: 735c28191e66ad943a3bf219d795d968, type: 2}
+  elementMassPrefab: {fileID: 825798516392069954, guid: 648764b27e93eaa43be8739421b23406, type: 3}
+  cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
+  massGrowthMultiplier: 0
+  massBaseMass: 3
+  massVelocityMultiplier: 30
+  massSpawnState:
+    activeStateName: ActiveStates.Elements.BasicElementGrow
+  massLetGoState:
+    activeStateName: ActiveStates.Elements.BasicElementLetGo
+  bodyMeleeStaterino:
+    activeStateName: ActiveStates.Characters.TwoHitCombo
+  elementActions:
+  - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.Lava.LavaSwipe
+    baseManaCost: 30
+  - gestureType: {fileID: 11400000, guid: 44615728a5361634c9e3b0f5a2518930, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.BasicElementMelee
+    baseManaCost: 0
+  explosionPrefab: {fileID: 0}
+  poolPrefab: {fileID: 3624624150187626333, guid: 07f19ac5fe935a6478ed26f744db3275, type: 3}
+  swipeSpawnSideDistance: 0.5

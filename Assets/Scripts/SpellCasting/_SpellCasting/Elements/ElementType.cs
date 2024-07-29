@@ -1,6 +1,7 @@
 ﻿using ActiveStates;
 using ActiveStates.Characters;
 using ActiveStates.Elements;
+using SpellCasting.Projectiles;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -86,6 +87,15 @@ namespace SpellCasting
         [SerializeField]
         private List<ElementActionState> elementActions;
         public List<ElementActionState> ElementActions => elementActions;
+
+        [Header("Prefabs")]
+        [SerializeField]
+        private ProjectileController explosionPrefab;
+        public ProjectileController ExplosionPrefab => explosionPrefab;
+
+        [SerializeField]
+        private ProjectileController poolPrefab;
+        public ProjectileController PoolPrefab => poolPrefab;
 
         public bool IsSecondary => componentElements.Count > 1;
 

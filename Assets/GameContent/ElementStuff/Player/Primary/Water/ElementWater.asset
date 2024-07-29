@@ -38,8 +38,10 @@ MonoBehaviour:
     gestureState:
       activeStateName: ActiveStates.Elements.BasicElementMelee
     baseManaCost: 0
-  - gestureType: {fileID: 11400000, guid: c52837f313ef4ca4396eed8288aaf495, type: 2}
+  - gestureType: {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
     gestureState:
-      activeStateName: ActiveStates.Elements.BasicElementLetGo
-    baseManaCost: 0
+      activeStateName: ActiveStates.Elements.Water.WaterSwirl
+    baseManaCost: 40
+  explosionPrefab: {fileID: 0}
+  poolPrefab: {fileID: 3624624150187626333, guid: 07f19ac5fe935a6478ed26f744db3275, type: 3}
   swipeSpawnSideDistance: 1

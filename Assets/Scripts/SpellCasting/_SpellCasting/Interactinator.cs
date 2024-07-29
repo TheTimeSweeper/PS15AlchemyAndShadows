@@ -15,6 +15,10 @@ namespace SpellCasting
         [SerializeField]
         private float SearchRange = 10;
 
+        [Space]
+        [SerializeField]
+        private GameObject interactableIndicator;
+
         private float _timer = 0.2f;
 
         private CharacterBody Body;
@@ -41,6 +45,11 @@ namespace SpellCasting
         private void CheckInteractable()
         {
             Body = CharacterBodyTracker.FindBodyByDistance(SearchTeam, transform.position, SearchRange);
+
+            if (interactableIndicator != null)
+            {
+                interactableIndicator.gameObject.SetActive(Body != null);
+            }
         }
     }
 }

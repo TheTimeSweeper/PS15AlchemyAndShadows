@@ -22,7 +22,7 @@ MonoBehaviour:
   cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
   massGrowthMultiplier: 0
   massBaseMass: 2
-  massVelocityMultiplier: 10
+  massVelocityMultiplier: 20
   massSpawnState:
     activeStateName: ActiveStates.Elements.BasicElementGrow
   massLetGoState:
@@ -33,12 +33,14 @@ MonoBehaviour:
   - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Earth.EarthSwipe
-    baseManaCost: 10
+    baseManaCost: 20
   - gestureType: {fileID: 11400000, guid: 44615728a5361634c9e3b0f5a2518930, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.BasicElementMelee
     baseManaCost: 0
-  - gestureType: {fileID: 11400000, guid: c52837f313ef4ca4396eed8288aaf495, type: 2}
+  - gestureType: {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
     gestureState:
-      activeStateName: ActiveStates.Elements.BasicElementLetGo
-    baseManaCost: 0
+      activeStateName: ActiveStates.Elements.Earth.EarthSwirl
+    baseManaCost: 40
+  explosionPrefab: {fileID: 6855747792429381767, guid: 2073d2f1ba9ba9b42b959c2801724f78, type: 3}
+  poolPrefab: {fileID: 0}

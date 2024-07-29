@@ -5442,7 +5442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9155246327287660149}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000058114523}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -2.65, y: 0, z: 9.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5585,7 +5585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     BaseMaxHealth: 100
-    BaseHealthRegen: 1
+    BaseHealthRegenPercent: 0
     BaseDamage: 10
     BaseAttackSpeed: 1
     BaseStunFactor: 1
@@ -5700,4 +5700,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathTable: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
   deathEffect: {fileID: 0}
+  deathEffectPooled: {fileID: 0}
   stateMachineLocator: {fileID: 0}

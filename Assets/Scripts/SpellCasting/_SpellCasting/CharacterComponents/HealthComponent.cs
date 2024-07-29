@@ -74,8 +74,8 @@ namespace SpellCasting
         {
             PreModifyHeal?.Invoke(heal);
 
-            health += heal.DamageValue;
-            OnHealTaken?.Invoke(heal.DamageValue);
+            health += heal.HealValue;
+            OnHealTaken?.Invoke(heal.HealValue);
         }
 
         public void UpdateMaxHealth(float newMaxHealth, bool heal)

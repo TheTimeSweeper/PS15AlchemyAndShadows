@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ItemManaRegen
   m_EditorClassIdentifier: 
   displayName: Blue Cookie
-  description: Mana Regeneration
-  icon: {fileID: 0}
+  description: Mana Regen
+  icon: {fileID: 21300000, guid: 5b4c1097c067f7f4d9f0f49682e5066d, type: 3}
   buffToApply: {fileID: 11400000, guid: 2166e21ec5b007846a1f9e13af75f169, type: 2}
   buffDuration: -1

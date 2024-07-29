@@ -1,5 +1,6 @@
 using SpellCasting.UI;
 using System;
+using System.Collections;
 using System.Threading.Tasks.Sources;
 using TMPro;
 using UnityEngine;
@@ -53,9 +54,15 @@ namespace SpellCasting.UI
             }
         }
 
+        public IEnumerator FuckinClose()
+        {
+            yield return new WaitForSeconds(1);
+            Destroy(gameObject);
+        }
         private void Close()
         {
             Destroy(gameObject);
+            StartCoroutine(FuckinClose());
         }
     }
 }

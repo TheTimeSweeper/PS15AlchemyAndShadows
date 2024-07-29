@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     BaseMaxHealth: 100
-    BaseHealthRegen: 1
+    BaseHealthRegenPercent: 0
     BaseDamage: 10
     BaseAttackSpeed: 1
     BaseStunFactor: 1
@@ -296,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathTable: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
   deathEffect: {fileID: 0}
+  deathEffectPooled: {fileID: 0}
   stateMachineLocator: {fileID: 0}
 --- !u!1 &2942884100240609209
 GameObject:

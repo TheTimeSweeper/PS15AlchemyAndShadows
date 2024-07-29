@@ -9,6 +9,7 @@
         MAXHEALTHUP,
         MAXMANAUP,
         DAMAGEUP,
-        FUCKINPOT
+        FUCKINPOT,
+        NOMANA
     }
 }

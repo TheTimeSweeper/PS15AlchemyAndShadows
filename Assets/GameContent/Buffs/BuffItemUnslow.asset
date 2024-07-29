@@ -26,5 +26,5 @@ MonoBehaviour:
     BaseManaRegeneration: 0
     BaseManaCostMultiplier: 0
     BaseCastRange: 0
-    BaseMoveSpeed: 1.1
+    BaseMoveSpeed: 1.2
     BaseJumpHeight: 0

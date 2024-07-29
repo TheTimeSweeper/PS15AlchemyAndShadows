@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd0dbaf9ccdf09439348dc47ca870b0, type: 3}
+  m_Name: TablePotDeathGlobes
+  m_EditorClassIdentifier: 
+  spawnItems:
+  - {fileID: 0}
+  - {fileID: 2833304059209602995, guid: 572833367627a1c4aac8fdc8f6b40701, type: 3}
+  - {fileID: 3566374912550040246, guid: 450a0e8dd0a8f4b43b5d942b22696d98, type: 3}
+  weights:
+  - 11
+  - 1
+  - 1

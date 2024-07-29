@@ -1,4 +1,5 @@
-﻿using SpellCasting.Projectiles;
+﻿using SpellCasting;
+using SpellCasting.Projectiles;
 using UnityEngine;
 
 namespace ActiveStates.Elements
@@ -21,11 +22,17 @@ namespace ActiveStates.Elements
                     PreviousPosition = elementMass.SubMasses[i].transform.position,
                     StartPosition = elementMass.SubMasses[i].transform.position,
                     AimDirection = inputBank.AimDirection,
-                    TeamIndex = characterBody.teamIndex
+                    TeamIndex = characterBody.teamIndex,
+                    DamageType = GetDamageType()
                 });
             }
 
             elementMass.Fizzle();
+        }
+
+        protected virtual DamageTypeIndex GetDamageType()
+        {
+            return DamageTypeIndex.NONE;
         }
     }
 }

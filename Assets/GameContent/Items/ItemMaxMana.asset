@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Blue Toast
   description: Max Mana
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 60173eb9ffce1ba44adfb91c78626506, type: 3}
   buffToApply: {fileID: 11400000, guid: 7a78c43c36b232a4ebd5374a9d5b65b2, type: 2}
   buffDuration: -1
