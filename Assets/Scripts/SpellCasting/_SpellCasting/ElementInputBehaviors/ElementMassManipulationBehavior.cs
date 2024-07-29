@@ -72,7 +72,7 @@ namespace SpellCasting
                     _currentMass.ActiveStateMachine.setState(currentCastingElement.CreateElementMassState(currentCastingElement.MassSpawnState, _currentMass));
                     _currentMass.transform.position = inputBank.AimPoint;
 
-                    _currentMass.SetPosition(inputBank.AimPoint);
+                    _currentMass.SetPosition(inputBank.AimPoint, commonComponents.transform);
                 }
             }
         }

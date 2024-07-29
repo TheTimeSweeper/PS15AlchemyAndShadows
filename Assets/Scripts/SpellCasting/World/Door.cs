@@ -42,7 +42,7 @@ namespace SpellCasting.World
 
         public void OnValidate()
         {
-            var nip = GetComponentInParent<Roome>();
+            var nip = GetComponentInParent<Room>();
             if (nip == null)
                 return;
 
@@ -51,7 +51,7 @@ namespace SpellCasting.World
         private void OnDestroy()
         {
 #if UNITY_EDITOR
-            var nip = GetComponentInParent<Roome>();
+            var nip = GetComponentInParent<Room>();
             if (nip == null)
                 return;
 

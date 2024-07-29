@@ -13,5 +13,14 @@ namespace ActiveStates.Elements
             this.elementType = elementType;
             
         }
+
+        public override void OnFixedUpdate()
+        {
+            base.OnFixedUpdate();
+            if(caster == null)
+            {
+                machine.setState(ActiveStateCatalog.InstantiateState(elementType.MassLetGoState));
+            }
+        }
     }
 }

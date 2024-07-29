@@ -4,10 +4,8 @@ namespace SpellCasting
 {
     public class ElementUnlockInteraction : InteractionHandler
     {
-
         [SerializeField]
         private ElementType elementToUnlock;
-
 
         [SerializeField]
         private GameObject fancyEffects;
@@ -15,8 +13,11 @@ namespace SpellCasting
         [SerializeField]
         private GameObject toDisable;
 
-        public override void HandleInteraction(CharacterBody body)
+        public override void OnBodyDetected(CharacterBody body, bool InteractPressed)
         {
+            if (!InteractPressed)
+                return;
+
             MainGame.Instance.SavedData.AddElement(elementToUnlock);
             MainGame.Instance.SavedData.Save();
 

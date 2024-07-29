@@ -1,33 +1,46 @@
-using SpellCasting;
 using UnityEngine;
 
-public class Interactinator : MonoBehaviour
+namespace SpellCasting
 {
-    [SerializeField]
-    private InteractionHandler interactionHandler;
-
-    private float _timer = 0.2f;
-
-    private CharacterBody Body;
-
-    private void FixedUpdate()
+    public class Interactinator : MonoBehaviour
     {
-        _timer -= Time.deltaTime;
+        [SerializeField]
+        private InteractionHandler[] interactionListeners;
 
-        if (_timer < 0)
-        {
-            _timer = 0.2f;
-            CheckInteractable();
-        }
-        
-        if (Body != null && Body.CommonComponents.InputBank.E.JustPressed(this))
-        {
-            interactionHandler.HandleInteraction(Body);
-        }
-    }
+        [SerializeField]
+        protected TeamIndex SearchTeam = TeamIndex.PLAYER;
 
-    private void CheckInteractable()
-    {
-        Body = CharacterBodyTracker.FindBodyByDistance(TeamIndex.PLAYER, transform.position, 10);
+        [SerializeField]
+        private float SearchInterval = 0.2f;
+        [SerializeField]
+        private float SearchRange = 10;
+
+        private float _timer = 0.2f;
+
+        private CharacterBody Body;
+
+        private void FixedUpdate()
+        {
+            _timer -= Time.deltaTime;
+
+            if (_timer < 0)
+            {
+                _timer = SearchInterval;
+                CheckInteractable();
+            }
+
+            if (Body != null)
+            {
+                for (int i = 0; i < interactionListeners.Length; i++)
+                {
+                    interactionListeners[i].OnBodyDetected(Body, Body.CommonComponents.InputBank.E.JustPressed(this));
+                }
+            }
+        }
+
+        private void CheckInteractable()
+        {
+            Body = CharacterBodyTracker.FindBodyByDistance(SearchTeam, transform.position, SearchRange);
+        }
     }
 }

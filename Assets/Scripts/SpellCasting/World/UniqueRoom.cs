@@ -5,7 +5,7 @@ namespace SpellCasting.World
     public class UniqueRoom : ScriptableObject
     {
         [SerializeField]
-        public Roome room;
+        public Room room;
 
         [SerializeField]
         public int maximumInstancesAllowed = 1;

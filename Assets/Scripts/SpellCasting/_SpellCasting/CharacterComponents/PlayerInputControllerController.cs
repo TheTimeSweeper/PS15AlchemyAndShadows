@@ -51,10 +51,6 @@ namespace SpellCasting
             _lastGesture = aim;
 
             return new Vector3(aim.x, aim.z, 0);
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.x /= Screen.width;
-            mousePosition.y /= Screen.height;
-            return mousePosition * 100;
         }
     }
 }

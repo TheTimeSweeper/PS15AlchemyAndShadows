@@ -10,7 +10,7 @@ namespace ActiveStates.Elements
 
             elementMass.Grow(elementType.MassGrowthMultiplier);
 
-            elementMass.SetPosition(inputBank.AimPoint);
+            elementMass.SetPosition(inputBank.AimPoint, caster.transform);
 
             for (int i = 0; i < elementMass.SubMasses.Count; i++)
             {

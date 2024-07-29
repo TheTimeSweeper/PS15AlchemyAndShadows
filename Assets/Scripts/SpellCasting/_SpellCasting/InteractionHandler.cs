@@ -4,6 +4,6 @@ namespace SpellCasting
 {
     public abstract class InteractionHandler : MonoBehaviour
     {
-        public abstract void HandleInteraction(CharacterBody body);
+        public abstract void OnBodyDetected(CharacterBody body, bool interactInputPressed);
     }
 }

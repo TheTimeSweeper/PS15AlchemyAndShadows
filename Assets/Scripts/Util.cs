@@ -30,7 +30,7 @@ public static class Util
 
     public static int WeightedRandomIndex(this List<float> weights)
     {
-        List<float> weightsList = new List<float>();
+        List<float> weightsList = new List<float>(weights);
         weightsList.Normalize();
 
         float sum = 0f;

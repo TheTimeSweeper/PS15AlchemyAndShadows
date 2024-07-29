@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace SpellCasting.World
 {
-    public class Roome : MonoBehaviour
+    public class Room : MonoBehaviour
     {
         [SerializeField]
         private List<Door> doors;
@@ -19,11 +19,11 @@ namespace SpellCasting.World
 
         //jam this should be in a roominfo scriptableojbect but I can't be fucked
         [SerializeField]
-        private float roomCost;
+        private float roomCost = 1;
         public float RoomCost => roomCost;
 
         [SerializeField]
-        public float RoomWeight;
+        public float RoomWeight = 1;
 
         private Collider[] _colliders;
 
@@ -67,9 +67,9 @@ namespace SpellCasting.World
                     break;
 
                 parent = doors[i].transform.parent;
-                while (parent != null && parent != transform)
+                while (parent != null)
                 {
-                    if(parent.localPosition + parent.localScale != Vector3.one)
+                    if(parent.localPosition + parent.localScale + parent.localRotation.eulerAngles != Vector3.one)
                     {
                         Debug.LogError($"parent {parent.name} of door {doors[i].name} is invalid. make sure localscale and localposition are default", parent);
                     }
@@ -82,9 +82,9 @@ namespace SpellCasting.World
                 if (overlapZones[i] == null)
                     break;
                 parent = overlapZones[i].transform.parent;
-                while (parent != null && parent != transform)
+                while (parent != null)
                 {
-                    if (parent.localPosition + parent.localScale != Vector3.one)
+                    if (parent.localPosition + parent.localScale + parent.localRotation.eulerAngles != Vector3.one)
                     {
                         Debug.LogError($"parent {parent.name} of overlapZone {overlapZones[i].name} is invalid. make sure localscale and localposition are default", parent);
                     }

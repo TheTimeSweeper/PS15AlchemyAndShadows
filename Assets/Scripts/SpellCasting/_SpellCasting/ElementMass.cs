@@ -19,8 +19,11 @@ namespace SpellCasting
         private float positionLerpDecay = 3;
 
         private float _totalMass;
-        private Vector3 _centerPosition;
-        public Vector3 CenterPosition => _centerPosition;
+
+        private Vector3 _centerPositionGlobal;
+        public Vector3 CenterPosition => _centerPositionGlobal;
+        public Vector3 _localCenterPosition;
+        public Vector3 LocalCenterPosition => _localCenterPosition;
         public Vector3 CenterPositionRaw { get; set; }
 
         public bool Casted { get; set; }
@@ -38,15 +41,20 @@ namespace SpellCasting
             _totalMass = elementType.BaseMass;
         }
 
-        public void SetPosition(Vector3 aimPoint)
+        public void SetPosition(Vector3 aimPoint, Transform casterTransform)
         {
-            if (_centerPosition == Vector3.zero)
+            CenterPositionRaw = aimPoint;
+
+            Vector3 localAimPoint = aimPoint - casterTransform.position;
+            if (_localCenterPosition == Vector3.zero)
             {
-                _centerPosition = aimPoint;
+                _localCenterPosition = localAimPoint;
                 return;
             }
-            CenterPositionRaw = aimPoint;
-            _centerPosition = Util.ExpDecayLerp(_centerPosition, aimPoint, positionLerpDecay, Time.deltaTime);
+
+            _localCenterPosition = Util.ExpDecayLerp(_localCenterPosition, localAimPoint, positionLerpDecay, Time.deltaTime);
+
+            _centerPositionGlobal = casterTransform.position + _localCenterPosition;
 
             //_centerPosition = aimPoint;
             //if (_lastPosition == Vector3.zero)
