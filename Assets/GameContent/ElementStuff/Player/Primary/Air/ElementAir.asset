@@ -50,3 +50,4 @@ MonoBehaviour:
   poolPrefab: {fileID: 0}
   succPrefab: {fileID: 1994112508006969103, guid: 3c1f584857535724db53ac84726d47e5, type: 3}
   blowPrefab: {fileID: 1474388984078184617, guid: b65dadb77a6624d48a71bcf54bad2df4, type: 3}
+  gustBurstPrefab: {fileID: 1009419643201310054, guid: 00dade05d8fa00a4bab77134ea1b7c71, type: 3}

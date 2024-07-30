@@ -42,4 +42,4 @@ MonoBehaviour:
     baseManaCost: 0
   explosionPrefab: {fileID: 0}
   poolPrefab: {fileID: 3624624150187626333, guid: 07f19ac5fe935a6478ed26f744db3275, type: 3}
-  swipeSpawnSideDistance: 0.5
+  swipeSpawnSideDistance: 1

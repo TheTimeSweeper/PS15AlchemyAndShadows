@@ -4919,7 +4919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6504295058412743720, guid: c639c158e068ba746b69dbbbaff9e8a1, type: 3}
       propertyPath: lifeTime
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8923244755416364392, guid: c639c158e068ba746b69dbbbaff9e8a1, type: 3}
       propertyPath: m_Name
@@ -4955,7 +4955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childProjectile: {fileID: 3624624150187626333, guid: bf4114a4e4fa8bf47ad229cb6157ad04, type: 3}
-  interval: 0.15
+  interval: 0.12
 --- !u!114 &2534895833487349310 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6504295058412743720, guid: c639c158e068ba746b69dbbbaff9e8a1, type: 3}

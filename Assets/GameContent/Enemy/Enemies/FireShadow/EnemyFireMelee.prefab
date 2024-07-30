@@ -148,6 +148,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.88
       objectReference: {fileID: 0}
+    - target: {fileID: 4655936010463782335, guid: 29875cacc3e66534c93132ad9525c06f, type: 3}
+      propertyPath: stats.BaseMoveSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5133511206925367190, guid: 29875cacc3e66534c93132ad9525c06f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.0000025928018
@@ -215,5 +219,25 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2741661588696770382, guid: 29875cacc3e66534c93132ad9525c06f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6605438196216143121}
   m_SourcePrefab: {fileID: 100100000, guid: 29875cacc3e66534c93132ad9525c06f, type: 3}
+--- !u!1 &3468312956456437897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2741661588696770382, guid: 29875cacc3e66534c93132ad9525c06f, type: 3}
+  m_PrefabInstance: {fileID: 1598138993141231559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6605438196216143121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3468312956456437897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bb0c03ef55b0643b74080c6a84bc54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

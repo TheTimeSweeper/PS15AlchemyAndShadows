@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 0.1
   inputIndex: 0
-  CloseDistance: 6
+  inputIndex2: -1
+  CloseDistance: 4
   StrafeWhileClose: 0

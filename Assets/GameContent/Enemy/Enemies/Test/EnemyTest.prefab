@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6063070201615603428, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
+      propertyPath: gestureBehaviors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063070201615603428, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
+      propertyPath: 'gestureBehaviors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f0afa44b7de6eb144bee81c8ed83bd03, type: 2}
     - target: {fileID: 9155246327287660149, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: m_Name
       value: EnemyTest

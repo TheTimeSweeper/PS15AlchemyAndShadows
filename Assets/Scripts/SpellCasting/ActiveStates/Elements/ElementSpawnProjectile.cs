@@ -31,7 +31,11 @@ namespace ActiveStates.Elements
                     DamageType = GetDamageType()
                 });
             }
+            FizzleMass();
+        }
 
+        protected virtual void FizzleMass()
+        {
             elementMass.Fizzle();
         }
 

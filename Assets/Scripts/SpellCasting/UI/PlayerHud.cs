@@ -2,6 +2,7 @@
 
 namespace SpellCasting.UI
 {
+
     public class PlayerHud : MonoBehaviour
     {
         [SerializeField]

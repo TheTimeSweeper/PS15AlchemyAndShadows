@@ -40,6 +40,11 @@ namespace SpellCasting.UI
             {
                 healthText.text = _healthComponent.Health.ToString("0");
             }
+
+            if (_healthComponent.Ded)
+            {
+                gameObject.SetActive(false);
+            }
         }
 
     }

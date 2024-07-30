@@ -14,5 +14,9 @@ namespace SpellCasting
         [SerializeField]
         private ProjectileController blowPrefab;
         public ProjectileController BlowPrefab => blowPrefab;
+
+        [SerializeField]
+        private GameObject gustBurstPrefab;
+        public GameObject GustBurstPrefab => gustBurstPrefab;
     }
 }

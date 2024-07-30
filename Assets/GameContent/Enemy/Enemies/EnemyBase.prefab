@@ -317,7 +317,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.62869906, g: 0.07676221, b: 0.7075472, a: 0.65882355}
+      maxColor: {r: 0.8679245, g: 0.08597365, b: 0.08597365, a: 0.65882355}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5447,7 +5447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engine: {fileID: 8668804339836209264}
-  controlledAcceleration: 69
+  controlledAcceleration: 30
   idleInertia: 10
 --- !u!54 &7927163457023004262
 Rigidbody:
@@ -5539,7 +5539,7 @@ MonoBehaviour:
     BaseManaRegeneration: 1
     BaseManaCostMultiplier: 1
     BaseCastRange: 20
-    BaseMoveSpeed: 0.44
+    BaseMoveSpeed: 0.2
     BaseJumpHeight: 0
   commonComponents: {fileID: 2816093511070573214}
   dontDestroyOnLoad: 0
