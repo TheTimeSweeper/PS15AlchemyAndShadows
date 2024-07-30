@@ -39,7 +39,13 @@ namespace SpellCasting.AI
                 if (!_throwing)
                 {
                     brain.AIInputController.downInputs[InfoObject.inputIndex] = true;
+
+                    if(InfoObject.inputIndex2 != -1)
+                    {
+                        brain.AIInputController.downInputs[InfoObject.inputIndex2] = true;
+                    }
                     _position = brain.defaultAimPoint.TransformPoint(InfoObject.startPosition);
+
                     _throwDirection = (brain.CurrentTargetPosition - _position).normalized;
                     brain.AIInputController.CurrentAimPosition = _position;
                 } 
@@ -50,6 +56,11 @@ namespace SpellCasting.AI
                     if (_throwTim > 0.8f)
                     {
                         brain.AIInputController.downInputs[InfoObject.inputIndex] = false;
+
+                        if (InfoObject.inputIndex2 != -1)
+                        {
+                            brain.AIInputController.downInputs[InfoObject.inputIndex2] = false;
+                        }
                     }
 
                     _throwTim += Time.fixedDeltaTime * InfoObject.quickness;

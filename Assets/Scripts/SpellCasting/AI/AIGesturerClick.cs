@@ -27,6 +27,11 @@ namespace SpellCasting.AI
                 brain.AIInputController.OverrideGesturePosition = initialPosition;
                 brain.AIInputController.downInputs[InfoObject.inputIndex] = true;
 
+                if (InfoObject.inputIndex2 != -1)
+                {
+                    brain.AIInputController.downInputs[InfoObject.inputIndex2] = true;
+                }
+
                 return end;
             }
         }

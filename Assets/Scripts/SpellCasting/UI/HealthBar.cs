@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 namespace SpellCasting.UI
 {
+
     public class HealthBar : MonoBehaviour
     {
         [SerializeField]
@@ -16,9 +17,9 @@ namespace SpellCasting.UI
 
         private HealthComponent _healthComponent;
 
-        public void Init(HealthComponent commonComponents)
+        public void Init(HealthComponent healthComponent)
         {
-            _healthComponent = commonComponents;
+            _healthComponent = healthComponent;
         }
 
         private void Update()

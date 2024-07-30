@@ -86,7 +86,7 @@ namespace SpellCasting
 
         protected override Vector3 GetMovementInput()
         {
-            return MoveDirection;
+            return transform.InverseTransformDirection(MoveDirection);
         }
 
         protected override void SetbuttonInputs()

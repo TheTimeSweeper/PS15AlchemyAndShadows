@@ -28,7 +28,7 @@ namespace ActiveStates.AI
                 Brain.CurrentTargetBody = Brain.SearchForTarget();
                 if(Brain.CurrentTargetBody != null)
                 {
-                    machine.setState(new ChaseToCombat { Brain = Brain });
+                    machine.setState(new ChaseToCombat { Brain = Brain, ChaseTime = Brain.chaseTimeMinimunm });
                     return;
                 }
 

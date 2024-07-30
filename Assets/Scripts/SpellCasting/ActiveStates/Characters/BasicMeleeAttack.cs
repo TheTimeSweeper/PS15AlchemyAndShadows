@@ -22,6 +22,11 @@ namespace ActiveStates.Characters
         {
             base.OnEnter();
 
+            if (animator != null)
+            {
+                animator.Play("Swipe");
+            }
+
             _shift = inputBank.GlobalMoveDirection * 0.69f * characterBody.stats.MoveSpeed;
 
             if (aimDirection == Vector3.zero)

@@ -32,6 +32,9 @@ namespace SpellCasting.AI
         public float searchIntervalMax = 2;
 
         [SerializeField]
+        public float chaseTimeMinimunm = 1;
+
+        [SerializeField]
         private ActiveStateMachine aiStateMachine;
 
         private CharacterBody _targetBody;

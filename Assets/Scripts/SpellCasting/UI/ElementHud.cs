@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,9 @@ namespace SpellCasting.UI
 {
     public class ElementHud : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject Deactivate;
+
         [SerializeField]
         private Image[] ImagesOfColor;
 
@@ -21,6 +25,7 @@ namespace SpellCasting.UI
 
         private CommonComponentsHolder _referenceComponents;
         private InputState _inputState;
+        private Wiard _wiard;
 
         private ElementType _currentElement;
         private ElementType currentElement
@@ -36,9 +41,9 @@ namespace SpellCasting.UI
         {
             //wait it's not gonna change. idk how I'd do overrides
             ElementType checkElement = null;
-            if (_referenceComponents != null && _referenceComponents.Caster != null)
+            if (_referenceComponents != null && _wiard != null)
             {
-                checkElement = _referenceComponents.Caster.InputToElement[_inputState];
+                checkElement = _wiard.TryGetInputElement(_inputState);
             }
 
             _currentElement = checkElement;
@@ -46,7 +51,25 @@ namespace SpellCasting.UI
             if (checkElement != null)
             {
                 BindElementUI();
+                if (_wiard.CurrentCastingElement!= null && _wiard.CurrentCastingElement.IsSecondary && _wiard.CurrentCastingElement.ComponentElements.Contains(checkElement))
+                {
+                    BindSecondayrElement();
+                }
+            } else
+            {
+                BindUIDed();
             }
+        }
+
+        private void BindSecondayrElement()
+        {
+            ImagesOfColor[0].color = _wiard.CurrentCastingElement.ElementColor;
+            ElementIcon.sprite = _wiard.CurrentCastingElement.Icon;
+        }
+
+        private void BindUIDed()
+        {
+            Deactivate.SetActive(false);
         }
 
         private void BindElementUI()
@@ -56,11 +79,13 @@ namespace SpellCasting.UI
                 ImagesOfColor[i].color = _currentElement.ElementColor;
             }
             ElementIcon.sprite = _currentElement.Icon;
+            Deactivate.SetActive(true);
         }
 
         public void Init(CommonComponentsHolder referenceCommonComponents, InputState inputState)
         {
             _referenceComponents = referenceCommonComponents;
+            _wiard = _referenceComponents.Caster as Wiard;
             _inputState = inputState;
             CheckCurrentElement();
         }
@@ -74,7 +99,7 @@ namespace SpellCasting.UI
             {
                 CheckCurrentElement();
             }
-            if(currentElement == null)
+            if(_currentElement == null)
                 return;
 
             switch (_currentElement.Index)

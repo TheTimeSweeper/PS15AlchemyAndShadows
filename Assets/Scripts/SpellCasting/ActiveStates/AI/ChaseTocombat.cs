@@ -28,7 +28,8 @@ namespace ActiveStates.AI
 
             if (difference.magnitude >= Gesture.CloseDistasnce)
             {
-                Brain.AIInputController.MoveDirection = -difference;
+                Brain.AIInputController.MoveDirection = difference;
+                Debug.DrawLine(transform.position, transform.position + difference);
             } 
             else
             {

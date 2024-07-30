@@ -16,10 +16,10 @@ MonoBehaviour:
   baseElement: 0
   DisplayName: 
   Icon: {fileID: 0}
-  elementColor: {r: 0.6981132, g: 0.13501245, b: 0.13501245, a: 1}
+  elementColor: {r: 0.4811321, g: 0, b: 0, a: 1}
   componentElements: []
-  elementMassPrefab: {fileID: 4742311297794782505, guid: cda0e8e3ca13bf24e8e20abcc62b3149, type: 3}
-  cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
+  elementMassPrefab: {fileID: 4742311297794782505, guid: 4f41425c4c9311f47916749f4e150326, type: 3}
+  cursorIndicatorPrefab: {fileID: 2526543222118484379, guid: 1b950938847fa3c4ebccc3791d6633d2, type: 3}
   massGrowthMultiplier: 0
   massBaseMass: 1
   massVelocityMultiplier: 30

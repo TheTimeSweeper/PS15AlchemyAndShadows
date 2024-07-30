@@ -1,5 +1,6 @@
 using ActiveStates;
 using SpellCasting;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,6 +45,9 @@ public class DeathComponent : MonoBehaviour
     [SerializeField]
     private StateMachineLocator stateMachineLocator;
 
+    [SerializeField]
+    private float deathDelay;
+
     public void GetRektLol()
     {
         if (deathTable)
@@ -61,9 +65,21 @@ public class DeathComponent : MonoBehaviour
 
         if (stateMachineLocator)
         {
-            stateMachineLocator.SetStates(new IdleState());
+            stateMachineLocator.SetStates(new DedState());
         }
 
+        if(deathDelay > 0)
+        {
+            StartCoroutine(DelayedDie());
+        }else
+        {
+            Object.Destroy(gameObject);
+        }
+    }
+
+    IEnumerator DelayedDie()
+    {
+        yield return new WaitForSeconds(1);
         Object.Destroy(gameObject);
     }
 }

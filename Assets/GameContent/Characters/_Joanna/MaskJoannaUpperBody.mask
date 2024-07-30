@@ -1,0 +1,217 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MaskJoannaUpperBody
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: ArmatureJoanna
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/IkArm.l
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/IkArm.l/Elbow_Target.L
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/IkArm.l/Elbow_Target.L/Elbow_Target.L_end
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/IkArm.r
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/IkArm.r/Elbow_Target.R
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/IkArm.r/Elbow_Target.R/Elbow_Target.R_end
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/pelvis
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/pelvis/leg1.L
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/pelvis/leg1.L/leg2.L
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/pelvis/leg1.L/leg2.L/foot.L
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/pelvis/leg1.L/leg2.L/foot.L/toe.L
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/pelvis/leg1.L/leg2.L/foot.L/toe.L/toe.L_end
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/pelvis/leg1.R
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/pelvis/leg1.R/leg2.R
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/pelvis/leg1.R/leg2.R/foot.R
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/pelvis/leg1.R/leg2.R/foot.R/toe.R
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/pelvis/leg1.R/leg2.R/foot.R/toe.R/toe.R_end
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/cape1
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/cape1/cape2
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/cape1/cape2/cape3
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/cape1/cape2/cape3/cape3_end
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/head
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/head/head_end
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/neck
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/neck/neck_end
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals0.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals0.L/thumb.02.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals0.L/thumb.02.L/thumb.03.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals0.L/thumb.02.L/thumb.03.L/thumb.03.L_end
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals1.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals1.L/f_index.01.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals1.L/f_index.01.L/f_index.02.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals1.L/f_index.01.L/f_index.02.L/f_index.03.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals1.L/f_index.01.L/f_index.02.L/f_index.03.L/f_index.03.L_end
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals2.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals2.L/f_middle.01.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals2.L/f_middle.01.L/f_middle.02.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals2.L/f_middle.01.L/f_middle.02.L/f_middle.03.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals2.L/f_middle.01.L/f_middle.02.L/f_middle.03.L/f_middle.03.L_end
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals4.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals4.L/f_pinky.01.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals4.L/f_pinky.01.L/f_pinky.02.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals4.L/f_pinky.01.L/f_pinky.02.L/f_pinky.03.L
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.L/arm1.L/arm3.L/hand.L/metacarpals4.L/f_pinky.01.L/f_pinky.02.L/f_pinky.03.L/f_pinky.03.L_end
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals0.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals0.R/thumb.02.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals0.R/thumb.02.R/thumb.03.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals0.R/thumb.02.R/thumb.03.R/thumb.03.R_end
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals1.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals1.R/f_index.01.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals1.R/f_index.01.R/f_index.02.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals1.R/f_index.01.R/f_index.02.R/f_index.03.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals1.R/f_index.01.R/f_index.02.R/f_index.03.R/f_index.03.R_end
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals2.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals2.R/f_middle.01.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals2.R/f_middle.01.R/f_middle.02.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals2.R/f_middle.01.R/f_middle.02.R/f_middle.03.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals2.R/f_middle.01.R/f_middle.02.R/f_middle.03.R/f_middle.03.R_end
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals4.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals4.R/f_pinky.01.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals4.R/f_pinky.01.R/f_pinky.02.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals4.R/f_pinky.01.R/f_pinky.02.R/f_pinky.03.R
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/BASE/stomach/spine/chest/shoulder.R/arm1.R/arm3.R/hand.R/metacarpals4.R/f_pinky.01.R/f_pinky.02.R/f_pinky.03.R/f_pinky.03.R_end
+    m_Weight: 1
+  - m_Path: ArmatureJoanna/ROOT/LegControl.L
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.L/FootRoll.L
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.L/FootRoll.L/ikLeg.L
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.L/FootRoll.L/ikLeg.L/ikLeg.L_end
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.L/Knee_Target.L
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.L/Knee_Target.L/Knee_Target.L_end
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.L/ToeControl.L
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.L/ToeControl.L/ToeControl.L_end
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.R
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.R/FootRoll.R
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.R/FootRoll.R/ikLeg.R
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.R/FootRoll.R/ikLeg.R/ikLeg.R_end
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.R/Knee_Target.R
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.R/Knee_Target.R/Knee_Target.R_end
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.R/ToeControl.R
+    m_Weight: 0
+  - m_Path: ArmatureJoanna/ROOT/LegControl.R/ToeControl.R/ToeControl.R_end
+    m_Weight: 0
+  - m_Path: MeshJoannaAccBelts
+    m_Weight: 0
+  - m_Path: MeshJoannaAccNecklace
+    m_Weight: 0
+  - m_Path: MeshJoannaAccPouches
+    m_Weight: 0
+  - m_Path: MeshJoannaBody
+    m_Weight: 0
+  - m_Path: MeshJoannaClothesCape
+    m_Weight: 0
+  - m_Path: MeshJoannaClothesShirt
+    m_Weight: 0
+  - m_Path: MeshJoannaEye
+    m_Weight: 0
+  - m_Path: MeshJoannaHeadHair
+    m_Weight: 0
+  - m_Path: MeshJoannaHeadHat
+    m_Weight: 0

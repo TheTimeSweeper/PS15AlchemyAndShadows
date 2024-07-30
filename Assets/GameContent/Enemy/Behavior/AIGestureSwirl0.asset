@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b75908d51fbfab4d9d23f4e63b6db78, type: 3}
-  m_Name: AIGestureSwirl
+  m_Name: AIGestureSwirl0
   m_EditorClassIdentifier: 
-  duration: 2
+  duration: 1
   inputIndex: 0
+  inputIndex2: -1
   CloseDistance: 10
   StrafeWhileClose: 0
   targetSelf: 0

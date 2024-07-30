@@ -48,6 +48,11 @@ namespace SpellCasting.AI
         public override void End(AIBrain brain)
         {
             brain.AIInputController.downInputs[InfoObject.inputIndex] = false;
+
+            if (InfoObject.inputIndex2 != -1)
+            {
+                brain.AIInputController.downInputs[InfoObject.inputIndex2] = false;
+            }
         }
     }
 }

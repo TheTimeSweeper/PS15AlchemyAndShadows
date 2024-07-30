@@ -5,6 +5,12 @@ namespace ActiveStates.Elements.Light
         public override void OnEnter()
         {
             base.OnEnter();
+
+            if (animator != null)
+            {
+                animator.Play("Cast");
+            }
+
             healthComponent.Heal(new SpellCasting.HealingInfo { HealValue = 0.3f * characterBody.stats.MaxHealth});
             elementMass.Fizzle();
         }

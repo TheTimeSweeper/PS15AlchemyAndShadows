@@ -21,6 +21,11 @@ public class CursorIndicator : MonoBehaviour
     [SerializeField]
     private ParticleSystem[] particleSystems;
 
+    [SerializeField]
+    private LineRenderer stringRenderer;
+
+    public Transform Caster { get; set; }
+
     private ParticleSystem.MainModule[] mainModules;
 
     private void Awake()
@@ -33,12 +38,25 @@ public class CursorIndicator : MonoBehaviour
         UpdateParticleColors();
     }
 
-
     private void UpdateParticleColors()
     {
         for (int i = 0; i< mainModules.Length; i++)
         {
             mainModules[i].startColor = color;
+        }
+        if (stringRenderer != null)
+        {
+            stringRenderer.startColor = color;
+            stringRenderer.endColor = color;
+        }
+    }
+
+    private void Update()
+    {
+        if (stringRenderer != null && Caster != null)
+        {
+            stringRenderer.SetPosition(0, Caster.transform.position);
+            stringRenderer.SetPosition(1, transform.position);
         }
     }
 }

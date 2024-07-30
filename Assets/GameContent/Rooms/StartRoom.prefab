@@ -2011,10 +2011,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot
@@ -2059,10 +2055,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2081,10 +2073,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (6)
@@ -2129,10 +2117,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2256,10 +2240,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (14)
@@ -2304,10 +2284,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2326,10 +2302,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (3)
@@ -2374,10 +2346,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2396,10 +2364,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (2)
@@ -2444,10 +2408,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2466,10 +2426,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (7)
@@ -2514,10 +2470,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2641,10 +2593,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (12)
@@ -2689,10 +2637,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2711,10 +2655,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (4)
@@ -2759,10 +2699,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2999,10 +2935,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (9)
@@ -3047,10 +2979,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3069,10 +2997,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (13)
@@ -3117,10 +3041,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3244,10 +3164,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (5)
@@ -3292,10 +3208,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3422,10 +3334,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (11)
@@ -3470,10 +3378,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3714,10 +3618,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (1)
@@ -3762,10 +3662,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3784,10 +3680,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (10)
@@ -3832,10 +3724,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3854,10 +3742,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3333582176678644993}
     m_Modifications:
-    - target: {fileID: 52868480468776066, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: teamIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587334918933251664, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
       propertyPath: m_Name
       value: Pot (8)
@@ -3902,10 +3786,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5675856552538864957, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
-      propertyPath: deathTable
-      value: 
-      objectReference: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

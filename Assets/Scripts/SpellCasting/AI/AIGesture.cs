@@ -9,6 +9,8 @@ namespace SpellCasting.AI
 
         [SerializeField]
         public int inputIndex;
+        [SerializeField]
+        public int inputIndex2 = -1;
 
         [SerializeField]
         public float CloseDistance;

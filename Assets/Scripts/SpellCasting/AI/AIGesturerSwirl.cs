@@ -47,6 +47,11 @@ namespace SpellCasting.AI
 
                 brain.AIInputController.downInputs[InfoObject.inputIndex] = true;
 
+                if (InfoObject.inputIndex2 != -1)
+                {
+                    brain.AIInputController.downInputs[InfoObject.inputIndex2] = true;
+                }
+
                 Quaternion quaternion = Quaternion.Euler(0, InfoObject.angularVelocity, 0);
                 offest = quaternion * offest;
 

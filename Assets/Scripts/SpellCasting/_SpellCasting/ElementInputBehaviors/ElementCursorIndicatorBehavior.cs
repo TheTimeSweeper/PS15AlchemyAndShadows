@@ -19,6 +19,7 @@ namespace SpellCasting
 
                     _currentIndicator = Object.Instantiate(currentCastingElement.CursorIndicatorPrefab);
                     _currentIndicator.Color = currentCastingElement.ElementColor;
+                    _currentIndicator.Caster = caster.transform;
                 }
                 return _currentIndicator;
             }
@@ -39,6 +40,15 @@ namespace SpellCasting
                 {
                     _currentIndicator.gameObject.SetActive(false);
                 }
+            }
+        }
+
+        public override void OnManipluatorExit()
+        {
+            base.OnManipluatorExit();
+            if (_currentIndicator != null)
+            {
+                Object.Destroy(_currentIndicator.gameObject);
             }
         }
     }

@@ -11,6 +11,11 @@ namespace ActiveStates.Elements
         {
             base.OnEnter();
 
+            if (animator != null)
+            {
+                animator.Play("Cast");
+            }
+
             for (int i = 0; i < elementMass.SubMasses.Count; i++)
             {
                 ProjectileController explosionProjectile = Object.Instantiate(prefab, elementMass.SubMasses[i].transform.position, Quaternion.identity);

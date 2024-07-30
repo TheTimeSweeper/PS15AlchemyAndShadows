@@ -10,10 +10,18 @@ namespace SpellCasting
 
         public static bool resetting;
 
+        [SerializeField]
+        private Transform spawnPoint;
+
+        [SerializeField]
+        private CharacterBody Joanna;
+
         protected override void InitOnce()
         {
             base.InitOnce();
             resetting = false;
+
+            Instantiate(Joanna, spawnPoint.transform.position, Quaternion.identity);
         }
 
         public override void ReInit()

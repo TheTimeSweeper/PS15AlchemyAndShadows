@@ -20,6 +20,8 @@ namespace ActiveStates
         protected CharacterModel characterModel => machine.CommonComponents.CharacterModel;
         protected StateMachineLocator stateMachineLocator => machine.CommonComponents.StateMachineLocator;
         protected TeamComponent teamComponent => machine.CommonComponents.TeamComponent;
+        //jam should be on characterbody
+        protected Animator animator => machine.CommonComponents.Animator;
 
         private float _fixedAge;
         protected float fixedAge => _fixedAge;
