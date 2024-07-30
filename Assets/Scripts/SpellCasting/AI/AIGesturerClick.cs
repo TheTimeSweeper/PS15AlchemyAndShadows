@@ -2,6 +2,7 @@
 
 namespace SpellCasting.AI
 {
+
     [CreateAssetMenu(menuName = "SpellCasting/AIGesturer/Click", fileName = "AIGestureClick")]
     public class AIGesturerClick : AIGesture
     {

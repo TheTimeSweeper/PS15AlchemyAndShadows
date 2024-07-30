@@ -17,7 +17,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   statsToChange:
     BaseMaxHealth: 0
-    BaseHealthRegen: 0
+    BaseHealthRegenPercent: 0
     BaseDamage: 0
     BaseAttackSpeed: 0
     BaseStunFactor: 0

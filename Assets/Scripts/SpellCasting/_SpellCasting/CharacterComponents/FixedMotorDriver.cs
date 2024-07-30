@@ -18,7 +18,7 @@ namespace SpellCasting
         public float DesiredSpeed { get; set; }
         public Vector3 AddedMotion { get; set; }
         public Vector3? OverrideVelocity { get; set; }
-        public Vector3 FinalVeolcity { get; set; }
+        public Vector3 FinalVeolcity { get; protected set; }
 
         private Vector3 _deltaPosition;
         private Vector3 _currentVelocity;

@@ -9,7 +9,10 @@ namespace SpellCasting
 
         public override void FixedMove(Vector3 movement)
         {
-            rigidBody.MovePosition(transform.position + movement);
+            Vector3 newVelocity = movement / Time.fixedDeltaTime;
+            newVelocity.y = rigidBody.linearVelocity.y;
+            rigidBody.linearVelocity = newVelocity;
+            //rigidBody.MovePosition(transform.position + movement);
         }
     }
 }

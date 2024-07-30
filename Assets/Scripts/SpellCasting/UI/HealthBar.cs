@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 namespace SpellCasting.UI
 {
-
     public class HealthBar : MonoBehaviour
     {
         [SerializeField]
@@ -15,17 +14,28 @@ namespace SpellCasting.UI
         [SerializeField]
         private TMP_Text healthText;
 
+        [SerializeField]
+        private bool diplayMax;
+
         private HealthComponent _healthComponent;
 
         public void Init(HealthComponent healthComponent)
         {
             _healthComponent = healthComponent;
+            gameObject.SetActive(true);
         }
 
         private void Update()
         {
-            if ((_healthComponent == null))
+            if (_healthComponent == null)
+            {
+                gameObject.SetActive(false);
                 return;
+            }
+            if (_healthComponent.Ded)
+            {
+                gameObject.SetActive(false);
+            }
 
             if (healthSlider != null)
             {
@@ -36,14 +46,15 @@ namespace SpellCasting.UI
                     delayedSlider.fillAmount = Util.ExpDecayLerp(delayedSlider.fillAmount, healthSlider.value, 3, Time.deltaTime);
                 }
             }
-            if(healthText != null)
+            if (healthText != null)
             {
-                healthText.text = _healthComponent.Health.ToString("0");
-            }
-
-            if (_healthComponent.Ded)
-            {
-                gameObject.SetActive(false);
+                if (diplayMax)
+                {
+                    healthText.text = $"{_healthComponent.Health.ToString("0")}/{_healthComponent.MaxHealth.ToString("0")}";
+                }else
+                {
+                    healthText.text = _healthComponent.Health.ToString("0");
+                }
             }
         }
 

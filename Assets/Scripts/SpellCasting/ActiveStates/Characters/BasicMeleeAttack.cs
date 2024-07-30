@@ -24,7 +24,8 @@ namespace ActiveStates.Characters
 
             if (animator != null)
             {
-                animator.Play("Swipe");
+                //animator.Update(0f);
+                animator.PlayInFixedTime("Swipe", -1, 0);
             }
 
             _shift = inputBank.GlobalMoveDirection * 0.69f * characterBody.stats.MoveSpeed;

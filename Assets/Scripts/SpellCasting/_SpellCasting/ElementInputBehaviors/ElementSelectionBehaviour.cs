@@ -29,7 +29,7 @@ namespace SpellCasting
                     if (combinationElement != null)
                     {
                         caster.CurrentCastingElement = combinationElement;
-                        commonComponents.Animator.Play("LeftHandCast");
+                        commonComponents.Animator.PlayInFixedTime("LeftHandCast", -1, 0);
                     }
                 }
             }

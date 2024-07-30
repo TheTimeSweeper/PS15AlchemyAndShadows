@@ -6,7 +6,7 @@ namespace SpellCasting
     {
         public override Collider[] DoOverlap()
         {
-            return Physics.OverlapSphere(transform.position, transform.lossyScale.x * 0.5f);
+            return Physics.OverlapSphere(transform.position, transform.lossyScale.x * 0.5f, LayerInfo.Hurtbox.layerMask);
         }
     }
 }

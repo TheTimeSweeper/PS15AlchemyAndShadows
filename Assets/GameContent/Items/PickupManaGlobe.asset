@@ -16,4 +16,4 @@ MonoBehaviour:
   description: Mana Orb
   icon: {fileID: 21300000, guid: 5b65c54f30b879b4d97ee0f913a9b28c, type: 3}
   buffToApply: {fileID: 11400000, guid: c65d9c89bfc66a545a83ab30d856ad4b, type: 2}
-  buffDuration: 1
+  buffDuration: 1.5

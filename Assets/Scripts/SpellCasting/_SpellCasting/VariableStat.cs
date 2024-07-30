@@ -78,6 +78,23 @@ namespace SpellCasting
         {
             return Mathf.RoundToInt(stat.Value);
         }
+
+        public static float operator *(VariableNumberStat a,  VariableNumberStat b)
+        {
+            return a.Value * b.Value;
+        }
+        public static float operator +(VariableNumberStat a, VariableNumberStat b)
+        {
+            return a.Value + b.Value;
+        }
+        public static float operator -(VariableNumberStat a, VariableNumberStat b)
+        {
+            return a.Value - b.Value;
+        }
+        public static float operator /(VariableNumberStat a, VariableNumberStat b)
+        {
+            return a.Value / b.Value;
+        }
     }
 
     [System.Serializable]

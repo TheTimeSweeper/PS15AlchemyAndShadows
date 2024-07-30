@@ -23,6 +23,7 @@ public class ElementRequriedSpawn
     }
 }
 
+//jam for enemy spawns there should be some way to set the team. for now just pre-set in prefab
 [CreateAssetMenu(menuName = "SpellCasting/SpawnTable/ElementsRequried", fileName = "Table")]
 public class ElementRequiredSpawnTable : SpawnTable
 {

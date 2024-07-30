@@ -1,5 +1,6 @@
 ﻿using ActiveStates;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 namespace SpellCasting
@@ -24,6 +25,20 @@ namespace SpellCasting
                 {
                     ComponentList[i].tryInterruptState(state, priority);
                 }
+            }
+        }
+
+        protected override void Awake()
+        {
+            for (int i = 0; i < componentList.Length; i++)
+            {
+                var component = componentList[i];
+                if (nameToComponent.ContainsKey(component.Label))
+                {
+                    Debug.LogError($"child with the name {component.name} already exists. multiple children with the same name are not supported");
+                    return;
+                }
+                nameToComponent[component.Label] = component;
             }
         }
     }

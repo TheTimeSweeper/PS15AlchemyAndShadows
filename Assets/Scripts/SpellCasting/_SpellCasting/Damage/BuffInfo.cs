@@ -52,6 +52,11 @@ namespace SpellCasting
                 body.stats.ManaRegeneration.ApplyMultiplyModifier(statsToChange.BaseManaRegeneration, buffID);
             }
 
+            if (statsToChange.BaseHealthRegenPercent > 0)
+            {
+                body.stats.HealthRegenPercent.ApplyMultiplyModifier(statsToChange.BaseHealthRegenPercent, buffID);
+            }
+
             //jam and so on and so forth
         }
 
@@ -71,6 +76,16 @@ namespace SpellCasting
             if (statsToChange.BaseMoveSpeed > 0)
             {
                 body.stats.MoveSpeed.RemoveModifier(buffID);
+            }
+
+            if (statsToChange.BaseManaRegeneration > 0)
+            {
+                body.stats.ManaRegeneration.RemoveModifier(buffID);
+            }
+
+            if (statsToChange.BaseHealthRegenPercent > 0)
+            {
+                body.stats.HealthRegenPercent.RemoveModifier(buffID);
             }
         }
     }

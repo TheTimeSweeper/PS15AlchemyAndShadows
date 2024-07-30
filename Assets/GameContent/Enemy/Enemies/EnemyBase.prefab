@@ -4996,7 +4996,7 @@ GameObject:
   - component: {fileID: 4445492391472018060}
   - component: {fileID: 3353553141788257557}
   - component: {fileID: 3913994871934679437}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5037,8 +5037,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.36
-  m_Height: 2
+  m_Radius: 0.96
+  m_Height: 3.71
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3913994871934679437
@@ -5371,6 +5371,7 @@ GameObject:
   - component: {fileID: 3105954548464548804}
   - component: {fileID: 2813631376633674538}
   - component: {fileID: 5891615296901959856}
+  - component: {fileID: 8420583644666335787}
   m_Layer: 0
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -5501,7 +5502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150d89e9dfc2e90479cb690a8cf371eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamIndex: 1
+  teamIndex: 4
 --- !u!114 &5113112206207525392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5643,7 +5644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6dda0fa94071242b16569a6dea96bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTable: {fileID: 11400000, guid: b3106588154ae23469b68931503e17a9, type: 2}
+  deathTable: {fileID: 11400000, guid: 2d839aa9a1130244f9933b1900900699, type: 2}
   deathEffect: {fileID: 0}
   deathEffectPooled: {fileID: 0}
   stateMachineLocator: {fileID: 0}
@@ -5662,3 +5663,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1428157399008160528, guid: 92af327ca9b901e4b973a4d168a6c1f2, type: 3}
   healthComponent: {fileID: 7646567501710710273}
+--- !u!136 &8420583644666335787
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9155246327287660149}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5568697
+  m_Height: 1.8562322
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9281161, z: 0}

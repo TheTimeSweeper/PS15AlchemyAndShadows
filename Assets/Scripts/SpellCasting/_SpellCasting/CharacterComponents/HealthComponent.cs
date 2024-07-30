@@ -74,7 +74,7 @@ namespace SpellCasting
         {
             PreModifyHeal?.Invoke(heal);
 
-            health += heal.HealValue;
+            health = Mathf.Clamp(health + heal.HealValue, 0, maxHealth);
             OnHealTaken?.Invoke(heal.HealValue);
         }
 
@@ -92,7 +92,9 @@ namespace SpellCasting
         {
             if (commonComponents != null && commonComponents.CharacterBody != null)
             {
-                health = Mathf.Clamp(health + commonComponents.CharacterBody.stats.HealthRegenPercent * commonComponents.CharacterBody.stats.MaxHealth * Time.fixedDeltaTime, 0, maxHealth);
+                float regenPerSecond = commonComponents.CharacterBody.stats.HealthRegenPercent * commonComponents.CharacterBody.stats.MaxHealth;
+
+                health = Mathf.Clamp(health + regenPerSecond * Time.fixedDeltaTime, 0, maxHealth);
             }
         }
     }

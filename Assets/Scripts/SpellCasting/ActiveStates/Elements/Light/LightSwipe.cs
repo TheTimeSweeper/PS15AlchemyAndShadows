@@ -8,7 +8,8 @@ namespace ActiveStates.Elements.Light
 
             if (animator != null)
             {
-                animator.Play("Cast");
+                //animator.Update(0f);
+                animator.PlayInFixedTime("Cast", -1, 0);
             }
 
             healthComponent.Heal(new SpellCasting.HealingInfo { HealValue = 0.3f * characterBody.stats.MaxHealth});

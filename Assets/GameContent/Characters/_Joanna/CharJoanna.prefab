@@ -5078,16 +5078,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     BaseMaxHealth: 100
-    BaseHealthRegenPercent: 0.169
+    BaseHealthRegenPercent: 0.012
     BaseDamage: 10
     BaseAttackSpeed: 1
     BaseStunFactor: 1
     BaseKnockbackFactor: 1
     BaseMaxMana: 100
-    BaseManaRegeneration: 5
+    BaseManaRegeneration: 3
     BaseManaCostMultiplier: 1
     BaseCastRange: 0
-    BaseMoveSpeed: 0.4
+    BaseMoveSpeed: 0.3
     BaseJumpHeight: 5
   commonComponents: {fileID: 1487827616747877697}
   dontDestroyOnLoad: 1
@@ -5313,6 +5313,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   deathEffectPooled: {fileID: 0}
   stateMachineLocator: {fileID: 8771263758274044495}
+  deathDelay: 0
 --- !u!114 &7561969412569387848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5702,7 +5703,7 @@ GameObject:
   - component: {fileID: 8056759837326555796}
   - component: {fileID: 2894997427263520378}
   - component: {fileID: 5228492122177268093}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

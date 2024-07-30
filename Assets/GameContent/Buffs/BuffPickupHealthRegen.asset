@@ -17,13 +17,13 @@ MonoBehaviour:
   icon: {fileID: 0}
   statsToChange:
     BaseMaxHealth: 0
-    BaseHealthRegenPercent: 3
+    BaseHealthRegenPercent: 20
     BaseDamage: 0
     BaseAttackSpeed: 0
     BaseStunFactor: 0
     BaseKnockbackFactor: 0
     BaseMaxMana: 0
-    BaseManaRegeneration: 3
+    BaseManaRegeneration: 0
     BaseManaCostMultiplier: 0
     BaseCastRange: 0
     BaseMoveSpeed: 0

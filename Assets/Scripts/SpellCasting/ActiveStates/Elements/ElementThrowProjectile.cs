@@ -16,7 +16,8 @@ namespace ActiveStates.Elements
 
             if(animator != null)
             {
-                animator.Play("Cast");
+                //animator.Update(0f);
+                animator.PlayInFixedTime("Cast", -1, 0);
             }
 
             for (int i = 0; i < elementMass.SubMasses.Count; i++)

@@ -1,10 +1,8 @@
 ﻿using SpellCasting;
 using Unity.VisualScripting;
-using UnityEngine;
 
 namespace ActiveStates.Characters
 {
-
     public class GenericMeleeCombo : BasicMeleeAttack
     {
         protected virtual int comboHits => 1;
