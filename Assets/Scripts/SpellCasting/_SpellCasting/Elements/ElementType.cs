@@ -72,6 +72,10 @@ namespace SpellCasting
         private float massVelocityMultiplier;
         public float MassVelocityMultiplier { get => massVelocityMultiplier; }
 
+        [SerializeField]
+        private float massOffsetDistance = 1;
+        public float MassOffsetDistance { get => massOffsetDistance; }
+
         [SerializeField, FormerlySerializedAs("spawnState")]
         private SerializableActiveState massSpawnState = new SerializableActiveState(typeof(BasicElementGrow));
         public SerializableActiveState MassSpawnState => massSpawnState;

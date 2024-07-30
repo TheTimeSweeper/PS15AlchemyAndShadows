@@ -86,7 +86,7 @@ namespace SpellCasting
                 true,
                 all);
 
-            _knockbackTime = 0.5f;
+            _knockbackTime = 0.5f * commonComponents.CharacterBody.stats.KnockbackFactor;
             _knockback = damagedInfo.DamagingInfo.Knockback * commonComponents.CharacterBody.stats.KnockbackFactor;
         }
     }

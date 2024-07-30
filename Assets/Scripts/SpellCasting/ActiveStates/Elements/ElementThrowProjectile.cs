@@ -29,13 +29,13 @@ namespace ActiveStates.Elements
                     (elementMass.CenterPositionRaw - elementMass.CenterPosition).normalized * elementType.MassVelocityMultiplier,
                     GetPositionInlineWithDirectionPerpendicularly() + relativePOsition,
                     originalPosition,
-                    getDamageType());
+                    GetDamageType());
             }
 
             elementMass.Casted = true;
         }
 
-        protected virtual DamageTypeIndex getDamageType()
+        protected virtual DamageTypeIndex GetDamageType()
         {
             return DamageTypeIndex.NONE;
         }

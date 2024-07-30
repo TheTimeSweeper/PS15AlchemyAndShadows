@@ -21,12 +21,13 @@ namespace SpellCasting.Projectiles
             targetTransform = transform;
         }
 
-        void Awake()
+        void Start()
         {
             if (targetTransform == null)
             {
                 targetTransform = transform;
             }
+            //starting at 0 idk why
             _originalScale = targetTransform.localScale;
             targetTransform.localScale = _originalScale * curve.Evaluate(0);
         }

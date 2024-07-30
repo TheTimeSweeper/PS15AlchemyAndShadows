@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b75908d51fbfab4d9d23f4e63b6db78, type: 3}
   m_Name: AIGestureSwirlSelf0
   m_EditorClassIdentifier: 
-  duration: 2
+  duration: 1
   inputIndex: 0
-  CloseDistance: 10
+  inputIndex2: -1
+  CloseDistance: 2
   StrafeWhileClose: 0
   targetSelf: 1
   offsetDistance: 3

@@ -5,7 +5,7 @@ namespace ActiveStates.Elements.Lava
 {
     public class LavaSwipe : WaterSwipe
     {
-        protected override DamageTypeIndex getDamageType()
+        protected override DamageTypeIndex GetDamageType()
         {
             return DamageTypeIndex.NONE;
         }

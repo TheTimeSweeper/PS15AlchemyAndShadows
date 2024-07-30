@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc96a05bd266cc947b66fb1be3f5fdbd, type: 3}
+  m_Name: ElementEnemyEarth
+  m_EditorClassIdentifier: 
+  index: 21
+  baseElement: 1
+  DisplayName: Shadow Earth
+  Icon: {fileID: 21300000, guid: 3360a36856f75034e83b7e0abef5b3af, type: 3}
+  elementColor: {r: 0.254717, g: 0.10279381, b: 0, a: 1}
+  componentElements: []
+  elementMassPrefab: {fileID: 5437148972744845369, guid: 0ebadbd9db02b49478ca628c2b1830f6, type: 3}
+  cursorIndicatorPrefab: {fileID: 2526543222118484379, guid: 1b950938847fa3c4ebccc3791d6633d2, type: 3}
+  massGrowthMultiplier: 0
+  massBaseMass: 5
+  massVelocityMultiplier: 10
+  massOffsetDistance: 1.5
+  massSpawnState:
+    activeStateName: ActiveStates.Elements.MultipleMassGrow
+  massLetGoState:
+    activeStateName: ActiveStates.Elements.BasicElementLetGo
+  bodyMeleeStaterino:
+    activeStateName: ActiveStates.Characters.GenericMeleeCombo
+  elementActions:
+  - gestureType: {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
+    gestureState:
+      activeStateName: ActiveStates.Elements.Earth.EarthSummon
+    baseManaCost: 0
+  explosionPrefab: {fileID: 0}
+  poolPrefab: {fileID: 0}
+  MinionPrefab: {fileID: 1329386043357478880, guid: d1e30e5fcf25ed849831ac54107bcdb1, type: 3}

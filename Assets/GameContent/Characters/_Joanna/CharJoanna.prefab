@@ -5039,6 +5039,7 @@ GameObject:
   - component: {fileID: 310531384847307336}
   - component: {fileID: 7736627267740524928}
   - component: {fileID: 7561969412569387848}
+  - component: {fileID: 27763782461655724}
   m_Layer: 0
   m_Name: CharJoanna
   m_TagString: Player
@@ -5081,7 +5082,7 @@ MonoBehaviour:
     BaseHealthRegenPercent: 0.012
     BaseDamage: 10
     BaseAttackSpeed: 1
-    BaseStunFactor: 1
+    BaseStunFactor: 0.2
     BaseKnockbackFactor: 1
     BaseMaxMana: 100
     BaseManaRegeneration: 3
@@ -5332,6 +5333,21 @@ MonoBehaviour:
   EarthMana: 0
   WaterMana: 0
   AirMana: 0
+--- !u!114 &27763782461655724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593886557186326773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5e249429e99b54eb65cf94ea6c7b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commonComponents: {fileID: 1487827616747877697}
+  hitStunThreshold: 1000
+  hitMoveThreshold: 0
 --- !u!1 &3845719698862260873
 GameObject:
   m_ObjectHideFlags: 0

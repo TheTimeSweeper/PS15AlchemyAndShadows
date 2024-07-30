@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace ActiveStates.Elements
+﻿namespace ActiveStates.Elements
 {
     public class BasicElementGrow : BaseElementMassState
     {
@@ -14,11 +12,7 @@ namespace ActiveStates.Elements
 
             for (int i = 0; i < elementMass.SubMasses.Count; i++)
             {
-                //Vector3 lastPosition = elementMass.SubMasses[i].transform.position;
-
-                elementMass.SubMasses[i].transform.position = elementMass.CenterPosition;
-
-                //elementMass.SubMasses[i].transform.rotation = Quaternion.LookRotation(elementMass.SubMasses[i].transform.position - lastPosition, Vector3.up);
+                elementMass.SubMasses[i].SetPosition(elementMass.CenterPosition);
             }
         }
     }

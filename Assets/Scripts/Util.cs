@@ -30,6 +30,12 @@ public static class Util
         return component.CommonComponents.TeamComponent.TeamIndex;
     }
 
+
+    public static T GetRandom<T>(this T[] stuff)
+    {
+        return stuff[UnityEngine.Random.Range(0, stuff.Length)];
+    }
+
     public static int WeightedRandomIndex(this List<float> weights)
     {
         List<float> weightsList = new List<float>(weights);

@@ -4918,9 +4918,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392a07cf2534f45449902f8a52befa08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  massScaleContainer: {fileID: 5489744001818490076}
+  massScaleContainer: {fileID: 8357498285966987786}
   rigidBody: {fileID: 3159130046204335257}
   projectileController: {fileID: 2736093658010405510}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!54 &3159130046204335257
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5092,7 +5093,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  targetTransform: {fileID: 0}
+  targetTransform: {fileID: 5489744001818490076}
 --- !u!1 &6529560793578120647
 GameObject:
   m_ObjectHideFlags: 0
