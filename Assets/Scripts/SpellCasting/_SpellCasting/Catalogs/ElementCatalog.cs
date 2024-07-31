@@ -11,13 +11,22 @@ namespace SpellCasting
         [SerializeField]
         private List<ElementType> elementTypes = new List<ElementType>();
 
-        public static ElementType TryCombineElements(ElementType element1, ElementType element2)
+        public static ElementType TryCombineElements(ElementType element1, ElementType element2, bool saverequired = false)
         {
             for (int i = 0; i < Instance.elementTypes.Count; i++)
             {
-                if (Instance.elementTypes[i].IsSecondary && Instance.elementTypes[i].ComponentElements.Contains(element1) && Instance.elementTypes[i].ComponentElements.Contains(element2))
+                ElementType combinedElement = Instance.elementTypes[i];
+
+                if (!combinedElement.IsSecondary)
+                    continue;                
+
+                if (saverequired && !MainGame.Instance.SavedData.UnlockedElements.Contains(combinedElement))
+                    continue;
+
+                if (combinedElement.ComponentElements.Contains(element1) &&
+                    combinedElement.ComponentElements.Contains(element2))
                 {
-                    return Instance.elementTypes[i];
+                    return combinedElement;
                 }
             }
             return null;

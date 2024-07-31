@@ -31,22 +31,10 @@ MonoBehaviour:
   bodyMeleeStaterino:
     activeStateName: ActiveStates.Characters.TwoHitCombo
   elementActions:
-  - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
-    gestureState:
-      activeStateName: ActiveStates.Elements.Air.AirSwipe
-    baseManaCost: 5
   - gestureType: {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Air.AirShake
     baseManaCost: 40
-  - gestureType: {fileID: 11400000, guid: 44615728a5361634c9e3b0f5a2518930, type: 2}
-    gestureState:
-      activeStateName: ActiveStates.Elements.BasicElementMelee
-    baseManaCost: 0
-  - gestureType: {fileID: 11400000, guid: c52837f313ef4ca4396eed8288aaf495, type: 2}
-    gestureState:
-      activeStateName: ActiveStates.Elements.BasicElementLetGo
-    baseManaCost: 0
   explosionPrefab: {fileID: 0}
   poolPrefab: {fileID: 0}
   succPrefab: {fileID: 1994112508006969103, guid: 3c1f584857535724db53ac84726d47e5, type: 3}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8267b83b0245fa44390e5e9d0eb1e315, type: 3}
+  m_Name: UniqueRoomEndPortal
+  m_EditorClassIdentifier: 
+  room: {fileID: 3301493890878630456, guid: 6eed8464224c4f8408a6fe9192cfc209, type: 3}
+  maximumInstancesAllowed: 1
+  minimumInstancesRequired: 1
+  minimumDifficultyRequirement: 0

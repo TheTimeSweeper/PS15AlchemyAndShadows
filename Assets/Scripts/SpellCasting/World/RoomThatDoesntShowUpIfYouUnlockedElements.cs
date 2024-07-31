@@ -9,7 +9,7 @@ namespace SpellCasting.World
 
         public override bool CanSpawn()
         {
-            return !MainGame.Instance.SavedData.UnlockedElements.Contains(elementThatTheRoomDoesntShowUpIfYouUnlock);
+            return base.CanSpawn() && !MainGame.Instance.SavedData.UnlockedElements.Contains(elementThatTheRoomDoesntShowUpIfYouUnlock);
         }
     }
 }

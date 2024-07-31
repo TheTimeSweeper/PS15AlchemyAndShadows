@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598169167652376554}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000002057005, y: 0.6087629, z: 0.79335225, w: 0.0000015784016}
-  m_LocalPosition: {x: 0, y: 0.491, z: -0.388}
+  m_LocalRotation: {x: 0.7933522, y: 0.0000032559035, z: 0.000004336238, w: -0.60876304}
+  m_LocalPosition: {x: 0, y: 0.491, z: 0.033}
   m_LocalScale: {x: 0.30588087, y: 0.30588087, z: 0.30588084}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1978122663480346289}
-  m_LocalEulerAnglesHint: {x: -105, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -105, y: 359.999, z: 0}
 --- !u!33 &1150303377508057432
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -247,23 +247,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2971402266644894205, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000025928018
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2971402266644894205, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2971402266644894205, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2971402266644894205, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2971402266644894205, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3105954548464548804, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: m1Element
@@ -276,6 +276,14 @@ PrefabInstance:
     - target: {fileID: 3353553141788257557, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: m_Radius
       value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358658940526756820, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
+      propertyPath: stats.BaseDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358658940526756820, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
+      propertyPath: stats.BaseMaxHealth
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3358658940526756820, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: stats.BaseMoveSpeed

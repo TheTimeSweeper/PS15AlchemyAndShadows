@@ -22,14 +22,14 @@ namespace SpellCasting
             //pressed a second button while controlling an element. set to combined element
             if (currentCastingElement != null && inputBank.OrderedHeldInputs.Count > 1)
             {
-                ElementType secondElement;
-                if ((secondElement = caster.TryGetInputElement(inputBank.OrderedHeldInputs[1])) != null)
+                ElementType secondElement = caster.TryGetInputElement(inputBank.OrderedHeldInputs[1]);
+                if (secondElement != null)
                 {
-                    ElementType combinationElement = ElementCatalog.TryCombineElements(currentCastingElement, secondElement);
+                    ElementType combinationElement = ElementCatalog.TryCombineElements(currentCastingElement, secondElement, true);
                     if (combinationElement != null)
                     {
                         caster.CurrentCastingElement = combinationElement;
-                        commonComponents.Animator.PlayInFixedTime("LeftHandCast", -1, 0);
+                        commonComponents.Animator.PlayInFixedTime("CastLeftHand", -1, 0);
                     }
                 }
             }

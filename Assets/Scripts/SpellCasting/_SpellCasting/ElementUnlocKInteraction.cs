@@ -18,10 +18,10 @@ namespace SpellCasting
             Instantiate(elementToUnlock.ElementMassPrefab, elementDisplay.transform.position, elementDisplay.transform.rotation, elementDisplay.transform);
         }
 
-        public override void OnBodyDetected(CharacterBody body, bool InteractPressed)
+        public override bool OnBodyDetected(CharacterBody body, bool InteractPressed)
         {
             if (!InteractPressed)
-                return;
+                return false;
 
             MainGame.Instance.SavedData.AddElement(elementToUnlock);
             MainGame.Instance.SavedData.Save();
@@ -35,6 +35,8 @@ namespace SpellCasting
             {
                 elementDisplay.SetActive(false);
             }
+
+            return true;
         }
     }
 }

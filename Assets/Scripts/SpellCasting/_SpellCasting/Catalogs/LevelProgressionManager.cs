@@ -31,6 +31,11 @@ namespace SpellCasting
             resetting = false;
         }
 
+        public void NextLevel()
+        {
+            SceneManager.LoadScene(0);
+        }
+
         public IEnumerator DelayReset()
         {
             yield return new WaitForSeconds(1);

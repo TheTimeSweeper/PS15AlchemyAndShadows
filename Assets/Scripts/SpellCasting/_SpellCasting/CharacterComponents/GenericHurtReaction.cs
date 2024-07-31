@@ -58,7 +58,7 @@ namespace SpellCasting
             {
                 _knockbackTime -= Time.deltaTime;
 
-                commonComponents.FixedMotorDriver.AddedMotion = _knockback;
+                commonComponents.FixedMotorDriver.AddedMotion2 = _knockback;
                 _knockback = Util.ExpDecayLerp(_knockback, Vector3.zero, 6, Time.fixedDeltaTime);
             }
         }
@@ -77,14 +77,17 @@ namespace SpellCasting
 
         public void SetHitstunState(GetDamagedinfo damagedInfo, bool all)
         {
-            commonComponents.StateMachineLocator.SetStates(
-                new StunnedState
-                {
-                    StunTime = stunFactor,
-                },
-                InterruptPriority.HITSTUN,
-                true,
-                all);
+            if(all)
+            {
+                commonComponents.StateMachineLocator.SetStates(
+                    new StunnedState
+                    {
+                        StunTime = stunFactor,
+                    },
+                    InterruptPriority.HITSTUN,
+                    true,
+                    all);
+            }
 
             _knockbackTime = 0.5f * commonComponents.CharacterBody.stats.KnockbackFactor;
             _knockback = damagedInfo.DamagingInfo.Knockback * commonComponents.CharacterBody.stats.KnockbackFactor;

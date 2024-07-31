@@ -7,10 +7,11 @@ namespace SpellCasting.World
         [SerializeField]
         private SpawnTable spawnTable;
 
-        public override void OnBodyDetected(CharacterBody body, bool interactInputPressed)
+        public override bool OnBodyDetected(CharacterBody body, bool interactInputPressed)
         {
             spawnTable.SpawnObject(transform.position);
             Destroy(gameObject);
+            return true;
         }
     }
 }

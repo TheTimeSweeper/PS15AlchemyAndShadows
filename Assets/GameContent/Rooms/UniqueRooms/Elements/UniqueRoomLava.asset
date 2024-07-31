@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf41402c2e93d284fa14f1acff9054f8, type: 3}
+  m_Name: UniqueRoomLava
+  m_EditorClassIdentifier: 
+  room: {fileID: 1314861660888935951, guid: b0af3628b29b9ef48b7965ff3c0deac0, type: 3}
+  maximumInstancesAllowed: 1
+  minimumInstancesRequired: 1
+  minimumDifficultyRequirement: 1
+  elementThatTheRoomDoesntShowUpIfYouUnlock: {fileID: 11400000, guid: 93cb0dcc15d5c6047acd57a5f2c65b8e, type: 2}

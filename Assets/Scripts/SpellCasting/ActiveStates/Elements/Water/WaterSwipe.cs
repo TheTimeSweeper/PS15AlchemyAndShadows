@@ -11,6 +11,8 @@ namespace ActiveStates.Elements.Water
         {
             Vector3 sideShift = Vector3.Cross(Vector3.up, inputBank.AimDirection) * (elementType as ElementTypeWater).SwipeSpawnSideDistance;
 
+            elementMass.TotalMass *= 3;
+
             ElementSubMass firstMass = elementMass.SubMasses[0];
 
             AddMass(sideShift * firstMass.CurrentMass);

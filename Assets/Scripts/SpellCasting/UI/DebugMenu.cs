@@ -36,12 +36,7 @@ namespace SpellCasting.UI
                 AddToggleElementButton(element);
             }
 
-            AddFunnyButton("Skip Level", SkipLevel);
-        }
-
-        private void SkipLevel()
-        {
-            SceneManager.LoadScene(0);
+            AddFunnyButton("Skip Level", LevelProgressionManager.Instance.NextLevel);
         }
 
         private void AddFunnyButton(string text, UnityAction onClick)

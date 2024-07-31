@@ -16,21 +16,23 @@ public class SpawnTable : ScriptableObject
     [SerializeField]
     protected List<float> weights;
 
-    public virtual void SpawnObject(Vector3 position)
+    public virtual GameObject SpawnObject(Vector3 position)
     {
         int randomIndex = Util.WeightedRandomIndex(GetWeights());
         if (randomIndex == -1)
-            return;
+            return null;
 
         List<GameObject> Table = GetTable();
 
-        GameObject item = Table[randomIndex];
+        GameObject spawnItem = Table[randomIndex];
 
         //possibility to drop nothing
-        if (item != null)
+        if (spawnItem != null)
         {
-            Object.Instantiate(item, position, Quaternion.identity);
+            return Object.Instantiate(spawnItem, position, Quaternion.identity);
         }
+
+        return null;
     }
 
     protected virtual List<GameObject> GetTable()

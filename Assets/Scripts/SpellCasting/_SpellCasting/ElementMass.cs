@@ -18,7 +18,7 @@ namespace SpellCasting
         [SerializeField]
         private float positionLerpDecay = 3;
 
-        private float _totalMass;
+        public float TotalMass { get; set; }
 
         private Vector3 _centerPositionGlobal;
         public Vector3 CenterPosition => _centerPositionGlobal;
@@ -38,7 +38,7 @@ namespace SpellCasting
         public void Init(ElementType elementType)
         {
             _elementType = elementType;
-            _totalMass = elementType.BaseMass;
+            TotalMass = elementType.BaseMass;
         }
 
         public void SetPosition(Vector3 aimPoint, Transform casterTransform)
@@ -82,7 +82,7 @@ namespace SpellCasting
 
         public void Grow(float multiplier)
         {
-            _totalMass += Time.deltaTime * multiplier;
+            TotalMass += Time.deltaTime * multiplier;
             UpdateMass();
         }
 
@@ -90,7 +90,7 @@ namespace SpellCasting
         {
             for (int i = 0; i < subMasses.Count; i++)
             {
-                subMasses[i].SetMass(_totalMass / subMasses.Count);
+                subMasses[i].SetMass(TotalMass / subMasses.Count);
             }
         }
 

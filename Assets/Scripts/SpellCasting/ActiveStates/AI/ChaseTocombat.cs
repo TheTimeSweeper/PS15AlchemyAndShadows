@@ -12,7 +12,11 @@ namespace ActiveStates.AI
         {
             base.OnEnter();
             Gesture = Brain.RollGesture();
-        }
+
+            Vector3 difference = Brain.CurrentTargetBody.transform.position - transform.position;
+
+            Brain.AIInputController.MoveDirection = difference;
+        }    
 
         public override void OnFixedUpdate()
         {
@@ -29,7 +33,6 @@ namespace ActiveStates.AI
             if (difference.magnitude >= Gesture.CloseDistasnce)
             {
                 Brain.AIInputController.MoveDirection = difference;
-                Debug.DrawLine(transform.position, transform.position + difference);
             } 
             else
             {

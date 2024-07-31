@@ -67,11 +67,11 @@ namespace SpellCasting
             return null;
         }
 
-        public static CharacterBody FindBodyByDistance(TeamIndex teamIndex, Vector3 centerPosition, float maxSqrDistance)
+        public static CharacterBody FindBodyBySqrDistance(TeamIndex teamIndex, Vector3 centerPosition, float sqrDistance)
         {
             for (int i = 0; i < teamsBodies[teamIndex].Count; i++)
             {
-                if (Vector3.SqrMagnitude(teamsBodies[teamIndex][i].transform.position - centerPosition) < maxSqrDistance)
+                if (Vector3.SqrMagnitude(teamsBodies[teamIndex][i].transform.position - centerPosition) < sqrDistance)
                 {
                     return teamsBodies[teamIndex][i].body;
                 }

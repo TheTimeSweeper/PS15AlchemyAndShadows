@@ -242,11 +242,22 @@ MonoBehaviour:
   elementRequriedRooms:
   - RequiredElement: {fileID: 0}
     Rooms:
-    - {fileID: 3301493890878630456, guid: 6eed8464224c4f8408a6fe9192cfc209, type: 3}
-    - {fileID: 6377077870120106474, guid: aeb7289a19005cb41bca1e402c2e7b6e, type: 3}
     - {fileID: 6377077870120106474, guid: 6c5cee9352db7d54ba2c325c5cd73c9c, type: 3}
+    - {fileID: 6377077870120106474, guid: aeb7289a19005cb41bca1e402c2e7b6e, type: 3}
+    - {fileID: 8172865267936626101, guid: ed77569e661ef154b8563767a71e2349, type: 3}
+    - {fileID: 1668410458771146776, guid: 0996481e40d92024ca7ddd02794fc6da, type: 3}
+    - {fileID: 4929317155163022749, guid: a5122d5c8b1549d44acad8d81b60780f, type: 3}
+    - {fileID: 5928520586353801707, guid: af8e5e2adcdf02844979d405cfa7fc9c, type: 3}
   StartRoom: {fileID: 1976698226689077186, guid: 67482284a33a41949b9c51e78ff3fbca, type: 3}
-  uniqueRooms: []
+  uniqueRooms:
+  - {fileID: 11400000, guid: 730ed765ba747ec4db4edc0431001d60, type: 2}
+  - {fileID: 11400000, guid: daadbf4f8e8084641804a094c54f3e66, type: 2}
+  - {fileID: 11400000, guid: ecd406156b07ebf4e8be95847b6a11ce, type: 2}
+  - {fileID: 11400000, guid: b035dcc328ef7d3498eefad887b76425, type: 2}
+  - {fileID: 11400000, guid: 894b2d442da607d43b0f9a899f719324, type: 2}
+  - {fileID: 11400000, guid: b16e3e3625f6a6940add6bf1d02ac604, type: 2}
+  - {fileID: 11400000, guid: 199a6394314c3584398bf716f5a8e92b, type: 2}
+  - {fileID: 11400000, guid: 7b850a54549f8d44694c6a87c856a62e, type: 2}
 --- !u!114 &2124546673239639657
 MonoBehaviour:
   m_ObjectHideFlags: 0

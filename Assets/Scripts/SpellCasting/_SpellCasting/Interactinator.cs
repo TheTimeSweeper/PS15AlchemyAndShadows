@@ -1,7 +1,10 @@
+using NUnit.Framework;
+using System;
 using UnityEngine;
 
 namespace SpellCasting
 {
+
     public class Interactinator : MonoBehaviour
     {
         [SerializeField]
@@ -18,6 +21,8 @@ namespace SpellCasting
         [Space]
         [SerializeField]
         private GameObject interactableIndicator;
+
+        private bool interacted;
 
         private float _timer = 0.2f;
 
@@ -37,19 +42,19 @@ namespace SpellCasting
             {
                 for (int i = 0; i < interactionListeners.Length; i++)
                 {
-                    interactionListeners[i].OnBodyDetected(Body, Body.CommonComponents.InputBank.E.JustPressed(this));
+                    interacted |= interactionListeners[i].OnBodyDetected(Body, Body.CommonComponents.InputBank.E.JustPressed(this));
+                }
+
+                if (interactableIndicator != null)
+                {
+                    interactableIndicator.gameObject.SetActive(Body != null && !interacted);
                 }
             }
         }
 
         private void CheckInteractable()
         {
-            Body = CharacterBodyTracker.FindBodyByDistance(SearchTeam, transform.position, SearchRange);
-
-            if (interactableIndicator != null)
-            {
-                interactableIndicator.gameObject.SetActive(Body != null);
-            }
+            Body = CharacterBodyTracker.FindBodyBySqrDistance(SearchTeam, transform.position, SearchRange * SearchRange);
         }
     }
 }

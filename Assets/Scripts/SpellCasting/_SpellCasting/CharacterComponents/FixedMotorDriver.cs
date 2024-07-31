@@ -17,6 +17,7 @@ namespace SpellCasting
         public Vector3 Direction { get; set; }
         public float DesiredSpeed { get; set; }
         public Vector3 AddedMotion { get; set; }
+        public Vector3 AddedMotion2 { get; set; }
         public Vector3? OverrideVelocity { get; set; }
         public Vector3 FinalVeolcity { get; protected set; }
 
@@ -48,6 +49,13 @@ namespace SpellCasting
             {
                 movement += AddedMotion;
                 AddedMotion = Vector3.zero;
+            }
+
+            //jam list of additions?
+            if (AddedMotion2 != Vector3.zero)
+            {
+                movement += AddedMotion2;
+                AddedMotion2 = Vector3.zero;
             }
 
             FinalVeolcity = movement;
