@@ -122,8 +122,8 @@ namespace ActiveStates
         }
 
         public void tryInterruptState(ActiveState activeState, InterruptPriority priority)
-          {
-            if(_currentlyRunningState.GetMinimumInterruptPriority() <= priority)
+        {
+            if(_currentlyRunningState == null || _currentlyRunningState.GetMinimumInterruptPriority() <= priority)
             {
                 setState(activeState);
             }

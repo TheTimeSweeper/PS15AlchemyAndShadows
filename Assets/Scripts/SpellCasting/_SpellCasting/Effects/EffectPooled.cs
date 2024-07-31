@@ -1,3 +1,5 @@
+using SpellCasting.Projectiles;
+using System.Collections.Generic;
 using UnityEngine;
 namespace SpellCasting
 {
@@ -13,6 +15,10 @@ namespace SpellCasting
         [SerializeField]
         private float effectTime;
 
+        //jam another thing to generalize
+        [SerializeField]
+        private List<MonoBehaviour> effectsWithIntParameter;
+
         private float _tim;
 
         void Update()
@@ -25,7 +31,7 @@ namespace SpellCasting
             }
         }
 
-        public EffectPooled StartEffect(Vector3 position)
+        public EffectPooled StartEffect(Vector3 position, int genericParameter)
         {
             transform.position = position;
             gameObject.SetActive(true);
@@ -33,6 +39,17 @@ namespace SpellCasting
             {
                 systems[i].Play();
             }
+
+            for (int i = 0; i < effectsWithIntParameter.Count; i++)
+            {
+                IEffectWithIntParamter initializedComponent = effectsWithIntParameter[i] as IEffectWithIntParamter;
+                if (initializedComponent != null)
+                {
+                    initializedComponent.InitParameter(genericParameter);
+                }
+                effectsWithIntParameter[i].enabled = true;
+            }
+
             return this;
         }
 
@@ -45,5 +62,26 @@ namespace SpellCasting
             }
             return this;
         }
+
+#if UNITY_EDITOR
+        void OnValidate()
+        {
+            AssignSubComponents();
+        }
+
+        [ContextMenu("Assign SubComponents")]
+        private void AssignSubComponents()
+        {
+            UnityEditor.Undo.RecordObject(this, "subcomponents");
+            IEffectWithIntParamter[] attachedSubComponents = GetComponents<IEffectWithIntParamter>();
+            for (int i = 0; i < attachedSubComponents.Length; ++i)
+            {
+                if (!effectsWithIntParameter.Contains((MonoBehaviour)attachedSubComponents[i]))
+                {
+                    effectsWithIntParameter.Add((MonoBehaviour)attachedSubComponents[i]);
+                }
+            }
+        }
+#endif
     }
 }

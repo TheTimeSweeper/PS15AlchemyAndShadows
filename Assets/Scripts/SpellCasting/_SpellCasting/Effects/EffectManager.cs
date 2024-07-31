@@ -22,9 +22,9 @@ namespace SpellCasting
             }
         }
 
-        public static void SpawnEffect(EffectIndex index, Vector3 position, Transform transform = null)
+        public static void SpawnEffect(EffectIndex index, Vector3 position, Transform transform = null, int genericParamter = -1)
         {
-            EffectPooled Effect = Instance.GetEffectFromPool(index).StartEffect(position);
+            EffectPooled Effect = Instance.GetEffectFromPool(index).StartEffect(position, genericParamter);
             Effect.transform.parent = transform != null? transform : Instance.transform;
         }
 

@@ -15,5 +15,5 @@ MonoBehaviour:
   duration: 0.1
   inputIndex: 0
   inputIndex2: -1
-  CloseDistance: 4
+  CloseDistance: 3
   StrafeWhileClose: 0

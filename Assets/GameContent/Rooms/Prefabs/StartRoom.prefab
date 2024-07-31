@@ -1187,6 +1187,7 @@ GameObject:
   - component: {fileID: 1071369841194969392}
   - component: {fileID: 864657084455835885}
   - component: {fileID: 9189861539047891721}
+  - component: {fileID: 772285700773604504}
   m_Layer: 0
   m_Name: Floor (1)
   m_TagString: Untagged
@@ -1283,6 +1284,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &772285700773604504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3568139220469679278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09cd80e60ef9fa242aed95dc92e38fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressionmaterials:
+  - {fileID: 2100000, guid: 73559b6adb712dd478ff8099e7620922, type: 2}
+  - {fileID: 2100000, guid: ce4aa6dd42ad2784eade9ccb4570e638, type: 2}
+  - {fileID: 2100000, guid: 01b460cf8eae70247b3e2d298a6105d7, type: 2}
+  leRenderer: {fileID: 864657084455835885}
 --- !u!1 &3820486966011728261
 GameObject:
   m_ObjectHideFlags: 0

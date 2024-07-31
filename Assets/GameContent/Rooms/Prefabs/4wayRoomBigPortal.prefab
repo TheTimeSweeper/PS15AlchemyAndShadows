@@ -2856,9 +2856,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3888245792723166264, guid: 3d78155ddcea1f2498c01641b22b46dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 44.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888245792723166264, guid: 3d78155ddcea1f2498c01641b22b46dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4642875257269189460, guid: 3d78155ddcea1f2498c01641b22b46dc, type: 3}
       propertyPath: m_Name
       value: MissionControllerIguess
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711911128899580972, guid: 3d78155ddcea1f2498c01641b22b46dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 48.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711911128899580972, guid: 3d78155ddcea1f2498c01641b22b46dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555313080541979424, guid: 3d78155ddcea1f2498c01641b22b46dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555313080541979424, guid: 3d78155ddcea1f2498c01641b22b46dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136879932149289199, guid: 3d78155ddcea1f2498c01641b22b46dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 44.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136879932149289199, guid: 3d78155ddcea1f2498c01641b22b46dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

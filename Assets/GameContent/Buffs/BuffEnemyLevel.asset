@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b073dcf703446694491b27c3a60469e8, type: 3}
+  m_Name: BuffEnemyLevel
+  m_EditorClassIdentifier: 
+  buffID: EnemyLevel
+  pooledEffect: {fileID: 0}
+  icon: {fileID: 0}
+  statsToChange:
+    BaseMaxHealth: 1.1
+    BaseHealthRegenPercent: 0
+    BaseDamage: 1.1
+    BaseAttackSpeed: 0
+    BaseStunFactor: 0.9
+    BaseKnockbackFactor: 0.9
+    BaseMaxMana: 0
+    BaseManaRegeneration: 0
+    BaseManaCostMultiplier: 0
+    BaseCastRange: 0
+    BaseMoveSpeed: 1.1
+    BaseJumpHeight: 0

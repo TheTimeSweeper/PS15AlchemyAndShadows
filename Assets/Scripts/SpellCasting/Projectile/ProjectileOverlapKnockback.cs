@@ -21,6 +21,7 @@ namespace SpellCasting.Projectiles
             {
                 Hitbox = hitbox,
                 OwnerGameObject = ProjectileInfo.OwnerObject,
+                OwnerBody = ProjectileInfo.OwnerBody,
                 Team = ProjectileInfo.TeamIndex,
                 TeamTargeting = teamTargeting
 

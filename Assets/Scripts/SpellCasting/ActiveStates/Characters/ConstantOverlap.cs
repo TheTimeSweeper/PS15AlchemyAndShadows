@@ -21,6 +21,7 @@ namespace ActiveStates.Characters
                 Damage = damageCoefficient * characterBody.stats.Damage,
                 Hitbox = characterModel.HitboxLocator.LocateByName(hitboxName),
                 OwnerGameObject = gameObject,
+                OwnerBody = characterBody,
                 Team = teamComponent.TeamIndex,
                 OverrideKnockbackDirection = characterModel.transform.forward,
                 KnockbackForce = 0.4f

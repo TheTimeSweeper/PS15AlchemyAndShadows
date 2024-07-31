@@ -5,10 +5,15 @@ namespace SpellCasting
 
         [SerializeField]
         private CharacterBody charBod;
+        [SerializeField]
+        private BuffInfo enemyDifficultyBuff;
 
         void Start()
         {
-            charBod.stats.MaxHealth.ApplyAddModifier(50 * LevelProgressionManager.DifficultyProgression, "difficulty");
+            for (int i = 0; i < LevelProgressionManager.DifficultyProgression; i++)
+            {
+                charBod.AddBuff(enemyDifficultyBuff);
+            }
         }
     }
 }

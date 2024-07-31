@@ -5023,6 +5023,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: dddead4259332b74dbee633ff8f4f576, type: 2}
     - target: {fileID: 3358658940526756820, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
+      propertyPath: stats.BaseDamage
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358658940526756820, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: stats.BaseMoveSpeed
       value: 0.4
       objectReference: {fileID: 0}
@@ -5052,7 +5056,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 06161273a04924d48840b7374ecb4f81, type: 2}
     - target: {fileID: 9155246327287660149, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: m_Name
-      value: EnemyWaterTornado Variant
+      value: EnemyWaterTornado
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

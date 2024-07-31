@@ -40,10 +40,13 @@ namespace ActiveStates.Characters
                 Damage = damageCoefficient * characterBody.stats.Damage,
                 Hitbox = characterModel.HitboxLocator.LocateByName(hitboxName),
                 OwnerGameObject = gameObject,
+                OwnerBody = characterBody,
                 Team = teamComponent.TeamIndex,
                 OverrideKnockbackDirection = characterModel.transform.forward,
                 KnockbackForce = 0.4f
             };
+
+            EffectManager.SpawnEffect(EffectIndex.SOUND_FAST, transform.position, null, 11);
 
             characterModel.CharacterDirection.OverrideLookDirection(aimDirection, duration);
 

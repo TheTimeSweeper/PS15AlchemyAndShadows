@@ -1,12 +1,15 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SpellCasting.UI
 {
+
+
     public class DebugMenu : MonoBehaviour
     {
         [SerializeField]
@@ -18,6 +21,11 @@ namespace SpellCasting.UI
         private Slider timeScaleSlider;
         [SerializeField]
         private TMP_Text timeScaleText;
+
+        [SerializeField]
+        private BuffInfo godBuff;
+
+        private bool _godding;
 
         private void Start()
         {
@@ -31,12 +39,26 @@ namespace SpellCasting.UI
 
             AddFunnyButton("Funny Respawn", FunnyFix);
 
+            AddFunnyButton("Skip Level", LevelProgressionManager.Instance.NextLevel);
+
+            AddFunnyButton("God Mode", GodMode);
+
             foreach (ElementType element in ElementCatalog.Instance.ElementTypesMap.Values)
             {
                 AddToggleElementButton(element);
             }
+        }
 
-            AddFunnyButton("Skip Level", LevelProgressionManager.Instance.NextLevel);
+        private void GodMode()
+        {
+            _godding = !_godding;
+            if (_godding)
+            {
+                CharacterBodyTracker.FindPrimaryPlayer().AddBuff(godBuff);
+            } else
+            {
+                CharacterBodyTracker.FindPrimaryPlayer().Removebuff(godBuff);
+            }
         }
 
         private void AddFunnyButton(string text, UnityAction onClick)

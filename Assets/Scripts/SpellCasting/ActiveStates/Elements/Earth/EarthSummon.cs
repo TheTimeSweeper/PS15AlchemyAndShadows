@@ -6,5 +6,12 @@ namespace ActiveStates.Elements.Earth
     {
         protected override CharacterBody minionPrefab => ((ElementTypeEnemyEarth)elementType).MinionPrefab;
         protected override int amount => 3;
+
+        public override void OnEnter()
+        {
+            base.OnEnter();
+
+            EffectManager.SpawnEffect(EffectIndex.SOUND, transform.position, null, 14);
+        }
     }
 }

@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 429721824019384160, guid: 7bb0867bb719475499dfbfb602b9d3ef, type: 3}
       propertyPath: ResultTable
       value: 
-      objectReference: {fileID: 11400000, guid: 85d4f181185575f4c90a6b208579cf8d, type: 2}
+      objectReference: {fileID: 11400000, guid: adfe26e7bab707243a32eefe0a2eaff6, type: 2}
     - target: {fileID: 429721824019384160, guid: 7bb0867bb719475499dfbfb602b9d3ef, type: 3}
       propertyPath: requireInput
       value: 1

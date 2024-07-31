@@ -18,7 +18,7 @@ namespace ActiveStates.Elements
         public override void OnFixedUpdate()
         {
             base.OnFixedUpdate();
-            if (caster == null && !machine.Destroyed)
+            if (caster == null && machine != null && !machine.Destroyed)
             {
                 machine.setState(ActiveStateCatalog.InstantiateState(elementType.MassLetGoState));
             }

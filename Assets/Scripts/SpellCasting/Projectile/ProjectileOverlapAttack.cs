@@ -24,6 +24,9 @@ namespace SpellCasting.Projectiles
         [SerializeField]
         private UnityEvent impactEvent;
 
+        [SerializeField]
+        private int impactSound = -1;
+
         private float _destoryOnImpactTim;
         private float _repeatTim;
 
@@ -37,6 +40,7 @@ namespace SpellCasting.Projectiles
                 Damage = ProjectileInfo.Damage * damageCoefficient,
                 DamageType = ProjectileInfo.DamageType,
                 OwnerGameObject = ProjectileInfo.OwnerObject,
+                OwnerBody = ProjectileInfo.OwnerBody,
                 Team = ProjectileInfo.TeamIndex,
                 OverrideKnockbackDirection = knockbackDirectionRigidbody ? knockbackDirectionRigidbody.linearVelocity.normalized : Vector3.zero,
                 KnockbackCenter = transform.position,
@@ -65,6 +69,10 @@ namespace SpellCasting.Projectiles
                 {
                     _impacted = true;
                     impactEvent.Invoke();
+                    if(impactSound > 0)
+                    {
+                        EffectManager.SpawnEffect(EffectIndex.SOUND, transform.position, null, impactSound);
+                    }
                 }
             }
             else if (destroyOnImpact)

@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 namespace SpellCasting.AI
 {
+
     public class AIBrain : MonoBehaviour
     {
         [SerializeField]
@@ -69,12 +70,12 @@ namespace SpellCasting.AI
             }
         }
 
-        public AIGestureBehavior RollGesture()
+        public virtual AIGestureBehavior RollGesture()
         {
             return gestureBehaviors[UnityEngine.Random.Range(0, gestureBehaviors.Length)].GetBehavior() as AIGestureBehavior;
         }
 
-        public CharacterBody SearchForTarget()
+        public virtual CharacterBody SearchForTarget()
         {
             return CharacterBodyTracker.FindBodyByTeam(gameObject, teamComponent.TeamIndex, teamTargetType, searchDistance * searchDistance);
             

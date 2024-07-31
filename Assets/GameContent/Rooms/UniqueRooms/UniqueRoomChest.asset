@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b75908d51fbfab4d9d23f4e63b6db78, type: 3}
-  m_Name: AIGestureSwirlSelf0
+  m_Script: {fileID: 11500000, guid: 8267b83b0245fa44390e5e9d0eb1e315, type: 3}
+  m_Name: UniqueRoomChest
   m_EditorClassIdentifier: 
-  duration: 1
-  inputIndex: 0
-  inputIndex2: -1
-  CloseDistance: 2
-  StrafeWhileClose: 0
-  targetSelf: 1
-  offsetDistance: 3
-  angularVelocity: 20
+  room: {fileID: 2393007048881668270, guid: 3af11de03cb60484cadf0bf9d9770e39, type: 3}
+  maximumInstancesAllowed: 2
+  minimumInstancesRequired: 2
+  minimumDifficultyRequirement: 0

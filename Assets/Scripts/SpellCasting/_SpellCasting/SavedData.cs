@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace SpellCasting
@@ -25,9 +26,10 @@ namespace SpellCasting
                         }
                     }
 
-                    if(_unlockedElements.Count == 0)
+                    if (!_unlockedElements.Contains(ElementCatalog.Instance.ElementTypesMap[ElementTypeIndex.FIRE]))
                     {
                         _unlockedElements.Add(ElementCatalog.Instance.ElementTypesMap[ElementTypeIndex.FIRE]);
+                        Save();
                     }
                 }
                 return _unlockedElements;
@@ -78,7 +80,8 @@ namespace SpellCasting
             else
             {
                 Debug.Log("no save found. creating new");
-                return new SavedData();
+                SavedData savedData = new SavedData();
+                return savedData;
             }
         }
     }

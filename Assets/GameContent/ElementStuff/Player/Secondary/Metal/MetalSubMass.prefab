@@ -99,6 +99,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2501168355527328141, guid: bc8ad25576f249f41b15b31519c23d9e, type: 3}
+      propertyPath: impactSound
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501168355527328141, guid: bc8ad25576f249f41b15b31519c23d9e, type: 3}
       propertyPath: damageCoefficient
       value: 5
       objectReference: {fileID: 0}

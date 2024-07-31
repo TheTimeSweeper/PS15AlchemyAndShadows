@@ -8,6 +8,7 @@ using UnityEngine;
 
 namespace SpellCasting
 {
+
     public class ActiveStateCatalog : Singleton<ActiveStateCatalog>
     {
         public static Dictionary<string, Type> StateTypes = new Dictionary<string, Type>();

@@ -22,7 +22,7 @@ MonoBehaviour:
     BaseAttackSpeed: 0
     BaseStunFactor: 0
     BaseKnockbackFactor: 0
-    BaseMaxMana: 1.2
+    BaseMaxMana: 1.1
     BaseManaRegeneration: 0
     BaseManaCostMultiplier: 0
     BaseCastRange: 0

@@ -48,8 +48,14 @@ public class DeathComponent : MonoBehaviour
     [SerializeField]
     private float deathDelay;
 
+    private bool _gotRektLololol;
+
     public void GetRektLol()
     {
+        if (_gotRektLololol)
+            return;
+        _gotRektLololol = true;
+
         if (deathTable)
         {
             deathTable.SpawnObject(transform.position);
@@ -67,6 +73,8 @@ public class DeathComponent : MonoBehaviour
         {
             stateMachineLocator.SetStates(new DedState());
         }
+
+        EffectManager.SpawnEffect(EffectIndex.SOUND, transform.position, null, Random.Range(0, 10));
 
         if(deathDelay > 0)
         {

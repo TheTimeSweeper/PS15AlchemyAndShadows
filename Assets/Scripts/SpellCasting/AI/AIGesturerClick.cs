@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using JetBrains.Annotations;
+using UnityEngine;
 
 namespace SpellCasting.AI
 {
-
     [CreateAssetMenu(menuName = "SpellCasting/AIGesturer/Click", fileName = "AIGestureClick")]
     public class AIGesturerClick : AIGesture
     {
@@ -15,6 +15,8 @@ namespace SpellCasting.AI
         {
             private Vector3 initialPosition;
 
+            private bool _inputted;
+
             public override bool OnFixedUpdate(AIBrain brain)
             {
                 bool end = base.OnFixedUpdate(brain);
@@ -26,11 +28,18 @@ namespace SpellCasting.AI
 
                 brain.AIInputController.CurrentAimPosition = brain.CurrentTargetPosition;
                 brain.AIInputController.OverrideGesturePosition = initialPosition;
-                brain.AIInputController.downInputs[InfoObject.inputIndex] = true;
+                //brain.AIInputController.downInputs[InfoObject.inputIndex] = true;
 
-                if (InfoObject.inputIndex2 != -1)
+                if (!_inputted)
                 {
-                    brain.AIInputController.downInputs[InfoObject.inputIndex2] = true;
+                    _inputted = true;
+                    brain.AIInputController.JustPress(InfoObject.inputIndex);
+
+                    if (InfoObject.inputIndex2 != -1)
+                    {
+                        //brain.AIInputController.downInputs[InfoObject.inputIndex2] = true;
+                        brain.AIInputController.JustPress(InfoObject.inputIndex2);
+                    }
                 }
 
                 return end;

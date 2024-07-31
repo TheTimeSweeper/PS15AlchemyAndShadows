@@ -15,4 +15,7 @@ MonoBehaviour:
   room: {fileID: 8390339163811271137, guid: a9ef9ff4d4c22234e96a4d260367acad, type: 3}
   maximumInstancesAllowed: 1
   minimumInstancesRequired: 1
+  minimumDifficultyRequirement: 0
+  requiredElements:
+  - {fileID: 11400000, guid: 3823b492ece4b0b49aea651602c99d8b, type: 2}
   elementThatTheRoomDoesntShowUpIfYouUnlock: {fileID: 11400000, guid: 1523a7871b8db304990d850360547269, type: 2}

@@ -7,6 +7,13 @@ namespace ActiveStates.Elements.Water
     {
         protected override ProjectileController prefab => elementType.PoolPrefab;
 
+        public override void OnEnter()
+        {
+            base.OnEnter();
+
+            EffectManager.SpawnEffect(EffectIndex.SOUND, transform.position, null, 22);
+        }
+
         protected override DamageTypeIndex GetDamageType()
         {
             return DamageTypeIndex.WATER;

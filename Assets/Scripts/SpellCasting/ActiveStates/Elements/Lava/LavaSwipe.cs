@@ -9,5 +9,12 @@ namespace ActiveStates.Elements.Lava
         {
             return DamageTypeIndex.NONE;
         }
+
+        public override void OnEnter()
+        {
+            base.OnEnter();
+
+            EffectManager.SpawnEffect(EffectIndex.SOUND, transform.position, null, 17);
+        }
     }
 }

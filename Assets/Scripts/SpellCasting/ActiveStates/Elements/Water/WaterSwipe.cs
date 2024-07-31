@@ -18,6 +18,8 @@ namespace ActiveStates.Elements.Water
             AddMass(sideShift * firstMass.CurrentMass);
             AddMass(-sideShift * firstMass.CurrentMass);
 
+            EffectManager.SpawnEffect(EffectIndex.SOUND, transform.position, null, 20);
+
             base.OnEnter();
         }
 

@@ -1,3 +1,5 @@
+using SpellCasting;
+
 namespace ActiveStates.Elements.Light
 {
     public class LightSwipe : BaseElementMassState
@@ -11,6 +13,8 @@ namespace ActiveStates.Elements.Light
                 //animator.Update(0f);
                 animator.PlayInFixedTime("Cast", -1, 0);
             }
+
+            EffectManager.SpawnEffect(EffectIndex.SOUND, transform.position, null, 18);
 
             healthComponent.Heal(new SpellCasting.HealingInfo { HealValue = 0.3f * characterBody.stats.MaxHealth});
             elementMass.Fizzle();

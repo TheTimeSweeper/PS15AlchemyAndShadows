@@ -29,7 +29,7 @@ namespace SpellCasting
         [SerializeField]
         private DeathComponent deathComponent;
 
-        public bool Ded => health < 0;
+        public bool Ded => health <= 0;
 
         public void Init(float health)
         {
@@ -63,6 +63,10 @@ namespace SpellCasting
             DamageTypeCatalog.OnTakeDamageAll(info);
 
             OnDamageTaken?.Invoke(info);
+
+            EffectIndex effect = info.DamagingInfo.AttackerBody.teamIndex == TeamIndex.MONSTER ? EffectIndex.DAMAGENUMBER_FROMENEMY : EffectIndex.DAMAGENUMBER;
+
+            EffectManager.SpawnEffect(effect, transform.position, null, (int)info.DamagingInfo.DamageValue);
 
             if (Ded && deathComponent != null)
             {

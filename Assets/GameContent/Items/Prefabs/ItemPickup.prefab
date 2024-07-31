@@ -331,7 +331,8 @@ MonoBehaviour:
   - {fileID: 4364309999624235945}
   SearchTeam: 2
   SearchInterval: 0.06
-  SearchRange: 10
+  SearchRange: 3
+  interactableIndicator: {fileID: 0}
 --- !u!114 &6074419647204315583
 MonoBehaviour:
   m_ObjectHideFlags: 0

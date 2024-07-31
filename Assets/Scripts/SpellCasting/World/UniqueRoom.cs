@@ -16,8 +16,22 @@ namespace SpellCasting.World
         [SerializeField]
         private int minimumDifficultyRequirement = 0;
 
+        [SerializeField]
+        private ElementType[] requiredElements;
+
         //jam generalize this to a room scriptablobject and make uniqueroom use this function to check instances n stuff n things
-        public virtual bool CanSpawn() { return minimumDifficultyRequirement >= LevelProgressionManager.DifficultyProgression; }
+        public virtual bool CanSpawn() {
+
+            for (int i = 0; i < requiredElements.Length; i++)
+            {
+                if (!MainGame.Instance.SavedData.UnlockedElements.Contains(requiredElements[i]))
+                {
+                    return false;
+                }
+            }
+
+            return minimumDifficultyRequirement >= LevelProgressionManager.DifficultyProgression;
+        }
 
         private void OnValidate()
         {

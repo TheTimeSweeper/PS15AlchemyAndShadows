@@ -116,6 +116,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.44
       objectReference: {fileID: 0}
+    - target: {fileID: 4655936010463782335, guid: 29875cacc3e66534c93132ad9525c06f, type: 3}
+      propertyPath: stats.BaseMaxHealth
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 5133511206925367190, guid: 29875cacc3e66534c93132ad9525c06f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.8839

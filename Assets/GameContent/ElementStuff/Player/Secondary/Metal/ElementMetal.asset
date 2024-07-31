@@ -35,7 +35,7 @@ MonoBehaviour:
   elementActions:
   - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
     gestureState:
-      activeStateName: ActiveStates.Elements.Earth.EarthSwipe
+      activeStateName: ActiveStates.Elements.Metal.MetalSwipe
     baseManaCost: 30
   - gestureType: {fileID: 11400000, guid: 44615728a5361634c9e3b0f5a2518930, type: 2}
     gestureState:

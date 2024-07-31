@@ -161,6 +161,8 @@ namespace SpellCasting
             if(commonComponents.ManaComponent == null)
                 return true;
 
+            manaCost *= stats.ManaCostMultiplier;
+
             bool success = GetCanMana(currentCastingElement, manaCost);
 
             if (success)
@@ -255,6 +257,11 @@ namespace SpellCasting
                     return GetCanMana(ElementTypeIndex.WATER, manaCost) && GetCanMana(ElementTypeIndex.AIR, manaCost);
             }
             return false;
+        }
+
+        internal void AddBuff(object godBuff)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

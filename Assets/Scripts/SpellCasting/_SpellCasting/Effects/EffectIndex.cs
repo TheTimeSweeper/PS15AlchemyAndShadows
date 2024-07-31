@@ -10,6 +10,10 @@
         MAXMANAUP,
         DAMAGEUP,
         FUCKINPOT,
-        NOMANA
+        NOMANA,
+        DAMAGENUMBER,
+        DAMAGENUMBER_FROMENEMY,
+        SOUND,
+        SOUND_FAST,
     }
 }

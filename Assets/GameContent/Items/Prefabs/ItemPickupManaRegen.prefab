@@ -50,12 +50,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3738947165228076356, guid: 579dbb7d59541204c91587e78b0ef342, type: 3}
       propertyPath: m_Name
-      value: ItemPickupSpeed Variant
+      value: ItemPickupManaRegen
       objectReference: {fileID: 0}
     - target: {fileID: 4364309999624235945, guid: 579dbb7d59541204c91587e78b0ef342, type: 3}
       propertyPath: item
       value: 
       objectReference: {fileID: 11400000, guid: 0498710db6a19b04db4d326ce24fdb2e, type: 2}
+    - target: {fileID: 4364309999624235945, guid: 579dbb7d59541204c91587e78b0ef342, type: 3}
+      propertyPath: soundIndex
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6074419647204315583, guid: 579dbb7d59541204c91587e78b0ef342, type: 3}
       propertyPath: itemInfo
       value: 

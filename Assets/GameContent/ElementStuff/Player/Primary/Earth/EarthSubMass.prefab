@@ -4977,6 +4977,7 @@ MonoBehaviour:
   impactEvent:
     m_PersistentCalls:
       m_Calls: []
+  impactSound: 13
 --- !u!114 &6749049692360157778
 MonoBehaviour:
   m_ObjectHideFlags: 0

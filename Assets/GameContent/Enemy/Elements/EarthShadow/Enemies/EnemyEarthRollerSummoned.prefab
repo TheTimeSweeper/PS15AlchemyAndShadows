@@ -279,15 +279,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3358658940526756820, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: stats.BaseDamage
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3358658940526756820, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: stats.BaseMaxHealth
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3358658940526756820, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: stats.BaseMoveSpeed
-      value: 0.4
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 4977220270559114638, guid: a5510c7455dddd14fb5c4f7338a7ae31, type: 3}
       propertyPath: m_LocalScale.x

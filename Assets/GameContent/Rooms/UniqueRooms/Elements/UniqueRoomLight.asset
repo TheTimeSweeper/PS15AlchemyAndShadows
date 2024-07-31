@@ -16,4 +16,7 @@ MonoBehaviour:
   maximumInstancesAllowed: 1
   minimumInstancesRequired: 1
   minimumDifficultyRequirement: 1
+  requiredElements:
+  - {fileID: 11400000, guid: dddead4259332b74dbee633ff8f4f576, type: 2}
+  - {fileID: 11400000, guid: 05d7f4c566de8304f9c78c0bb2cb16b6, type: 2}
   elementThatTheRoomDoesntShowUpIfYouUnlock: {fileID: 11400000, guid: 678d617e6d741bc4f89325d0b38b5a42, type: 2}

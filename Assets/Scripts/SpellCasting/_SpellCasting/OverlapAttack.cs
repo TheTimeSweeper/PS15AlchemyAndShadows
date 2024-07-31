@@ -111,6 +111,7 @@ namespace SpellCasting
                     if (Damage > 0)
                     {
                         EffectManager.SpawnEffect(EffectIndex.HITFLASH, collider.transform.position, collider.transform);
+                        EffectManager.SpawnEffect(EffectIndex.SOUND_FAST, collider.transform.position, null, 10);
                     }
                 }
             }

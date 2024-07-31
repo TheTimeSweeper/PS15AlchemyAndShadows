@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3738947165228076356, guid: 579dbb7d59541204c91587e78b0ef342, type: 3}
       propertyPath: m_Name
-      value: ItemPickupSpeed (2) Variant
+      value: ItemPickupManaGlobe
       objectReference: {fileID: 0}
     - target: {fileID: 3738947165228076356, guid: 579dbb7d59541204c91587e78b0ef342, type: 3}
       propertyPath: m_IsActive
@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: item
       value: 
       objectReference: {fileID: 11400000, guid: 3b21feea27072d042a91a4e310b3eda9, type: 2}
+    - target: {fileID: 4364309999624235945, guid: 579dbb7d59541204c91587e78b0ef342, type: 3}
+      propertyPath: soundIndex
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6074419647204315583, guid: 579dbb7d59541204c91587e78b0ef342, type: 3}
       propertyPath: itemInfo
       value: 

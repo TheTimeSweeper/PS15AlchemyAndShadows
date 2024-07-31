@@ -184,6 +184,14 @@ PrefabInstance:
       propertyPath: validateRooms
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4929317155163022749, guid: a5122d5c8b1549d44acad8d81b60780f, type: 3}
+      propertyPath: overlapZones.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929317155163022749, guid: a5122d5c8b1549d44acad8d81b60780f, type: 3}
+      propertyPath: 'overlapZones.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4882748710261225627}
     - target: {fileID: 5524081898528930616, guid: a5122d5c8b1549d44acad8d81b60780f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 29.6
@@ -233,3 +241,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5122d5c8b1549d44acad8d81b60780f, type: 3}
+--- !u!114 &4882748710261225627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6191648850048165101, guid: a5122d5c8b1549d44acad8d81b60780f, type: 3}
+  m_PrefabInstance: {fileID: 1598256450290736246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a10dfc91208c5d418ea35f8a417502b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -20,19 +20,21 @@ namespace SpellCasting
         {
             base.InitOnce();
             resetting = false;
-
+            DontDestroyOnLoad(gameObject);
             Instantiate(Joanna, spawnPoint.transform.position, Quaternion.identity);
         }
 
         public override void ReInit()
         {
             base.ReInit();
+            CharacterBodyTracker.FindPrimaryPlayer().CommonComponents.FixedMotorDriver.engine.Teleport(spawnPoint.transform.position);
             DifficultyProgression++;
             resetting = false;
         }
 
         public void NextLevel()
         {
+
             SceneManager.LoadScene(0);
         }
 
@@ -53,7 +55,6 @@ namespace SpellCasting
             if (player != null)
             {
                 SceneManager.MoveGameObjectToScene(player.gameObject, SceneManager.GetActiveScene());
-
             }
 
             Destroy(Camera.main.gameObject);

@@ -282,6 +282,7 @@ MonoBehaviour:
   - {fileID: 144355031882230734}
   overlapZones:
   - {fileID: 9169361129609354726}
+  - {fileID: 6191648850048165101}
   roomCost: 1
   RoomWeight: 0.5
   validateRooms: 0
@@ -1464,7 +1465,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 943330acee920dd46b853412b2bbfd0a, type: 2}
     - target: {fileID: 6041204639117028911, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.8516
+      value: 2.121088
       objectReference: {fileID: 0}
     - target: {fileID: 6041204639117028911, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: m_LocalScale.y
@@ -1989,7 +1990,7 @@ PrefabInstance:
       objectReference: {fileID: -3731751293371987520, guid: e9ba58e1a87116444a1adaecac42fe7e, type: 3}
     - target: {fileID: 6041204639117028911, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 1.35008
       objectReference: {fileID: 0}
     - target: {fileID: 6041204639117028911, guid: 6c30967ce65e91b42a057f10795f3566, type: 3}
       propertyPath: m_LocalScale.y
