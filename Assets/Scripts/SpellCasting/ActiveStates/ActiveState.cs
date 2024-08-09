@@ -6,29 +6,29 @@ namespace ActiveStates
 {
     public abstract class ActiveState
     {
-        public ActiveStateMachine machine;
-        protected GameObject gameObject => machine.gameObject;
-        protected Transform transform => machine.transform;
-        protected CommonComponentsHolder components => machine.CommonComponents;
+        public ActiveStateMachine Machine;
+        protected GameObject gameObject => Machine.gameObject;
+        protected Transform transform => Machine.transform;
+        protected CommonComponentsHolder components => Machine.CommonComponents;
 
-        protected CharacterBody characterBody => machine.CommonComponents.CharacterBody;
-        protected InputBank inputBank => machine.CommonComponents.InputBank;
-        protected HealthComponent healthComponent => machine.CommonComponents.HealthComponent;
-        protected Caster caster => machine.CommonComponents.Caster;
-        protected ManaComponent manaComponent => machine.CommonComponents.ManaComponent;
-        protected FixedMotorDriver fixedMotorDriver => machine.CommonComponents.FixedMotorDriver;
-        protected CharacterModel characterModel => machine.CommonComponents.CharacterModel;
-        protected StateMachineLocator stateMachineLocator => machine.CommonComponents.StateMachineLocator;
-        protected TeamComponent teamComponent => machine.CommonComponents.TeamComponent;
+        protected CharacterBody characterBody => Machine.CommonComponents.CharacterBody;
+        protected InputBank inputBank => Machine.CommonComponents.InputBank;
+        protected HealthComponent healthComponent => Machine.CommonComponents.HealthComponent;
+        protected Caster caster => Machine.CommonComponents.Caster;
+        protected ManaComponent manaComponent => Machine.CommonComponents.ManaComponent;
+        protected FixedMotorDriver fixedMotorDriver => Machine.CommonComponents.FixedMotorDriver;
+        protected CharacterModel characterModel => Machine.CommonComponents.CharacterModel;
+        protected StateMachineLocator stateMachineLocator => Machine.CommonComponents.StateMachineLocator;
+        protected TeamComponent teamComponent => Machine.CommonComponents.TeamComponent;
         //jam should be on characterbody
-        protected Animator animator => machine.CommonComponents.Animator;
+        protected Animator animator => Machine.CommonComponents.Animator;
 
         private float _fixedAge;
         protected float fixedAge => _fixedAge;
 
         protected void EndState()
         {
-            machine.endState(this);
+            Machine.EndState(this);
         }
 
         public virtual void OnFixedUpdate()
@@ -44,5 +44,7 @@ namespace ActiveStates
         {
             return InterruptPriority.STATE_ANY;
         }
+
+        public virtual ActiveState Clone(){ return ActiveStateCatalog.InstantiateState(this.GetType()); }
     }
 }

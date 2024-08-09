@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnItems:
   - {fileID: 0}
-  - {fileID: 4135753502551298488, guid: 3d8925faca52bfa40b5ba11f463fb8c9, type: 3}
+  - {fileID: 4271396977137928333, guid: 3d8925faca52bfa40b5ba11f463fb8c9, type: 3}
   weights:
   - 10
   - 1

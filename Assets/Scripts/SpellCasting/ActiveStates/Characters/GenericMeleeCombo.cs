@@ -46,7 +46,7 @@ namespace ActiveStates.Characters
             if (hits < comboHits)
             {
                 //jam ugly
-                machine.setState(ActiveStateCatalog.InstantiateState(this.GetType().ToString()));
+                Machine.SetState(ActiveStateCatalog.InstantiateState(this.GetType().ToString()));
             }
             else
             {
@@ -59,7 +59,7 @@ namespace ActiveStates.Characters
             if (hits < comboHits)
             {
                 //jam ugly
-                machine.setState(ActiveStateCatalog.InstantiateState(this.GetType().ToString()));
+                Machine.SetState(ActiveStateCatalog.InstantiateState(this.GetType().ToString()));
             }
             else
             {

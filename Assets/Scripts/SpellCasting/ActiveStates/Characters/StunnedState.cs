@@ -33,5 +33,9 @@ namespace ActiveStates.Characters
         {
             return InterruptPriority.STUN;
         }
+        public override ActiveState Clone()
+        {
+            return new StunnedState { StunTime = StunTime, EffectPrefab = EffectPrefab };
+        }
     }
 }

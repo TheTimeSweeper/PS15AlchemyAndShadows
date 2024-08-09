@@ -5603,7 +5603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd7d785d55221754e9573f9d1efacd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  componentList: []
+  componentList:
+  - {fileID: 2890170768704974797}
   mainStateMachine: {fileID: 194451413381304547}
 --- !u!114 &3358658940526756820
 MonoBehaviour:

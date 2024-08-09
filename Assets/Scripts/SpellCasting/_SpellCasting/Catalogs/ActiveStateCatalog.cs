@@ -35,11 +35,17 @@ namespace SpellCasting
                 return null;
             }
 
-            object newState = Activator.CreateInstance(StateTypes[state]);
+            return InstantiateState<T>(StateTypes[state]);
+        }
+
+        public static ActiveState InstantiateState(Type state) => InstantiateState<ActiveState>(state);
+        public static T InstantiateState<T>(Type state) where T : ActiveState
+        {
+            object newState = Activator.CreateInstance(state);
 
             if (newState is not T)
             {
-                Debug.LogError($"stateType {state} is not of type {typeof(T).ToString()}");
+                Debug.LogError($"stateType {newState.GetType()} is not of type {typeof(T).ToString()}");
                 return null;
             }
             //Util.Log($"successfully entered state {newState.GetType().ToString()}");

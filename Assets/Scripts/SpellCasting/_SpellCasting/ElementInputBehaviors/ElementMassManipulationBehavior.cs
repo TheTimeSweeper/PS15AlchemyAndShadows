@@ -43,7 +43,7 @@ namespace SpellCasting
                         BaseElementMassState newState = currentCastingElement.CreateElementMassState(actionState.GestureState, _currentMass);
                         if (newState != null)
                         {
-                            _currentMass.ActiveStateMachine.setState(newState);
+                            _currentMass.ActiveStateMachine.SetState(newState);
                         }
                     }
                     else
@@ -51,7 +51,7 @@ namespace SpellCasting
                         BaseElementMassState newState = currentCastingElement.CreateElementMassState(currentCastingElement.MassLetGoState, _currentMass);
                         if (newState != null)
                         {
-                            _currentMass.ActiveStateMachine.setState(newState);
+                            _currentMass.ActiveStateMachine.SetState(newState);
                         }
                     }
                 }
@@ -77,7 +77,7 @@ namespace SpellCasting
 
                     _currentMass.Init(currentCastingElement);
                     _currentMass.ActiveStateMachine.CommonComponents = commonComponents;
-                    _currentMass.ActiveStateMachine.setState(currentCastingElement.CreateElementMassState(currentCastingElement.MassSpawnState, _currentMass));
+                    _currentMass.ActiveStateMachine.SetState(currentCastingElement.CreateElementMassState(currentCastingElement.MassSpawnState, _currentMass));
                     _currentMass.transform.position = inputBank.AimPoint;
 
                     _currentMass.SetPosition(inputBank.AimPoint, commonComponents.transform);

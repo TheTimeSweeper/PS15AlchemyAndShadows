@@ -13,7 +13,7 @@ namespace SpellCasting.World
         //public List<Room> Rooms => rooms;
 
         [SerializeField]
-        private float TEMPStartingCredits = 120;
+        private List<float> TEMPStartingCreditses = new List<float> { 2, 4, 6 };
 
         [SerializeField]
         private float availableCredits;
@@ -32,8 +32,9 @@ namespace SpellCasting.World
 
         public void InitializeValues()
         {
-
-            availableCredits = TEMPStartingCredits;
+            bool hasAir = MainGame.Instance.SavedData.UnlockedElements.Contains(ElementCatalog.Instance.ElementTypesMap[ElementTypeIndex.AIR]);
+            int progression = Mathf.Max(LevelProgressionManager.DifficultyProgression, hasAir ? 0 : 1);
+            availableCredits = TEMPStartingCreditses[Mathf.Clamp(progression, 0, TEMPStartingCreditses.Count - 1)];
 
             _uniqueRoomsSpawned = new Dictionary<UniqueRoom, int>();
         }

@@ -66,7 +66,7 @@ namespace SpellCasting.AI
         {
             if(aiStateMachine.CurrentState is IdleState)
             {
-                aiStateMachine.setState(new Search { Brain = this });
+                aiStateMachine.SetState(new Search { Brain = this });
             }
         }
 

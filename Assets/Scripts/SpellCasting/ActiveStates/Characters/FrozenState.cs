@@ -38,7 +38,7 @@ namespace ActiveStates.Characters
                 return;
             _unfreezed = true;
 
-            machine.endState();
+            Machine.EndState();
         }
 
         public override void OnExit(bool machineded = false)

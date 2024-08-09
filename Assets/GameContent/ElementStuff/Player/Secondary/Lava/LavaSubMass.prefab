@@ -4869,6 +4869,10 @@ PrefabInstance:
       propertyPath: 'subComponentsBehaviours.Array.data[2]'
       value: 
       objectReference: {fileID: 4691086828712364424}
+    - target: {fileID: 2885614391750186399, guid: c639c158e068ba746b69dbbbaff9e8a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4632153826963849642, guid: c639c158e068ba746b69dbbbaff9e8a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

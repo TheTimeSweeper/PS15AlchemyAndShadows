@@ -37,9 +37,12 @@ namespace SpellCasting.UI
             timeScaleSlider.value = getInverseTimeScaleSliderValue();
             timeScaleText.text = $"Time Scale: {TimeStopperInstance.UnpausedTime.ToString("0.00")}";
 
-            AddFunnyButton("Funny Respawn", FunnyFix);
+            AddFunnyButton("Funny Respawn", FunnyRespawn);
 
             AddFunnyButton("Skip Level", LevelProgressionManager.Instance.NextLevel);
+
+            Toggle joystickToggle = AddFunnyToggle("Controller", PlayerInputDecider.IsJoystick);
+            joystickToggle.onValueChanged.AddListener(ToggleJoystick);
 
             AddFunnyButton("God Mode", GodMode);
 
@@ -47,6 +50,11 @@ namespace SpellCasting.UI
             {
                 AddToggleElementButton(element);
             }
+        }
+
+        private void ToggleJoystick(bool toggleValue)
+        {
+            PlayerInputDecider.IsJoystick = toggleValue;
         }
 
         private void GodMode()
@@ -69,20 +77,17 @@ namespace SpellCasting.UI
             NewButton.onClick.AddListener(onClick);
         }
 
-        private void FunnyFix()
+        private void FunnyRespawn()
         {
             GameObject.FindWithTag("Player").GetComponent<FixedMotorDriver>().engine.Teleport(GameObject.FindWithTag("Level").transform.position + Vector3.up * 10);
         }
 
         private void AddToggleElementButton(ElementType value)
         {
-            Toggle newToggle = Instantiate(jangoToggle, jangoToggle.transform.parent);
-            newToggle.gameObject.SetActive(true);
+            string toggleTitle = $"unlock {value.name}";
+            bool toggleEnabled = MainGame.Instance.SavedData.UnlockedElements.Contains(value);
 
-            newToggle.GetComponentInChildren<TMPro.TMP_Text>().text = $"unlock {value.name}";
-
-            bool elementUnlocked = MainGame.Instance.SavedData.UnlockedElements.Contains(value);
-            newToggle.isOn = elementUnlocked;
+            Toggle newToggle = AddFunnyToggle(toggleTitle, toggleEnabled);
 
             newToggle.onValueChanged.AddListener(ToggleElement);
 
@@ -91,12 +96,23 @@ namespace SpellCasting.UI
                 if (toggled)
                 {
                     MainGame.Instance.SavedData.AddElement(value);
-                } 
+                }
                 else
                 {
                     MainGame.Instance.SavedData.RemoveElement(value);
                 }
             }
+        }
+
+        private Toggle AddFunnyToggle(string toggleTitle, bool toggleEnabled)
+        {
+            Toggle newToggle = Instantiate(jangoToggle, jangoToggle.transform.parent);
+            newToggle.gameObject.SetActive(true);
+
+            newToggle.GetComponentInChildren<TMPro.TMP_Text>().text = toggleTitle;
+            newToggle.isOn = toggleEnabled;
+
+            return newToggle;
         }
 
         private float getInverseTimeScaleSliderValue()

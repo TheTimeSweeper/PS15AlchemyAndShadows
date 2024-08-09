@@ -26,7 +26,7 @@ namespace ActiveStates.Elements
                 Vector3 relativePOsition = originalPosition - elementMass.CenterPosition;
 
                 elementMass.SubMasses[i].JAMActivateProjectile(characterBody,
-                    (elementMass.CenterPositionRaw - elementMass.CenterPosition).normalized * elementType.MassVelocityMultiplier,
+                    /*(elementMass.CenterPositionRaw - elementMass.CenterPosition).normalized*/inputBank.AimDirection * elementType.MassVelocityMultiplier,
                     GetPositionInlineWithDirectionPerpendicularly() + relativePOsition,
                     originalPosition,
                     GetDamageType());

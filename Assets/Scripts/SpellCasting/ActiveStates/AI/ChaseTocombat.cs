@@ -24,7 +24,7 @@ namespace ActiveStates.AI
 
             if (Brain.CurrentTargetBody == null)
             {
-                machine.setStateToDefault();
+                Machine.SetStateToDefault();
                 return;
             }
 
@@ -40,7 +40,7 @@ namespace ActiveStates.AI
 
                 if (fixedAge > ChaseTime)
                 {
-                    machine.setState(new Combat { Brain = Brain, Gesture = Gesture });
+                    Machine.SetState(new Combat { Brain = Brain, Gesture = Gesture });
                 }
             }
         }

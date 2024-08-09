@@ -23,6 +23,7 @@ MonoBehaviour:
   massGrowthMultiplier: 0
   massBaseMass: 3
   massVelocityMultiplier: 30
+  massOffsetDistance: 1
   massSpawnState:
     activeStateName: ActiveStates.Elements.BasicElementGrow
   massLetGoState:

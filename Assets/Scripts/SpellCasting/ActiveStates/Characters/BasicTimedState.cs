@@ -92,7 +92,7 @@ namespace ActiveStates.Characters
 
         protected virtual void SetNextState()
         {
-            machine.setStateToDefault();
+            Machine.SetStateToDefault();
         }
 
         public override void OnUpdate()

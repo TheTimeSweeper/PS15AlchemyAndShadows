@@ -43,13 +43,13 @@ namespace ActiveStates.Characters
             if (!_returnedState)
             {
                 _returnedState = true;
-                stateMachineLocator.MainStateMachine.setStateToDefault();
+                stateMachineLocator.MainStateMachine.SetStateToDefault();
             }
 
             if (_attack.Fire())
             {
                 _hitTim = 1;
-                stateMachineLocator.MainStateMachine.setState(new IdleState());
+                stateMachineLocator.MainStateMachine.SetState(new IdleState());
                 _returnedState = false;
             }
         }

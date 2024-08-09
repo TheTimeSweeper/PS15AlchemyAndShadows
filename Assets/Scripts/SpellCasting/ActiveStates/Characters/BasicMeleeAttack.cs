@@ -1,6 +1,7 @@
 ﻿using SpellCasting;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.Windows;
 
 namespace ActiveStates.Characters
@@ -30,10 +31,10 @@ namespace ActiveStates.Characters
 
             _shift = inputBank.GlobalMoveDirection * 0.69f * characterBody.stats.MoveSpeed;
 
-            if (aimDirection == Vector3.zero)
-            {
-                aimDirection = inputBank.GlobalMoveDirection;
-            }
+            //if (aimDirection == Vector3.zero)
+            //{
+            //    aimDirection = inputBank.GlobalMoveDirection;
+            //}
 
             attack = new OverlapAttack
             {
@@ -47,6 +48,8 @@ namespace ActiveStates.Characters
             };
 
             EffectManager.SpawnEffect(EffectIndex.SOUND_FAST, transform.position, null, 11);
+
+            aimDirection = inputBank.AimOut;
 
             characterModel.CharacterDirection.OverrideLookDirection(aimDirection, duration);
 

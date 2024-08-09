@@ -86,10 +86,13 @@ namespace SpellCasting
         private void UpdateAimPoint()
         {
             _currentAimPosition = GetAimPosition();
-            _currentAimDirection = (_currentAimPosition - _lastAimPosition).normalized;
+            //_currentAimDirection = (_currentAimPosition - _lastAimPosition).normalized;
 
             _currentAimDirection = (_currentAimPosition - _lastUnrestrictedAimPosition).normalized;
             _lastUnrestrictedAimPosition = _currentAimPosition;
+            Debug.DrawLine(_currentAimPosition, _lastUnrestrictedAimPosition);
+            Debug.DrawLine(_lastUnrestrictedAimPosition, _lastUnrestrictedAimPosition + Vector3.up * 10);
+            Debug.DrawLine(_currentAimPosition, _currentAimPosition + Vector3.up * 10);
 
             //jam this should probably be in input bank or caster
             Vector3 aimDistance = _currentAimPosition - aimOriginPosition.position;

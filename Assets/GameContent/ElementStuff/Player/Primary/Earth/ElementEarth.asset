@@ -34,7 +34,7 @@ MonoBehaviour:
   - gestureType: {fileID: 11400000, guid: 438e87395cd2b8545837dbc7e498131f, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Earth.EarthSwipe
-    baseManaCost: 20
+    baseManaCost: 10
   - gestureType: {fileID: 11400000, guid: 44615728a5361634c9e3b0f5a2518930, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.BasicElementMelee
@@ -42,6 +42,6 @@ MonoBehaviour:
   - gestureType: {fileID: 11400000, guid: cce9d1d75ab857c48b0aaf349bb7721e, type: 2}
     gestureState:
       activeStateName: ActiveStates.Elements.Earth.EarthSwirl
-    baseManaCost: 40
+    baseManaCost: 30
   explosionPrefab: {fileID: 6855747792429381767, guid: 2073d2f1ba9ba9b42b959c2801724f78, type: 3}
   poolPrefab: {fileID: 0}

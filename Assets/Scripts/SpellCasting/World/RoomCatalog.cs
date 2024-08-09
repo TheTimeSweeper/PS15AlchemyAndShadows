@@ -51,5 +51,18 @@ namespace SpellCasting.World
                 }
             }
         }
+        public override void ReInit()
+        {
+            base.ReInit();
+
+            AllUniqueRooms = new List<UniqueRoom>();
+            for (int i = 0; i < uniqueRooms.Count; i++)
+            {
+                if (uniqueRooms[i].CanSpawn())
+                {
+                    AllUniqueRooms.Add(uniqueRooms[i]);
+                }
+            }
+        }
     }
 }

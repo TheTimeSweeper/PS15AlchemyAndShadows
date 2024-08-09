@@ -8,8 +8,8 @@ namespace ActiveStates.Elements
         {
             base.OnEnter();
             elementMass.Fizzle();
-
-            stateMachineLocator.MainStateMachine.tryInterruptState(ActiveStateCatalog.InstantiateState(elementType.BodyMeleeState), InterruptPriority.STATE_ANY);
+            //characterModel.CharacterDirection.OverrideDirection
+            stateMachineLocator.MainStateMachine.TryInterruptState(ActiveStateCatalog.InstantiateState(elementType.BodyMeleeState), InterruptPriority.STATE_ANY);
         }
     }
 }

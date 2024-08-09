@@ -15,26 +15,38 @@ MonoBehaviour:
   spawnItems: []
   weights: []
   elementRequiredItems:
-  - RequiredElement: {fileID: 11400000, guid: b4bf9355eaf200840ae74d300c1c7e24, type: 2}
+  - RequiredElement: {fileID: 0}
+    RequiredDifficulty: 0
     spawnItems:
-    - {fileID: 2941607162525882826, guid: da2061056f681cb41b3cffd75690e12f, type: 3}
-    - {fileID: 513741678102788057, guid: 6a4c0793060ad2f46a9b0058795fc3c7, type: 3}
     - {fileID: 6742890254903443112, guid: a87c0be20b0501247a0f5e3c98ab847e, type: 3}
     weights:
     - 0.3
+  - RequiredElement: {fileID: 11400000, guid: 3823b492ece4b0b49aea651602c99d8b, type: 2}
+    RequiredDifficulty: 0
+    spawnItems:
+    - {fileID: 2941607162525882826, guid: da2061056f681cb41b3cffd75690e12f, type: 3}
+    weights:
     - 0.3
+  - RequiredElement: {fileID: 11400000, guid: 3823b492ece4b0b49aea651602c99d8b, type: 2}
+    RequiredDifficulty: 1
+    spawnItems:
+    - {fileID: 513741678102788057, guid: 6a4c0793060ad2f46a9b0058795fc3c7, type: 3}
+    weights:
     - 0.3
   - RequiredElement: {fileID: 11400000, guid: 1523a7871b8db304990d850360547269, type: 2}
+    RequiredDifficulty: 0
     spawnItems:
     - {fileID: 6437461920432883375, guid: a4ce654d6a81c2e4caf405b1ca42836a, type: 3}
     weights:
     - 1
   - RequiredElement: {fileID: 11400000, guid: 735c28191e66ad943a3bf219d795d968, type: 2}
+    RequiredDifficulty: 0
     spawnItems:
     - {fileID: 3220547582268774455, guid: 8eb19d9add63b0c44b8e082eb9711a84, type: 3}
     weights:
     - 1
   - RequiredElement: {fileID: 11400000, guid: 3823b492ece4b0b49aea651602c99d8b, type: 2}
+    RequiredDifficulty: 0
     spawnItems:
     - {fileID: 5026395562396124002, guid: 75ea15505e9bb024c8a7fc7f6b24b6a2, type: 3}
     weights:

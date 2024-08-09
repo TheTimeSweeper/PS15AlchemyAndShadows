@@ -23,7 +23,7 @@ namespace ActiveStates.Characters
 
         protected virtual void OnMovementInterrupt()
         {
-            machine.setStateToDefault();
+            Machine.SetStateToDefault();
         }
     }
 }

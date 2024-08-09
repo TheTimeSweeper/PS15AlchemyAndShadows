@@ -11,7 +11,7 @@ namespace ActiveStates.AI
 
             if (Brain.CurrentTargetBody == null)
             {
-                machine.setStateToDefault();
+                Machine.SetStateToDefault();
                 return;
             }
 
@@ -21,11 +21,11 @@ namespace ActiveStates.AI
             {
                 if (Brain.CurrentTargetBody != null)
                 {
-                    machine.setState( new ChaseToCombat { Brain = Brain, ChaseTime = Brain.chaseTimeMinimunm } );
+                    Machine.SetState( new ChaseToCombat { Brain = Brain, ChaseTime = Brain.chaseTimeMinimunm } );
                 }
                 else
                 {
-                    machine.setStateToDefault();
+                    Machine.SetStateToDefault();
                 }
             }
         }

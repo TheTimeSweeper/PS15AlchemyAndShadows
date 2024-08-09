@@ -17,6 +17,6 @@ MonoBehaviour:
   minimumInstancesRequired: 1
   minimumDifficultyRequirement: 1
   requiredElements:
-  - {fileID: 11400000, guid: e9dc55c4007b4c84287fb34af817401e, type: 2}
-  - {fileID: 11400000, guid: 2784bd7580a58e74da893813476c5069, type: 2}
+  - {fileID: 11400000, guid: b4bf9355eaf200840ae74d300c1c7e24, type: 2}
+  - {fileID: 11400000, guid: 1523a7871b8db304990d850360547269, type: 2}
   elementThatTheRoomDoesntShowUpIfYouUnlock: {fileID: 11400000, guid: 89a994514cf2dd24cb5bcb5305d81a8d, type: 2}

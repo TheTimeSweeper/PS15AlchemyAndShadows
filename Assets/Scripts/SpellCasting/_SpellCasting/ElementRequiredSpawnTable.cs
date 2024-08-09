@@ -7,6 +7,7 @@ using UnityEngine;
 public class ElementRequriedSpawn
 {
     public ElementType RequiredElement;
+    public int RequiredDifficulty;
     public List<GameObject> spawnItems;
     public List<float> weights;
 
@@ -37,7 +38,8 @@ public class ElementRequiredSpawnTable : SpawnTable
 
         for (int i = 0; i < elementRequiredItems.Count; i++)
         {
-            if (MainGame.Instance.SavedData.UnlockedElements.Contains(elementRequiredItems[i].RequiredElement))
+            if (MainGame.Instance.SavedData.UnlockedElements.Contains(elementRequiredItems[i].RequiredElement) &&
+                LevelProgressionManager.DifficultyProgression >= elementRequiredItems[i].RequiredDifficulty)
             {
                 newList.AddRange(elementRequiredItems[i].spawnItems);
             }
@@ -53,7 +55,9 @@ public class ElementRequiredSpawnTable : SpawnTable
 
         for (int i = 0; i < elementRequiredItems.Count; i++)
         {
-            if (MainGame.Instance.SavedData.UnlockedElements.Contains(elementRequiredItems[i].RequiredElement))
+            //jam dry reeeee
+            if (MainGame.Instance.SavedData.UnlockedElements.Contains(elementRequiredItems[i].RequiredElement) &&
+                LevelProgressionManager.DifficultyProgression >= elementRequiredItems[i].RequiredDifficulty)
             {
                 newList.AddRange(elementRequiredItems[i].weights);
             }

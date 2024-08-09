@@ -43,7 +43,7 @@ namespace ActiveStates
             if (defaultState != null)
             {
                 //Util.Log($"{label} entering state {DefaultState.activeStateName}");
-                setState(ActiveStateCatalog.InstantiateState(DefaultState));
+                SetState(ActiveStateCatalog.InstantiateState(DefaultState));
             }
         }
 
@@ -56,24 +56,24 @@ namespace ActiveStates
             _currentlyRunningState.OnUpdate();
         }
 
-        public void setState(ActiveState newState)
+        public void SetState(ActiveState newState)
         {
             if (newState == null)
             {
                 Debug.LogError("Tried to enter a null state", this);
             }
 
-            exitCurrentState(newState);
+            ExitCurrentState(newState);
 
             _currentlyRunningState = newState;
 
 #if UNITY_EDITOR
             currentState = _currentlyRunningState.GetType().ToString();
 #endif
-            enterCurrentState();
+            EnterCurrentState();
         }
 
-        private void exitCurrentState(ActiveState newState)
+        private void ExitCurrentState(ActiveState newState)
         {
             if (_currentlyRunningState != null)
             {
@@ -82,50 +82,50 @@ namespace ActiveStates
             }
         }
 
-        private void enterCurrentState()
+        private void EnterCurrentState()
         {
-            _currentlyRunningState.machine = this;
+            _currentlyRunningState.Machine = this;
             _currentlyRunningState.OnEnter();
         }
 
-        public void setStateToDefault(bool clearQueue = false)
+        public void SetStateToDefault(bool clearQueue = false)
         {
-            setState(ActiveStateCatalog.InstantiateState(DefaultState));
+            SetState(ActiveStateCatalog.InstantiateState(DefaultState));
             if (clearQueue)
             {
                 _queuedStates.Clear();
             }
         }
-        public void endState(ActiveState state)
+        public void EndState(ActiveState state)
         {
             if (_currentlyRunningState != state)
             {
                 Debug.LogError($"trying to end a state ({state.GetType()}) that is not the current state ({_currentlyRunningState.GetType()})");
                 return;
             }
-            endState();
+            EndState();
         }
-        public void endState()
+        public void EndState()
         {
             if (_queuedStates.Count > 0)
             {
-                setState(_queuedStates.Dequeue());
+                SetState(_queuedStates.Dequeue());
             }
             else
             {
-                setStateToDefault();
+                SetStateToDefault();
             }
         }
-        public void queueState(ActiveState newState)
+        public void QueueState(ActiveState newState)
         {
             _queuedStates.Enqueue(newState);
         }
 
-        public void tryInterruptState(ActiveState activeState, InterruptPriority priority)
+        public void TryInterruptState(ActiveState activeState, InterruptPriority priority)
         {
             if(_currentlyRunningState == null || _currentlyRunningState.GetMinimumInterruptPriority() <= priority)
             {
-                setState(activeState);
+                SetState(activeState);
             }
         }
 

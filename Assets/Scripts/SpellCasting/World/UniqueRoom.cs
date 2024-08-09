@@ -30,10 +30,10 @@ namespace SpellCasting.World
                 }
             }
 
-            return minimumDifficultyRequirement >= LevelProgressionManager.DifficultyProgression;
+            return LevelProgressionManager.DifficultyProgression >= minimumDifficultyRequirement;
         }
 
-        private void OnValidate()
+        void OnValidate()
         {
             minimumInstancesRequired = Mathf.Min(minimumInstancesRequired, maximumInstancesAllowed);
             maximumInstancesAllowed = Mathf.Max(maximumInstancesAllowed, minimumInstancesRequired);
