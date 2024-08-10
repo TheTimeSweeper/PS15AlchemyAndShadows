@@ -13,7 +13,7 @@ namespace SpellCasting
         [SerializeField]
         private Sprite icon;
 
-        [SerializeField, Tooltip("currently only maxhealth, damage, basemovespeed")]
+        [SerializeField, Tooltip("currently only maxhealth, damage, basemovespeed, maxMana, manaRegen, healthRegen")]
         public CharacterStats statsToChange;
 
         public virtual void OnApply(CharacterBody body)

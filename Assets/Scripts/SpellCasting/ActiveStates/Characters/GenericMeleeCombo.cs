@@ -7,7 +7,7 @@ namespace ActiveStates.Characters
     {
         protected virtual int comboHits => 1;
         protected override string hitboxName => "BasicHitbox";
-        protected override float damageCoefficient => 0.7f;
+        protected override float damageCoefficient => 0.5f;
         protected override float baseDuration => 0.5f;
         protected override float baseCastStartTimeFraction => 0.1f;
         protected override float baseCastEndTimeFraction => 0.4f;

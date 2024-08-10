@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dde42c8530127174389c3668a6a16cd1, type: 3}
-  m_Name: SpawnTable_RandomChest
+  m_Name: ItemTable_RandomChest
   m_EditorClassIdentifier: 
   spawnItems:
   - {fileID: 0}

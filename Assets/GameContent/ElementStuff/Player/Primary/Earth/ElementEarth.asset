@@ -21,7 +21,7 @@ MonoBehaviour:
   elementMassPrefab: {fileID: 8323308202881544581, guid: f0399cf9ce4623d4cb939acd06e48519, type: 3}
   cursorIndicatorPrefab: {fileID: 7438076937922181526, guid: 3edf0c1c9e2c7614195746d4f26049f4, type: 3}
   massGrowthMultiplier: 0
-  massBaseMass: 3
+  massBaseMass: 2
   massVelocityMultiplier: 20
   massOffsetDistance: 1
   massSpawnState:

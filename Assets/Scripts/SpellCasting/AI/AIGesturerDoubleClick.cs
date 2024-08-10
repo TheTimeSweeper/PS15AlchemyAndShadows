@@ -14,7 +14,7 @@ namespace SpellCasting.AI
         {
             private Vector3 initialPosition;
 
-            private float _clickTim;
+            private float _clickTim = 0.1f;
             private int _clicks;
 
             public override bool OnFixedUpdate(AIBrain brain)

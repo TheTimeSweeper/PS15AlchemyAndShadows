@@ -531,8 +531,8 @@ Transform:
   m_GameObject: {fileID: 2510608715192541119}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.10609999, y: -4.3303795, z: 15.991401}
-  m_LocalScale: {x: 82.38354, y: 1, z: 64.56401}
+  m_LocalPosition: {x: -0.0579, y: -4.3303795, z: 16.0878}
+  m_LocalScale: {x: 81.51256, y: 1, z: 64.370316}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2818783172452367297}
@@ -983,7 +983,7 @@ MonoBehaviour:
   - {fileID: 467942334381079784}
   overlapZones:
   - {fileID: 5748648881499751322}
-  roomCost: 1
+  roomCost: 1.5
   RoomWeight: 1
   validateRooms: 0
 --- !u!1 &4433773040694076518

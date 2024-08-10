@@ -12,27 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde42c8530127174389c3668a6a16cd1, type: 3}
   m_Name: SpawnTable_EnemyBasic
   m_EditorClassIdentifier: 
-  spawnItems: []
-  weights: []
+  spawnItems:
+  - {fileID: 6742890254903443112, guid: a87c0be20b0501247a0f5e3c98ab847e, type: 3}
+  - {fileID: 2941607162525882826, guid: da2061056f681cb41b3cffd75690e12f, type: 3}
+  weights:
+  - 1
+  - 1
   elementRequiredItems:
   - RequiredElement: {fileID: 0}
-    RequiredDifficulty: 0
-    spawnItems:
-    - {fileID: 6742890254903443112, guid: a87c0be20b0501247a0f5e3c98ab847e, type: 3}
-    weights:
-    - 0.3
-  - RequiredElement: {fileID: 11400000, guid: 3823b492ece4b0b49aea651602c99d8b, type: 2}
-    RequiredDifficulty: 0
-    spawnItems:
-    - {fileID: 2941607162525882826, guid: da2061056f681cb41b3cffd75690e12f, type: 3}
-    weights:
-    - 0.3
-  - RequiredElement: {fileID: 11400000, guid: 3823b492ece4b0b49aea651602c99d8b, type: 2}
     RequiredDifficulty: 1
     spawnItems:
     - {fileID: 513741678102788057, guid: 6a4c0793060ad2f46a9b0058795fc3c7, type: 3}
     weights:
-    - 0.3
+    - 1
   - RequiredElement: {fileID: 11400000, guid: 1523a7871b8db304990d850360547269, type: 2}
     RequiredDifficulty: 0
     spawnItems:

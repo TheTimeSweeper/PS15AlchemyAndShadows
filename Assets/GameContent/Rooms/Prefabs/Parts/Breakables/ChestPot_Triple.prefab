@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1027122527401781226}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.119, y: 0.323, z: 0}
+  m_LocalPosition: {x: -4.119, y: 0.323, z: 1.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93,7 +93,7 @@ Transform:
   m_GameObject: {fileID: 2629166890786746170}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.79, y: 0.323, z: -0.59}
+  m_LocalPosition: {x: 3.79, y: 0.323, z: 0.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -249,7 +249,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -322,6 +322,10 @@ PrefabInstance:
       propertyPath: deathTable
       value: 
       objectReference: {fileID: 11400000, guid: 7634a8bbf7b95ea47ae26839bd57fd6a, type: 2}
+    - target: {fileID: 8315330657768634198, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1943945661010662673, guid: bc01eb01cd1c8144f8f1c7c62adb85f2, type: 3}

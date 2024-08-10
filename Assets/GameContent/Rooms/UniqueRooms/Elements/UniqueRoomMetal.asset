@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf41402c2e93d284fa14f1acff9054f8, type: 3}
   m_Name: UniqueRoomMetal
   m_EditorClassIdentifier: 
-  room: {fileID: 4909897189538031285, guid: 7e22e1e8b26d9714ab09313b8cd9cf01, type: 3}
+  room: {fileID: 1206411204617598730, guid: a7142f248d72257498b42acf0769e1f7, type: 3}
   maximumInstancesAllowed: 1
   minimumInstancesRequired: 1
   minimumDifficultyRequirement: 1

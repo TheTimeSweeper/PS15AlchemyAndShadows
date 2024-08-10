@@ -5180,6 +5180,7 @@ MonoBehaviour:
   massScaleContainer: {fileID: 8572207729784449978}
   rigidBody: {fileID: 8599585788529758082}
   projectileController: {fileID: 1994112508006969103}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!54 &8599585788529758082
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5261,6 +5262,7 @@ MonoBehaviour:
   impactEvent:
     m_PersistentCalls:
       m_Calls: []
+  impactSound: -1
 --- !u!114 &7990725702055464545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5274,8 +5276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 2517951345225999493}
-  force: -0.2
-  succCloseLimit: 1
+  force: -0.1
+  succCloseLimit: 3
   teamTargeting: 2
 --- !u!114 &2620428317841873699
 MonoBehaviour:

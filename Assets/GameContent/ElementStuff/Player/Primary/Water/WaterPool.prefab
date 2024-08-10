@@ -180,6 +180,7 @@ MonoBehaviour:
   massScaleContainer: {fileID: 5674768894678111996}
   rigidBody: {fileID: 2055303392958719544}
   projectileController: {fileID: 3624624150187626333}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!54 &2055303392958719544
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -237,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 6842700511486428438}
-  damageCoefficient: 0.2
+  damageCoefficient: 0.1
   knockbackDirectionRigidbody: {fileID: 0}
   KnockbackForce: 0
   resetInterval: 0.3
@@ -246,6 +247,7 @@ MonoBehaviour:
   impactEvent:
     m_PersistentCalls:
       m_Calls: []
+  impactSound: -1
 --- !u!114 &4659915942550810931
 MonoBehaviour:
   m_ObjectHideFlags: 0

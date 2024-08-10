@@ -1231,8 +1231,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4005944344684906302}
   - {fileID: 414715115662950877}
+  - {fileID: 4005944344684906302}
   - {fileID: 8548087407816285996}
   - {fileID: 9124700037389411076}
   m_Father: {fileID: 7476206324353688220}
@@ -5744,7 +5744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4590202524379167786, guid: c6fb7964f1509284592314215e87de63, type: 3}
       propertyPath: m_text
-      value: Kill
+      value: Restart
       objectReference: {fileID: 0}
     - target: {fileID: 4590202524379167786, guid: c6fb7964f1509284592314215e87de63, type: 3}
       propertyPath: m_fontSize

@@ -87,7 +87,7 @@ public class DeathComponent : MonoBehaviour
 
     IEnumerator DelayedDie()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(deathDelay);
         Object.Destroy(gameObject);
     }
 }

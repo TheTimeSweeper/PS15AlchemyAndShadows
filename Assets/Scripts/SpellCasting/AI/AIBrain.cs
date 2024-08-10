@@ -36,7 +36,7 @@ namespace SpellCasting.AI
         public float chaseTimeMinimunm = 1;
 
         [SerializeField]
-        private ActiveStateMachine aiStateMachine;
+        protected ActiveStateMachine aiStateMachine;
 
         private CharacterBody _targetBody;
         public CharacterBody CurrentTargetBody
@@ -62,7 +62,7 @@ namespace SpellCasting.AI
 
         public Vector3 CurrentTargetPosition => CurrentTargetBody != null ? CurrentTargetBody.transform.position + Vector3.up* defaultAimPoint.transform.position.y : defaultAimPoint.position;
 
-        void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             if(aiStateMachine.CurrentState is IdleState)
             {

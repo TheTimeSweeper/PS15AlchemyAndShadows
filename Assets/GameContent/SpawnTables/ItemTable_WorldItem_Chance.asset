@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbd0dbaf9ccdf09439348dc47ca870b0, type: 3}
-  m_Name: RewardTable_WorldItem_Guaranteed
+  m_Name: ItemTable_WorldItem_Chance
   m_EditorClassIdentifier: 
   spawnItems:
+  - {fileID: 0}
   - {fileID: 129495689152731821, guid: 874b634d993900d418f2b462955be4fa, type: 3}
-  - {fileID: 3692292587145018752, guid: 3aa63ecb101bdf24b9ebce5bf71373c3, type: 3}
   - {fileID: 6063569557046346015, guid: 98e5c351f0a29a94786d5638448cf90f, type: 3}
   - {fileID: 7375709540811193174, guid: 9e1527ef901aeed4d86e2e45474b65e5, type: 3}
   - {fileID: 8617347193230838296, guid: 643c9bc65fb0b81419d7fdf42254d89b, type: 3}
   weights:
-  - 1
+  - 100
   - 1
   - 1
   - 1

@@ -1725,7 +1725,7 @@ MonoBehaviour:
   overlapZones:
   - {fileID: 44967014387151464}
   - {fileID: 2874169235488634712}
-  roomCost: 1
+  roomCost: 1.5
   RoomWeight: 0.5
   validateRooms: 0
 --- !u!1001 &206196965807773342

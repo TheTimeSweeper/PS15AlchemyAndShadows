@@ -38,7 +38,7 @@ public class ElementRequiredSpawnTable : SpawnTable
 
         for (int i = 0; i < elementRequiredItems.Count; i++)
         {
-            if (MainGame.Instance.SavedData.UnlockedElements.Contains(elementRequiredItems[i].RequiredElement) &&
+            if ((elementRequiredItems[i].RequiredElement == null || MainGame.Instance.SavedData.UnlockedElements.Contains(elementRequiredItems[i].RequiredElement)) &&
                 LevelProgressionManager.DifficultyProgression >= elementRequiredItems[i].RequiredDifficulty)
             {
                 newList.AddRange(elementRequiredItems[i].spawnItems);
@@ -56,7 +56,7 @@ public class ElementRequiredSpawnTable : SpawnTable
         for (int i = 0; i < elementRequiredItems.Count; i++)
         {
             //jam dry reeeee
-            if (MainGame.Instance.SavedData.UnlockedElements.Contains(elementRequiredItems[i].RequiredElement) &&
+            if ((elementRequiredItems[i].RequiredElement == null || MainGame.Instance.SavedData.UnlockedElements.Contains(elementRequiredItems[i].RequiredElement)) &&
                 LevelProgressionManager.DifficultyProgression >= elementRequiredItems[i].RequiredDifficulty)
             {
                 newList.AddRange(elementRequiredItems[i].weights);

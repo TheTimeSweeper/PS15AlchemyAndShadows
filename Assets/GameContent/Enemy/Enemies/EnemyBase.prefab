@@ -5680,7 +5680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commonComponents: {fileID: 2816093511070573214}
-  hitStunThreshold: 0
+  hitStunThreshold: 50
   hitMoveThreshold: 0
 --- !u!114 &5176992554521670172
 MonoBehaviour:
@@ -5737,7 +5737,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   deathEffectPooled: {fileID: 0}
   stateMachineLocator: {fileID: 0}
-  deathDelay: 1
+  deathDelay: 0.1
 --- !u!114 &5891615296901959856
 MonoBehaviour:
   m_ObjectHideFlags: 0
