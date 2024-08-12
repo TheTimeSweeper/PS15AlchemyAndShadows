@@ -24,8 +24,11 @@ namespace SpellCasting.UI
 
         [SerializeField]
         private BuffInfo godBuff;
+        [SerializeField]
+        private BuffInfo manaBuff;
 
-        private bool _godding;
+        private static bool _manning;
+        private static bool _godding;
 
         private void Start()
         {
@@ -45,10 +48,24 @@ namespace SpellCasting.UI
             joystickToggle.onValueChanged.AddListener(ToggleJoystick);
 
             AddFunnyButton("God Mode", GodMode);
+            AddFunnyButton("God Mana", GodMana);
 
             foreach (ElementType element in ElementCatalog.Instance.ElementTypesMap.Values)
             {
                 AddToggleElementButton(element);
+            }
+        }
+
+        private void GodMana()
+        {
+            _manning = !_manning;
+            if (_manning)
+            {
+                CharacterBodyTracker.FindPrimaryPlayer().AddBuff(manaBuff);
+            }
+            else
+            {
+                CharacterBodyTracker.FindPrimaryPlayer().Removebuff(manaBuff);
             }
         }
 

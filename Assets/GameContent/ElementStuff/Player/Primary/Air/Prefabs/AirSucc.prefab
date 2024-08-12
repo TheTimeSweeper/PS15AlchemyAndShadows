@@ -5239,7 +5239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e971475c90ddf24b8d83976a1743df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0.3
+  lifeTime: 0.15
 --- !u!114 &4161082688376463815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5276,8 +5276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 2517951345225999493}
-  force: -0.1
-  succCloseLimit: 3
+  force: -0.07
+  succCloseLimit: 1
   teamTargeting: 2
 --- !u!114 &2620428317841873699
 MonoBehaviour:

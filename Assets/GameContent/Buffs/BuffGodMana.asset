@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b073dcf703446694491b27c3a60469e8, type: 3}
-  m_Name: BuffGodMode
+  m_Name: BuffGodMana
   m_EditorClassIdentifier: 
   buffID: GodMode
   pooledEffect: {fileID: 0}
   icon: {fileID: 0}
   statsToChange:
-    BaseMaxHealth: 20
+    BaseMaxHealth: 0
     BaseHealthRegenPercent: 0
-    BaseDamage: 10
+    BaseDamage: 0
     BaseAttackSpeed: 0
     BaseStunFactor: 0
     BaseKnockbackFactor: 0
@@ -26,5 +26,5 @@ MonoBehaviour:
     BaseManaRegeneration: 111
     BaseManaCostMultiplier: 0
     BaseCastRange: 0
-    BaseMoveSpeed: 3
+    BaseMoveSpeed: 0
     BaseJumpHeight: 0
