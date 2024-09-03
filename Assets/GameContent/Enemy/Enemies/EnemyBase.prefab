@@ -5619,7 +5619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    BaseMaxHealth: 100
+    BaseMaxHealth: 60
     BaseHealthRegenPercent: 0
     BaseDamage: 10
     BaseAttackSpeed: 1

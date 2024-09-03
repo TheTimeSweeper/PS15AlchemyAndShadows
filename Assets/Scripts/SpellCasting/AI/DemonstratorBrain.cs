@@ -1,5 +1,4 @@
 ﻿using ActiveStates;
-using UnityEditor.Search;
 using UnityEngine;
 
 namespace SpellCasting.AI
